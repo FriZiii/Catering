@@ -97,7 +97,6 @@ button:hover{
 }
 
 .content .imgBox{
-    width: 400px;
     display: flex;
     justify-content: flex-end;
     padding-right: 10px;
