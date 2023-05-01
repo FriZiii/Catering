@@ -44,6 +44,10 @@ header {
                 color: #F2C94C;
             }
 
+.active {
+    color: #F2C94C;
+}
+
 button {
     margin-left: 20px;
     padding: 9px 25px;

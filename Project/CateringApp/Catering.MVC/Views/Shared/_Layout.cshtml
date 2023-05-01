@@ -13,10 +13,10 @@
         <a class="logo" asp-controller="Home" asp-action="Index"><img src="~/Images/logo.svg" alt="logo" asp-area=""></a>
         <nav>
             <ul class="nav_links">
-                <li><a asp-area="" asp-controller="Home" asp-action="Offer">Offer</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="FAQ">FAQ</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Pricing">Pricing</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                <li><a class="@(ViewData["Title"] == "Offer" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="Offer">Offer</a></li>
+                <li><a class="@(ViewData["Title"] == "FAQ" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="FAQ">FAQ</a></li>
+                <li><a class="@(ViewData["Title"] == "Pricing" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="Pricing">Pricing</a></li>
+                <li><a class="@(ViewData["Title"] == "Contact" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
             </ul>
         </nav>
         <button class="cta">Sign in</button>
