@@ -5,44 +5,60 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
         <title>Document</title>
     </head>
     <body>
         <header>
-            <img class="logo" src="Images/logo.svg" alt="logo">
+
             <nav>
-                <ul class="nav_links">
-                    <li><a href="#">Offer</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Pricing</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
+                <img src="Images/logo.svg">
+    
+                <div class="menu">
+                    <a href="#">Home</a>
+                    <a href="#">About</a>
+                    <a href="#">Discord</a>
+                    <a href="#">Contact</a>
+                    <button>Log in</button>
+                </div>
+    
+                <button class="hamburger">
+                    <span class="material-icons">menu</span>
+                </button>
             </nav>
-            <a class="cta" href="#"><button>Sign in</button></a>
+    
+            <div class="mobile-menu">
+                <a href="#">Offer</a>
+                <a href="#">FAQ</a>
+                <a href="#">Pricing</a>
+                <a href="#">Contact</a>
+                <button>Sign in</button>
+            </div>
         </header>
         <div class="content">
-            <div class="textBox">
+            <!-- <div class="textBox">
                 <h2>Cateringboxes, the best choice<br>for meals for every day!</h2>
                 <p>A nutrient-packed, tasty meal for every day of<br>the week just a few clicks away.</p>
                 <a class="cta" href="#"><button>Sign up</button></a>
             </div>
             <div class="imgBox">
                 <img src="Images/header-img.png" class="food">
-            </div>
+            </div> -->
         </div>
         <footer>
-            <img class="logo_nav" src="Images/logo.svg" alt="logo">
-            <ul class="nav_links">
-                <li><a href="#">Offer</a></li>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Pricing</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
+            <img src="Images/logo.svg">
+            <div class="menu-footer">
+                <a href="#">Offer</a>
+                <a href="#">FAQ</a>
+                <a href="#">Pricing</a>
+                <a href="#">Contact</a>
+            </div>
             <div class="socials">
-                <img class="social" src="Images/Facebook.svg" alt="logo">
-                <img class="social" src="Images/Instagram.svg" alt="logo">
+                <img src="Images/Facebook.svg">
+                <img src="Images/Instagram.svg">
             </div>
             <a>Copyrights © 2023</a>
         </footer>
+        <script src="script.js"></script>
     </body>
 </html>
