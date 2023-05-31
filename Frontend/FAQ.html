@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+        <title>Document</title>
+    </head>
+    <body>
+        <header>
+
+            <nav>
+                <img src="Images/logo.svg">
+    
+                <div class="menu">
+                    <a href="#">Home</a>
+                    <a href="#">About</a>
+                    <a href="#">Discord</a>
+                    <a href="#">Contact</a>
+                    <button>Log in</button>
+                </div>
+    
+                <button class="hamburger">
+                    <span class="material-icons">menu</span>
+                </button>
+            </nav>
+    
+            <div class="mobile-menu">
+                <a href="#">Offer</a>
+                <a href="#">FAQ</a>
+                <a href="#">Pricing</a>
+                <a href="#">Contact</a>
+                <button>Sign in</button>
+            </div>
+        </header>
+        
+        
+        <h2 class="title">FAQ</h2>
+        <div class="content">
+            <div class="textBox">
+                <div class = "accordion">
+                    <div class="contentBx">
+                        <div class="label">What is a boxed meal diet?</div>
+                        <div class="content"><p>A boxed meal diet, also known as a meal delivery diet or a meal plan service, is a dietary approach where pre-portioned and balanced meals are delivered directly to the individual's doorstep. The meals are conveniently packaged in individual containers or boxes, ready to be consumed without the need for extensive meal preparation or cooking.</p>
+                        </div>
+                    </div>
+                    <div class="contentBx">
+                        <div class="label">How does meal delivery diet work?</div>
+                        <div class="content"><p>You have the freedom to select and order your desired diet plan. Our team diligently prepares fresh, flavorful meals, carefully packaging them with care. Delivered right to your doorstep on designated days, you simply need to heat up your meal and indulge in its deliciousness. With minimal effort required, you can enjoy the convenience and satisfaction of our expertly crafted meals.</p>
+                        </div>
+                    </div>
+                    <div class="contentBx">
+                        <div class="label">What types of meals are offered in box catering?</div>
+                        <div class="content"><p>We offer a wide variety of meals to cater to different tastes, preferences, and dietary needs. You can choose your diet and a number of calories you need and we will prepare tasty and unique meals</p>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    const accordion = document.getElementsByClassName('contentBx');
+
+                    for(i = 0; i<accordion.length; i++){
+                        accordion[i].addEventListener('click', function(){
+                            this.classList.toggle('active')
+                        })
+                    }
+                </script>
+
+                
+            </div>
+            
+        </div>
+            
+        </div>
+        <footer>
+            <img src="Images/logo.svg">
+            <div class="menu-footer">
+                <a href="#">Offer</a>
+                <a href="#">FAQ</a>
+                <a href="#">Pricing</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="socials">
+                <img src="Images/Facebook.svg">
+                <img src="Images/Instagram.svg">
+            </div>
+            <a>Copyrights © 2023</a>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>

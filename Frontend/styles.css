@@ -27,6 +27,7 @@ nav img {
 	padding-right: calc(1rem - 5px);
 }
 
+
 .menu {
 	display: none;
 	align-items: center;
@@ -137,6 +138,24 @@ nav img {
 
 /* CONTENT */
 
+.title-center{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 58px; 
+    text-align: center;
+    margin: 0px 0px 40px 0px;
+}
+.title{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 58px; 
+    margin: 0px 0px 40px 262px;
+}
+
 .content{
     position: relative;
     width: 100%;
@@ -145,47 +164,205 @@ nav img {
     align-items: center;
     padding: 0px 150px;
 }
-/* 
-.content .textBox{
+
+    .content .textBox{
+        position: relative;
+        max-width: 1000px;
+    }
+    
+
+        .content .textBox h2{
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 48px;
+            line-height: 58px;    
+        }
+
+        .conent .textBox title{
+            align-items:stretch;
+        }
+
+        .content .textBox p{
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 24px;
+            line-height: 29px;
+
+        }
+
+        .content .textBox a{
+            display: inline-block;
+            margin-top: 20px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        
+
+        .content .container{
+            display: flex;
+            justify-content: space-around;
+
+        }
+
+        .content .textBox section{
+            min-height: 48px;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            box-shadow: 1px 6px 14px grey;
+            
+        }
+
+        .content .textBox .substance{
+            border: 1px solid #FFE083;
+        }
+
+       
+
+    .content .imgBox .index{
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 10px;
+    }
+
+        .content .imgBox img{
+            max-width: 900px;
+        }  
+
+
+
+/*FAQ*/
+.accordion{
+    width: 800px;
+}
+.accordion .contentBx{
     position: relative;
-    max-width: 1000px;
+    margin: 10px 20px;
+
 }
 
-.content .textBox h2{
-    font-family: 'Inter';
+.accordion .contentBx .label{
     font-style: normal;
-    font-weight: 700;
-    font-size: 48px;
-    line-height: 58px;    
+    font-weight: 800;
+    font-size: 18px;
+    min-height: 48px;
+    position: relative;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 1px 6px 14px grey;
+    cursor: pointer;
 }
 
-.content .textBox p{
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 24px;
-    line-height: 29px;
+.accordion .contentBx .label::before{
+    content: '+';
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    
+}
+
+.accordion .contentBx.active .label::before{
+content: '-';
+}
+
+
+.accordion .contentBx .content{
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+    overflow-y: auto;
+    
+    
+}
+
+.accordion .contentBx .content p{
+    font-size: 18px;
+    text-align: center;
+}
+
+
+.accordion .contentBx.active .content{
+    height: 150px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 1px 6px 14px grey;
+    
 
 }
 
-.content .textBox a{
-    display: inline-block;
-    margin-top: 20px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    text-decoration: none;
-}
-
-.content .imgBox{
+/*Cart*/
+.content_cart{
     display: flex;
-    justify-content: flex-end;
-    padding-right: 10px;
+    flex-direction: column;
+    align-items: center;
 }
 
-.content .imgBox img{
-    max-width: 900px;
-} */ 
+.container_checkbx{
+    max-width: 1000px;
+    margin: 0px;
+    display: flex;
+    flex-wrap: wrap;
+}
 
+.container_checkbx div{
+    margin: 10px;
+
+}
+
+.container_checkbx div label{
+    cursor: pointer;
+}
+
+.container_checkbx div label input[type="radio"]
+{
+    display: none;
+}
+
+.container_checkbx div label input[type="checkbox"]
+{
+    display: none;
+}
+
+.container_checkbx div label span{
+    position: relative;
+    display: inline-block;
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
+    padding: 15px 30px;
+    font-size: 18px;
+    text-align: center;
+    transition: 0.5s;
+    user-select: none;
+    overflow: hidden;
+}
+
+.container_checkbx div label span::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: rgba(255,255,255,.1);
+}
+
+.container_checkbx div label input[type="radio"]:checked ~ span
+{
+    border: 1px solid #F2C94C;
+    color: #F2C94C;
+}
+
+.container_checkbx div label input[type="checkbox"]:checked ~ span
+{
+    border: 1px solid #F2C94C;
+    color: #F2C94C;
+}
 
 /* FOOTER */
 footer{
