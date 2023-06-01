@@ -7,4 +7,8 @@
     <UserSecretsId>9bf84a8a-93c4-4d8d-bcdc-dd45ab95dc6a</UserSecretsId>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\images\icons\" />
+  </ItemGroup>
+
 </Project>

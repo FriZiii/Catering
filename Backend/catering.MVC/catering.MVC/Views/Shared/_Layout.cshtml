@@ -4,42 +4,58 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - catering.MVC</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/catering.MVC.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/header.css" />
+    <link rel="stylesheet" href="~/css/footer.css" />
+    <link rel="stylesheet" href="~/css/offer.css" />
+    <link rel="stylesheet" href="~/css/faq.css" />
+    <link rel="stylesheet" href="~/css/content.css" />
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">catering.MVC</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
+        <nav>
+            <img src="~/images/logo.svg"/>
+
+            <div class="menu" alt="Logo">
+                <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                <a asp-area="" asp-controller="Home" asp-action="FAQ">About</a>
+                <a asp-area="" asp-controller="Home" asp-action="Index">Cart</a>
+                <a asp-area="" asp-controller="Home" asp-action="Index">Contact</a>
+                <button>Log in</button>
             </div>
+
+            <button class="hamburger">
+                <span class="material-icons">menu</span>
+            </button>
         </nav>
+
+        <div class="mobile-menu">
+            <a href="#">Offer</a>
+            <a href="#">FAQ</a>
+            <a href="#">Cart</a>
+            <a href="#">Contact</a>
+            <button>Sign in</button>
+        </div>
     </header>
-    <div class="container">
+
+    <div class="content">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - catering.MVC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <footer>
+        <img src="~/images/logo.svg" class="logo-footer" />
+        <div class="menu-footer">
+            <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+            <a asp-area="" asp-controller="Home" asp-action="FAQ">About</a>
+            <a asp-area="" asp-controller="Home" asp-action="Index">Cart</a>
+            <a asp-area="" asp-controller="Home" asp-action="Index">Contact</a>
         </div>
+        <div class="socials">
+            <img src="~/images/Facebook.svg" />
+            <img src="~/images/Instagram.svg" />
+        </div>
+        <a>Copyrights © 2023</a>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
