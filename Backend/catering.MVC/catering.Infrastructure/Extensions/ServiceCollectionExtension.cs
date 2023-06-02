@@ -1,4 +1,5 @@
 ﻿using catering.Infrastructure.Persistence;
+using catering.Infrastructure.Seeders;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -7,10 +8,12 @@ namespace catering.Infrastructure.Extensions
 {
     public static class ServiceCollectionExtension
     {
-        public static void AddInfrastructure(this IServiceCollection services)
+        public static void AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<StoreContext>(options =>
-                options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=YummyDB;Trusted_Connection=True"));
+                options.UseSqlServer(configuration.GetConnectionString("DevCon")));
+
+            services.AddScoped<ProductSeeder>();
         }
     }
 }
