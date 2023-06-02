@@ -1,0 +1,15 @@
+﻿@using catering.Domain.Entities;
+@model IEnumerable<Product>
+
+<div class="centered">
+    <div class="content-offer">
+        @foreach(var product in Model)
+        {
+        <div key=@product.Id class="product-card">
+            <img src="~/images/products/@product.ImageName" alt="Product" class="product-image" />
+            <div class="product-name">@product.Name</div>
+            <div class="product-price">@product.Price$</div>
+        </div>
+        }
+    </div>
+</div>

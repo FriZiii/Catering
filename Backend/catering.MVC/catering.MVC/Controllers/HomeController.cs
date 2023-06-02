@@ -17,6 +17,7 @@ namespace catering.MVC.Controllers
         {
             return View();
         }
+
         public IActionResult FAQ()
         {
             return View();
