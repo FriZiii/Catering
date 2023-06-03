@@ -42,3 +42,97 @@
     color: #888;
   }
   
+
+/*Modal*/
+.offer-modal-container{
+  background: rgb(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  pointer-events: none;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transition: opacity 0.3s ease;
+}
+
+.offer-modal-container.show {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.offer-modal{
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 20px 20px;
+  width: 800px;
+  max-width: 100%;
+}
+
+.open-modal-button{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--yellow-light);
+  width: 120px;
+  height: 30px;
+  border: none;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.add-to-cart-button{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--yellow-light);
+  width: 100%;
+  height: 30px;
+  border: none;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.offer-modal-content{
+  display: flex;
+  margin: 0 0 5px 0;
+}
+
+.offer-modal-text-content{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  padding: 0 15px;
+}
+
+.offer-modal-text-content h2{
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.offer-modal-text-content .modal-product-price-offer{
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.offer-modal-text-content p{
+  font-size: 20px;
+}
+
+.product-image-modal{
+  margin: 0 5px;
+}

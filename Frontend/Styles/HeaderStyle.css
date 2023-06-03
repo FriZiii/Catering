@@ -143,81 +143,80 @@ nav img {
   margin: 0px 0px 40px 262px;
 }
 
-.content{
+.home-page-content{
   width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding: 0px 150px;
+  flex-basis: 50%;
 }
 
-  .content .textBox{
-      max-width: 1000px;
-      
-  }
+.home-page-content .textBox{
+  max-width: 1000px;   
+}
 
-  .slogan {
-      max-width: 580px;
-  }
-  .slogan img{
-      float: left;
-      height: 70px;
-      
-  }
+.slogan {
+  max-width: 580px;
+}
 
-      .content .textBox h2{
-          font-family: 'Inter';
-          font-style: normal;
-          font-weight: 700;
-          font-size: 55px;
-          line-height: 70px;    
-      }
+.slogan img{
+  float: left;
+  height: 70px;
+}
 
-      
+.home-page-content .textBox h2{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 55px;
+  line-height: 70px;    
+}
 
-      p{
-          font-family: 'Inter';
-          font-style: normal;
-          font-weight: 300;
-          font-size: 24px;
-          line-height: 29px;
+p{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 29px;
+}
 
-      }
+.home-page-content .textBox a{
+  display: inline-block;
+  margin-top: 20px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
 
-      .content .textBox a{
-          display: inline-block;
-          margin-top: 20px;
-          font-weight: 500;
-          letter-spacing: 1px;
-          text-decoration: none;
-      }
+.home-page-content .container{
+  display: flex;
+  justify-content: space-around;
+}
 
-      
+.home-page-content .textBox section{
+  min-height: 48px;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 1px 6px 14px grey;
+}
 
-      .content .container{
-          display: flex;
-          justify-content: space-around;
+.home-page-content .textBox .substance{
+  border: 1px solid --yellow-light;
+}
 
-      }
+.home-imgBox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-      .content .textBox section{
-          min-height: 48px;
-          padding: 10px;
-          margin: 10px;
-          border-radius: 5px;
-          box-shadow: 1px 6px 14px grey;
-          
-      }
-
-      .content .textBox .substance{
-          border: 1px solid --yellow-light;
-      }
-
-     
-      .imgBox img{
-          width: 120%;
-          min-width: 200px;
-      }
+.home-page-image{
+  width: 50%;
+  height: 50%;
+  transform: rotate(65deg);
+}
 
 .signup-button {
   display: inline-flex;
@@ -237,6 +236,5 @@ nav img {
 
 .signup-button span{
   padding: 0 10px 0px 0px;
-  
 }
-       
+
