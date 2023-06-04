@@ -9,35 +9,48 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-
+    margin-bottom: 20%;
   }
   
   .product-card-offer {
+    cursor: pointer;
     flex-basis: 25%;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 200px;
-    margin: 20px;
-    padding: 20px;
+    padding-top: 30px;
+    margin: 3%;
     border: none;
     border-radius: 5px;
   }
   
   .product-image-offer {
-    width: 200px;
-    height: 150px;
+    width: 250px;
+    height: 175px;
     object-fit: cover;
-    margin-bottom: 10px;
+  }
+
+  .product-name-price-container-offer {
+    background-color: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: -35px;
+    width: 150px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
   }
   
   .product-name-offer {
     font-size: 18px;
     font-weight: bold;
-    margin-bottom: 5px;
+    margin: 3%;
   }
   
   .product-price-offer {
+    margin: 1%;
     font-size: 16px;
     color: #888;
   }
@@ -69,8 +82,7 @@
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   padding: 20px 20px;
-  width: 800px;
-  max-width: 100%;
+  width: 50%;
 }
 
 .open-modal-button{
@@ -95,10 +107,11 @@
   margin: 0 0 5px 0;
 }
 
-.offer-modal-left-content{
+.offer-modal-right-content{
+  width: 80%;
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 2%;
   padding: 0 15px;
 }
 
@@ -109,22 +122,24 @@
 }
 
 .modal-title-and-price-div{
-  width: min-content;
-  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 0 10px 0;
+
 }
 
-.modal-title-and-price .modal-product-price-offer{
-  
+.modal-title-and-price .modal-product-price-offer{ 
   display: flex;
   justify-content: right;
 }
 
-.offer-modal-left-content h2{
+.offer-modal-right-content h2{
   font-size: 40px;
   font-weight: 700;
 }
 
-.offer-modal-left-content .modal-product-price-offer{
+.offer-modal-right-content .modal-product-price-offer{
   font-size: 20px;
   font-weight: 500;
   text-align: right;
@@ -132,21 +147,27 @@
   left: 20px;
 }
 
-.offer-modal-left-content p{
+.offer-modal-right-content p{
   font-size: 20px;
   text-align: justify;
 }
 
+.img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-.product-image-modal{
-  height: 100%;
-  padding: 0 30px 0 0;
+.product-image-modal {
+  width: 400px;
+  margin-right: 5%;
 }
 
 .modal-div-close-button{
   display: flex;
   justify-content: flex-end;
 }
+
 .modal-close-button{
   width: 30px;
   height: 30px;
@@ -155,8 +176,7 @@
   justify-content: center;
   background-color: #fff;
   border: none;
-  cursor: pointer;
-  
+  cursor: pointer; 
 }
 
 .modal-close-img{
