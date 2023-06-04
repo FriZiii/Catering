@@ -1,0 +1,158 @@
+.title-center{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 58px; 
+    text-align: center;
+    margin: 0px 0px 40px 0px;
+  }
+  .title{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 58px; 
+    margin: 0px 0px 40px 262px;
+  }
+  
+  
+  .home-page-content{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 100px;
+    margin: 30px 0 0 0;
+  }
+  
+  .home-page-content .textBox{
+    max-width: 1000px; 
+    align-items: center;
+  }
+  
+  .slogan {
+    max-width: 800px;
+  }
+  
+  .slogan img{
+    float: left;
+    height: 90px;
+  }
+  
+  .home-page-content .textBox h2{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 70px;
+    line-height: 90px;    
+  }
+  
+  p{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 50px;
+  }
+  
+  .home-page-content .textBox a{
+    display: inline-block;
+    margin-top: 20px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-decoration: none;
+  }
+  
+  .home-page-content .container{
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .home-page-content .textBox section{
+    min-height: 48px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 1px 6px 14px grey;
+  }
+  
+  .home-page-content .textBox .substance{
+    border: 1px solid --yellow-light;
+  }
+  
+  .home-imgBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+  }
+  
+  .home-page-image{
+    width: 75%;
+    height: 75%;
+    transform: rotate(65deg);
+  }
+  
+  .signup-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--yellow-light);
+    width: 158px;
+    height: 50px;
+    border: none;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 20px;
+    cursor: pointer;
+  }
+  
+  .signup-button span{
+    padding: 0 10px 0px 0px;
+  }
+  
+  @media (max-width: 1200px){
+    .home-imgBox{
+      display: none;
+    }
+  }
+  
+  @media (max-width: 768px){
+    .home-page-content{
+      padding: 0px 40px;
+      margin: 10 0 0 0;
+    }
+  
+    .slogan {
+      max-width: 720px;
+    }
+    
+    .slogan img{
+      float: left;
+      height: 60px;
+    }
+    
+    .home-page-content .textBox h2{
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 50px;
+      line-height: 60px;    
+    }
+    
+    p{
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 30px;
+      line-height: 35px;
+    }
+  
+    .home-imgBox{
+      display: none;
+    }
+  }
+  
