@@ -1,0 +1,155 @@
+
+
+    .center-container-login {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container-login {
+        width: 600px;
+        height: 500px;
+        display: flex;
+    }
+
+    @media (max-width: 767px) {
+        .container-login {
+            width: 80%;
+            height: auto;
+            flex-direction: column;
+        }
+    }
+
+    .image-login {
+        flex: 1;
+        background-image: url('../Images/mniam.png');
+        background-size: cover;
+    }
+
+    .content-login {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logo-login {
+        margin-bottom: 5px;
+    }
+
+
+    h1 {
+        margin-bottom: 10px;
+    }
+
+
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    .rounded-input-login {
+        width: 90%;
+        margin-bottom: 30px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        border: 2px solid;
+        border-radius: 15px;
+        color: #BDBDBD;
+      }
+      
+      .rounded-input-login input[type="email"] {
+        width: 70%;
+        outline: none;
+      }
+  
+      .rounded-input-login input[type="password"] {
+        width: 70%;
+        outline: none;
+      }
+
+      .rounded-input-login input {
+        flex: 1;
+        border-radius: 15px;
+        padding: 10px 5px;
+        background-color: #ffffff;
+        font-size: 16px;
+        border: none;
+      }
+  
+      .rounded-input-login .icon-email,
+      .rounded-input-login .icon-lock {
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+      }
+      
+      .icon-email img,
+      .icon-lock img {
+        width: 20px;
+        height: 20px;
+      }
+
+      .remember-me-container {
+        margin-right: 37%;
+        display: flex;
+        align-items: center;
+      }
+      
+      .remember-label {
+        opacity: 0.7;
+        margin-left: 5px; 
+      }
+
+      .remember-me-login {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        width: 18px;
+        height: 18px;
+        outline: none;
+        border: 2px solid #888888;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+      }
+      
+      .remember-me-login:checked::before {
+        content: '\2713';
+        display: block;
+        text-align: center;
+        line-height: 16px;
+        color: rgb(255, 255, 255);
+      }
+      
+      .remember-me-login:checked {
+        background-color: #FFE083;
+      }
+
+
+    .login-btn {
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+        padding: 10px 50px;
+        border-radius: 15px;
+        background-color: #FFE083;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+    }
+    
+    .login-btn span {
+        margin-right: 10px; 
+    }
+    
+    .login-btn::after {
+        content: '';
+        background-image: url('../Images/log-in.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 20px; 
+        width: 20px; 
+        height: 20px; 
+    }
