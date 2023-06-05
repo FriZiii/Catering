@@ -9,7 +9,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20%;
+    margin-bottom: 3%;
   }
   
   .product-card-offer {
@@ -96,7 +96,7 @@
 .offer-modal {
   background: #fff;
   border-radius: 10px;
-  max-width: 60%;
+  max-width: 50%;
   padding: 20px;
   position: relative;
 }
@@ -165,8 +165,27 @@
 
 .offer-modal-right-content p {
   line-height: 1.5em;
-  font-size: 1em;
+  font-size: 0.95em;
 }
+
+@media (max-width: 1228px) {
+
+  .offer-modal {
+    max-width: 60%;
+  }
+
+  .offer-modal-right-content p {
+    line-height: 1.5em;
+    font-size: 0.7em;
+  }
+  .modal-title-and-price h2 {
+    font-size: 1.2em;
+  }
+  .modal-product-price-offer{
+    font-size: 0.4em;
+  }
+}
+
 
 .add-to-cart-button {
   display: flex;
@@ -203,9 +222,16 @@
     max-width: 220px;
   }
 
-  .product-image-modal img{
-    border-radius: px;
+  .offer-modal-right-content p {
+    line-height: 1.5em;
+    font-size: 1.2em;
   }
+
+  .offer-modal {
+    min-width: 300px;
+  }
+
+
 }
 
 
