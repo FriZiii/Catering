@@ -1,11 +1,15 @@
-/*Menu*/
-nav {
-  position: relative;
+
+header {
+  position: sticky;
+  top: 0;
   z-index: 99;
+  background-color: #fff;
+}
+
+nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   padding: 1rem 1.5rem;
 }
 
@@ -56,8 +60,7 @@ nav img {
   display: block;
 }
 
-.burger-icon
-{
+.burger-icon {
   width: 80px;
   height: 80px;
 }
@@ -112,8 +115,6 @@ nav img {
 .mobile-menu button:hover {
   background-color: #f2c94c;
 }
-
-
 
 @media (min-width: 768px) {
   .mobile-menu,
