@@ -1,10 +1,9 @@
-﻿using catering.Application.Services;
+﻿using catering.Application.Mappings;
+using catering.Application.Offer;
+using catering.Application.Services;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace catering.Application.Extensions
 {
@@ -13,6 +12,12 @@ namespace catering.Application.Extensions
         public static void AddApplication(this IServiceCollection services)
         {
             services.AddScoped<IOfferService, OfferService>();
+
+            services.AddAutoMapper(typeof(ProductMappingProfile));
+
+            services.AddValidatorsFromAssemblyContaining<ProductDtoValidator>()
+                .AddFluentValidationAutoValidation()
+                .AddFluentValidationClientsideAdapters();
         }
     }
 }

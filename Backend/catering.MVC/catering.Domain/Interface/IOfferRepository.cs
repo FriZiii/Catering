@@ -6,5 +6,6 @@ namespace catering.Domain.Interface
     {
         Task Create(Product product);
         Task<List<Product>> GetAll();
+        Task <Product?> GetByName(string name);
     }
 }

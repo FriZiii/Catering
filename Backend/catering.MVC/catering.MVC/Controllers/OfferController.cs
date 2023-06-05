@@ -1,7 +1,5 @@
-﻿using catering.Application.Services;
-using catering.Domain.Entities;
-using catering.Domain.Interface;
-using catering.Infrastructure.Persistence;
+﻿using catering.Application.Offer;
+using catering.Application.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace catering.MVC.Controllers
@@ -27,9 +25,13 @@ namespace catering.MVC.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(Product product)
+        public async Task<IActionResult> Create(ProductDto productDto)
         {
-            await offerService.Create(product);
+            if(!ModelState.IsValid)
+            {
+                return View(productDto);
+            }
+            await offerService.Create(productDto);
             return RedirectToAction("Index");
         }
     }

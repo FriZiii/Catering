@@ -21,7 +21,7 @@ namespace catering.Infrastructure.Repositories
         public OfferRepository(StoreContext context, IWebHostEnvironment hostEnvironment)
         {
             this.context = context;
-            this.hostEnvironment = hostEnvironment;
+			this.hostEnvironment = hostEnvironment;
         }
 
         public async Task Create(Product product)
@@ -40,5 +40,8 @@ namespace catering.Infrastructure.Repositories
         {
             return await context.Products.ToListAsync();
         }
-    }
+
+		public Task<Product?> GetByName(string name)
+		    => context.Products.FirstOrDefaultAsync(p => p.Name.ToLower() == name.ToLower());
+	}
 }
