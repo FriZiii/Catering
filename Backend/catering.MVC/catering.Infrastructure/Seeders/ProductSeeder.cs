@@ -19,9 +19,9 @@ namespace catering.Infrastructure.Seeders
 
         public async Task Seed()
         {
-            if(await context.Database.CanConnectAsync())
+            if (await context.Database.CanConnectAsync())
             {
-                if(!context.Products.Any())
+                if (!context.Products.Any())
                 {
                     Product meatDiet = new Product()
                     {

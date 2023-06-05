@@ -1,4 +1,6 @@
-﻿using catering.Infrastructure.Persistence;
+﻿using catering.Domain.Interface;
+using catering.Infrastructure.Persistence;
+using catering.Infrastructure.Repositories;
 using catering.Infrastructure.Seeders;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -14,6 +16,7 @@ namespace catering.Infrastructure.Extensions
                 options.UseSqlServer(configuration.GetConnectionString("DevCon")));
 
             services.AddScoped<ProductSeeder>();
+            services.AddScoped<IOfferRepository, OfferRepository>();
         }
     }
 }

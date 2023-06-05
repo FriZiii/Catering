@@ -1,20 +1,36 @@
-﻿using catering.Infrastructure.Persistence;
+﻿using catering.Application.Services;
+using catering.Domain.Entities;
+using catering.Domain.Interface;
+using catering.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Mvc;
 
 namespace catering.MVC.Controllers
 {
     public class OfferController : Controller
     {
-        private readonly StoreContext context;
+        private readonly IOfferService offerService;
 
-        public OfferController(StoreContext context)
+        public OfferController(IOfferService offerService)
         {
-            this.context = context;
+            this.offerService = offerService;
         }
-        public IActionResult Index()
+
+        public async Task<IActionResult> Index()
         {
-            var products = context.Products.ToList(); //TODO: Refactor
+            var products = await offerService.GetAll();
             return View(products);
+        }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create(Product product)
+        {
+            await offerService.Create(product);
+            return RedirectToAction("Index");
         }
     }
 }

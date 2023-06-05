@@ -1,4 +1,5 @@
 using catering.Infrastructure.Extensions;
+using catering.Application.Extensions;
 using catering.Infrastructure.Seeders;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddInfrastructure(builder.Configuration);
+builder.Services.AddApplication();
 var app = builder.Build();
 
 //Seeding products
