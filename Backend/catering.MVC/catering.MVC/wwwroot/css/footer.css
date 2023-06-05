@@ -1,12 +1,18 @@
 ﻿footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    margin: auto;
-    padding-top: 15px;
+    background-color: #fff;
     padding-bottom: 15px;
+    z-index: 9999;
+}
+
+.footer-image {
+    padding: 15px;
 }
 
 .menu-footer {
@@ -27,10 +33,10 @@
         }
 
 .logo-footer {
-    margin: 2%;
+    padding: 2em 20px;
 }
 
-.socials {
+.socials-footer {
     display: flex;
     justify-content: space-between;
     margin-top: auto;

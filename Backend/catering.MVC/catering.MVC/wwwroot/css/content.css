@@ -1,83 +1,13 @@
-﻿.title-center {
+﻿@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: "Inter";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 48px;
-    line-height: 58px;
-    text-align: center;
-    margin: 0px 0px 40px 0px;
+    color: #19191a;
 }
 
-.title {
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 48px;
-    line-height: 58px;
-    margin: 0px 0px 40px 262px;
-}
-
-.content {
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 0px 150px;
-}
-
-    .content .textBox {
-        position: relative;
-        max-width: 1000px;
-    }
-
-        .content .textBox h2 {
-            font-family: "Inter";
-            font-style: normal;
-            font-weight: 700;
-            font-size: 48px;
-            line-height: 58px;
-        }
-
-.content .textBox p {
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 300;
-    font-size: 24px;
-    line-height: 29px;
-}
-
-.content .textBox a {
-    display: inline-block;
-    margin-top: 20px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    text-decoration: none;
-}
-
-.content .container {
-    display: flex;
-    justify-content: space-around;
-}
-
-.content .textBox section {
-    min-height: 48px;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 5px;
-    box-shadow: 1px 6px 14px grey;
-}
-
-.content .textBox .substance {
-    border: 1px solid #ffe083;
-}
-
-.content .imgBox .index {
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 10px;
-}
-
-.content .imgBox img {
-    max-width: 900px;
+body {
+    background-color: #fff;
 }
