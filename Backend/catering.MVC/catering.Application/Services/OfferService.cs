@@ -1,4 +1,6 @@
-﻿using catering.Domain.Entities;
+﻿using AutoMapper;
+using catering.Application.Offer;
+using catering.Domain.Entities;
 using catering.Domain.Interface;
 using System;
 using System.Collections.Generic;
@@ -11,14 +13,18 @@ namespace catering.Application.Services
     public class OfferService : IOfferService
     {
         private readonly IOfferRepository offerRepository;
+        private readonly IMapper mapper;
 
-        public OfferService(IOfferRepository offerRepository)
+        public OfferService(IOfferRepository offerRepository, IMapper mapper)
         {
             this.offerRepository = offerRepository;
+            this.mapper = mapper;
         }
 
-        public async Task Create(Product product)
+        public async Task Create(ProductDto productDto)
         {
+            var product = mapper.Map<Product>(productDto);
+
             product.SetImageName();
             await offerRepository.Create(product);
         }

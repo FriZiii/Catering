@@ -1,10 +1,11 @@
-﻿using catering.Domain.Entities;
+﻿using catering.Application.Offer;
+using catering.Domain.Entities;
 
 namespace catering.Application.Services
 {
     public interface IOfferService
     {
-        Task Create(Product product);
+        Task Create(ProductDto productDto);
         Task<List<Product>> GetAll();
     }
 }
