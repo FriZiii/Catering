@@ -3,13 +3,48 @@
 
 <div class="centered">
     <div class="content-offer">
-        @foreach(var product in Model)
+        @for (var index = 0; index < Model.Count; index++)
         {
-        <div key=@product.Id class="product-card">
-            <img src="~/images/products/@product.ImageName" alt="Product" class="product-image" />
-            <div class="product-name">@product.Name</div>
-            <div class="product-price">@product.Price$</div>
-        </div>
+            var product = Model[index];
+            <div class="product-card-offer">
+                <img alt="Product" src="~/images/products/@product.ImageName" class="product-image-offer" />
+                <div class="product-name-price-container-offer">
+                    <div class="product-name-offer">@product.Name</div>
+                    <div class="product-price-offer">@product.Price$</div>
+                </div>
+            </div>
+
+            <div class="offer-modal-container" id="offer-modal-container-@index">
+                <div class="offer-modal">
+                    <div class="offer-modal-content">
+                        <div class="img-container">
+                            <img class="product-image-modal" src="~/images/products/@product.ImageName">
+                        </div>
+                        <div class="offer-modal-right-content">
+                            <div class="modal-div-close-button">
+                                <button class="modal-close-button" id="close-modal-button-@index">
+                                    <img class="modal-close-img" src="~/images/icons/close.svg">
+                                </button>
+                            </div>
+                            <div class="modal-title-and-price">
+                                <div class="modal-title-and-price-div">
+                                    <h2>@product.Name</h2>
+                                    <div class="modal-product-price-offer">@product.Price$</div>
+                                </div>
+                            </div>
+                            <p>
+                                @product.Description
+                            </p>
+                        </div>
+                    </div>
+                    <div class="modal-div-add-button">
+                        <button class="add-to-cart-button" id="add-to-cart-button">
+                            Add to cart
+                            <img src="Images/plus-icon.svg" class="plus-icon-offer">
+                        </button>
+                    </div>
+                </div>
+            </div>
         }
     </div>
 </div>

@@ -1,0 +1,127 @@
+﻿.home-page-content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 100px;
+    margin: 30px 0 0 0;
+}
+
+.textBox-home-home {
+    margin: 15px;
+}
+
+.slogan {
+    max-width: 800px;
+}
+
+    .slogan img {
+        float: left;
+        height: 90px;
+    }
+
+.home-page-content .textBox-home h2 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 70px;
+    line-height: 90px;
+}
+
+p {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 50px;
+}
+
+.home-imgBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    min-width: 610px;
+}
+
+    .home-imgBox img {
+        width: 75%;
+        height: 75%;
+        transform: rotate(75deg);
+        min-width: 570px;
+    }
+
+/*Sign up*/
+.signup-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--ligth-yellow);
+    width: 158px;
+    height: 50px;
+    border: none;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+.textBox-home a {
+    text-decoration: none;
+    color: #19191a;
+}
+
+    .textBox-home a:hover {
+        background-color: var(--main-color);
+        color: #19191a;
+    }
+
+.signup-button span {
+    padding: 0 10px 0px 0px;
+}
+
+
+/*Responsiveness*/
+@media (max-width: 1200px) {
+    .home-imgBox {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .home-page-content {
+        padding: 0px 40px;
+        margin: 10 0 0 0;
+    }
+
+    .slogan {
+        max-width: 720px;
+    }
+
+        .slogan img {
+            float: left;
+            height: 60px;
+        }
+
+    .home-page-content .textBox-home h2 {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 50px;
+        line-height: 60px;
+    }
+
+    p {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 30px;
+        line-height: 35px;
+    }
+
+    .home-imgBox {
+        display: none;
+    }
+}

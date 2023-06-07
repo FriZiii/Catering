@@ -1,7 +1,11 @@
-﻿/*Menu*/
-nav {
-    position: relative;
+﻿header {
+    position: sticky;
+    top: 0;
     z-index: 99;
+    background-color: #fff;
+}
+
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -20,7 +24,7 @@ nav {
 }
 
     .menu button {
-        background-color: #ffe083;
+        background-color: var(--ligth-yellow);
         border: none;
         border-radius: 50px;
         padding: 9px 25px;
@@ -31,18 +35,19 @@ nav {
     }
 
         .menu button:hover {
-            background-color: #f2c94c;
+            background-color: var(--main-color);
         }
 
     .menu a {
         margin: 0 1rem;
+        color: var(--gray);
         font-weight: 700;
         text-decoration: none;
         transition: all 0.3s ease-out 0s;
     }
 
         .menu a:hover {
-            color: #ffe083;
+            color: var(--ligth-yellow);
         }
 
 .hamburger {
@@ -91,12 +96,12 @@ nav {
     }
 
         .mobile-menu a:hover {
-            color: #ffe083;
+            color: var(--ligth-yellow);
             background-color: #fff;
         }
 
     .mobile-menu button {
-        background-color: #ffe083;
+        background-color: var(--ligth-yellow);
         border: none;
         border-radius: 50px;
         padding: 9px 25px;
@@ -107,7 +112,7 @@ nav {
     }
 
         .mobile-menu button:hover {
-            background-color: #f2c94c;
+            background-color: var(--main-color);
         }
 
 @media (min-width: 768px) {
@@ -120,119 +125,3 @@ nav {
         display: flex;
     }
 }
-
-/*Content*/
-
-.title-center {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 48px;
-    line-height: 58px;
-    text-align: center;
-    margin: 0px 0px 40px 0px;
-}
-
-.title {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 48px;
-    line-height: 58px;
-    margin: 0px 0px 40px 262px;
-}
-
-.home-page-content {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 0px 150px;
-    flex-basis: 50%;
-}
-
-    .home-page-content .textBox {
-        max-width: 1000px;
-    }
-
-.slogan {
-    max-width: 580px;
-}
-
-    .slogan img {
-        float: left;
-        height: 70px;
-    }
-
-.home-page-content .textBox h2 {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 55px;
-    line-height: 70px;
-}
-
-p {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 24px;
-    line-height: 29px;
-}
-
-.home-page-content .textBox a {
-    display: inline-block;
-    margin-top: 20px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    text-decoration: none;
-}
-
-.home-page-content .container {
-    display: flex;
-    justify-content: space-around;
-}
-
-.home-page-content .textBox section {
-    min-height: 48px;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 5px;
-    box-shadow: 1px 6px 14px grey;
-}
-
-.home-page-content .textBox .substance {
-    border: 1px solid --yellow-light;
-}
-
-.home-imgBox {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.home-page-image {
-    width: 50%;
-    height: 50%;
-    transform: rotate(65deg);
-}
-
-.signup-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--yellow-light);
-    width: 148px;
-    height: 40px;
-    border: none;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 17px;
-    cursor: pointer;
-}
-
-    .signup-button span {
-        padding: 0 10px 0px 0px;
-    }

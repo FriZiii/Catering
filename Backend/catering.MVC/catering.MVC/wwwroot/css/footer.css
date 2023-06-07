@@ -12,7 +12,7 @@
 }
 
 .footer-image {
-    padding: 15px;
+    padding: 5px;
 }
 
 .menu-footer {
@@ -22,6 +22,7 @@
 }
 
     .menu-footer a {
+        color: var(--gray);
         margin: 0 2rem;
         font-weight: 700;
         text-decoration: none;
@@ -29,11 +30,11 @@
     }
 
         .menu-footer a:hover {
-            color: #ffe083;
+            color: var(--ligth-yellow);
         }
 
 .logo-footer {
-    padding: 2em 20px;
+    padding: 6% 20px;
 }
 
 .socials-footer {
@@ -42,6 +43,6 @@
     margin-top: auto;
 }
 
-    .socials img {
+    .socials-footer img {
         padding: 10% 20px;
     }

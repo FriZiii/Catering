@@ -9,34 +9,226 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    margin-bottom: 3%;
 }
 
-.product-card {
+.product-card-offer {
+    cursor: pointer;
     flex-basis: 25%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 200px;
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    width: 250px;
+    padding-top: 30px;
+    margin: 10px;
+    border: none;
 }
 
-.product-image {
-    width: 150px;
-    height: 150px;
+.product-image-offer {
+    width: 250px;
+    height: 175px;
     object-fit: cover;
+}
+
+.product-name-price-container-offer {
+    background-color: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: -35px;
+    width: 150px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+}
+
+.product-name-offer {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 3%;
+}
+
+.product-price-offer {
+    margin: 1%;
+    font-size: 16px;
+    color: #888;
+}
+
+
+/*Modal*/
+.offer-modal-container {
+    background: rgb(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    pointer-events: none;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 9999;
+    transition: opacity 0.3s ease;
+}
+
+    .offer-modal-container.show {
+        pointer-events: auto;
+        opacity: 1;
+    }
+
+.open-modal-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--yellow-light);
+    width: 120px;
+    height: 30px;
+    border: none;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.offer-modal {
+    background: #fff;
+    border-radius: 10px;
+    max-width: 50%;
+    padding: 20px;
+    position: relative;
+}
+
+.offer-modal-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.img-container {
+    flex: 0 0 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-image-modal {
+    border-radius: 15px;
+    width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+}
+
+.offer-modal-right-content {
+    flex: 0 0 60%;
+    padding-left: 10px;
+}
+
+.modal-title-and-price {
+    font-size: 1.8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 10px;
 }
 
-.product-name {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 5px;
+.modal-product-price-offer {
+    font-size: 0.6em;
+    padding-left: 60%;
 }
 
-.product-price {
+.modal-title-and-price h2 {
+    margin-bottom: -5px;
+    font-size: 1.7em;
+}
+
+.modal-div-close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+    .modal-div-close-button button {
+        cursor: pointer;
+        border: none;
+        background: none;
+    }
+
+
+.modal-div-add-button {
+    margin-top: 10px;
+}
+
+
+.offer-modal-right-content p {
+    line-height: 1.5em;
+    font-size: 0.95em;
+}
+
+@media (max-width: 1228px) {
+
+    .offer-modal {
+        max-width: 60%;
+    }
+
+    .offer-modal-right-content p {
+        line-height: 1.5em;
+        font-size: 0.7em;
+    }
+
+    .modal-title-and-price h2 {
+        font-size: 1.2em;
+    }
+
+    .modal-product-price-offer {
+        font-size: 0.4em;
+    }
+}
+
+
+.add-to-cart-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+    background-color: #FFE083;
+    color: #000;
+    border: none;
+    border-radius: 4px;
     font-size: 16px;
-    color: #888;
+    cursor: pointer;
+}
+
+    .add-to-cart-button img {
+        width: 16px;
+        height: 16px;
+        margin-left: 5px;
+    }
+
+@media (max-width: 768px) {
+    .offer-modal-content {
+        flex-direction: column;
+    }
+
+    .img-container,
+    .offer-modal-right-content {
+        flex: 1 1 100%;
+    }
+
+    .product-image-modal {
+        max-height: 170px;
+        max-width: 220px;
+    }
+
+    .offer-modal-right-content p {
+        line-height: 1.5em;
+        font-size: 1.2em;
+    }
+
+    .offer-modal {
+        min-width: 300px;
+    }
 }
