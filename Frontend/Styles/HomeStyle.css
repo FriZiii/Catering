@@ -30,6 +30,10 @@
     max-width: 1000px; 
     align-items: center;
   }
+
+  .textBox-home{
+    margin: 15px;
+  }
   
   .slogan {
     max-width: 800px;
@@ -86,7 +90,7 @@
     justify-content: center;
     align-items: center;
     width: 40%;
-    min-width: 590px;
+    min-width: 610px;
   }
   
   .home-page-image{
