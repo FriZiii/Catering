@@ -86,12 +86,15 @@
     justify-content: center;
     align-items: center;
     width: 40%;
+    min-width: 590px;
   }
   
   .home-page-image{
     width: 75%;
     height: 75%;
     transform: rotate(65deg);
+    min-width: 570px;
+    
   }
   
   .signup-button {
