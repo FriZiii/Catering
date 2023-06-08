@@ -23,22 +23,23 @@
 <body>
     <header>
         <nav>
-            <img src="Images/logo.svg">
-
+            <img id="offer-logo" src="Images/logo.svg">
             <div class="menu">
                 <a href="#">Home</a>
                 <a href="#">About</a>
                 <a href="#">Discord</a>
                 <a href="#">Contact</a>
-                <button>Log in</button>
+                <button id="offer-login">Log in</button>
             </div>
-
             <button class="hamburger">
-                <span class="material-icons">menu</span>
+                <span class="material-icons menu-icon">menu</span>
             </button>
         </nav>
 
+
+
         <div class="mobile-menu">
+            <span class="material-icons close-icon hamburger">close</span>
             <a href="#">Offer</a>
             <a href="#">FAQ</a>
             <a href="#">Pricing</a>
@@ -46,46 +47,33 @@
             <button>Sign in</button>
         </div>
     </header>
-    <div class="content">
-        <div class="container-faq">
-            <h2 class="faq-title">FAQ</h2>
-            <div class="accordion-faq">
-                <div class="accordion-item-faq">
-                    <button id="accordion-button-1-faq" aria-expanded="false">
-                        <span class="accordion-title-faq">What is a boxed meal diet?</span>
-                        <span class="icon" aria-hidden="true"></span>
-                    </button>
-                    <div class="accordion-content-faq">
-                        <p>A boxed meal diet, also known as a meal delivery diet or a meal plan service, is a dietary approach where pre-portioned and
-                             balanced meals are delivered directly to the individual's doorstep. The meals are conveniently packaged in individual 
-                             containers or boxes, ready to be consumed without the need for extensive meal preparation or cooking.</p>
-                    </div>
+    <div class="container-faq">
+        <h2>FAQ</h2>
+        <div class="accordion-faq">
+            <div class="accordion-item-faq">
+                <button id="accordion-button-1-faq" aria-expanded="false">
+                    <span class="accordion-title-faq">Why is the moon sometimes out during the day?</span><span
+                        class="icon-faq" aria-hidden="true"></span>
+                </button>
+                <div class="accordion-content-faq">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium
+                        viverra suspendisse potenti.</p>
                 </div>
-                <div class="accordion-item-faq">
-                    <button id="accordion-button-1-faq" aria-expanded="false">
-                        <span class="accordion-title-faq">How does meal delivery diet work?</span>
-                        <span class="icon" aria-hidden="true"></span>
-                    </button>
-                    <div class="accordion-content-faq">
-                        <p>You have the freedom to select and order your desired diet plan. Our team diligently prepares fresh, flavorful meals, 
-                            carefully packaging them with care. Delivered right to your doorstep on designated days, you simply need to heat up 
-                            your meal and indulge in its deliciousness. With minimal effort required, you can enjoy the convenience and satisfaction 
-                            of our expertly crafted meals.</p>
-                    </div>
-                </div>
-                <div class="accordion-item-faq">
-                    <button id="accordion-button-1-faq" aria-expanded="false">
-                        <span class="accordion-title-faq">What types of meals are offered in box catering?</span>
-                        <span class="icon" aria-hidden="true"></span>
-                    </button>
-                    <div class="accordion-content-faq">
-                        <p>We offer a wide variety of meals to cater to different tastes, preferences, and dietary needs. You can choose your diet 
-                            and a number of calories you need and we will prepare tasty and unique meals.</p>
-                    </div>
+            </div>
+            <div class="accordion-item-faq">
+                <button id="accordion-button-1" aria-expanded="false-faq">
+                    <span class="accordion-title-faq">Why is the moon sometimes out during the day?</span><span
+                        class="icon-faq" aria-hidden="true"></span>
+                </button>
+                <div class="accordion-content-faq">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium
+                        viverra suspendisse potenti.</p>
                 </div>
             </div>
         </div>
-    </div>  
+    </div>
 
     <footer>
         <img class="footer-image" src="Images/logo.svg">

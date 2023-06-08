@@ -21,11 +21,10 @@
 </head>
 
 <body>
-    <header>
 
+    <header id="header-offer">
         <nav>
             <img id="offer-logo" src="Images/logo.svg">
-
             <div class="menu">
                 <a href="#">Home</a>
                 <a href="#">About</a>
@@ -33,13 +32,15 @@
                 <a href="#">Contact</a>
                 <button id="offer-login">Log in</button>
             </div>
-
             <button class="hamburger">
-                <span class="material-icons">menu</span>
+                <span class="material-icons menu-icon">menu</span>
             </button>
         </nav>
 
+
+
         <div class="mobile-menu">
+            <span class="material-icons close-icon hamburger">close</span>
             <a href="#">Offer</a>
             <a href="#">FAQ</a>
             <a href="#">Pricing</a>
@@ -47,7 +48,9 @@
             <button>Sign in</button>
         </div>
     </header>
+
     <div class="content">
+
         <div class="centered">
             <div class="content-offer">
 
@@ -60,45 +63,108 @@
                     </div>
                 </div>
 
-                <div class="product-card-offer">
+                <div key="1" class="product-card-offer">
                     <img alt="Product" src="Images/meat1.png" class="product-image-offer" />
-                    <div class="product-name-price-container-offer">
-                        <div class="product-name-offer">Vege Diet </div>
-                        <div class="product-price-offer"> 299 PLN</div>
-                    </div>
-                </div>
 
-                <div class="product-card-offer">
-                    <img alt="Product" src="Images/meat1.png" class="product-image-offer" />
-                    <div class="product-name-price-container-offer">
-                        <div class="product-name-offer">Paleo Diet </div>
-                        <div class="product-price-offer"> 599 PLN</div>
-                    </div>
-                </div>
-
-                <div class="product-card-offer">
-                    <img alt="Product" src="Images/meat1.png" class="product-image-offer" />
                     <div class="product-name-price-container-offer">
                         <div class="product-name-offer">Meat Diet </div>
                         <div class="product-price-offer"> 199 PLN</div>
                     </div>
                 </div>
 
-                <div class="product-card-offer">
+                <div key="1" class="product-card-offer">
                     <img alt="Product" src="Images/meat1.png" class="product-image-offer" />
+
                     <div class="product-name-price-container-offer">
-                        <div class="product-name-offer">Vege Diet </div>
-                        <div class="product-price-offer"> 299 PLN</div>
+                        <div class="product-name-offer">Meat Diet </div>
+                        <div class="product-price-offer"> 199 PLN</div>
                     </div>
                 </div>
 
-                <div class="product-card-offer">
+                <div key="1" class="product-card-offer">
                     <img alt="Product" src="Images/meat1.png" class="product-image-offer" />
+
                     <div class="product-name-price-container-offer">
-                        <div class="product-name-offer">Paleo Diet </div>
-                        <div class="product-price-offer"> 599 PLN</div>
+                        <div class="product-name-offer">Meat Diet </div>
+                        <div class="product-price-offer"> 199 PLN</div>
                     </div>
                 </div>
+
+                <!--New code section-->
+
+                <div class="product-card-offer">
+                    <img alt="Product" src="~/images/products/@product.ImageName" class="product-image-offer" />
+                    <div class="product-name-price-container-offer">
+                        <div class="product-name-offer">@product.Name</div>
+                        <div class="product-price-offer">@product.Price$</div>
+                    </div>
+                </div>
+
+                <div class="offer-modal-container" id="offer-modal-container-@index">
+                    <div class="offer-modal">
+                        <div class="offer-modal-content">
+                            <div class="img-container">
+                                <img class="product-image-modal" src="~/images/products/@product.ImageName">
+                            </div>
+                            <div class="offer-modal-right-content">
+                                <div class="modal-div-close-button">
+                                    <button class="modal-close-button" id="close-modal-button-@index">
+                                        <img class="modal-close-img" src="~/images/icons/close.svg">
+                                    </button>
+                                </div>
+                                <div class="modal-title-and-price">
+                                    <div class="modal-title-and-price-div">
+                                        <h2>@product.Name</h2>
+                                        <div class="modal-product-price-offer">@product.Price$</div>
+                                    </div>
+                                </div>
+                                <p>
+                                    @product.Description
+                                </p>
+                            </div>
+                        </div>
+                        <div class="modal-div-add-button">
+                            <button class="add-to-cart-button" id="add-to-cart-button">
+                                Add to cart
+                                <img src="Images/plus-icon.svg" class="plus-icon-offer">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="offer-modal-container" id="offer-modal-container-@index">
+                    <div class="offer-modal">
+                        <div class="offer-modal-content">
+                            <div class="img-container">
+                                <img class="product-image-modal" src="~/images/products/@product.ImageName">
+                            </div>
+                            <div class="offer-modal-right-content">
+                                <div class="modal-div-close-button">
+                                    <button class="modal-close-button" id="close-modal-button-@index">
+                                        <img class="modal-close-img" src="~/images/icons/close.svg">
+                                    </button>
+                                </div>
+                                <div class="modal-title-and-price">
+                                    <div class="modal-title-and-price-div">
+                                        <h2>@product.Name</h2>
+                                        <div class="modal-product-price-offer">@product.Price$</div>
+                                    </div>
+                                </div>
+                                <p>
+                                    @product.Description
+                                </p>
+                            </div>
+                        </div>
+                        <div class="modal-div-add-button">
+                            <button class="add-to-cart-button" id="add-to-cart-button">
+                                Add to cart
+                                <img src="Images/plus-icon.svg" class="plus-icon-offer">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!--New code section ends-->
 
                 <div class="offer-modal-container" id="offer-modal-container">
                     <div class="offer-modal">
@@ -134,6 +200,8 @@
 
             </div>
         </div>
+
+
     </div>
     <footer style="position: relative;" id="footer-offer">
         <img class="footer-image" src="Images/logo.svg">

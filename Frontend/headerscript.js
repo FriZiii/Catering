@@ -1,9 +1,11 @@
-const hamburger = document.querySelector('.hamburger');
-const hamburger_icon = hamburger.querySelector('.material-icons');
-const mobile_menu = document.querySelector('.mobile-menu');
+    const hamburgerButton = document.querySelector('.hamburger');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const closeIcon = document.querySelector('.close-icon.hamburger');
 
-hamburger.addEventListener('click', () => {
-	hamburger_icon.innerText = hamburger_icon.innerText === 'menu' ? 'close': 'menu';
-	console.log("elo")
-	mobile_menu.classList.toggle('is-open');
-})
+    hamburgerButton.addEventListener('click', function() {
+        mobileMenu.classList.toggle('is-open');
+    });
+
+    closeIcon.addEventListener('click', function() {
+        mobileMenu.classList.toggle('is-open');
+    });
