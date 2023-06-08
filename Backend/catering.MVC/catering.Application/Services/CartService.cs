@@ -25,15 +25,12 @@ namespace catering.Application.Services
         public async Task<CartModelDto> Get()
         {
             var cart = cartRepository.GetCart().CartItems;
-            List<CartItemModelDto> cartItemsDto = new List<CartItemModelDto>();
-            foreach (var item in cart)
+            List<CartItemModelDto> cartItemsDto = mapper.Map<List<CartItemModelDto>>(cart);
+            foreach (var itemDto in cartItemsDto)
             {
-                cartItemsDto.Add(new CartItemModelDto()
-                {
-                    Id = cartItemsDto.Count,
-                    Product = await offerRepository.GetById(item.ProductID)
-                });
+                itemDto.Product = await offerRepository.GetById(itemDto.Product!.Id);
             }
+
             var cartDto = new CartModelDto()
             {
                 CartItems = cartItemsDto

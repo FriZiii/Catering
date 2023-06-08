@@ -5,6 +5,6 @@ namespace catering.Application.Cart
     public class CartItemModelDto
     {
         public int Id { get; set; }
-        public Product Product { get; set; } = default!;
+        public Product? Product { get; set; }
     }
 }

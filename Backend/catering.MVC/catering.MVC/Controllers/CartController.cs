@@ -22,7 +22,7 @@ namespace catering.MVC.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Add(int productID)
+        public IActionResult Add(int productID)
         {
             cartService.Add(productID);
             return RedirectToAction("Index", "Offer");
