@@ -1,6 +1,10 @@
 ﻿@using catering.Domain.Entities;
 @model List<Product>
 
+@{
+    ViewData["Title"] = "Offer";
+}
+
 <div class="centered">
     <div class="content-offer">
         @for (var index = 0; index < Model.Count; index++)
