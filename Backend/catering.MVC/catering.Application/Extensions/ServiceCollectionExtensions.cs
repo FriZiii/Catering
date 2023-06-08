@@ -12,6 +12,7 @@ namespace catering.Application.Extensions
         public static void AddApplication(this IServiceCollection services)
         {
             services.AddScoped<IOfferService, OfferService>();
+            services.AddScoped<ICartService, CartService>();
 
             services.AddAutoMapper(typeof(ProductMappingProfile));
 

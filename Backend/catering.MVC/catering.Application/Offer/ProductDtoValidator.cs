@@ -9,6 +9,8 @@ namespace catering.Application.Offer
 
 		public ProductDtoValidator(IOfferRepository offerRepository)
         {
+            this.offerRepository = offerRepository;
+
             RuleFor(c => c.Name)
                 .NotEmpty()
                 .MinimumLength(3)
@@ -32,7 +34,6 @@ namespace catering.Application.Offer
 
             RuleFor(c => c.ImageFile)
                 .NotEmpty().WithMessage("Product must have a photo."); ;
-			this.offerRepository = offerRepository;
 		}
     }
 }

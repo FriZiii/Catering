@@ -33,5 +33,10 @@ namespace catering.Application.Services
         {
             return await offerRepository.GetAll(); 
         }
+
+        public async Task<Product?> GetById(int id)
+        {
+            return await offerRepository.GetById(id);
+        }
     }
 }
