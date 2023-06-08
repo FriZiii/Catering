@@ -1,13 +1,6 @@
 ﻿using AutoMapper;
-using catering.Application.Offer;
-using catering.Domain.Entities;
-using catering.Domain.Entities.CartEntities;
+using catering.Application.Cart;
 using catering.Domain.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace catering.Application.Services
 {
@@ -15,21 +8,35 @@ namespace catering.Application.Services
     {
         private readonly IMapper mapper;
         private readonly ICartRepository cartRepository;
+        private readonly IOfferRepository offerRepository;
 
-        public CartService(IMapper mapper, ICartRepository cartRepository)
+        public CartService(IMapper mapper, ICartRepository cartRepository, IOfferRepository offerRepository)
         {
             this.mapper = mapper;
             this.cartRepository = cartRepository;
+            this.offerRepository = offerRepository;
         }
 
-        public void Add(Product product)
+        public void Add(int productID)
         {
-            cartRepository.AddToCart(product);
+            cartRepository.AddToCart(productID);
         }
 
-        public CartModel Get()
+        public async Task<CartModelDto> Get()
         {
-            return cartRepository.GetCart();
+            var cart = cartRepository.GetCart().CartItems;
+            List<CartItemModelDto> cartItemsDto = mapper.Map<List<CartItemModelDto>>(cart);
+            foreach (var itemDto in cartItemsDto)
+            {
+                itemDto.Product = await offerRepository.GetById(itemDto.Product!.Id);
+            }
+
+            var cartDto = new CartModelDto()
+            {
+                CartItems = cartItemsDto
+            };
+
+            return cartDto;
         }
     }
 }

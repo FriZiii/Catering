@@ -8,20 +8,21 @@ namespace catering.Domain.Entities.CartEntities
 {
     public class CartModel
     {
-        public List<Product> CartProducts { get; set; }
-        public CartModel()
+        public List<CartItemModel> CartItems { get; set; } = new List<CartItemModel>();
+
+        public void AddProduct(int productID)
         {
-            CartProducts = new List<Product>();
+            var cartItem = new CartItemModel()
+            {
+                Id = CartItems.Count,
+                ProductID = productID,
+            };
+            CartItems.Add(cartItem);
         }
 
-        public void AddProduct(Product product)
+        public void RemoveProduct(CartItemModel cartItem)
         {
-            CartProducts.Add(product);
-        }
-
-        public void RemoveProduct(Product product)
-        {
-            CartProducts.Remove(product);
+            CartItems.Remove(cartItem);
         }
     }
 }

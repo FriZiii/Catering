@@ -1,11 +1,10 @@
-﻿using catering.Domain.Entities;
-using catering.Domain.Entities.CartEntities;
+﻿using catering.Application.Cart;
 
 namespace catering.Application.Services
 {
     public interface ICartService
     {
-        void Add(Product product);
-        CartModel Get();
+        void Add(int productID);
+        Task<CartModelDto> Get();
     }
 }
