@@ -41,7 +41,12 @@ namespace catering.Infrastructure.Repositories
             return await context.Products.ToListAsync();
         }
 
-		public Task<Product?> GetByName(string name)
+        public async Task<Product?> GetById(int id)
+        {
+            return await context.Products.FirstAsync(p => p.Id == id);
+        }
+
+        public Task<Product?> GetByName(string name)
 		    => context.Products.FirstOrDefaultAsync(p => p.Name.ToLower() == name.ToLower());
 	}
 }

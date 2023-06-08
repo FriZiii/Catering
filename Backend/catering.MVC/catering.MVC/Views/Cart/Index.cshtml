@@ -1,0 +1,33 @@
+﻿@using catering.Domain.Entities.CartEntities;
+@model CartModel
+
+<h1>Cart</h1>
+
+@if (Model.CartProducts != null && Model.CartProducts.Count > 0)
+{
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Image Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model.CartProducts)
+            {
+                <tr>
+                    <td>@product.Id</td>
+                    <td>@product.Name</td>
+                    <td>@product.Price</td>
+                    <td>@product.ImageName</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No products in the cart.</p>
+}

@@ -38,10 +38,13 @@
                         </div>
                     </div>
                     <div class="modal-div-add-button">
-                        <button class="add-to-cart-button" id="add-to-cart-button">
-                            Add to cart
-                            <img src="Images/plus-icon.svg" class="plus-icon-offer">
-                        </button>
+                        <form method="post" action="@Url.Action("Add", "Cart")">
+                            <input type="hidden" name="productID" value=@product.Id />
+                            <button type="submit" class="add-to-cart-button" id="add-to-cart-button">
+                                Add to cart
+                                <img src="Images/plus-icon.svg" class="plus-icon-offer">
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>

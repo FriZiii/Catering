@@ -5,6 +5,6 @@ namespace catering.Domain.Entities
 {
     public class AppUser : IdentityUser
     {
-        public Cart Cart { get; set; } = new Cart();
+        public CartModel Cart { get; set; } = new CartModel();
     }
 }
