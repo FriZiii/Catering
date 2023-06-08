@@ -176,7 +176,7 @@
 
   .offer-modal-right-content p {
     line-height: 1.5em;
-    font-size: 0.7em;
+    font-size: 0.8em;
   }
   .modal-title-and-price h2 {
     font-size: 1.2em;
@@ -212,6 +212,14 @@
     flex-direction: column;
   }
 
+  .modal-title-and-price-div {
+    font-size: 1.3em;
+  }
+
+  .modal-product-price-offer {
+    font-size: 0.47em;
+  }
+
   .img-container,
   .offer-modal-right-content {
     flex: 1 1 100%;
@@ -224,7 +232,7 @@
 
   .offer-modal-right-content p {
     line-height: 1.5em;
-    font-size: 1.2em;
+    font-size: 1em;
   }
 
   .offer-modal {
