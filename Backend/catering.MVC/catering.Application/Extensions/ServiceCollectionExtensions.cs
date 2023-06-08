@@ -1,5 +1,5 @@
-﻿using catering.Application.Mappings;
-using catering.Application.Offer;
+﻿using catering.Application.DTO.Offer;
+using catering.Application.Mappings;
 using catering.Application.Services;
 using FluentValidation;
 using FluentValidation.AspNetCore;

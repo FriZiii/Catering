@@ -1,13 +1,13 @@
 ﻿using catering.Domain.Interface;
 using FluentValidation;
 
-namespace catering.Application.Offer
+namespace catering.Application.DTO.Offer
 {
     public class ProductDtoValidator : AbstractValidator<ProductDto>
     {
-		private readonly IOfferRepository offerRepository;
+        private readonly IOfferRepository offerRepository;
 
-		public ProductDtoValidator(IOfferRepository offerRepository)
+        public ProductDtoValidator(IOfferRepository offerRepository)
         {
             this.offerRepository = offerRepository;
 
@@ -18,7 +18,7 @@ namespace catering.Application.Offer
                 .Custom((value, context) =>
                 {
                     var existingProduct = offerRepository.GetByName(value).Result;
-                    if(existingProduct != null)
+                    if (existingProduct != null)
                     {
                         context.AddFailure($"{value} is not unique name for product.");
                     }
@@ -34,6 +34,6 @@ namespace catering.Application.Offer
 
             RuleFor(c => c.ImageFile)
                 .NotEmpty().WithMessage("Product must have a photo."); ;
-		}
+        }
     }
 }
