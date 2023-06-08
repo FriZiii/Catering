@@ -81,7 +81,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: var(--yellow-light);
+    background: var(--light-yellow);
     width: 120px;
     height: 30px;
     border: none;
