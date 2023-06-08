@@ -1,24 +1,17 @@
-@import url('https://fonts.googleapis.com/css?family=Hind:300,400&display=swap');
- * {
-	 box-sizing: border-box;
+* {
 	 --yellow-light: #FFE083;
 	 --yellow-prime: #F2C94C;
 }
- *::before, *::after {
-	 box-sizing: border-box;
-}
- body {
-	 margin: 0;
-	 padding: 0;
-	 font-family: 'Hind', sans-serif;
-	 background: #fff;
-	 color: #000000;
-	 min-height: 100vh;
-}
+
  .container-faq {
 	 margin: 0 auto;
-	 padding: 4rem;
-	 width: 48rem;
+	 padding: 30px;
+	 width: 1000px;
+}
+
+.faq-title{
+	font-size: 44px;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
  .accordion-faq .accordion-item-faq {
 	 border-bottom: 1px solid #e5e5e5;
@@ -32,9 +25,10 @@
 	 text-align: left;
 	 width: 100%;
 	 padding: 1em 0;
-	 color: #7288a2;
-	 font-size: 1.15rem;
+	 color: black;
+	 font-size: 22px;
 	 font-weight: 400;
+	 font-family: 'Inter';
 	 border: none;
 	 background: none;
 	 outline: none;
@@ -54,7 +48,7 @@
  .accordion-faq button .icon {
 	 display: inline-block;
 	 position: absolute;
-	 top: 18px;
+	 top: 26px;
 	 right: 0;
 	 width: 22px;
 	 height: 22px;
@@ -70,7 +64,7 @@
 }
  .accordion-faq button[aria-expanded='true'] + .accordion-content-faq {
 	 opacity: 1;
-	 max-height: 9em;
+	 max-height: 200px;
 	 transition: all 200ms linear;
 	 will-change: opacity, max-height;
 }
@@ -82,8 +76,11 @@
 	 will-change: opacity, max-height;
 }
  .accordion-faq .accordion-content-faq p {
-	 font-size: 1rem;
-	 font-weight: 300;
-	 margin: 2em 0;
+	font-family: 'Inter';
+	color: black;
+	font-weight: 350;
+	font-size: 20px;
+	line-height: 150%;
+	padding: 10px 20px;
 }
  
