@@ -1,85 +1,84 @@
 * {
-	 --yellow-light: #FFE083;
-	 --yellow-prime: #F2C94C;
+	--yellow-light: #FFE083;
+	--yellow-prime: #F2C94C;
 }
 
- .container-faq {
-	 margin: 0 auto;
-	 padding: 30px;
-	 width: 1000px;
+.container-faq {
+	margin: 0 auto;
+	padding: 30px;
+	width: 1000px;
 }
 
 .faq-title{
-	font-size: 44px;
+   font-size: 44px;
 }
- .accordion-faq .accordion-item-faq {
-	 border-bottom: 1px solid #e5e5e5;
+.accordion-faq .accordion-item-faq {
+	border-bottom: 1px solid #e5e5e5;
 }
- .accordion-faq .accordion-item-faq button[aria-expanded='true'] {
-	 border-bottom: 1px solid var(--yellow-prime);
+.accordion-faq .accordion-item-faq button[aria-expanded='true'] {
+	border-bottom: 1px solid var(--yellow-prime);
 }
- .accordion-faq button {
-	 position: relative;
-	 display: block;
-	 text-align: left;
-	 width: 100%;
-	 padding: 1em 0;
-	 color: black;
-	 font-size: 22px;
-	 font-weight: 400;
-	 font-family: 'Inter';
-	 border: none;
-	 background: none;
-	 outline: none;
+.accordion-faq button {
+	position: relative;
+	display: block;
+	text-align: left;
+	width: 100%;
+	padding: 1em 0;
+	color: black;
+	font-size: 22px;
+	font-weight: 400;
+	font-family: 'Inter';
+	border: none;
+	background: none;
+	outline: none;
 }
- .accordion-faq button:hover, .accordion-faq button:focus {
-	 cursor: pointer;
-	 color: var(--yellow-light);
+.accordion-faq button:hover, .accordion-faq button:focus {
+	cursor: pointer;
+	color: var(--yellow-light);
 }
- .accordion-faq button:hover::after, .accordion-faq button:focus::after {
-	 cursor: pointer;
-	 color: var(--yellow-light);
-	 border: 1px solid var(--yellow-light);
+.accordion-faq button:hover::after, .accordion-faq button:focus::after {
+	cursor: pointer;
+	color: var(--yellow-light);
+	border: 1px solid var(--yellow-light);
 }
- .accordion-faq button .accordion-title-faq {
-	 padding: 1em 1.5em 1em 0;
+.accordion-faq button .accordion-title-faq {
+	padding: 1em 1.5em 1em 0;
 }
- .accordion-faq button .icon {
-	 display: inline-block;
-	 position: absolute;
-	 top: 26px;
-	 right: 0;
-	 width: 22px;
-	 height: 22px;
+.accordion-faq button .icon {
+	display: inline-block;
+	position: absolute;
+	top: 26px;
+	right: 0;
+	width: 22px;
+	height: 22px;
 }
- .accordion-faq button[aria-expanded='true'] {
-	 color: var(--yellow-prime);
+.accordion-faq button[aria-expanded='true'] {
+	color: var(--yellow-prime);
 }
- .accordion-faq button[aria-expanded='true'] .icon::after {
-	content: url('../Images/arrow-up.svg');
+.accordion-faq button[aria-expanded='true'] .icon::after {
+   content: url('../Images/arrow-up.svg');
 }
 .accordion-faq button[aria-expanded='false'] .icon::after {
-	content: url('../Images/arrow-down.svg');
+   content: url('../Images/arrow-down.svg');
 }
- .accordion-faq button[aria-expanded='true'] + .accordion-content-faq {
-	 opacity: 1;
-	 max-height: 200px;
-	 transition: all 200ms linear;
-	 will-change: opacity, max-height;
+.accordion-faq button[aria-expanded='true'] + .accordion-content-faq {
+	opacity: 1;
+	max-height: 200px;
+	transition: all 200ms linear;
+	will-change: opacity, max-height;
 }
- .accordion-faq .accordion-content-faq {
-	 opacity: 0;
-	 max-height: 0;
-	 overflow: hidden;
-	 transition: opacity 200ms linear, max-height 200ms linear;
-	 will-change: opacity, max-height;
+.accordion-faq .accordion-content-faq {
+	opacity: 0;
+	max-height: 0;
+	overflow: hidden;
+	transition: opacity 200ms linear, max-height 200ms linear;
+	will-change: opacity, max-height;
 }
- .accordion-faq .accordion-content-faq p {
-	font-family: 'Inter';
-	color: black;
-	font-weight: 350;
-	font-size: 20px;
-	line-height: 150%;
-	padding: 10px 20px;
+.accordion-faq .accordion-content-faq p {
+   font-family: 'Inter';
+   color: black;
+   font-weight: 350;
+   font-size: 20px;
+   line-height: 150%;
+   padding: 10px 20px;
 }
- 
