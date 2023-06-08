@@ -15,22 +15,16 @@ namespace catering.MVC.Controllers
             this.offerService = offerService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var cart = cartService.Get();
+            var cart = await cartService.Get();
             return View(cart);
         }
 
         [HttpPost]
         public async Task<IActionResult> Add(int productID)
         {
-            var product = await offerService.GetById(productID);
-            if (product == null)
-            {
-                return NotFound();
-            }
-            cartService.Add(product);
-            var currentCart = cartService.Get();
+            cartService.Add(productID);
             return RedirectToAction("Index", "Offer");
         }
     }

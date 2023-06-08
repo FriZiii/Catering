@@ -14,7 +14,7 @@ namespace catering.Application.Extensions
             services.AddScoped<IOfferService, OfferService>();
             services.AddScoped<ICartService, CartService>();
 
-            services.AddAutoMapper(typeof(ProductMappingProfile));
+            services.AddAutoMapper(typeof(MappingsProfile));
 
             services.AddValidatorsFromAssemblyContaining<ProductDtoValidator>()
                 .AddFluentValidationAutoValidation()

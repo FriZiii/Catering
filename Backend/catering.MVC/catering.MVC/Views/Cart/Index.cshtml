@@ -1,27 +1,29 @@
-﻿@using catering.Domain.Entities.CartEntities;
-@model CartModel
+﻿@using catering.Application.Cart;
+@model CartModelDto
 
 <h1>Cart</h1>
 
-@if (Model.CartProducts != null && Model.CartProducts.Count > 0)
+@if (Model.CartItems != null && Model.CartItems.Count > 0)
 {
     <table>
         <thead>
             <tr>
                 <th>Id</th>
+                <th>Product Id</th>
                 <th>Name</th>
                 <th>Price</th>
                 <th>Image Name</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var product in Model.CartProducts)
+            @foreach (var product in Model.CartItems)
             {
                 <tr>
                     <td>@product.Id</td>
-                    <td>@product.Name</td>
-                    <td>@product.Price</td>
-                    <td>@product.ImageName</td>
+                    <td>@product.Product.Id</td>
+                    <td>@product.Product.Name</td>
+                    <td>@product.Product.Price</td>
+                    <td>@product.Product.ImageName</td>
                 </tr>
             }
         </tbody>

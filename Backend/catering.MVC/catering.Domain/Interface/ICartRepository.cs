@@ -6,7 +6,7 @@ namespace catering.Domain.Interface
     public interface ICartRepository
     {
         CartModel GetCart();
-        void AddToCart(Product product);
+        void AddToCart(int productID);
         void Commit(CartModel cart);
     }
 }

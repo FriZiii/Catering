@@ -15,10 +15,10 @@ namespace catering.Infrastructure.Repositories
             this.httpContextAccessor = httpContextAccessor;
         }
 
-        public void AddToCart(Product product)
+        public void AddToCart(int productID)
         {
             var cart = GetCart();
-            cart.AddProduct(product);
+            cart.AddProduct(productID);
             Commit(cart);
         }
 
