@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using catering.Application.Cart;
-using catering.Application.Offer;
+using catering.Application.DTO.Cart;
+using catering.Application.DTO.Offer;
 using catering.Domain.Entities;
 using catering.Domain.Entities.CartEntities;
 using catering.Domain.Interface;

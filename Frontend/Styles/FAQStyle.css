@@ -1,12 +1,7 @@
-* {
-	--yellow-light: #FFE083;
-	--yellow-prime: #F2C94C;
-}
-
 .container-faq {
 	margin: 0 auto;
 	padding: 30px;
-	width: 1000px;
+	max-width: 1000px;
 }
 
 .faq-title{
@@ -24,7 +19,7 @@
 	text-align: left;
 	width: 100%;
 	padding: 1em 0;
-	color: black;
+	color: var(--gray);
 	font-size: 22px;
 	font-weight: 400;
 	font-family: 'Inter';
@@ -34,15 +29,18 @@
 }
 .accordion-faq button:hover, .accordion-faq button:focus {
 	cursor: pointer;
-	color: var(--yellow-light);
+	color: var(--ligth-yellow);
 }
 .accordion-faq button:hover::after, .accordion-faq button:focus::after {
 	cursor: pointer;
-	color: var(--yellow-light);
-	border: 1px solid var(--yellow-light);
+	color: var(--ligth-yellow);
+	border: 1px solid var(--ligth-yellow);
 }
 .accordion-faq button .accordion-title-faq {
-	padding: 1em 1.5em 1em 0;
+	display: block;
+	padding: 0 1.5em 0 0;
+	width: 90%
+	
 }
 .accordion-faq button .icon {
 	display: inline-block;
@@ -53,7 +51,7 @@
 	height: 22px;
 }
 .accordion-faq button[aria-expanded='true'] {
-	color: var(--yellow-prime);
+	color: var(--main-color);
 }
 .accordion-faq button[aria-expanded='true'] .icon::after {
    content: url('../Images/arrow-up.svg');
@@ -76,9 +74,24 @@
 }
 .accordion-faq .accordion-content-faq p {
    font-family: 'Inter';
-   color: black;
+   color: var(--gray);
    font-weight: 350;
    font-size: 20px;
    line-height: 150%;
-   padding: 10px 20px;
+   padding: 10px 35px 10px 10px;
+}
+
+ /*Responsiveness*/
+@media (max-width: 768px){
+	.accordion-faq button{
+		font-size: 15px;
+	}
+	.accordion-faq .accordion-content-faq p {
+		font-size: 12px;
+	}
+
+	.accordion-faq button .icon {
+		top: 9px;
+	}
+	
 }

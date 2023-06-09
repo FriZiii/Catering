@@ -1,4 +1,4 @@
-﻿using catering.Application.Offer;
+﻿using catering.Application.DTO.Offer;
 using catering.Application.Services;
 using Microsoft.AspNetCore.Mvc;
 

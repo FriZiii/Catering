@@ -1,4 +1,4 @@
-﻿@using catering.Application.Cart;
+﻿@using catering.Application.DTO.Cart;
 @model CartModelDto
 
 <h1>Cart</h1>
@@ -13,18 +13,28 @@
                 <th>Name</th>
                 <th>Price</th>
                 <th>Image Name</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var product in Model.CartItems)
+            @foreach (var item in Model.CartItems)
             {
                 <tr>
-                    <td>@product.Id</td>
-                    <td>@product.Product.Id</td>
-                    <td>@product.Product.Name</td>
-                    <td>@product.Product.Price</td>
-                    <td>@product.Product.ImageName</td>
+                    <td>@item.Id</td>
+                    <td>@item.Product.Id</td>
+                    <td>@item.Product.Name</td>
+                    <td>@item.Product.Price</td>
+                    <td>@item.Product.ImageName</td>
+                    <td>
+                        <form method="post" action="@Url.Action("Delete", "Cart")">
+                        <input type="hidden" name="cartItemID" value=@item.Id />
+                        <button type="submit">
+                            X
+                        </button>
+                    </form>
+                    </td>
                 </tr>
+ 
             }
         </tbody>
     </table>

@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using catering.Application.Offer;
+using catering.Application.DTO.Offer;
 using catering.Domain.Entities;
 using catering.Domain.Interface;
 using System;

@@ -1,0 +1,114 @@
+﻿.container-faq {
+    margin: 0 auto;
+    padding: 30px;
+    max-width: 1000px;
+}
+
+.faq-title {
+    font-size: 44px;
+    font-weight:500;
+}
+
+.accordion-faq .accordion-item-faq {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+    .accordion-faq .accordion-item-faq button[aria-expanded='true'] {
+        border-bottom: 1px solid var(--yellow-prime);
+    }
+
+.accordion-faq button {
+    position: relative;
+    display: block;
+    text-align: left;
+    width: 100%;
+    padding: 1em 0;
+    color: var(--gray);
+    font-size: 22px;
+    font-weight: 400;
+    font-family: 'Inter';
+    border: none;
+    background: none;
+    outline: none;
+}
+
+    .accordion-faq button:hover, .accordion-faq button:focus {
+        cursor: pointer;
+        color: var(--light-yellow);
+    }
+
+        .accordion-faq button:hover::after, .accordion-faq button:focus::after {
+            cursor: pointer;
+            color: var(--light-yellow);
+            border: 1px solid var(--light-yellow);
+        }
+
+    .accordion-faq button .accordion-title-faq {
+        display: block;
+        padding: 0 1.5em 0 0;
+        width: 90%
+    }
+
+    .accordion-faq button .icon {
+        display: inline-block;
+        position: absolute;
+        top: 26px;
+        right: 0;
+        width: 22px;
+        height: 22px;
+    }
+
+    .accordion-faq button[aria-expanded='true'] {
+        color: var(--main-color);
+    }
+
+        .accordion-faq button[aria-expanded='true'] .icon::after {
+            content: url("../images/icons/arrow-up.svg")
+        }
+
+    .accordion-faq button[aria-expanded='false'] .icon::after {
+        content: url("../images/icons/arrow-down.svg");
+    }
+
+    .accordion-faq button[aria-expanded='true'] + .accordion-content-faq {
+        opacity: 1;
+        max-height: 200px;
+        transition: all 200ms linear;
+        will-change: opacity, max-height;
+    }
+
+.accordion-faq .accordion-content-faq {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 200ms linear, max-height 200ms linear;
+    will-change: opacity, max-height;
+}
+
+    .accordion-faq .accordion-content-faq p {
+        font-family: 'Inter';
+        color: var(--gray);
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 150%;
+        padding: 10px 35px 10px 10px;
+    }
+
+/*Responsiveness*/
+@media (max-width: 768px) {
+    .accordion-faq button {
+        font-size: 15px;
+    }
+
+    .accordion-faq .accordion-content-faq p {
+        font-size: 12px;
+    }
+
+    .accordion-faq button .icon {
+        top: 9px;
+    }
+
+    .faq-title {
+        font-size: 28px;
+    }
+}

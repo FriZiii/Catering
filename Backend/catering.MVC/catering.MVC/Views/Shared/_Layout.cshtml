@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var currentUrl = $"{ViewContext.RouteData.Values["Action"]!.ToString()}-{ViewContext.RouteData.Values["Controller"]!.ToString()}";
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -10,6 +14,7 @@
     <link rel="stylesheet" href="~/css/footer.css">
     <link rel="stylesheet" href="~/css/home.css">
     <link rel="stylesheet" href="~/css/offer.css">
+    <link rel="stylesheet" href="~/css/faq.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
@@ -21,42 +26,43 @@
                 <img id="offer-logo" src="~/images/yummy-logo.svg">
             </a>
             <div class="menu">
-                <a asp-area="" asp-controller="Offer" asp-action="Index">Offer</a>
-                <a asp-area="" asp-controller="Home" asp-action="Index">About</a>
-                <a asp-area="" asp-controller="Cart" asp-action="Index">Cart</a>
-                <a asp-area="" asp-controller="Home" asp-action="Index">Contact</a>
+                <a class="@(currentUrl == "Index-Offer" ? "active" : "")" asp-area="" asp-controller="Offer" asp-action="Index">Offer</a>
+                <a class="@(currentUrl == "FAQ-Home" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="FAQ">FAQ</a>
+                <a class="@(currentUrl == "Index-Cart" ? "active" : "")" asp-area="" asp-controller="Cart" asp-action="Index">Cart</a>
+                <a class="@(currentUrl == "Index-Home" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="Index">Contact</a>
                 <button id="offer-login">Log in</button>
             </div>
 
             <button class="hamburger">
-                <span class="material-icons">menu</span>
+                <span class="material-icons menu-icon">menu</span>
             </button>
         </nav>
 
         <div class="mobile-menu">
-            <a asp-area="" asp-controller="Offer" asp-action="Index">Offer</a>
-            <a asp-area="" asp-controller="Home" asp-action="Index">About</a>
-            <a asp-area="" asp-controller="Cart" asp-action="Index">Cart</a>
-            <a asp-area="" asp-controller="Home" asp-action="Index">Contact</a>
+            <span class="material-icons close-icon hamburger">close</span>
+            <a class="@(currentUrl == "Index-Offer" ? "active" : "")" asp-area="" asp-controller="Offer" asp-action="Index">Offer</a>
+            <a class="@(currentUrl == "FAQ-Home" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="FAQ">FAQ</a>
+            <a class="@(currentUrl == "Index-Cart" ? "active" : "")" asp-area="" asp-controller="Cart" asp-action="Index">Cart</a>
+            <a class="@(currentUrl == "Index-Home" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="Index">Contact</a>
             <button>Sign in</button>
         </div>
     </header>
 
     <div class="content">
-        <main role="main" class="pb-3">
+        <main role="main">
             @RenderBody()
         </main>
     </div>
 
-    <footer style="position: relative;" id="footer-offer">
+    <footer id="footer-offer">
         <a asp-area="" asp-controller="Home" asp-action="Index">
             <img class="footer-image" src="~/images/yummy-logo.svg">
         </a>
         <div class="menu-footer">
-            <a asp-area="" asp-controller="Offer" asp-action="Index">Offer</a>
-            <a asp-area="" asp-controller="Home" asp-action="Index">About</a>
-            <a asp-area="" asp-controller="Cart" asp-action="Index">Cart</a>
-            <a asp-area="" asp-controller="Home" asp-action="Index">Contact</a>
+            <a class="@(currentUrl == "Index-Offer" ? "active" : "")" asp-area="" asp-controller="Offer" asp-action="Index">Offer</a>
+            <a class="@(currentUrl == "FAQ-Home" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="FAQ">FAQ</a>
+            <a class="@(currentUrl == "Index-Cart" ? "active" : "")" asp-area="" asp-controller="Cart" asp-action="Index">Cart</a>
+            <a class="@(currentUrl == "Index-Home" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="Index">Contact</a>
         </div>
         <div class="socials-footer">
             <img src="~/images/Facebook.svg" />
@@ -66,6 +72,7 @@
     </footer>
     <script src="~/js/offer.js" asp-append-version="true"></script>
     <script src="~/js/header.js" asp-append-version="true"></script>
+    <script src="~/js/faq.js" asp-append-version="true"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     @await RenderSectionAsync("Scripts", required: false)

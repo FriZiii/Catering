@@ -20,9 +20,10 @@ namespace catering.Domain.Entities.CartEntities
             CartItems.Add(cartItem);
         }
 
-        public void RemoveProduct(CartItemModel cartItem)
+        public void DeleteCartItem(int cartItemID)
         {
-            CartItems.Remove(cartItem);
+            var itemToDelete = CartItems.First(x => x.Id == cartItemID);
+            CartItems.Remove(itemToDelete);
         }
     }
 }

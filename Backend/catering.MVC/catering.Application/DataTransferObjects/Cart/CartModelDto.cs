@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace catering.Application.Cart
+namespace catering.Application.DTO.Cart
 {
     public class CartModelDto
     {

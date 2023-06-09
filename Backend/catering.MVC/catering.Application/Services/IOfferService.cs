@@ -1,4 +1,4 @@
-﻿using catering.Application.Offer;
+﻿using catering.Application.DTO.Offer;
 using catering.Domain.Entities;
 
 namespace catering.Application.Services

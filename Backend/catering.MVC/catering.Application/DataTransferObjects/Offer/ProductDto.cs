@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace catering.Application.Offer
+namespace catering.Application.DTO.Offer
 {
     public class ProductDto
     {
