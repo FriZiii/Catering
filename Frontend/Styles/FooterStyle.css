@@ -30,7 +30,7 @@ footer {
   }
   
   .menu-footer a:hover {
-    color: #ffe083;
+    color: var(--main-color);
   }
   
   .logo-footer {

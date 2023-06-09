@@ -54,13 +54,13 @@
         align-items: center;
         border: 1px solid;
         border-radius: 15px;
-        color: #BDBDBD;
+        color: var(--light-grey);
       }
       
       .rounded-input-login input[type="email"] {
         width: 70%;
         outline: none;
-        color: #BDBDBD;
+        color: var(--light-grey);
       }
 
 
@@ -74,12 +74,14 @@
       }
   
       .rounded-input-login input[type="password"] {
-        font-size: 14px;
+        font-size: 10px;
         margin-left: -100px;
-        padding: 10px 10px;
+        padding: 14px 10px;
         width: 0%;
         outline: none;
+        letter-spacing: 5px
       }
+
 
       .rounded-input-login .icon-email,
       .rounded-input-login .icon-lock {
@@ -100,9 +102,9 @@
       }
 
       .icon-lock {
-        color: #BDBDBD ;
+        color: var(--light-grey) ;
         position: relative;
-        top: -20px;
+        top: -22px;
         right: -15px;
         background-color: #ffffff;;        
       }
@@ -125,7 +127,7 @@
         width: 18px;
         height: 18px;
         outline: none;
-        border: 2px solid #FFE083;
+        border: 2px solid var(--main-color);
         border-radius: 4px;
         transition: background-color 0.3s ease;
       }
@@ -139,7 +141,7 @@
       }
       
       .remember-me-login:checked {
-        background-color: #FFE083;
+        background-color: var(--main-color);
       }
 
 
@@ -149,10 +151,11 @@
         margin-top: 20px;
         padding: 10px 50px;
         border-radius: 15px;
-        background-color: #FFE083;
+        background-color: var(--main-color);
         border: none;
         cursor: pointer;
         font-weight: bold;
+        font-size: 0.9em;
     }
     
     .login-btn span {
