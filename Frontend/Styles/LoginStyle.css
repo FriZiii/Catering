@@ -54,7 +54,7 @@
         position: relative;
         display: flex;
         align-items: center;
-        border: 2px solid;
+        border: 1px solid;
         border-radius: 15px;
         color: #BDBDBD;
       }
@@ -62,12 +62,9 @@
       .rounded-input-login input[type="email"] {
         width: 70%;
         outline: none;
+        color: #BDBDBD;
       }
-  
-      .rounded-input-login input[type="password"] {
-        width: 70%;
-        outline: none;
-      }
+
 
       .rounded-input-login input {
         flex: 1;
@@ -78,17 +75,38 @@
         border: none;
       }
   
+      .rounded-input-login input[type="password"] {
+        font-size: 14px;
+        margin-left: -100px;
+        padding: 10px 10px;
+        width: 0%;
+        outline: none;
+      }
+
       .rounded-input-login .icon-email,
       .rounded-input-login .icon-lock {
         display: flex;
         align-items: center;
-        padding: 0 10px;
+        padding: 0 7px;
       }
       
-      .icon-email img,
-      .icon-lock img {
+      .icon-email img {
         width: 20px;
         height: 20px;
+      }
+
+      .icon-lock img {
+        padding-right: 3px;
+        width: 22px;
+        height: 22px;
+      }
+
+      .icon-lock {
+        color: #BDBDBD ;
+        position: relative;
+        top: -20px;
+        right: -15px;
+        background-color: #ffffff;;        
       }
 
       .remember-me-container {
