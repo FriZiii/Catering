@@ -61,15 +61,22 @@
                 <h1>Hello again!</h1>
                 <h2>Enter your credentials</h2>
 
-                <div class="rounded-input-login">
-                    <span class="icon-email"><img src="Images/login-icon-left.svg"></span>
-                    <input type="email" class="email-login" placeholder="Email">
-                </div>
-                <br>
-                <div class="rounded-input-login">
-                    <span class="icon-lock"><img src="Images/password-icon-left.svg"> Password </span>
-                    <input type="password" class="password-login" placeholder="">
-                </div>
+                <label class="input">
+                    <input class="input__field" type="text" placeholder=" " />
+                    <span class="input__label">
+                        <img src="Images/login-icon-left.svg" class="input__icon" />
+                        Email
+                    </span>
+                </label>
+
+                <label class="input">
+                    <input class="input__field" type="password" placeholder=" " />
+                    <span class="input__label">
+                        <img src="Images/password-icon-left.svg" class="input__icon" />
+                        Password
+                    </span>
+                </label>
+
 
                 <div class="remember-me-container">
                     <input type="checkbox" id="remember" class="remember-me-login">
