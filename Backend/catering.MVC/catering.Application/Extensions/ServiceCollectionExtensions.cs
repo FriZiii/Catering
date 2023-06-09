@@ -1,8 +1,9 @@
-﻿using catering.Application.DTO.Offer;
+﻿using catering.Application.Managements.OfferManagment.Commands.AddProduct;
+using catering.Application.Managements.OfferManagment.Commands.CreateProduct;
 using catering.Application.Mappings;
-using catering.Application.Services;
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace catering.Application.Extensions
@@ -11,12 +12,11 @@ namespace catering.Application.Extensions
     {
         public static void AddApplication(this IServiceCollection services)
         {
-            services.AddScoped<IOfferService, OfferService>();
-            services.AddScoped<ICartService, CartService>();
+            services.AddMediatR(typeof(CreateProductCommand));
 
             services.AddAutoMapper(typeof(MappingsProfile));
 
-            services.AddValidatorsFromAssemblyContaining<ProductDtoValidator>()
+            services.AddValidatorsFromAssemblyContaining<CreateProductCommandValidator>()
                 .AddFluentValidationAutoValidation()
                 .AddFluentValidationClientsideAdapters();
         }

@@ -1,21 +1,22 @@
-﻿using catering.Application.DTO.Offer;
-using catering.Application.Services;
+﻿using catering.Application.Managements.OfferManagment.Commands.AddProduct;
+using catering.Application.Managements.OfferManagment.Queries.GetAllProducts;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace catering.MVC.Controllers
 {
     public class OfferController : Controller
     {
-        private readonly IOfferService offerService;
+        private readonly IMediator mediator;
 
-        public OfferController(IOfferService offerService)
+        public OfferController(IMediator mediator)
         {
-            this.offerService = offerService;
+            this.mediator = mediator;
         }
 
         public async Task<IActionResult> Index()
         {
-            var products = await offerService.GetAll();
+            var products = await mediator.Send(new GetAllProductsQuery());
             return View(products);
         }
 
@@ -25,13 +26,13 @@ namespace catering.MVC.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(ProductDto productDto)
+        public async Task<IActionResult> Create(CreateProductCommand command)
         {
             if(!ModelState.IsValid)
             {
-                return View(productDto);
+                return View(command);
             }
-            await offerService.Create(productDto);
+            await mediator.Send(command);
             return RedirectToAction("Index");
         }
     }

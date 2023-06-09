@@ -1,33 +1,36 @@
-﻿using catering.Application.Services;
+﻿using catering.Application.Managements.CartManagement.Commands.AddProduct;
+using catering.Application.Managements.CartManagement.Commands.DeleteProduct;
+using catering.Application.Managements.CartManagement.Queries.GetCart;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace catering.MVC.Controllers
 {
     public class CartController : Controller
     {
-        private readonly ICartService cartService;
+        private readonly IMediator mediator;
 
-        public CartController(ICartService cartService)
+        public CartController(IMediator mediator)
         {
-            this.cartService = cartService;
+            this.mediator = mediator;
         }
 
         public async Task<IActionResult> Index()
         {
-            var cart = await cartService.Get();
+            var cart = await mediator.Send(new GetCartQuery());
             return View(cart);
         }
 
-        public IActionResult Delete(int cartItemID)
+        public async Task<IActionResult> Delete(int cartItemID)
         {
-            cartService.Delete(cartItemID);
+            await mediator.Send(new DeleteProductCommand(cartItemID));
             return RedirectToAction("Index");
         }
 
         [HttpPost]
-        public IActionResult Add(int productID)
+        public async Task<IActionResult> Add(int productID)
         {
-            cartService.Add(productID);
+            await mediator.Send(new AddProductCommand(productID));
             return RedirectToAction("Index", "Offer");
         }
     }
