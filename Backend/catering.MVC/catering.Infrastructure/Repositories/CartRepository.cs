@@ -21,7 +21,7 @@ namespace catering.Infrastructure.Repositories
             cart.AddProduct(productID);
             Commit(cart);
         }
-        public void Delete(int productID)
+        public void DeleteFromCart(int productID)
         {
             var cart = GetCart();
             cart.DeleteCartItem(productID);
