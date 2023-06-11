@@ -1,0 +1,324 @@
+.container-cart {
+	margin: 0 auto;
+	padding: 30px;
+	max-width: 1000px;
+    
+}
+
+.cart-title{
+   font-size: 44px;
+}
+.accordion-cart .accordion-item-cart {
+	border-bottom: 1px solid #e5e5e5;
+}
+.accordion-cart .accordion-item-cart button[aria-expanded='true'] {
+	border-bottom: 1px solid var(--yellow-prime);
+}
+.accordion-cart button {
+	position: relative;
+	display: block;
+	text-align: left;
+	width: 100%;
+	padding: 1em 0;
+	color: var(--gray);
+	font-size: 22px;
+	font-weight: 400;
+	font-family: 'Inter';
+	border: none;
+	background: none;
+	outline: none;
+}
+.accordion-cart button:hover, .accordion-cart button:focus {
+	cursor: pointer;
+	color: var(--ligth-yellow);
+}
+.accordion-cart button:hover::after, .accordion-cart button:focus::after {
+	cursor: pointer;
+	color: var(--ligth-yellow);
+	border: 1px solid var(--ligth-yellow);
+}
+.accordion-cart button .accordion-title-cart {
+	display: block;
+	padding: 0 1.5em 0 0;
+	width: 90%
+	
+}
+.accordion-cart button .icon {
+	display: inline-block;
+	position: absolute;
+	top: 26px;
+	right: 0;
+	width: 22px;
+	height: 22px;
+}
+.accordion-cart button[aria-expanded='true'] {
+	color: var(--main-color);
+}
+.accordion-cart button[aria-expanded='true'] .icon::after {
+   content: url('../Images/arrow-up.svg');
+}
+.accordion-cart button[aria-expanded='false'] .icon::after {
+   content: url('../Images/arrow-down.svg');
+}
+.accordion-cart button[aria-expanded='true'] + .accordion-content-cart {
+	opacity: 1;
+    max-height: fit-content;
+	transition: all 200ms linear;
+	will-change: opacity, max-height;
+}
+.accordion-cart .accordion-content-cart {
+	opacity: 0;
+	max-height: 0;
+	overflow: hidden;
+	transition: opacity 200ms linear, max-height 200ms linear;
+	will-change: opacity, max-height;
+}
+.accordion-cart .accordion-content-cart p {
+   font-family: 'Inter';
+   color: var(--gray);
+   font-weight: 350;
+   font-size: 20px;
+   line-height: 150%;
+   padding: 10px 35px 10px 10px;
+}
+
+ /*Responsiveness*/
+@media (max-width: 768px){
+	.accordion-cart button{
+		font-size: 15px;
+	}
+	.accordion-cart .accordion-content-cart p {
+		font-size: 12px;
+	}
+
+	.accordion-cart button .icon {
+		top: 9px;
+	}
+	
+}
+
+
+/**/
+h3{
+    font-size: 22px;
+    margin: 10px;
+}
+
+/*Buttons*/
+.content_cart{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+.container_checkbx{
+    max-width: 1000px;
+    margin: 0px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container_checkbx div{
+    margin: 10px;
+
+}
+
+.container_checkbx div label{
+    cursor: pointer;
+}
+
+.container_checkbx div label input[type="radio"]
+{
+    display: none;
+}
+
+.container_checkbx div label input[type="checkbox"]
+{
+    display: none;
+}
+
+.container_checkbx div label span{
+    position: relative;
+    display: inline-block;
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
+    padding: 15px 30px;
+    font-size: 18px;
+    text-align: center;
+    transition: 0.5s;
+    user-select: none;
+    overflow: hidden;
+    min-width: 124px;
+}
+
+.container_checkbx div label span img{
+    width: 15px;
+    height: 15px;
+    display: none;
+}
+
+.container_checkbx div label span::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+}
+
+.container_checkbx div label input[type="radio"]:checked ~ span
+{
+    border: 1px solid var(--main-color);
+    color: var(--main-color);
+}
+
+.container_checkbx div label input[type="radio"]:checked ~ span img
+{
+    display: inline;
+    width: 15px;
+    height: 15px;
+}
+
+.container_checkbx div label input[type="checkbox"]:checked ~ span
+{
+    border: 1px solid var(--main-color);
+    color: var(--main-color);
+    background-image: url(check.svg);
+    background-size: contain;
+}
+
+/*Calendar*/
+.wrapper{
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 1px 6px 14px var(--light-grey);
+    margin: 10px;
+}
+
+.wrapper header{
+    display: flex;
+    align-items: center;
+    padding: 25px 30px 10px;
+    justify-content: space-between;
+}
+
+header .current-date{
+    font-size: 1.45rem;
+    font-weight: 500;
+}
+
+header .icons span{
+    height: 38px;
+    width: 38px;
+    color: var(--light-grey);
+    font-size: 1.9rem;
+    margin: 0 1px;
+    text-align: center;
+    line-height: 38px;
+    border-radius: 50%;
+    user-select: none;
+}
+
+header .icons span:hover{
+    background: var(--hover-color);
+}
+
+header .icons span:last-child{
+    margin-right: -10p;
+}
+
+.calendar{
+    padding: 20px;
+}
+
+.calendar ul{
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.calendar .days{
+ margin-bottom: 20px;
+ user-select: none;
+}
+
+.calendar .weeks li{
+    width: calc(100% / 7);
+    text-align: center;
+    font-weight: 500;
+}
+
+
+.calendar div label input[type="checkbox"]{
+    display: none;
+}
+
+.calendar .days div {
+    position: relative;
+    width: calc(100% / 7);
+    text-align: center;
+    margin-top: 30px;
+    z-index: 1;
+}
+
+.calendar div label{
+    cursor: pointer;
+}
+
+.calendar div label span::before{
+    content: '';
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*Hover effect*/
+.calendar div label span:hover::before{
+    background: var(--hover-color);
+}
+
+/*Checked*/
+.calendar div label input[type="checkbox"]:checked ~ span
+{
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+/*Today*/
+.calendar div label.active span::before{
+    background: var(--hover-color);
+}
+
+
+/*Other month*/
+label.inactive span{
+    color: var(--light-grey);
+}
+
+label.inactive{
+    pointer-events: none;
+}
+
+/*Submit Button*/
+.cart-subminBtn{
+    margin-top: 50px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 32px;
+    width: 147px;
+    height: 44px;
+    background-color: var(--ligth-yellow);
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+}
