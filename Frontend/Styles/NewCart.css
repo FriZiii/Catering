@@ -82,7 +82,7 @@
 .accordion-cart .cart-item button .icon {
 	display: inline-block;
 	position: absolute;
-	top: 26px;
+	top: 24px;
 	right: 0;
 	width: 22px;
 	height: 22px;
@@ -152,11 +152,14 @@
 	
 }
 
+.content_cart h2{
+    font-size: 32px;
+    margin: 15px;
+}
 
-/**/
 h3{
     font-size: 22px;
-    margin: 10px;
+    margin: 15px;
 }
 
 /*Buttons*/
