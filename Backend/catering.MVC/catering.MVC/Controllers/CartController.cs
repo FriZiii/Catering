@@ -1,6 +1,7 @@
 ﻿using catering.Application.Managements.CartManagement.Commands.AddProduct;
 using catering.Application.Managements.CartManagement.Commands.DeleteProduct;
 using catering.Application.Managements.CartManagement.Queries.GetCart;
+using catering.Domain.Entities.OrderEntities;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -38,15 +39,9 @@ namespace catering.MVC.Controllers
         }
 
         [HttpPost]
-        public IActionResult Action(string dates)
+        public IActionResult Next([FromBody] List<OrderItem> cartItems)
         {
-            //TODO: Refactor - calendar fixes 
-            JsonSerializerSettings settings = new JsonSerializerSettings
-            {
-                Culture = CultureInfo.InvariantCulture,
-                Converters = new List<JsonConverter> { new IsoDateTimeConverter { DateTimeFormat = "dd/M/yyyy" } }
-            };
-            List<List<DateTime>> dateList = JsonConvert.DeserializeObject<List<List<DateTime>>>(dates, settings);
+
             return RedirectToAction("Index", "Offer");
         }
     }

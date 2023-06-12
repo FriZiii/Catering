@@ -70,8 +70,6 @@ function renderCalendar(index, currentDate) {
                         cartItem.selectedValues.splice(index, 1);
                     }
                 }
-
-                // console.log(cartItem.selectedValues);
             });
         });
     }

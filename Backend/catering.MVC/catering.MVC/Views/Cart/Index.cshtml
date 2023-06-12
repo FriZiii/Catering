@@ -1,44 +1,159 @@
 ﻿@using catering.Application.Managements.CartManagement.Cart;
 @model CartModelDto
 
-<h1>Cart</h1>
-@if (Model.CartItems != null && Model.CartItems.Count > 0)
-{
-        @for (var index = 0; index < Model.CartItems.Count; index++)
-        {
-            var cartItem = Model.CartItems[index];
-            <h3>Choose delivery days for @cartItem.Id</h3>
+<div class="content">
+    @if (Model.CartItems != null && Model.CartItems.Count > 0)
+    {
+        <div class="container-cart">
+            <h2 class="cart-title">Cart</h2>
+            <div class="accordion-cart">
+                @for (var index = 0; index < Model.CartItems.Count; index++)
+                {
+                    var cartItem = Model.CartItems[index];
 
-            <div class="calendar-wrapper" id="calendar-wrapper-@index" data-index="@index">
-                <header>
-                    <p class="current-date"></p>
-                    <div class="icons">
-                        <span class="prev material-symbols-rounded" data-index="@index">chevron_left</span>
-                        <span class="next material-symbols-rounded" data-index="@index">chevron_right</span>
+                    <div class="cart-item">
+                        <div class="accordion-item-cart">
+                            <button id="" aria-expanded="false">
+                                <span class="accordion-title-cart">
+                                    <h4>@cartItem.Product.Name</h4>
+                                    <h4>---- kcal</h4>
+                                    <h4>0 Days</h4>
+                                    <h4>@cartItem.Product.Price$</h4>
+                                </span>
+                                <span class="icon" aria-hidden="true"></span>
+                            </button>
+                            <div class="accordion-content-cart">
+                                <div class="content_cart">
+                                    <h2>Configure your @cartItem.Product.Name</h2>
+                                    <h3>Select your calories</h3>
+                                    <div class="container_checkbx">
+                                        <div>
+                                            <label>
+                                                <input type="radio" name="cartItems[@index].Calories" value="1200">
+                                                <span>
+                                                    <img src="~/images/icons/check.svg">
+                                                    1200
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label>
+                                                <input type="radio" name="cartItems[@index].Calories" value="1500">
+                                                <span>
+                                                    <img src="~/images/icons/check.svg">
+                                                    1500
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label>
+                                                <input type="radio" name="cartItems[@index].Calories" value="1800">
+                                                <span>
+                                                    <img src="~/images/icons/check.svg">
+                                                    1800
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label>
+                                                <input type="radio" name="cartItems[@index].Calories" value="2000">
+                                                <span>
+                                                    <img src="~/images/icons/check.svg">
+                                                    2000
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label>
+                                                <input type="radio" name="cartItems[@index].Calories" value="2400">
+                                                <span>
+                                                    <img src="~/images/icons/check.svg">
+                                                    2400
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <h3>Choose your meals</h3>
+                                    <div class="container_checkbx">
+                                        <div>
+                                            <label>
+                                                <input type="checkbox" name="cartItems[@index].Meals" value="Breakfast">
+                                                <span>
+                                                    Breakfast
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label>
+                                                <input type="checkbox" name="cartItems[@index].Meals" value="II Breakfast">
+                                                <span>II Breakfast</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label>
+                                                <input type="checkbox" name="cartItems[@index].Meals" value="Lunch">
+                                                <span>Lunch</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label>
+                                                <input type="checkbox" name="cartItems[@index].Meals" value="Dessert">
+                                                <span>Dessert</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label>
+                                                <input type="checkbox" name="cartItems[@index].Meals" value="Dinner">
+                                                <span>Dinner</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="calendar-wrapper" id="calendar-wrapper-@index" data-index="@index">
+                                        <header>
+                                            <p class="current-date"></p>
+                                            <div class="icons">
+                                                <span class="prev material-symbols-rounded" data-index="@index">chevron_left</span>
+                                                <span class="next material-symbols-rounded" data-index="@index">chevron_right</span>
+                                            </div>
+                                        </header>
+                                        <div class="calendar">
+                                            <ul class="weeks">
+                                                <li>Sun</li>
+                                                <li>Mon</li>
+                                                <li>Tue</li>
+                                                <li>Wed</li>
+                                                <li>Thu</li>
+                                                <li>Fri</li>
+                                                <li>Sat</li>
+                                            </ul>
+                                            <ul class="days">
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cart-button-container">
+                            <form method="post" action="@Url.Action("Delete", "Cart")">
+                                <input type="hidden" name="cartItemID" value=@cartItem.Id />
+                                <button class="cart-remove-item" type="submit">
+                                    <img src="~/images/icons/close.svg">
+                                </button>
+                            </form>
+                        </div>
                     </div>
-                </header>
-                <div class="calendar">
-                    <ul class="weeks">
-                        <li>Sun</li>
-                        <li>Mon</li>
-                        <li>Tue</li>
-                        <li>Wed</li>
-                        <li>Thu</li>
-                        <li>Fri</li>
-                        <li>Sat</li>
-                    </ul>
-                    <ul class="days">
-                    </ul>
+                }
+                <div class="cart-next-container">
+                    <button class="cart-next-button" type="button" onclick="submitForm()">
+                        Next
+                    </button>
                 </div>
             </div>
-        }
-    
-    <form action="/Cart/Action" method="post" id="myForm">
-        <input type="hidden" id="dates" name="dates" value="">
-        <input type="submit" value="Submit">
-    </form>
-}
-else
-{
-    <p>No products in the cart.</p>
-}
+        </div>
+    }
+    else
+    {
+        <h2 class="cart-title">No products in the cart.</h2>
+    }
+</div>

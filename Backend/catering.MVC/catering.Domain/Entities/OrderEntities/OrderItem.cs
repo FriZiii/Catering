@@ -8,12 +8,12 @@ namespace catering.Domain.Entities.OrderEntities
 {
     public class OrderItem
     {
-        public int Id { get; set; }
-        public int OrderId { get; set; }
-        public int ProductId { get; set; }
-        public int Quantity { get; set; }
-
-        public Order Order { get; set; }
-        public Product Product { get; set; }
+        public string Calories { get; set; }
+        public List<string> Meals { get; set; }
+        public List<string> Dates { get; set; }
+        public OrderItem()
+        {
+            Meals = new List<string>();
+        }
     }
 }
