@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="./Styles/FAQStyle.css">
     <link rel="stylesheet" href="./Styles/OfferStyle.css">
     <link rel="stylesheet" href="./Styles/ContactStyle.css">
-    <link rel="stylesheet" href="./Styles/CartStyle.css">
     <link rel="stylesheet" href="./Styles/HomeStyle.css">
     <link rel="stylesheet" href="./Styles/LoginStyle.css">
     <link rel="stylesheet" href="./Styles/NewCart.css">
@@ -147,12 +146,12 @@
                                 </div>
                     
                                 <h3>Choose delivery days</h3>
-                                <div class="wrapper">
+                                <div class="calendar-wrapper" id="calendar-wrapper-0" data-index="0">
                                     <header>
-                                        <p class="current-date" id="0"></p>
+                                        <p class="current-date"></p>
                                         <div class="icons">
-                                            <span id="prev" class="material-symbols-rounded">chevron_left</span>
-                                            <span id="next" class="material-symbols-rounded">chevron_right</span>
+                                            <span class="prev material-symbols-rounded" data-index="0">chevron_left</span>
+                                            <span class="next material-symbols-rounded" data-index="0">chevron_right</span>
                                         </div>
                                     </header>
                                     <div class="calendar">
@@ -164,19 +163,11 @@
                                             <li>Thu</li>
                                             <li>Fri</li>
                                             <li>Sat</li>
-                    
                                         </ul>
-                                        <ul class="days" id="0">
-                    
+                                        <ul class="days">
                                         </ul>
                                     </div>
-                    
-                    
                                 </div>
-                                <button class="cart-subminBtn" id="submitBtn">Zatwierdź</button>
-                    
-                    
-                    
                             </div>
                         </div>
                     </div>
@@ -277,12 +268,12 @@
                                 </div>
                     
                                 <h3>Choose delivery days</h3>
-                                <div class="wrapper">
+                                <div class="calendar-wrapper" id="calendar-wrapper-1" data-index="1">
                                     <header>
-                                        <p class="current-date" id="1"></p>
+                                        <p class="current-date"></p>
                                         <div class="icons">
-                                            <span id="prev" class="material-symbols-rounded">chevron_left</span>
-                                            <span id="next" class="material-symbols-rounded">chevron_right</span>
+                                            <span class="prev material-symbols-rounded" data-index="1">chevron_left</span>
+                                            <span class="next material-symbols-rounded" data-index="1">chevron_right</span>
                                         </div>
                                     </header>
                                     <div class="calendar">
@@ -294,19 +285,11 @@
                                             <li>Thu</li>
                                             <li>Fri</li>
                                             <li>Sat</li>
-                    
                                         </ul>
-                                        <ul class="days" id="1">
-                    
+                                        <ul class="days">
                                         </ul>
                                     </div>
-                    
-                    
                                 </div>
-                                <button class="cart-subminBtn" id="submitBtn">Zatwierdź</button>
-                    
-                    
-                    
                             </div>
                         </div>
                     </div>
@@ -340,8 +323,9 @@
     </footer>
     <script src="offerscript.js" defer></script>
     <script src="headerscript.js" defer></script>
-    <script src="cartscript.js" defer></script>
     <script src="newcartscript.js" defer></script>
+    <script src="cart.js" defer></script>
+    <script src="calendar.js" defer></script>
 </body>
 
 </html>
