@@ -1,121 +1,241 @@
+.orderdetails-listtitle {
+  padding-left: 1.5em;
+}
+
 .orders-section {
-    display: flex;
-  }
-  
-  .orders-list {
-    width: 75%;
-    padding: 20px;
-  }
-  
-  .order-item {
-    display: flex;
-    margin-bottom: 20px;
-  }
-  
-  .orderdetails-image-container {
-    margin-right: 20px;
-  }
-  
-  .orderdetails-image {
-    width: 100px;
-    height: 100px;
-  }
-  
-  .orderdetails-content {
-    flex: 1;
-  }
-  
-  .orderdetails-details {
-    margin-left: 20px;
-  }
-  
-  .orderdetails-title {
-    margin: 0;
-  }
-  
-  .orderdetails-date {
-    font-size: 14px;
-    margin: 5px 0;
-  }
-  
-  .orderdetails-summary-price,
-  .orderdetails-price-per-day {
-    text-align: right;
-    font-size: 14px;
-    margin: 0;
-  }
-  
-  .orderdetails-buttons {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin-top: 10px;
-  }
-  
-  .orderdetails-edit-button,
-  .orderdetails-delete-button {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    font-size: 16px;
-    width: 40%;
-  }
-  
-  .orderdetails-edit-button i,
-  .orderdetails-delete-button i {
-    margin-right: 5px;
-  }
-  
-  .orderdetails-delete-button {
-    margin-left: 10px;
-  }
-  
-  .orderdetails-buttons::before {
-    content: "";
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: #000;
-    margin-right: 10px;
-  }
-  
-  .orderdetails-buttons:last-child::before {
-    display: none;
-  }
+  display: flex;
+}
+
+.orders-list {
+  width: 75%;
+  padding: 20px;
+}
+
+.order-item {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.orderdetails-image-container {
+  margin-right: 20px;
+}
+
+.orderdetails-image {
+  width: 150px;
+  height: 150px;
+}
+
+.orderdetails-content {
+  flex: 1;
+}
+
+.orderdetails-details {
+  margin-left: 20px;
+}
+
+.orderdetails-title {
+  margin: 0;
+}
+
+.orderdetails-date-from {
+  font-size: 14px;
+  margin: 5px 0;
+  display: inline-block;
+}
+
+.orderdetails-date-to {
+  font-size: 14px;
+  margin: 5px 0;
+  display: inline-block;
+}
+
+.orderdetails-days {
+  font-size: 14px;
+  color: var(--main-color);
+  border: 1px solid #000;
+  border-radius: 10px;
+  display: inline-block;
+  line-height: 2em;
+  margin-left: 0.5em;
+  padding: 0em 0.3em;
+}
+
+
+.orderdetails-price-per-day {
+  text-align: right;
+  font-size: 14px;
+  margin: 0;
+}
+
+.orderdetails-summary-price {
+  text-align: right;
+  font-size: 20px;
+  line-height: 10px;
+  margin: 0;
+}
+
+.orderdetails-calendar {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.orderdetails-buttons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.orderdetails-edit-button,
+.orderdetails-delete-button {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  font-size: 16px;
+  width: 40%;
+}
+
+.orderdetails-edit-button i,
+.orderdetails-delete-button i {
+  margin-right: 5px;
+}
+
+.orderdetails-delete-button {
+  margin-left: 10px;
+}
+
+.orderdetails-buttons::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #000;
+  margin-right: 10px;
+}
+
+.orderdetails-buttons:last-child::before {
+  display: none;
+}
+
   
   .summary-section {
-    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
     padding: 20px;
     background-color: #f7f7f7;
+    width: 320px;
+    max-width: 320px;
+    margin-left: auto;
+  }
+  
+  .summary-section h2 {
+    font-size: 1.5em;
+    padding-bottom: 0.2em;
+    padding-left: 0.1em;
+    width: 100%;
+    border-bottom: 1px solid #acacac;
+  }
+  
+  .summary-discount-section h2 {
+    font-size: 1.5em;
+    padding-bottom: 0.2em;
+    margin-right: 0em;
+    padding-right: 3.5em;
+    width: 100%;
+    border-bottom: 1px solid #acacac;
   }
   
   .summary-prices {
-    margin-bottom: 1em;
+    font-size: 0.8em;
+    margin-bottom: 0.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .summary-price-left {
+    padding-right: 11em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  
+  .summary-total-price {
+    color: var(--main-color);
+  }
+  
+  .summary-price-left p {
+    line-height: 1.5em;
+  }
+  
+  .summary-price-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  .summary-price-right p {
+    line-height: 1.5em;
   }
   
   .summary-price-item {
     font-size: 1.5em;
-    margin: 5px 0;
   }
   
   .summary-discount-section {
     margin-bottom: 10px;
-  }
-  
-  .summary-discount-input {
-    padding: 5px;
-    width: 200px;
-  }
-  
-  .summary-apply-button {
-    padding: 5px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
   .summary-button {
-    padding: 10px 20px;
-    background-color: #337ab7;
-    color: #fff;
+    padding: 15px 20px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    background-color: var(--main-color);
+    font-weight: bold;
+    color: #000;
     border: none;
+    border-radius: 10px;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
   }
+  
+  .summary-discount-input {
+    padding: 8px 10px;
+    width: 200px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  .summary-apply-button {
+    margin-top: 10px;
+    padding: 10px 10px;
+    background-color: var(--main-color);
+    font-weight: bold;
+    color: #000;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
   
