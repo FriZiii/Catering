@@ -4,6 +4,10 @@
 <div class="content">
     @if (Model.CartItems != null && Model.CartItems.Count > 0)
     {
+        @if (ViewBag.HasValidationErrors == true)
+        {
+            <p class="text-danger">Przesłane dane zawierają błędy walidacji.</p>
+        }
         <div class="container-cart">
             <h2 class="cart-title">Cart</h2>
             <div class="accordion-cart">
@@ -25,6 +29,7 @@
                             <div class="accordion-content-cart">
                                 <div class="content_cart">
                                     <h2>Configure your @cartItem.Product.Name</h2>
+                                    <input type="hidden" id="productID" value="@cartItem.Product.Id">
                                     <h3>Select your calories</h3>
                                     <div class="container_checkbx">
                                         <div>
@@ -145,7 +150,7 @@
                     </div>
                 }
                 <div class="cart-next-container">
-                    <button class="cart-next-button" type="button" onclick="submitForm()">
+                    <button class="cart-next-button" type="button" id="submitButton" onclick="submitForm()">
                         Next
                     </button>
                 </div>

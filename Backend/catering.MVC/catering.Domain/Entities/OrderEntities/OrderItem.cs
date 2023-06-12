@@ -8,12 +8,6 @@ namespace catering.Domain.Entities.OrderEntities
 {
     public class OrderItem
     {
-        public string Calories { get; set; }
-        public List<string> Meals { get; set; }
-        public List<string> Dates { get; set; }
-        public OrderItem()
-        {
-            Meals = new List<string>();
-        }
+
     }
 }

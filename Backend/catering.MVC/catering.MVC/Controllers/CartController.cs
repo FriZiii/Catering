@@ -37,12 +37,5 @@ namespace catering.MVC.Controllers
             await mediator.Send(new AddProductCommand(productID));
             return RedirectToAction("Index", "Offer");
         }
-
-        [HttpPost]
-        public IActionResult Next([FromBody] List<OrderItem> cartItems)
-        {
-
-            return RedirectToAction("Index", "Offer");
-        }
     }
 }
