@@ -3,6 +3,9 @@ using catering.Application.Managements.CartManagement.Commands.DeleteProduct;
 using catering.Application.Managements.CartManagement.Queries.GetCart;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using System.Globalization;
 
 namespace catering.MVC.Controllers
 {
@@ -31,6 +34,19 @@ namespace catering.MVC.Controllers
         public async Task<IActionResult> Add(int productID)
         {
             await mediator.Send(new AddProductCommand(productID));
+            return RedirectToAction("Index", "Offer");
+        }
+
+        [HttpPost]
+        public IActionResult Action(string dates)
+        {
+            //TODO: Refactor - calendar fixes 
+            JsonSerializerSettings settings = new JsonSerializerSettings
+            {
+                Culture = CultureInfo.InvariantCulture,
+                Converters = new List<JsonConverter> { new IsoDateTimeConverter { DateTimeFormat = "dd/M/yyyy" } }
+            };
+            List<List<DateTime>> dateList = JsonConvert.DeserializeObject<List<List<DateTime>>>(dates, settings);
             return RedirectToAction("Index", "Offer");
         }
     }
