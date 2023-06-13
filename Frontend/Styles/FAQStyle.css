@@ -29,12 +29,12 @@
 }
 .accordion-faq button:hover, .accordion-faq button:focus {
 	cursor: pointer;
-	color: var(--ligth-yellow);
+	color: var(--light-yellow);
 }
 .accordion-faq button:hover::after, .accordion-faq button:focus::after {
 	cursor: pointer;
-	color: var(--ligth-yellow);
-	border: 1px solid var(--ligth-yellow);
+	color: var(--light-yellow);
+	border: 1px solid var(--light-yellow);
 }
 .accordion-faq button .accordion-title-faq {
 	display: block;
