@@ -11,11 +11,51 @@ function getDates() {
     return tab;
 }
 
-function submitForm() {
-    var cartItems = [];
-
+function checkOrderItems() {
     var cartItemElements = document.getElementsByClassName("cart-item");
     var selectedDates = getDates();
+    for (var i = 0; i < cartItemElements.length; i++) {
+        var cartItemElement = cartItemElements[i];
+        var caloriesInput = cartItemElement.querySelector("input[name^='cartItems']:checked");
+        var mealInputs = cartItemElement.querySelectorAll("input[name^='cartItems'][type='checkbox']:checked");
+        var selectedDate = selectedDates[i]
+
+        if (!caloriesInput || mealInputs.length === 0 || selectedDate.length ===0) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+function submitForm() {
+    var errorHeading = document.getElementById("error-heading");
+    var cartTitle = document.querySelector(".cart-title");
+
+    if (!checkOrderItems()) {
+        if (!errorHeading) {
+            errorHeading = document.createElement("h3");
+            errorHeading.id = "error-heading";
+            errorHeading.textContent = "Complete your order setup to proceed!";
+            errorHeading.classList.add("valid-message");
+            cartTitle.parentNode.insertBefore(errorHeading, cartTitle.nextSibling);
+        }
+        return;
+    } else {
+        if (errorHeading) {
+            errorHeading.parentNode.removeChild(errorHeading);
+        }
+    }
+    var cartItems = [];
+    var cartItemElements = document.getElementsByClassName("cart-item");
+    var selectedDates = getDates();
+
+    var inputs = document.querySelectorAll("input[id='productID']");
+    var productIDs = [];
+    inputs.forEach(function (input) {
+        productIDs.push(input.value);
+    });
+
     for (var i = 0; i < cartItemElements.length; i++) {
         var cartItemElement = cartItemElements[i];
         var calories = cartItemElement.querySelector("input[name^='cartItems']:checked").value;
@@ -28,21 +68,23 @@ function submitForm() {
         var orderItem = {
             Calories: calories,
             Meals: meals,
-            Dates: selectedDates[i]
+            Dates: selectedDates[i],
+            ProductId: productIDs[i]
         };
 
         cartItems.push(orderItem);
     }
 
-
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "/Cart/Next");
+    xhr.open("POST", "/Order/Submit");
     xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            var response = JSON.parse(xhr.responseText);
+
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            window.location.href = "/Home/Index";
         }
     };
+
     xhr.send(JSON.stringify(cartItems));
 }
 

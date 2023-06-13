@@ -399,3 +399,9 @@ label.inactive {
         width: auto;
     }
 }
+
+.container-cart .valid-message {
+    color: #FE5050;
+    font-size: 24px;
+    margin-left:3px;
+}

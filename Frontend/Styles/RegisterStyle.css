@@ -1,0 +1,72 @@
+.center-container-register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.container-register {
+    width: 600px;
+    height: 550px;
+    display: flex;
+}
+  
+@media (max-width: 767px) {
+    .container-register {
+      width: 80%;
+      height: auto;
+      flex-direction: column;
+    }
+}
+
+.image-register {
+    flex: 1;
+    background-image: url("../Images/mniam.png");
+    background-size: cover;
+}
+
+.content-register {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-register {
+    margin-bottom: 5px;
+}
+
+
+.register-title{
+    text-align: center;
+}
+
+
+.register-btn {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px 50px;
+    border-radius: 15px;
+    background-color: var(--light-yellow);
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9em;
+  }
+  
+
+  
+  .register-btn::after {
+    content: "";
+    background-image: url("../Images/log-in.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px;
+    width: 20px;
+    height: 20px;
+  }
+  
+  .register-btn:hover{
+    background-color: var(--main-color);
+  }
