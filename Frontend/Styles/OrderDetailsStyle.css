@@ -4,7 +4,6 @@
 
 .orders-section {
   display: flex;
-  flex-wrap: wrap;
 }
 
 .orders-list {
@@ -152,7 +151,6 @@
   top: 0em;
   font-size: 1.4em;
 }
-
 .orderdetails-edit-span {
   color: var(--main-color);
   padding-left: 0.1em;
@@ -280,15 +278,8 @@
   background-color: var(--main-color);
 }
 
-@media (max-width: 767px) {
-
-  .orderdetails-buttons {
-    position: relative;
-
-  }
-
-  
-
+/* Media query for screens below 1024px */
+@media (max-width: 1023px) {
   .orders-section {
     flex-direction: column;
   }
@@ -298,54 +289,9 @@
   }
 
   .summary-section {
+    margin-top: 20px;
     width: 100%;
     max-width: 100%;
-    margin-left: 0;
-    margin-top: 20px;
-  }
-
-
-  .orderdetails-content {
-    margin-top: 20px;
-  }
-}
-
-@media (max-width: 500px) {
-
-  .orderdetails-buttons {
-    position: relative;
-    left: -45%;
-  }
-
-  .orderdetails-edit-icon {
-    position: relative;
-    right: -20%;
-  }
-
-  .orderdetails-delete-icon {
-    position: relative;
-    right: -20%;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
-  
-  .orderdetails-listtitle {
-    padding-left: 1em;
-  }
-
-  .orders-section {
-    flex-wrap: wrap;
-  }
-
-  .orders-list {
-    width: 100%;
-  }
-
-  .summary-section {
-    width: 100%;
-    max-width: 100%;
-    margin-left: 0;
-    margin-top: 20px;
+    align-self: flex-start;
   }
 }
