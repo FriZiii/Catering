@@ -50,39 +50,46 @@
 
     </header>
 
-    <div class="center-container-login">
-        <div class="container-login">
-            <div class="image-login">
-            </div>
-            <div class="content-login">
-                <div class="logo-login">
-                    <img src="Images/logo.svg" alt="Logo">
+    <div class="content">
+        <div class="center-container-login">
+            <div class="container-login">
+                <div class="image-login">
                 </div>
-                <h1>Hello again!</h1>
-                <h2>Enter your credentials</h2>
+                    <form class="content-login" id="account" method="post">
+                        <div class="logo-login">
+                            <img src="Images/logo.svg" alt="Logo">
+                        </div>
+                        <h1>Hello again!</h1>
+                        <h2>Enter your credentials</h2>
+                        
+                        <div  class="text-danger" role="alert"></div>
 
-                <label class="input">
-                    <input class="input__field" type="email" placeholder=" " />
-                    <span class="input__label">
-                        <img src="Images/login-icon-left.svg" class="input__icon" />
-                        Email
-                    </span>
-                </label>
+                        <div class="input">
+                            <input  class="input__field" type="email" autocomplete="username" aria-required="true" placeholder=" " />
+                            <span  class="input__label" class="text-danger">
+                                <img src="Images/login-icon-left.svg" class="input__icon" />
+                                Email
+                            </span>
+                        </div>
 
-                <label class="input">
-                    <input class="input__field" type="password" placeholder=" " />
-                    <span class="input__label">
-                        <img src="Images/password-icon-left.svg" class="input__icon" />
-                        Password
-                    </span>
-                </label>
+                        <div class="input">
+                            <input  class="input__field" type="password" autocomplete="current-password" aria-required="true" placeholder=" " />
+                            <span  class="input__label" class="text-danger">
+                                <img src="Images/password-icon-left.svg" class="input__icon" />
+                                Password
+                            </span>
+                        </div>
 
+                        <div class="remember-me-container">
+                            <input type="checkbox" id="remember" class="remember-me-login">
+                            <label for="remember" class="remember-label">Remember me</label>
+                        </div>
 
-                <div class="remember-me-container">
-                    <input type="checkbox" id="remember" class="remember-me-login">
-                    <label for="remember" class="remember-label">Remember me</label>
-                </div>
-                <a class="login-btn"> <span> Sign in </span> </a>
+                        <div>
+                            <a class="login-btn" type="submit" class="w-100 btn btn-lg btn-primary"> <span> Sign in </span> </a>
+                        </div>
+                        
+                    </form>
             </div>
         </div>
     </div>
