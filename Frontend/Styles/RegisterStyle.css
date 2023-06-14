@@ -55,7 +55,9 @@
     font-size: 0.9em;
   }
   
-
+  .register-btn span {
+    margin-right: 10px;
+  }
   
   .register-btn::after {
     content: "";
