@@ -1,6 +1,7 @@
 ﻿using catering.Application.Managements.OfferManagment.Commands.AddProduct;
 using catering.Application.Managements.OfferManagment.Commands.CreateProduct;
 using catering.Application.Mappings;
+using catering.Application.Serializers;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using MediatR;
@@ -15,6 +16,8 @@ namespace catering.Application.Extensions
             services.AddMediatR(typeof(CreateProductCommand));
 
             services.AddAutoMapper(typeof(MappingsProfile));
+
+            services.AddScoped<PreDtoToDtoOrderItemSerialization>();
 
             services.AddValidatorsFromAssemblyContaining<CreateProductCommandValidator>()
                 .AddFluentValidationAutoValidation()

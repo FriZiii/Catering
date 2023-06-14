@@ -1,15 +1,12 @@
 ﻿using AutoMapper;
 using catering.Application.Managements.CartManagement.Cart;
 using catering.Application.Managements.OfferManagment;
-using catering.Application.Managements.OfferManagment.Queries.GetById;
 using catering.Application.Managements.OrderManagment;
-using catering.Application.Managements.OrderManagment.PreSubmit;
+using catering.Application.Managements.OrderManagment.SubmitOrder;
 using catering.Application.Serializers;
 using catering.Domain.Entities;
 using catering.Domain.Entities.CartEntities;
 using catering.Domain.Entities.OrderEntities;
-using catering.Domain.Interface;
-using MediatR;
 
 namespace catering.Application.Mappings
 {
@@ -25,10 +22,25 @@ namespace catering.Application.Mappings
                      Id = src.ProductID,
                  }));
 
+
             CreateMap<OrderItemDto, OrderItem>()
-                .ForMember(dest => dest.Calories, opt => opt.MapFrom(src => int.Parse(src.Calories)))
-                .ForMember(dest => dest.Dates, opt => opt.MapFrom(src => DateSerializer.SerializeDates(src.Dates)))
-                .ForMember(dest => dest.Meals, opt => opt.MapFrom(src => new HashSet<string>(src.Meals)));
+                .ForMember(dest => dest.OrderId, opt => opt.MapFrom(src => src.Order.Id))
+                .ForMember(dest => dest.ProductId, opt => opt.MapFrom(src => src.Product.Id));
+
+            CreateMap<OrderItemMealDto, OrderItemMeal>();
+
+            CreateMap<OrderItemDateDto, OrderItemDate>();
+
+            CreateMap<OrderItem, OrderItemDto>()
+                .ForMember(dest => dest.Order, opt => opt.MapFrom(src => src.Order))
+                .ForMember(dest => dest.Product, opt => opt.MapFrom(src => src.Product))
+                .ForMember(dest => dest.Dates, opt => opt.MapFrom(src => src.Dates))
+                .ForMember(dest => dest.Meals, opt => opt.MapFrom(src => src.Meals.Select(m => new OrderItemMealDto { Meal = m.Meal })));
+
+            CreateMap<OrderItemMeal, OrderItemMealDto>();
+
+            CreateMap<OrderItemDate, OrderItemDateDto>();
+
         }
     }
 }
