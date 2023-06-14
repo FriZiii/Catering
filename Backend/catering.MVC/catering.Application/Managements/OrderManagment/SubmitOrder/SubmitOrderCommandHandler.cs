@@ -1,37 +1,35 @@
 ﻿using AutoMapper;
-using catering.Application.Managements.OfferManagment.Queries.GetById;
-using catering.Application.Managements.OrderManagment.PreSubmit;
 using catering.Domain.Entities.OrderEntities;
+using catering.Domain.Interface;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace catering.Application.Managements.OrderManagment.SubmitOrder
 {
     public class SubmitOrderCommandHandler : IRequestHandler<SubmitOrderCommand>
     {
         private readonly IMapper mapper;
-        private readonly IMediator mediator;
+        private readonly IOrderRepository orderRepository;
 
-        public SubmitOrderCommandHandler(IMapper mapper, IMediator mediator)
+        public SubmitOrderCommandHandler(IMapper mapper, IOrderRepository orderRepository)
         {
             this.mapper = mapper;
-            this.mediator = mediator;
+            this.orderRepository = orderRepository;
         }
 
         public async Task<Unit> Handle(SubmitOrderCommand request, CancellationToken cancellationToken)
         {
-            List<OrderItem> orderItems = mapper.Map<List<OrderItemDto>, List<OrderItem>>(request);
-            
-            foreach (OrderItem item in orderItems)
+
+            List<OrderItem> orderItems = mapper.Map<List<OrderItem>>(request.OrderItems);
+
+            var newOrder = new Order()
             {
-                item.Product = await mediator.Send(new GetByIdQuerry(item.ProductId));
-                item.Price = item.Product.Price * item.Dates.Count * item.Meals.Count;
-            }
-            var newOrder = new Order(orderItems);
+                OrderItems = orderItems,
+                OrderDate = DateTime.Now,
+                TotalPrice = orderItems.Select(c => c.Price).Sum(),
+            };
+
+            await orderRepository.AddOrder(newOrder);
+
             return Unit.Value;
         }
     }
