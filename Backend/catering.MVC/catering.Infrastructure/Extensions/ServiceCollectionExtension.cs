@@ -18,6 +18,7 @@ namespace catering.Infrastructure.Extensions
             services.AddScoped<ProductSeeder>();
             services.AddScoped<IOfferRepository, OfferRepository>();
             services.AddScoped<ICartRepository, CartRepository>();
+            services.AddScoped<IOrderRepository, OrderRepository>();
         }
     }
 }
