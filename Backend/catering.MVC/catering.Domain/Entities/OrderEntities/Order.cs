@@ -9,11 +9,15 @@ namespace catering.Domain.Entities.OrderEntities
     public class Order
     {
         public int Id { get; set; }
-        public int UserId { get; set; }
-        public decimal TotalAmount { get; set; }
+        public decimal TotalPrice { get; set; }
         public DateTime OrderDate { get; set; }
 
-        public AppUser AppUser { get; set; }
-        public List<OrderItem> OrderItems { get; set; }
+        public List<OrderItem> OrderItems { get; set; } = null!;
+        public Order(List<OrderItem> orderItems)
+        {
+            OrderItems = orderItems;
+            OrderDate = DateTime.Now;
+            TotalPrice = orderItems.Sum(i => i.Price);
+        }
     }
 }
