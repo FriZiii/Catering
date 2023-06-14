@@ -9,14 +9,14 @@ namespace catering.Domain.Entities.OrderEntities
     public class OrderItem
     {
         public int Id { get; set; }
+        public int OrderId { get; set; }
         public int ProductId { get; set; }
         public decimal Price { get; set; }
         public int Calories { get; set; }
-        public HashSet<DateTime> Dates { get; set; } = new HashSet<DateTime>();
-        public HashSet<string> Meals { get; set; } = new HashSet<string>();
-
 
         public Order Order { get; set; } = null!;
         public Product Product { get; set; } = null!;
+        public ICollection<OrderItemDate> Dates { get; set; } = new HashSet<OrderItemDate>();
+        public ICollection<OrderItemMeal> Meals { get; set; } = new HashSet<OrderItemMeal>();
     }
 }

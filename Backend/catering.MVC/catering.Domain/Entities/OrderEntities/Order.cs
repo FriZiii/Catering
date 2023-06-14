@@ -11,13 +11,8 @@ namespace catering.Domain.Entities.OrderEntities
         public int Id { get; set; }
         public decimal TotalPrice { get; set; }
         public DateTime OrderDate { get; set; }
+        public bool Confirmed { get; set; } = false;
 
         public List<OrderItem> OrderItems { get; set; } = null!;
-        public Order(List<OrderItem> orderItems)
-        {
-            OrderItems = orderItems;
-            OrderDate = DateTime.Now;
-            TotalPrice = orderItems.Sum(i => i.Price);
-        }
     }
 }
