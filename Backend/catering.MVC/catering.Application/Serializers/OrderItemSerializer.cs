@@ -17,8 +17,8 @@ namespace catering.Application.Serializers
         {
             return new OrderItemDto
             {
-                Dates = DateSerialization.SerializeDates(preOrderItemDto.Dates),
-                Meals = MealSerialization.SerializeMeals(preOrderItemDto.Meals),
+                Dates = DateSerializer.SerializeDates(preOrderItemDto.Dates),
+                Meals = MealSerializer.SerializeMeals(preOrderItemDto.Meals),
                 Product = await mediator.Send(new GetProductByIdQuerry(preOrderItemDto.ProductId)),
                 Calories = int.Parse(preOrderItemDto.Calories),
                 Price = mediator.Send(new GetProductByIdQuerry(preOrderItemDto.ProductId)).Result.Price * preOrderItemDto.Dates.Count * preOrderItemDto.Meals.Count,

@@ -3,7 +3,7 @@ using System.Globalization;
 
 namespace catering.Application.Serializers
 {
-    public static class DateSerialization
+    public static class DateSerializer
     {
         public static ICollection<OrderItemDateDto> SerializeDates(List<string> dateStrings)
         {

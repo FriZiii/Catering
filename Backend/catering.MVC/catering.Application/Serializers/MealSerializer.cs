@@ -2,7 +2,7 @@
 
 namespace catering.Application.Serializers
 {
-    public static class MealSerialization
+    public static class MealSerializer
     {
         public static ICollection<OrderItemMealDto> SerializeMeals(List<string> meals)
         {
