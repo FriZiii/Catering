@@ -29,7 +29,7 @@ namespace catering.Application.Managements.OrderManagment.SubmitOrder
             };
 
             await orderRepository.AddOrder(newOrder);
-
+            request.OrderId = newOrder.Id;
             return Unit.Value;
         }
     }

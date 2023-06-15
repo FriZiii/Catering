@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace catering.Application.Managements.CartManagement.Commands.DeleteProduct
 {
-    public class DeleteProductCommandHandler : IRequestHandler<DeleteProductCommand>
+    public class DeleteCartProductByIdCommandHandler : IRequestHandler<DeleteCartProductByIdCommand>
     {
         private readonly ICartRepository cartRepository;
 
-        public DeleteProductCommandHandler(ICartRepository cartRepository)
+        public DeleteCartProductByIdCommandHandler(ICartRepository cartRepository)
         {
             this.cartRepository = cartRepository;
         }
 
-        public async Task<Unit> Handle(DeleteProductCommand request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(DeleteCartProductByIdCommand request, CancellationToken cancellationToken)
         {
             cartRepository.DeleteFromCart(request.Id);
 

@@ -1,5 +1,4 @@
 ﻿using catering.Application.Managements.OrderManagment;
-using catering.Domain.Entities.OrderEntities;
 using System.Globalization;
 
 namespace catering.Application.Serializers

@@ -31,7 +31,7 @@ namespace catering.Application.Managements.CartManagement.Queries.GetCart
             
             foreach(var itemDto in cartItemModelDtos)
             {
-                var product = await mediator.Send(new GetByIdQuerry(itemDto.Product.Id));
+                var product = await mediator.Send(new GetProductByIdQuerry(itemDto.Product.Id));
                 if(product is null)
                 {
                     throw new InvalidOperationException("Missing product in cart");

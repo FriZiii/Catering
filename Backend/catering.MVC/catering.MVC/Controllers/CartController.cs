@@ -27,14 +27,14 @@ namespace catering.MVC.Controllers
 
         public async Task<IActionResult> Delete(int cartItemID)
         {
-            await mediator.Send(new DeleteProductCommand(cartItemID));
+            await mediator.Send(new DeleteCartProductByIdCommand(cartItemID));
             return RedirectToAction("Index");
         }
 
         [HttpPost]
         public async Task<IActionResult> Add(int productID)
         {
-            await mediator.Send(new AddProductCommand(productID));
+            await mediator.Send(new AddProductByIdCommand(productID));
             return RedirectToAction("Index", "Offer");
         }
     }

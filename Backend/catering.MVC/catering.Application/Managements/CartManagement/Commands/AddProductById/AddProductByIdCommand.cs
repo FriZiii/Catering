@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace catering.Application.Managements.CartManagement.Commands.AddProduct
 {
-    public class AddProductCommand : IRequest
+    public class AddProductByIdCommand : IRequest
     {
         public int Id { get; }
 
-        public AddProductCommand(int id)
+        public AddProductByIdCommand(int id)
         {
             Id = id;
         }

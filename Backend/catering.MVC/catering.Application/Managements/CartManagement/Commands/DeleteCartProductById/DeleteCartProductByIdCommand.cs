@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace catering.Application.Managements.CartManagement.Commands.DeleteProduct
 {
-    public class DeleteProductCommand : IRequest
+    public class DeleteCartProductByIdCommand : IRequest
     {
         public int Id { get; set; }
 
-        public DeleteProductCommand(int id)
+        public DeleteCartProductByIdCommand(int id)
         {
             Id = id;
         }

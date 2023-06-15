@@ -3,11 +3,11 @@ using MediatR;
 
 namespace catering.Application.Managements.OfferManagment.Queries.GetById
 {
-    public class GetByIdQuerry : IRequest<Product>
+    public class GetProductByIdQuerry : IRequest<Product>
     {
         public int Id { get; }
 
-        public GetByIdQuerry(int id)
+        public GetProductByIdQuerry(int id)
         {
             Id = id;
         }

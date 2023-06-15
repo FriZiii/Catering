@@ -2,8 +2,6 @@
 using catering.Application.Managements.CartManagement.Cart;
 using catering.Application.Managements.OfferManagment;
 using catering.Application.Managements.OrderManagment;
-using catering.Application.Managements.OrderManagment.SubmitOrder;
-using catering.Application.Serializers;
 using catering.Domain.Entities;
 using catering.Domain.Entities.CartEntities;
 using catering.Domain.Entities.OrderEntities;

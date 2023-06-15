@@ -17,7 +17,7 @@ namespace catering.Application.Extensions
 
             services.AddAutoMapper(typeof(MappingsProfile));
 
-            services.AddScoped<PreDtoToDtoOrderItemSerialization>();
+            services.AddScoped<OrderItemSerializer>();
 
             services.AddValidatorsFromAssemblyContaining<CreateProductCommandValidator>()
                 .AddFluentValidationAutoValidation()
