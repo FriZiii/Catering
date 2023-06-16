@@ -1,4 +1,5 @@
 ﻿using catering.Application.Managements.OrderManagment;
+using catering.Application.Managements.OrderManagment.Queries.GetOrderById;
 using catering.Application.Managements.OrderManagment.SubmitOrder;
 using catering.Application.Serializers;
 using catering.Domain.Interface;
@@ -28,9 +29,13 @@ namespace catering.MVC.Controllers
 
             await mediator.Send(submitOrderCommand);
 
-            var orderId = submitOrderCommand.OrderId;
+            return Ok(submitOrderCommand.OrderId.ToString());
+        }
 
-            return RedirectToAction("Index", "Offer");
+        public async Task<IActionResult> Confirm(int orderId)
+        {
+            var order = await mediator.Send(new GetOrderByIdQuerry(orderId));
+            return View();
         }
     }
 }

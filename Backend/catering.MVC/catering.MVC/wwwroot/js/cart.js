@@ -81,7 +81,8 @@ function submitForm() {
 
     xhr.onload = function () {
         if (xhr.status === 200) {
-            window.location.href = "/Home/Index";
+            var orderId = xhr.responseText;
+            window.location.href = "/Order/Confirm?orderId=" + orderId;
         }
     };
 
