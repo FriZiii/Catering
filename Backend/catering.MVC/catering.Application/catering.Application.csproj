@@ -16,8 +16,4 @@
     <ProjectReference Include="..\catering.Domain\catering.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Managements\OrderManagment\Queries\" />
-  </ItemGroup>
-
 </Project>
