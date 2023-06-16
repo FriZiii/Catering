@@ -453,9 +453,10 @@
 
 
 @media (max-width: 442px) {
-  
+
   .orderdetails-delete-button {
     top: 2.2em;
+    padding-right: 3em;
   }
 
   .orderdetails-dot {
@@ -467,4 +468,12 @@
     top: -2.5em;
     left: -11em;
   }
+}
+
+@media (max-width: 400px) {
+
+  .orderdetails-delete-button {
+    left: -5.5em;
+  }
+
 }
