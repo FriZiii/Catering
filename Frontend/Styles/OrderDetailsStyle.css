@@ -177,6 +177,28 @@
   padding-left: 0.1em;
 }
 
+.orderdetails-cancel-button-section {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1em;
+}
+
+.orderdetails-cancel-icon {
+  position: relative;
+  top: 0.35em;
+}
+
+.orderdetails-cancel-button {
+  all: unset;
+  cursor: pointer;
+  padding: 0.5em 1em;
+  padding-top: 0.2em;
+  border-radius: 10px;
+  border: 1px solid #e1e1e1;
+  border-radius: 10px;
+}
+
+
 .summary-section {
   display: flex;
   flex-direction: column;
