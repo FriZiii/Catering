@@ -1,8 +1,9 @@
 ﻿using catering.Application.Managements.OrderManagment;
+using catering.Application.Managements.OrderManagment.Commands.DeleteOrderById;
+using catering.Application.Managements.OrderManagment.Commands.DeleteOrderItemById;
 using catering.Application.Managements.OrderManagment.Queries.GetOrderById;
 using catering.Application.Managements.OrderManagment.SubmitOrder;
 using catering.Application.Serializers;
-using catering.Domain.Interface;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -32,10 +33,11 @@ namespace catering.MVC.Controllers
             return Ok(submitOrderCommand.OrderId.ToString());
         }
 
-        public async Task<IActionResult> Confirm(int orderId)
+        [HttpPost]
+        public async Task<IActionResult> Confirm([FromForm] int orderId)
         {
             var order = await mediator.Send(new GetOrderByIdQuerry(orderId));
-            return View();
+            return View(order);
         }
     }
 }

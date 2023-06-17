@@ -1,0 +1,481 @@
+﻿.orderdetails-listtitle {
+    padding-left: 4em;
+}
+
+.orders-section {
+    display: flex;
+}
+
+.orders-list {
+    width: 75%;
+    padding: 4em;
+    padding-top: 1em;
+}
+
+.order-item {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: solid 1px #e1e1e1;
+    padding-bottom: 0.8em;
+}
+
+.orderdetails-image-container {
+    margin-right: 20px;
+    width: 140px;
+    height: 140px;
+    overflow: hidden;
+}
+
+.orderdetails-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.orderdetails-content {
+    flex: 1;
+}
+
+.orderdetails-details {
+    margin-left: 20px;
+}
+
+.orderdetails-title {
+    display: inline-block;
+    margin: 0;
+}
+
+.orderdetails-dot {
+    display: inline-block;
+    position: relative;
+    transform: translateY(-15%);
+}
+
+.orderdetails-yellow-title {
+    color: var(--light-yellow)
+}
+
+.orderdetails-new-line {
+    display: block;
+}
+
+.orderdetails-date-from {
+    font-size: 14px;
+    margin: 5px 0;
+    display: inline-block;
+}
+
+.orderdetails-date-to {
+    font-size: 14px;
+    margin: 5px 0;
+    display: inline-block;
+}
+
+.orderdetails-meals {
+    margin-top: 0.5em;
+    margin-right: 3em;
+}
+
+.orderdetails-meal-time {
+    position: relative;
+    left: -0.3em;
+    top: -5em;
+    font-size: 14px;
+    color: var(--main-color);
+    border: 1px solid var(--main-color);
+    border-radius: 10px;
+    display: inline-block;
+    line-height: 1.7em;
+    margin-left: 0.5em;
+    padding: 0em 0.3em;
+    margin-top: 0.5em;
+}
+
+.orderdetails-top-line {
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid #e1e1e1;
+    top: -4.3em;
+}
+
+.orderdetails-delete-icon {
+    position: relative;
+    top: 0.3em;
+    right: 0em;
+}
+
+.orderdetails-days {
+    font-size: 14px;
+    color: var(--main-color);
+    border: 1px solid var(--main-color);
+    border-radius: 10px;
+    display: inline-block;
+    line-height: 1.7em;
+    margin-left: 0.5em;
+    padding: 0em 0.3em;
+}
+
+.orderdetails-price-per-day {
+    font-weight: bold;
+    text-align: right;
+    font-size: 14px;
+    margin: 0;
+}
+
+.orderdetails-summary-price {
+    font-weight: bold;
+    text-align: right;
+    font-size: 20px;
+    line-height: 10px;
+    margin: 0;
+}
+
+.orderdetails-calendar {
+    position: relative;
+    top: 0.3em;
+    display: inline-block;
+    height: 15px;
+    width: 25px;
+    margin-right: 0px;
+}
+
+.orderdetails-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.orderdetails-delete-button {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    padding-right: 15%;
+}
+
+.orderdetails-delete-button {
+    cursor: pointer;
+}
+
+.orderdetails-buttons::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #000;
+    margin-right: 10px;
+}
+
+.orderdetails-buttons:last-child::before {
+    display: none;
+}
+
+.orderdetails-cancel-button-section {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1em;
+}
+
+.orderdetails-cancel-icon {
+    position: relative;
+    top: 0.35em;
+}
+
+.orderdetails-cancel-button {
+    all: unset;
+    cursor: pointer;
+    padding: 0.5em 1em;
+    padding-top: 0.2em;
+    border-radius: 10px;
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+}
+
+.orderdetails-link-delete-button {
+    all: unset;
+    cursor: pointer;
+}
+
+.summary-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 20px;
+    background-color: #f7f7f7;
+    width: 340px;
+    max-width: 380px;
+    height: 450px;
+    margin-left: auto;
+    margin-right: 4em;
+    position: sticky;
+    top: 120px;
+    background-color: white;
+    z-index: 999;
+}
+
+.summary-title {
+    font-size: 1.5em;
+    padding-bottom: 0.2em;
+    padding-left: 0.1em;
+    width: 100%;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.summary-title-codes {
+    font-size: 1.5em;
+    width: 100%;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.summary-prices {
+    font-size: 0.8em;
+    margin-bottom: 0.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.summary-price-left {
+    padding-right: 13em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.summary-total-price {
+    color: var(--main-color);
+}
+
+.summary-price-left p {
+    line-height: 1.5em;
+}
+
+.summary-price-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+    .summary-price-right p {
+        line-height: 1.5em;
+    }
+
+.summary-price-item {
+    font-size: 1.5em;
+}
+
+.summary-discount-section {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 3em;
+}
+
+.summary-button {
+    padding: 15px 20px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    background-color: var(--light-yellow);
+    font-weight: bold;
+    color: #000;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+    .summary-button:hover {
+        background-color: var(--main-color);
+    }
+
+.summary-discount-input {
+    padding: 8px 10px;
+    width: 200px;
+    border: 1px solid #bdbdbd;
+    border-radius: 10px;
+    width: 90%;
+    margin: 10px auto 0;
+}
+
+.summary-apply-button {
+    margin-top: 10px;
+    padding: 10px 10px;
+    margin-bottom: 30px;
+    background-color: var(--light-yellow);
+    font-weight: bold;
+    color: #000;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    transition: background-color 0.3s ease;
+}
+
+    .summary-apply-button:hover {
+        background-color: var(--main-color);
+    }
+
+@media (max-width: 1023px) {
+
+
+    .summary-price-left {
+        padding-right: 17em;
+    }
+
+    .summary-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        background-color: #f7f7f7;
+        width: 380px;
+        max-width: 380px;
+        height: 450px;
+        margin-left: auto;
+        margin-right: 2em;
+    }
+
+    .summary-title {
+        font-size: 1.5em;
+        padding-bottom: 0.2em;
+        padding-left: 0.1em;
+        width: 87%;
+        border-bottom: 1px solid #e1e1e1;
+        text-align: center;
+    }
+
+    .summary-discount-section {
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+        padding-right: 0em;
+    }
+
+    .orderdetails-delete-button {
+        display: inline-block;
+        position: relative;
+        left: -2.7em;
+        min-width: 88px;
+    }
+
+
+    .summary-price-left {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    .summary-button {
+        width: 40%;
+    }
+
+    .orders-section {
+        flex-direction: column;
+    }
+
+    .orders-list {
+        width: 100%;
+    }
+
+    .summary-section {
+        margin-top: 20px;
+        width: 100%;
+        max-width: 100%;
+        align-self: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .orderdetails-calendar {
+        width: 18px;
+        height: 18px;
+    }
+
+    .orderdetails-calendar-icon {
+        position: relative;
+        top: -0.1em;
+        width: 20px;
+        height: 20px;
+    }
+
+    .order-item {
+        padding-bottom: 3em;
+    }
+
+    .orderdetails-summary-price {
+        padding-top: 15px;
+        font-size: 20px;
+    }
+
+    .orderdetails-delete-button {
+        display: inline-block;
+        position: relative;
+        top: 2.2em;
+        left: -4.5em;
+        min-width: 88px;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .orderdetails-summary-price {
+        position: relative;
+        top: 6em;
+    }
+
+    .orderdetails-price-per-day {
+        position: relative;
+        top: 9em;
+    }
+
+    .orderdetails-dot {
+        display: none;
+    }
+
+    .orderdetails-meals {
+        position: relative;
+        top: 1.5em;
+        left: -11.2em;
+    }
+}
+
+
+@media (max-width: 442px) {
+
+    .orderdetails-delete-button {
+        top: 2.2em;
+        padding-right: 3em;
+    }
+
+    .orderdetails-dot {
+        display: none;
+    }
+
+    .orderdetails-meals {
+        position: relative;
+        top: -2.5em;
+        left: -11em;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .orderdetails-delete-button {
+        left: -5.5em;
+    }
+}

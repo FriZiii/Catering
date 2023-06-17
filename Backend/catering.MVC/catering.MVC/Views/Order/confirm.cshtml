@@ -1,5 +1,92 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿
 @{
+    ViewData["Title"] = "Confirm";
 }
+
+@using catering.Domain.Entities.OrderEntities;
+@model Order
+
+<div class="content">
+    <div class="orderdetails-listtitle">
+        <h1>Order</h1>
+    </div>
+        <div class="orders-section">
+            <div class="orders-list">
+            @foreach (var item in Model.OrderItems)
+            {
+                <div class="order-item">
+                    <div class="orderdetails-image-container">
+                        <img src="~/images/products/@item.Product.ImageName" class="orderdetails-image" />
+                    </div>
+                    <div class="orderdetails-content">
+                        <div class="orderdetails-details">
+                            <h3 class="orderdetails-title">@item.Product.Name</h3>
+                            <h3 class="orderdetails-dot"> . </h3>
+                            <h3 class="orderdetails-title orderdetails-yellow-title">@item.Calories kcal</h3>
+
+                            <div class="orderdetails-new-line">
+                                <div class="orderdetails-calendar">
+                                    <img class="orderdetails-calendar-icon" src="~/images/icons/calendar.svg"
+                                         alt="Cal Icon">
+                                </div>
+                                <p class="orderdetails-date-from">@item.Dates.Min(d => d.Date).ToString("dd.MM.yyyy")</p>
+                                    -
+                                <p class="orderdetails-date-to">@item.Dates.Max(d => d.Date).ToString("dd.MM.yyyy")</p>
+                                <p class="orderdetails-days">Days: @item.Dates.Count</p>
+                                <p class="orderdetails-summary-price">$@item.Price</p>
+                                    @{
+                                        var pricePerDay = item.Price / item.Dates.Count;
+                                    }
+                                <p class="orderdetails-price-per-day">$@pricePerDay/day</p>
+                            </div>
+
+                            <div class="orderdetails-meals">
+                                @foreach (var meal in item.Meals)
+                                {
+                                    <p class="orderdetails-meal-time">@meal.Meal</p>
+                                }
+                            </div>
+
+                            <div class="orderdetails-buttons">
+                                <div class="orderdetails-delete-button">
+                                    <button class="orderdetails-link-delete-button">
+                                        <img class="orderdetails-delete-icon" src="~/images/icons/trash.svg" alt="Trash Icon">
+                                        <span class="orderdetails-delete-span">Delete</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="orderdetails-top-line"> </div>
+            }
+            <div class="orderdetails-cancel-button-section">
+                <button class="orderdetails-cancel-button">
+                    <img class="orderdetails-cancel-icon" src="~/images/icons/x.svg" alt="Trash Icon">
+                    <span class="orderdetails-cancel-span">Cancel all</span>
+                </button>
+            </div>
+        </div>
+        <div class="summary-section">
+                <h2 class="summary-title">Discount codes</h2>
+                <div class="summary-discount-section">
+                    <input type="text" placeholder="Enter discount code" class="summary-discount-input" />
+                    <button class="summary-apply-button">Apply</button>
+                </div>
+                <h2 class="summary-title">Summary</h2>
+                <div class="summary-prices">
+                    <div class="summary-price-left">
+                        <p class="summary-price-item">Total</p>
+                        <p class="summary-price-item">Discount</p>
+                        <p class="summary-price-item summary-total-price">To pay</p>
+                    </div>
+                    <div class="summary-price-right">
+                        <p class="summary-price-item">$@Model.TotalPrice</p>
+                        <p class="summary-price-item">-$20</p>
+                        <p class="summary-price-item summary-total-price">$180</p>
+                    </div>
+                </div>
+                <button class="summary-button">Go to Summary</button>
+            </div>
+    </div>
+</div>

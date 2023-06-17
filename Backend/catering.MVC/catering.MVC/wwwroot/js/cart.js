@@ -82,7 +82,19 @@ function submitForm() {
     xhr.onload = function () {
         if (xhr.status === 200) {
             var orderId = xhr.responseText;
-            window.location.href = "/Order/Confirm?orderId=" + orderId;
+            var form = document.createElement("form");
+            form.method = "post";
+            form.action = "/Order/Confirm";
+
+            var input = document.createElement("input");
+            input.type = "hidden";
+            input.name = "orderId";
+            input.value = orderId;
+
+            form.appendChild(input);
+            document.body.appendChild(form);
+
+            form.submit();
         }
     };
 

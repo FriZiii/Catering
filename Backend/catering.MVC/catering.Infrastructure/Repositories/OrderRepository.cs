@@ -43,6 +43,10 @@ namespace catering.Infrastructure.Repositories
         }
 
         public async Task<Order?> GetOrderById(int id)
-            => await context.Orders.FirstOrDefaultAsync(p => p.Id == id);
+            => await context.Orders
+                .Include(o => o.OrderItems).ThenInclude(oi => oi.Dates)
+                .Include(o => o.OrderItems).ThenInclude(oi => oi.Meals)
+                .Include(o => o.OrderItems).ThenInclude(oi => oi.Product)
+                .FirstOrDefaultAsync(p => p.Id == id);
     }
 }
