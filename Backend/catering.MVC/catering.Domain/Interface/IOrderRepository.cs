@@ -10,6 +10,8 @@ namespace catering.Domain.Interface
     public interface IOrderRepository
     {
         Task<int> AddOrder(Order order);
+        Task DeleteOrderById(int id);
+        Task DeleteOrderItemById(int id);
         Task<Order?> GetOrderById(int id);
     }
 }

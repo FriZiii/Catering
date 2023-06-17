@@ -22,6 +22,26 @@ namespace catering.Infrastructure.Repositories
             return order.Id;
         }
 
+        public async Task DeleteOrderById(int id)
+        {
+            var orderToDelete = await context.Orders.Where(order => order.Id == id).FirstOrDefaultAsync();
+            if (orderToDelete != null) 
+            {
+                context.Orders.Remove(orderToDelete);
+                await context.SaveChangesAsync();
+            }
+        }
+
+        public async Task DeleteOrderItemById(int id)
+        {
+            var orderItemToDelete = await context.OrderItems.Where(orderItem => orderItem.Id == id).FirstOrDefaultAsync();
+            if(orderItemToDelete != null)
+            {
+                context.OrderItems.Remove(orderItemToDelete);
+                await context.SaveChangesAsync();
+            }
+        }
+
         public async Task<Order?> GetOrderById(int id)
             => await context.Orders.FirstOrDefaultAsync(p => p.Id == id);
     }
