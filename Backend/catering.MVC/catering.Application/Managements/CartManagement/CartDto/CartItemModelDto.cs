@@ -1,6 +1,6 @@
 ﻿using catering.Domain.Entities;
 
-namespace catering.Application.Managements.CartManagement.Cart
+namespace catering.Application.Managements.CartManagement
 {
     public class CartItemModelDto
     {

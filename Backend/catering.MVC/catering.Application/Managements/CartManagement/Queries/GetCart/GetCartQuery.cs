@@ -1,4 +1,4 @@
-﻿using catering.Application.Managements.CartManagement.Cart;
+﻿using catering.Application.Managements.CartManagement;
 using MediatR;
 using System;
 using System.Collections.Generic;

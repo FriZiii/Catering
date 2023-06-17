@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using catering.Application.Managements.CartManagement;
 
-namespace catering.Application.Managements.CartManagement.Cart
+namespace catering.Application.Managements.CartManagement
 {
     public class CartModelDto
     {

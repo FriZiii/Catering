@@ -1,13 +1,7 @@
 ﻿using AutoMapper;
-using catering.Application.Managements.CartManagement.Cart;
 using catering.Application.Managements.OfferManagment.Queries.GetById;
 using catering.Domain.Interface;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace catering.Application.Managements.CartManagement.Queries.GetCart
 {

@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using catering.Application.Managements.CartManagement.Cart;
+using catering.Application.Managements.CartManagement;
 using catering.Application.Managements.OfferManagment;
 using catering.Application.Managements.OrderManagment;
 using catering.Domain.Entities;
