@@ -49,10 +49,13 @@
 
                             <div class="orderdetails-buttons">
                                 <div class="orderdetails-delete-button">
-                                    <button class="orderdetails-link-delete-button">
-                                        <img class="orderdetails-delete-icon" src="~/images/icons/trash.svg" alt="Trash Icon">
-                                        <span class="orderdetails-delete-span">Delete</span>
-                                    </button>
+                                    <form method="post" action="@Url.Action("DeleteOrderItem","Order")">
+                                        <input type="hidden" name="orderItemId" value="@item.Id"/>
+                                        <button class="orderdetails-link-delete-button">
+                                            <img class="orderdetails-delete-icon" src="~/images/icons/trash.svg" alt="Trash Icon">
+                                            <span class="orderdetails-delete-span">Delete</span>
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -61,10 +64,13 @@
                 <div class="orderdetails-top-line"> </div>
             }
             <div class="orderdetails-cancel-button-section">
-                <button class="orderdetails-cancel-button">
-                    <img class="orderdetails-cancel-icon" src="~/images/icons/x.svg" alt="Trash Icon">
-                    <span class="orderdetails-cancel-span">Cancel all</span>
-                </button>
+                <form method="post" action="@Url.Action("DeleteOrder", "Order")">
+                    <input type="hidden" name="orderId" value="@Model.Id" />
+                    <button class="orderdetails-cancel-button">
+                        <img class="orderdetails-cancel-icon" src="~/images/icons/x.svg" alt="Trash Icon">
+                        <span class="orderdetails-cancel-span">Cancel all</span>
+                    </button>
+                </form>
             </div>
         </div>
         <div class="summary-section">

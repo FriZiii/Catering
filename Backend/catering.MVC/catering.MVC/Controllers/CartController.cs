@@ -1,12 +1,8 @@
 ﻿using catering.Application.Managements.CartManagement.Commands.AddProduct;
 using catering.Application.Managements.CartManagement.Commands.DeleteProduct;
 using catering.Application.Managements.CartManagement.Queries.GetCart;
-using catering.Domain.Entities.OrderEntities;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using System.Globalization;
 
 namespace catering.MVC.Controllers
 {

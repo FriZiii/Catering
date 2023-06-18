@@ -33,11 +33,35 @@ namespace catering.MVC.Controllers
             return Ok(submitOrderCommand.OrderId.ToString());
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Confirm([FromForm] int orderId)
+        public async Task<IActionResult> Confirm()
         {
-            var order = await mediator.Send(new GetOrderByIdQuerry(orderId));
-            return View(order);
+            if (Request.Cookies.TryGetValue("orderId", out string? orderIdCookie) && int.TryParse(orderIdCookie, out int orderId))
+            {
+                var order = await mediator.Send(new GetOrderByIdQuerry(orderId));
+                if (order.OrderItems.Any())
+                {
+                    return View(order);
+                }
+                else
+                {
+                    await mediator.Send(new DeleteOrderByIdCommand(orderId));
+                    return RedirectToAction("Index", "Cart");
+                }
+            }
+            return RedirectToAction("Error");
+        }
+
+        public async Task<IActionResult> DeleteOrderItem(int orderItemId)
+        {
+            await mediator.Send(new DeleteOrderItemByIdCommand(orderItemId));
+            return RedirectToAction("Confirm");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteOrder(int orderId)
+        {
+            await mediator.Send(new DeleteOrderByIdCommand(orderId));
+            return RedirectToAction("Index","Cart");
         }
     }
 }

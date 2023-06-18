@@ -86,19 +86,17 @@ function submitForm() {
             form.method = "post";
             form.action = "/Order/Confirm";
 
-            var input = document.createElement("input");
-            input.type = "hidden";
-            input.name = "orderId";
-            input.value = orderId;
+            var expires = new Date();
+            expires.setTime(expires.getTime() + (5 * 60 * 1000));
+            document.cookie = "orderId=" + orderId + "; expires=" + expires.toUTCString();
 
-            form.appendChild(input);
             document.body.appendChild(form);
-
             form.submit();
         }
     };
 
     xhr.send(JSON.stringify(cartItems));
+
 }
 
 document.addEventListener("DOMContentLoaded", function () {
