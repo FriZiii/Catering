@@ -34,11 +34,16 @@ function submitForm() {
 
     if (!checkOrderItems()) {
         if (!errorHeading) {
-            errorHeading = document.createElement("h3");
-            errorHeading.id = "error-heading";
-            errorHeading.textContent = "Complete your order setup to proceed!";
-            errorHeading.classList.add("valid-message");
-            cartTitle.parentNode.insertBefore(errorHeading, cartTitle.nextSibling);
+            const cartTitle = document.querySelector('h2.cart-title');
+            const div = document.createElement('div');
+            div.className = 'incomplete';
+            div.id = 'error-heading';
+            const img = document.createElement('img');
+            img.src = '../images/icons/alert-triangle.svg';
+            const textNode = document.createTextNode('Complete your order setup to proceed!');
+            div.appendChild(img);
+            div.appendChild(textNode);
+            cartTitle.insertAdjacentElement('afterend', div);
         }
         return;
     } else {
