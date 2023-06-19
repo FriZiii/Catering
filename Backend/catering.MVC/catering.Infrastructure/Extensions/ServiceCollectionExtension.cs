@@ -16,6 +16,7 @@ namespace catering.Infrastructure.Extensions
                 options.UseSqlServer(configuration.GetConnectionString("DevCon")));
 
             services.AddScoped<ProductSeeder>();
+            services.AddScoped<DiscountCodeSeeder>();
             services.AddScoped<IOfferRepository, OfferRepository>();
             services.AddScoped<ICartRepository, CartRepository>();
             services.AddScoped<IOrderRepository, OrderRepository>();

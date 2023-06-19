@@ -12,8 +12,10 @@ var app = builder.Build();
 
 //Seeding products
 var scope = app.Services.CreateScope();
-var seeder = scope.ServiceProvider.GetRequiredService<ProductSeeder>();
-await seeder.Seed();
+var productSeeder = scope.ServiceProvider.GetRequiredService<ProductSeeder>();
+await productSeeder.Seed();
+var discountCodeSeeder = scope.ServiceProvider.GetRequiredService<DiscountCodeSeeder>();
+await discountCodeSeeder.Seed();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

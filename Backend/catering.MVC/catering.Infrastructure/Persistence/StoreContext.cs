@@ -17,6 +17,7 @@ namespace catering.Infrastructure.Persistence
         public DbSet<Order> Orders { get; set; } = null!;
         public DbSet<OrderItemDate> OrderItemsDates { get; set; } = null!;
         public DbSet<OrderItemMeal> OrderItemMeals { get; set; } = null!;
+        public DbSet<DiscountCode> DiscountCodes { get; set; } = null!;
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
