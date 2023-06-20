@@ -76,8 +76,10 @@
         <div class="summary-section">
                 <h2 class="summary-title">Discount codes</h2>
                 <div class="summary-discount-section">
-                    <input type="text" placeholder="Enter discount code" class="summary-discount-input" />
-                    <button class="summary-apply-button">Apply</button>
+                    <form method="post" action="@Url.Action("ApplyDiscountCode", "Order")">
+                        <input type="text" placeholder="Enter discount code" class="summary-discount-input" name="discountCode" />
+                        <button type="submit" class="summary-apply-button">Apply</button>
+                    </form>
                 </div>
                 <h2 class="summary-title">Summary</h2>
                 <div class="summary-prices">

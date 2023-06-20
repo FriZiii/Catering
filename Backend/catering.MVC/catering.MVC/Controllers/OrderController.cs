@@ -1,4 +1,5 @@
-﻿using catering.Application.Managements.OrderManagment;
+﻿using catering.Application.Managements.DiscountCodeManagment.Queries.GetDiscountCodeValue;
+using catering.Application.Managements.OrderManagment;
 using catering.Application.Managements.OrderManagment.Commands.DeleteOrderById;
 using catering.Application.Managements.OrderManagment.Commands.DeleteOrderItemById;
 using catering.Application.Managements.OrderManagment.Queries.GetOrderById;
@@ -62,6 +63,12 @@ namespace catering.MVC.Controllers
         {
             await mediator.Send(new DeleteOrderByIdCommand(orderId));
             return RedirectToAction("Index","Cart");
+        }
+
+        public async Task<IActionResult> ApplyDiscountCode(string discountCode)
+        {
+            var discount = await mediator.Send(new GetDiscountCodeQuery(discountCode));
+            return RedirectToAction("Confirm");
         }
     }
 }
