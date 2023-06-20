@@ -75,6 +75,8 @@
 
     .empty-cart-content h2 {
         font-size: 4vw;
+        margin-bottom: 0;
+        line-height: normal;
     }
 
     .empty-cart-content p{
@@ -92,9 +94,5 @@
         width: 50vw
     }
 
-    .return-to-offer-button{
-        width: 100px;
-        font-size: 10px;
-        line-height: 12px;
-    }
+    
 }
