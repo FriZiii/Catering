@@ -14,7 +14,10 @@ namespace catering.Application.Managements.DiscountCodeManagment.Commands.ApplyD
 
         public async Task<Unit> Handle(ApplyDiscountCodeCommand request, CancellationToken cancellationToken)
         {
-            await discountCodeRepository.SetDiscountCodeToOrder(request.OrderId, request.DiscountCode);
+            if (request.DiscountCode is not null)
+            {
+                await discountCodeRepository.SetDiscountCodeToOrder(request.OrderId, request.DiscountCode);
+            }
             return Unit.Value;
         }
     }

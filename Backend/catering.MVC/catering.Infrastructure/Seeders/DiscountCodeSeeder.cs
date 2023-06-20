@@ -23,13 +23,13 @@ namespace catering.Infrastructure.Seeders
             {
                 if(!context.DiscountCodes.Any())
                 {
-                    DiscountCode june2022 = new DiscountCode()
+                    DiscountCode june2023 = new DiscountCode()
                     {
-                        Code = "june2022",
+                        Code = "june2023",
                         DiscountPercentage = 5,
                         Expiration = new DateTime(2023, 6, 30)
                     };
-                    context.DiscountCodes.Add(june2022);
+                    context.DiscountCodes.Add(june2023);
 
                     DiscountCode summer = new DiscountCode()
                     {

@@ -10,7 +10,8 @@ namespace catering.Domain.Entities.OrderEntities
     {
         public int Id { get; set; }
         public int? DiscountCodeId { get; set; } = null;
-        public decimal TotalPrice { get; set; }
+        public decimal TotalPriceBeforeDiscount { get; set; }
+        public decimal TotalPriceAfterDiscount { get; set; }
         public DateTime OrderDate { get; set; }
         public bool Confirmed { get; set; } = false;
 

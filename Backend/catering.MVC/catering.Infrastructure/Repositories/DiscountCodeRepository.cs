@@ -27,6 +27,7 @@ namespace catering.Infrastructure.Repositories
             {
                 order.DiscountCode = discountCode;
                 order.DiscountCodeId = discountCode.Id;
+                order.TotalPriceAfterDiscount = order.TotalPriceBeforeDiscount - ((order.TotalPriceBeforeDiscount * order.DiscountCode.DiscountPercentage) / 100);
                 await context.SaveChangesAsync();
             }
         }

@@ -50,6 +50,7 @@ namespace catering.Infrastructure.Repositories
                 .Include(o => o.OrderItems).ThenInclude(oi => oi.Dates)
                 .Include(o => o.OrderItems).ThenInclude(oi => oi.Meals)
                 .Include(o => o.OrderItems).ThenInclude(oi => oi.Product)
+                .Include(o => o.DiscountCode)
                 .FirstOrDefaultAsync(p => p.Id == id);
 
         public int GetOrderIdFromCookies()

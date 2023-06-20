@@ -25,7 +25,8 @@ namespace catering.Application.Managements.OrderManagment.SubmitOrder
             {
                 OrderItems = orderItems,
                 OrderDate = DateTime.Now,
-                TotalPrice = orderItems.Select(c => c.Price).Sum(),
+                TotalPriceBeforeDiscount = orderItems.Select(c => c.Price).Sum(),
+                TotalPriceAfterDiscount = orderItems.Select(c => c.Price).Sum(),
             };
 
             await orderRepository.AddOrder(newOrder);
