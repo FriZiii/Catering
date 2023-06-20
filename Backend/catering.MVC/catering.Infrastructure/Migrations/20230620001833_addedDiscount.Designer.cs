@@ -12,8 +12,8 @@ using catering.Infrastructure.Persistence;
 namespace catering.Infrastructure.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    [Migration("20230619221348_addedDiscountCodes")]
-    partial class addedDiscountCodes
+    [Migration("20230620001833_addedDiscount")]
+    partial class addedDiscount
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -59,6 +59,9 @@ namespace catering.Infrastructure.Migrations
                     b.Property<bool>("Confirmed")
                         .HasColumnType("bit");
 
+                    b.Property<int?>("DiscountCodeId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime2");
 
@@ -66,6 +69,8 @@ namespace catering.Infrastructure.Migrations
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("DiscountCodeId");
 
                     b.ToTable("Orders");
                 });
@@ -168,6 +173,15 @@ namespace catering.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("catering.Domain.Entities.OrderEntities.Order", b =>
+                {
+                    b.HasOne("catering.Domain.Entities.DiscountCode", "DiscountCode")
+                        .WithMany()
+                        .HasForeignKey("DiscountCodeId");
+
+                    b.Navigation("DiscountCode");
                 });
 
             modelBuilder.Entity("catering.Domain.Entities.OrderEntities.OrderItem", b =>

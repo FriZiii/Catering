@@ -9,10 +9,12 @@ namespace catering.Domain.Entities.OrderEntities
     public class Order
     {
         public int Id { get; set; }
+        public int? DiscountCodeId { get; set; } = null;
         public decimal TotalPrice { get; set; }
         public DateTime OrderDate { get; set; }
         public bool Confirmed { get; set; } = false;
 
+        public DiscountCode? DiscountCode { get; set; } = null!;
         public List<OrderItem> OrderItems { get; set; } = null!;
     }
 }
