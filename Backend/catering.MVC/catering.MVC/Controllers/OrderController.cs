@@ -1,8 +1,10 @@
-﻿using catering.Application.Managements.DiscountCodeManagment.Queries.GetDiscountCodeValue;
+﻿using catering.Application.Managements.DiscountCodeManagment.Commands.ApplyDiscountCode;
+using catering.Application.Managements.DiscountCodeManagment.Queries.GetDiscountCodeValue;
 using catering.Application.Managements.OrderManagment;
 using catering.Application.Managements.OrderManagment.Commands.DeleteOrderById;
 using catering.Application.Managements.OrderManagment.Commands.DeleteOrderItemById;
 using catering.Application.Managements.OrderManagment.Queries.GetOrderById;
+using catering.Application.Managements.OrderManagment.Queries.GetOrderIdFromCookies;
 using catering.Application.Managements.OrderManagment.SubmitOrder;
 using catering.Application.Serializers;
 using MediatR;
@@ -36,7 +38,8 @@ namespace catering.MVC.Controllers
 
         public async Task<IActionResult> Confirm()
         {
-            if (Request.Cookies.TryGetValue("orderId", out string? orderIdCookie) && int.TryParse(orderIdCookie, out int orderId))
+            int orderId = await mediator.Send(new GetOrderIdFromCookiesQuery());
+            if(orderId != 0)
             {
                 var order = await mediator.Send(new GetOrderByIdQuerry(orderId));
                 if (order.OrderItems.Any())
@@ -67,7 +70,14 @@ namespace catering.MVC.Controllers
 
         public async Task<IActionResult> ApplyDiscountCode(string discountCode)
         {
+            if(discountCode is null)
+            {
+                return RedirectToAction("Confirm");
+            }
             var discount = await mediator.Send(new GetDiscountCodeQuery(discountCode));
+            int orderId = await mediator.Send(new GetOrderIdFromCookiesQuery());
+            await mediator.Send(new ApplyDiscountCodeCommand(orderId, discount));
+
             return RedirectToAction("Confirm");
         }
     }

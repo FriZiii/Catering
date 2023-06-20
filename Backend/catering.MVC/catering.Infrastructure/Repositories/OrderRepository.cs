@@ -1,6 +1,7 @@
 ﻿using catering.Domain.Entities.OrderEntities;
 using catering.Domain.Interface;
 using catering.Infrastructure.Persistence;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 
 namespace catering.Infrastructure.Repositories
@@ -8,10 +9,12 @@ namespace catering.Infrastructure.Repositories
     public class OrderRepository : IOrderRepository
     {
         private readonly StoreContext context;
+        private readonly IHttpContextAccessor httpContextAccessor;
 
-        public OrderRepository(StoreContext context)
+        public OrderRepository(StoreContext context, IHttpContextAccessor httpContextAccessor)
         {
             this.context = context;
+            this.httpContextAccessor = httpContextAccessor;
         }
 
         public async Task<int> AddOrder(Order order)
@@ -48,5 +51,26 @@ namespace catering.Infrastructure.Repositories
                 .Include(o => o.OrderItems).ThenInclude(oi => oi.Meals)
                 .Include(o => o.OrderItems).ThenInclude(oi => oi.Product)
                 .FirstOrDefaultAsync(p => p.Id == id);
+
+        public int GetOrderIdFromCookies()
+        {
+            var httpContext = httpContextAccessor?.HttpContext;
+
+            if (httpContext is null)
+            {
+                throw new InvalidOperationException("Cookies could not be accessed because HttpContext is null.");
+            }
+
+            var cookies = httpContext.Request.Cookies;  
+
+            if(cookies.TryGetValue("orderId", out var orderIdCookie))
+            {
+                if(int.TryParse(orderIdCookie, out int orderId))
+                {
+                    return orderId;
+                }    
+            }
+            return 0;
+        }
     }
 }
