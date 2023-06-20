@@ -4,10 +4,6 @@
 <div class="content">
     @if (Model.CartItems != null && Model.CartItems.Count > 0)
     {
-        @if (ViewBag.HasValidationErrors == true)
-        {
-            <p class="text-danger">Przesłane dane zawierają błędy walidacji.</p>
-        }
         <div class="container-cart">
             <h2 class="cart-title">Cart</h2>
             <div class="accordion-cart">
@@ -159,6 +155,16 @@
     }
     else
     {
-        <h2 class="cart-title">No products in the cart.</h2>
+        <div class="empty-cart-container">
+            <div class="empty-cart-content">
+                <img class="empty-cart-main-image" src="~/images/icons/cart-empty.svg">
+                <h2>Your cart is currently empty</h2>
+                <p> Before proceed to checkout, you must add some diet to your cart.<br /> You will find a lot of interesting diets on our “Offer” page.</p>
+                <a class="return-to-offer-button" asp-area="" asp-controller="Offer" asp-action="Index">
+                    <img src="~/images/icons/shoping-cart.svg">
+                    <span>Return to offer</span>
+                </a>
+            </div>
+        </div>
     }
 </div>
