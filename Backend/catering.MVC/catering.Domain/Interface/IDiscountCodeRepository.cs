@@ -10,5 +10,6 @@ namespace catering.Domain.Interface
     public interface IDiscountCodeRepository
     {
         Task<DiscountCode?> GetDiscountCodeByCode(string code);
+        Task SetDiscountCodeToOrder(int orderId, DiscountCode discountCode);
     }
 }
