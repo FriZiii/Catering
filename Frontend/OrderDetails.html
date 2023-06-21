@@ -223,10 +223,77 @@
                     </div>
                 </div>
 
-                <button class="summary-button">Go to Summary</button>
+                <button class="summary-button" id="order-open-modal">Go to Summary</button>
 
             </div>
         </div>
+
+        <!--Modal-->
+        <div class="order-modal-container" id="order-modal-container">
+            <div class="order-modal">
+                <div class="order-modal-button-container"><button class="order-close-modal" id="order-close-modal"><img src="Images/close.svg"></button></div>
+                
+                <div class="modal-sections-container">
+                    <div class="left-section">
+                        <h2 class="order-modal-title">Returning Customers</h2>
+                        <p class="order-modal-p">Sign in to speed up the checkout process and save your order to account.</p>
+
+                        <form class="order-content-login" id="account" method="post">
+                            
+                            <div  class="text-danger" role="alert"></div>
+    
+                            <div class="order-input">
+                                <input  class="input__field" type="email" autocomplete="username" aria-required="true" placeholder=" " />
+                                <span  class="input__label" class="text-danger">
+                                    <img src="Images/login-icon-left.svg" class="input__icon" />
+                                    Email
+                                </span>
+                            </div>
+    
+                            <div class="order-input">
+                                <input  class="input__field" type="password" autocomplete="current-password" aria-required="true" placeholder=" " />
+                                <span  class="input__label" class="text-danger">
+                                    <img src="Images/password-icon-left.svg" class="input__icon" />
+                                    Password
+                                </span>
+                            </div>
+    
+                            <div class="order-remember-me-container">
+                                <input type="checkbox" id="remember" class="remember-me-login">
+                                <label for="remember" class="remember-label">Remember me</label>
+                            </div>
+    
+                            <div>
+                                <a class="login-btn" type="submit" class="w-100 btn btn-lg btn-primary"> <span> Sign in </span> </a>
+                            </div>
+                            
+                        </form>
+
+                    </div>
+                    <div class="vertical-line"></div>
+                    <div class="horizontal-line-for-mobiles"></div>
+                    <div class="right-section">
+                        <div class="upper-section">
+                            <h2 class="order-modal-title">New Customers</h2>
+                            <p class="order-modal-p">Register to streamline your checkout process and save your orders to your account.</p>
+                            <div>
+                                <a class="order-modal-btn"><span> Register for free </span> </a>
+                            </div>
+                        </div>
+                        <div class="horizontal-line"></div>
+                        <div class="lower-section">
+                            <h2 class="order-modal-title">Order as guest</h2>
+                            <p class="order-modal-p">Enjoy a quick and hassle-free ordering experience without creating an account. </p>
+                            <div>
+                                <a class="order-modal-btn"> <span> Order as guest </span> </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
     <footer style="position: relative" id="footer-offer">
         <img class="footer-image" src="Images/logo.svg" />
@@ -246,6 +313,7 @@
     <script src="offerscript.js" defer></script>
     <script src="headerscript.js" defer></script>
     <script src="cartscript.js" defer></script>
+    <script src="orderdetailsoffer.js" defer></script>
 </body>
 
 </html>
