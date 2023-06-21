@@ -237,7 +237,7 @@
   align-items: flex-start;
   justify-content: flex-start;
   position: absolute;
-  left: 5%;
+  left: 7%;
 }
 
 .summary-total-price {
@@ -266,8 +266,21 @@
   margin-bottom: 10px;
   display: inline;
   flex-direction: column;
+  position: relative;
+  left: -0.6em;
   justify-content: center;
+}
 
+@media (max-width: 1623px) {
+  .summary-discount-section {
+    left: -0.5em;
+  }
+}
+
+@media (max-width: 1523px) {
+  .summary-discount-section {
+    left: -0.3em;
+  }
 }
 
 .summary-discount-input {
@@ -374,7 +387,7 @@
 
   .summary-prices {
     position: relative;
-    right: -4em;
+    right: -8em;
   }
 
   .summary-button {
