@@ -608,27 +608,7 @@
   width: 330px;
 }
 
-.order-modal-btn {
-  display: flex;
-  align-items: center;
-  margin-top: 20px;
-  padding: 10px 30px;
-  border-radius: 15px;
-  background-color: var(--light-yellow);
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 0.9em;
-  text-align: center;
-}
 
-.order-modal-btn span {
-  margin-right: 10px;
-}
-
-.order-modal-btn:hover {
-  background-color: var(--main-color);
-}
 
 @media (max-width: 920px) {
   .vertical-line {
