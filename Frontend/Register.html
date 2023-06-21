@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./Styles/404Style.css">
     <link rel="stylesheet" href="./Styles/BodyStyle.css">
+    <link rel="stylesheet" href="./Styles/ButtonsStyle.css">
     <link rel="stylesheet" href="./Styles/CartStyle.css">
     <link rel="stylesheet" href="./Styles/colors.css">
     <link rel="stylesheet" href="./Styles/ContactStyle.css">
@@ -23,15 +23,15 @@
     <link rel="stylesheet" href="./Styles/PickerStyle.css">
     <link rel="stylesheet" href="./Styles/RegisterStyle.css">
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet" />
     <title>Document</title>
 </head>
 
 <body>
-    <header>
+    <header id="header-offer">
         <nav>
-            <img id="offer-logo" src="Images/logo.svg">
+            <img id="offer-logo" src="Images/logo.svg" />
             <div class="menu">
                 <a href="#">Home</a>
                 <a href="#">About</a>
@@ -44,8 +44,6 @@
             </button>
         </nav>
 
-
-
         <div class="mobile-menu">
             <span class="material-icons close-icon hamburger">close</span>
             <a href="#">Offer</a>
@@ -54,7 +52,6 @@
             <a href="#">Contact</a>
             <button>Sign in</button>
         </div>
-
     </header>
 
     <div class="content">
@@ -173,14 +170,17 @@
                     </div>
 
                     <div class="register-btn-conteiner">
-                        <button id="registerSubmit" type="submit" class="register-btn"><span>Register  </span></button>
+                        <button id="registerSubmit" type="submit" class="btn-with-icon">
+                            <span>Register</span>
+                            <img src="Images/log-in.svg">
+                        </button>
                     </div>
                 </form>
         </div>
     </div>
 
-    <footer>
-        <img class="footer-image" src="Images/logo.svg">
+    <footer style="position: relative" id="footer-offer">
+        <img class="footer-image" src="Images/logo.svg" />
         <div class="menu-footer">
             <a href="#">Offer</a>
             <a href="#">FAQ</a>
@@ -188,8 +188,8 @@
             <a href="#">Contact</a>
         </div>
         <div class="socials-footer">
-            <img src="Images/Facebook.svg">
-            <img src="Images/Instagram.svg">
+            <img src="Images/Facebook.svg" />
+            <img src="Images/Instagram.svg" />
         </div>
         <a>Copyrights © 2023</a>
     </footer>
@@ -197,6 +197,7 @@
     <script src="offerscript.js" defer></script>
     <script src="headerscript.js" defer></script>
     <script src="cartscript.js" defer></script>
+    <script src="orderdetailsoffer.js" defer></script>
 </body>
 
 </html>

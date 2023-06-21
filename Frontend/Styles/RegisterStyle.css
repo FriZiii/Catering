@@ -59,35 +59,26 @@
   justify-content: flex-end;
   padding: 0 20px 0 0;
 }
-/*Register button*/
 
-.register-btn {
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-    padding: 10px 50px;
-    border-radius: 15px;
-    background-color: var(--light-yellow);
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 0.9em;
+@media (max-width: 760px){
+  .register-inputs-container{
+    flex-direction: column;
+  }
+  .register-btn-conteiner{
+    justify-content: center;
+  }
+}
+
+@media (max-width: 400px){
+  .register-two-in-one-inputs{
+    flex-direction: column;
+  }
+
+  .register-small-input{
+    width: auto;
   }
   
-  .register-btn span {
-    margin-right: 10px;
+  .register-input{
+    width: auto;
   }
-  
-  .register-btn::after {
-    content: "";
-    background-image: url("../Images/log-in.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 20px;
-    width: 20px;
-    height: 20px;
-  }
-  
-  .register-btn:hover{
-    background-color: var(--main-color);
-  }
+}
