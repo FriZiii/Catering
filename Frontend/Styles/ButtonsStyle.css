@@ -23,7 +23,7 @@
 
 
 /*A without icon*/
-.a-btn {
+.btn-no-cta {
   display: flex;
   align-items: center;
   margin-top: 20px;
@@ -37,10 +37,10 @@
   text-align: center;
 }
 
-.a-btn span {
+.btn-no-cta span {
   margin-right: 10px;
 }
 
-.a-btn:hover {
+.btn-no-cta:hover {
   background-color: var(--main-color);
 }
