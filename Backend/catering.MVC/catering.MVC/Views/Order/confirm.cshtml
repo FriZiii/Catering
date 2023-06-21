@@ -10,69 +10,69 @@
     <div class="orderdetails-listtitle">
         <h1>Order</h1>
     </div>
-        <div class="orders-section">
-            <div class="orders-list">
-            @foreach (var item in Model.OrderItems)
-            {
-                <div class="order-item">
-                    <div class="orderdetails-image-container">
-                        <img src="~/images/products/@item.Product.ImageName" class="orderdetails-image" />
-                    </div>
-                    <div class="orderdetails-content">
-                        <div class="orderdetails-details">
-                            <h3 class="orderdetails-title">@item.Product.Name</h3>
-                            <h3 class="orderdetails-dot"> . </h3>
-                            <h3 class="orderdetails-title orderdetails-yellow-title">@item.Calories kcal</h3>
+    <div class="orders-section">
+        <div class="orders-list">
+        @foreach (var item in Model.OrderItems)
+        {
+            <div class="order-item">
+                <div class="orderdetails-image-container">
+                    <img src="~/images/products/@item.Product.ImageName" class="orderdetails-image" />
+                </div>
+                <div class="orderdetails-content">
+                    <div class="orderdetails-details">
+                        <h3 class="orderdetails-title">@item.Product.Name</h3>
+                        <h3 class="orderdetails-dot"> . </h3>
+                        <h3 class="orderdetails-title orderdetails-yellow-title">@item.Calories kcal</h3>
 
-                            <div class="orderdetails-new-line">
-                                <div class="orderdetails-calendar">
-                                    <img class="orderdetails-calendar-icon" src="~/images/icons/calendar.svg"
-                                         alt="Cal Icon">
-                                </div>
-                                <p class="orderdetails-date-from">@item.Dates.Min(d => d.Date).ToString("dd.MM.yyyy")</p>
-                                    -
-                                <p class="orderdetails-date-to">@item.Dates.Max(d => d.Date).ToString("dd.MM.yyyy")</p>
-                                <p class="orderdetails-days">Days: @item.Dates.Count</p>
-                                <p class="orderdetails-summary-price">$@item.Price</p>
-                                    @{
-                                        var pricePerDay = item.Price / item.Dates.Count;
-                                    }
-                                <p class="orderdetails-price-per-day">$@pricePerDay/day</p>
+                        <div class="orderdetails-new-line">
+                            <div class="orderdetails-calendar">
+                                <img class="orderdetails-calendar-icon" src="~/images/icons/calendar.svg"
+                                     alt="Cal Icon">
                             </div>
-
-                            <div class="orderdetails-meals">
-                                @foreach (var meal in item.Meals)
-                                {
-                                    <p class="orderdetails-meal-time">@meal.Meal</p>
+                            <p class="orderdetails-date-from">@item.Dates.Min(d => d.Date).ToString("dd.MM.yyyy")</p>
+                                -
+                            <p class="orderdetails-date-to">@item.Dates.Max(d => d.Date).ToString("dd.MM.yyyy")</p>
+                            <p class="orderdetails-days">Days: @item.Dates.Count</p>
+                            <p class="orderdetails-summary-price">$@item.Price</p>
+                                @{
+                                    var pricePerDay = item.Price / item.Dates.Count;
                                 }
-                            </div>
+                            <p class="orderdetails-price-per-day">$@pricePerDay/day</p>
+                        </div>
 
-                            <div class="orderdetails-buttons">
-                                <div class="orderdetails-delete-button">
-                                    <form method="post" action="@Url.Action("DeleteOrderItem","Order")">
-                                        <input type="hidden" name="orderItemId" value="@item.Id"/>
-                                        <button class="orderdetails-link-delete-button">
-                                            <img class="orderdetails-delete-icon" src="~/images/icons/trash.svg" alt="Trash Icon">
-                                            <span class="orderdetails-delete-span">Delete</span>
-                                        </button>
-                                    </form>
-                                </div>
+                        <div class="orderdetails-meals">
+                            @foreach (var meal in item.Meals)
+                            {
+                                <p class="orderdetails-meal-time">@meal.Meal</p>
+                            }
+                        </div>
+
+                        <div class="orderdetails-buttons">
+                            <div class="orderdetails-delete-button">
+                                <form method="post" action="@Url.Action("DeleteOrderItem","Order")">
+                                    <input type="hidden" name="orderItemId" value="@item.Id"/>
+                                    <button class="orderdetails-link-delete-button">
+                                        <img class="orderdetails-delete-icon" src="~/images/icons/trash.svg" alt="Trash Icon">
+                                        <span class="orderdetails-delete-span">Delete</span>
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="orderdetails-top-line"> </div>
-            }
-            <div class="orderdetails-cancel-button-section">
-                <form method="post" action="@Url.Action("DeleteOrder", "Order")">
-                    <input type="hidden" name="orderId" value="@Model.Id" />
-                    <button class="orderdetails-cancel-button">
-                        <img class="orderdetails-cancel-icon" src="~/images/icons/x.svg" alt="Trash Icon">
-                        <span class="orderdetails-cancel-span">Cancel all</span>
-                    </button>
-                </form>
             </div>
+            <div class="orderdetails-top-line"> </div>
+        }
+        <div class="orderdetails-cancel-button-section">
+            <form method="post" action="@Url.Action("DeleteOrder", "Order")">
+                <input type="hidden" name="orderId" value="@Model.Id" />
+                <button class="orderdetails-cancel-button">
+                    <img class="orderdetails-cancel-icon" src="~/images/icons/x.svg" alt="Trash Icon">
+                    <span class="orderdetails-cancel-span">Cancel all</span>
+                </button>
+            </form>
         </div>
+    </div>
         <div class="summary-section">
                 <h2 class="summary-title">Discount codes</h2>
                 <div class="summary-discount-section">
@@ -80,6 +80,13 @@
                         <input type="text" placeholder="Enter discount code" class="summary-discount-input" name="discountCode" />
                         <button type="submit" class="summary-apply-button">Apply</button>
                     </form>
+                    @if(Model.DiscountCode is not null)
+                    {
+                        <div class="summary-discount-applied-code">
+                            <img class="summary-discount-applied-code-image" src="~/images/icons/discount.svg">
+                        <h4 class="summary-discount-applied-code-text">@Model.DiscountCode.Code.ToUpper() - @Model.DiscountCode.DiscountPercentage%</h4>
+                        </div>
+                    }
                 </div>
                 <h2 class="summary-title">Summary</h2>
                 <div class="summary-prices">
@@ -97,7 +104,80 @@
                     <p class="summary-price-item summary-total-price">$@Model.TotalPriceAfterDiscount</p>
                     </div>
                 </div>
-                <button class="summary-button">Go to Summary</button>
+            <button class="summary-button" id="order-open-modal">Go to Summary</button>
+        </div>
+    </div>
+
+    <!--Modal-->
+    <div class="order-modal-container" id="order-modal-container">
+        <div class="order-modal">
+            <div class="order-modal-button-container">
+                <button class="order-close-modal" id="order-close-modal">
+                    <img src="~/images/icons/close.svg">
+                </button>
             </div>
+
+            <div class="modal-sections-container">
+                <div class="left-section">
+                    <h2 class="order-modal-title">Returning Customers</h2>
+                    <p class="order-modal-p">Sign in to speed up the checkout process and save your order to account.</p>
+
+                    <form class="order-content-login" id="account" method="post">
+                        <div role="alert"></div>
+                        <div class="order-input">
+                            <input class="input_field" type="email" autocomplete="username" aria-required="true" placeholder=" " />
+                            <span class="input_label">
+                                <img src="~/images/icons/men.svg" class="input_icon" />
+                                Email
+                            </span>
+                        </div>
+
+                        <div class="order-input">
+                            <input class="input_field" type="password" autocomplete="current-password" aria-required="true" placeholder=" " />
+                            <span class="input_label">
+                                <img src="~/images/icons/lock.svg" class="input_icon" />
+                                Password
+                            </span>
+                        </div>
+
+                        <div class="order-remember-me-container">
+                            <input type="checkbox" id="remember" class="remember-me-login">
+                            <label class="remember-label">Remember me</label>
+                        </div>
+
+                        <button class="btn-with-icon" type="submit">
+                            Log in
+                            <img src="~/images/icons/log-in.svg">
+                        </button>
+                    </form>
+
+                </div>
+                <div class="vertical-line"></div>
+                <div class="horizontal-line-for-mobiles"></div>
+                <div class="right-section">
+                    <div class="upper-section">
+                        <h2 class="order-modal-title">New Customers</h2>
+                        <p class="order-modal-p">Register to streamline your checkout process and save your orders to your account.</p>
+                        <div>
+                            <a class="btn-no-cta">
+                                <span> 
+                                    Register for free
+                                </span> 
+                            </a>
+                        </div>
+                    </div>
+                    <div class="horizontal-line"></div>
+                    <div class="lower-section">
+                        <h2 class="order-modal-title">Order as guest</h2>
+                        <p class="order-modal-p">Enjoy a quick and hassle-free ordering experience without creating an account. </p>
+                        <div>
+                            <a class="btn-no-cta">
+                                <span> Order as guest </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
