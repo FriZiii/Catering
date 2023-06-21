@@ -50,3 +50,39 @@
   .input_field:focus + .input_label .input_icon {
     transform: scale(0.8);
   }
+
+
+  .remember-me-container {
+    margin-right: 37%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .remember-label {
+    opacity: 0.7;
+    margin-left: 5px;
+  }
+  
+  .remember-me-login {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 18px;
+    height: 18px;
+    outline: none;
+    border: 2px solid var(--main-color);
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .remember-me-login:checked::before {
+    content: "\2713";
+    display: block;
+    text-align: center;
+    line-height: 16px;
+    color: rgb(255, 255, 255);
+  }
+  
+  .remember-me-login:checked {
+    background-color: var(--main-color);
+  }
