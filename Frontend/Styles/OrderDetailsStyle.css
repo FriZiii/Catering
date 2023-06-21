@@ -366,7 +366,6 @@
 
   .summary-discount-section {
     margin-bottom: 10px;
-    display: flex;
     flex-direction: column;
     justify-items: center;
     align-items: center;
