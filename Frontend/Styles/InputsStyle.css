@@ -9,7 +9,7 @@
     padding: 10px;
     width: 100%;
     border: none;
-    border: 1px solid var(--light-grey);
+    border: 1px solid var(--gray-4, #BDBDBD);
     border-radius: 10px;
     transition: border-bottom-color 0.3s ease;
     caret-color: var(--main-color);
@@ -27,7 +27,7 @@
     top: 10px;
     left: 10px;
     font-size: 16px;
-    color: #999;
+    color: var(--gray-4, #BDBDBD);
     pointer-events: none;
     transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
   }

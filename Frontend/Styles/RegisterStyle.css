@@ -5,8 +5,8 @@
 }
   
 .content-register {
-    width: 800px;
-    height: 550px;
+    width: 950px;
+    height: 600px;
 }
 
 
@@ -36,11 +36,21 @@
 }
 
 .register-small-input{
-  width: 172px;
+  width: 205px;
+  margin-bottom: 15px;
 }
 
 .register-input{
-  width: 351px;
+  width: 420px;
+  margin-bottom: 15px;
+}
+
+.register-inputs-container .input_field{
+  font-size: 20px;
+}
+
+.register-inputs-container .input_label{
+  font-size: 20px;
 }
 
 .logo-register {
@@ -50,8 +60,19 @@
 
 .register-title{
     text-align: center;
-    font-size: 32px;
+    font-size: 36px;
     font-weight: 400;
+}
+
+.register-paragraph{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: normal;
+    margin: 10px 0 10px 0;
+}
+.right-register-paragraph{
+margin-bottom: 34px;
 }
 
 .register-btn-conteiner{
@@ -60,7 +81,7 @@
   padding: 0 20px 0 0;
 }
 
-@media (max-width: 760px){
+@media (max-width: 890px){
   .register-inputs-container{
     flex-direction: column;
   }
@@ -69,7 +90,7 @@
   }
 }
 
-@media (max-width: 400px){
+@media (max-width: 450px){
   .register-two-in-one-inputs{
     flex-direction: column;
   }
