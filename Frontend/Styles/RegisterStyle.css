@@ -4,32 +4,43 @@
     align-items: center;
 }
   
-.container-register {
-    width: 600px;
-    height: 550px;
-    display: flex;
-}
-  
-@media (max-width: 767px) {
-    .container-register {
-      width: 80%;
-      height: auto;
-      flex-direction: column;
-    }
-}
-
-.image-register {
-    flex: 1;
-    background-image: url("../Images/mniam.png");
-    background-size: cover;
-}
-
 .content-register {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    width: 800px;
+    height: 550px;
+}
+
+
+.register-inputs-container{
+  display: flex;
+}
+
+.register-left-section{
+  flex: 1;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.register-right-section{
+  flex: 1;
+  margin-top: 74px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.register-two-in-one-inputs{
+  display: flex;
+}
+
+.register-small-input{
+  width: 172px;
+}
+
+.register-input{
+  width: 351px;
 }
 
 .logo-register {
@@ -39,8 +50,16 @@
 
 .register-title{
     text-align: center;
+    font-size: 32px;
+    font-weight: 400;
 }
 
+.register-btn-conteiner{
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 20px 0 0;
+}
+/*Register button*/
 
 .register-btn {
     display: flex;

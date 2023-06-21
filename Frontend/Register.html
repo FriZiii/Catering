@@ -59,61 +59,123 @@
 
     <div class="content">
         <div class="center-container-register">
-            <div class="container-register">
-                <div class="image-register">
-                </div>
-
                 <form id="registerForm" class="content-register">
-                    <div class="logo-register">
-                        <img src="Images/logo.svg" alt="Logo">
+                    <div class="register-inputs-container">
+                        <div class="register-left-section">
+                            <div class="logo-register">
+                                <img src="Images/logo.svg" alt="Logo">
+                                </div>
+
+                            <h1 class="register-title">Create a new account.</h1>
+                            
+                            <div class="register-two-in-one-inputs">
+                                <div class="input register-small-input">
+                                    <input class="input_field" type="text" autocomplete="firstname" aria-required="true" placeholder=" " />
+                                    <span class="input_label">
+                                        <img src="Images/men-icon.svg" class="input_icon" />
+                                        First Name
+                                    </span>
+                                </div>
+            
+                                <div class="input register-small-input">
+                                    <input class="input_field" type="text" autocomplete="lastname" aria-required="true" placeholder=" " />
+                                    <span class="input_label">
+                                        <img src="Images/men-icon.svg" class="input_icon" />
+                                        Last Name
+                                    </span>
+                                </div>
+                            </div>
+                            
+        
+                            <div class="input register-input">
+                                <input class="input_field" type="email" autocomplete="username" aria-required="true" placeholder=" " />
+                                <span class="input_label">
+                                    <img src="Images/men-icon.svg" class="input_icon" />
+                                        Email
+                                </span>
+                            </div>
+        
+                            <div class="input register-input">
+                                <input class="input_field" type="password" autocomplete="new-password" aria-required="true" placeholder=" " />
+                                <span class="input_label">
+                                    <img src="Images/password-icon-left.svg" class="input_icon" />
+                                    Password
+                                </span>
+                            </div>
+        
+                            <div class="input register-input">
+                                <input class="input_field" type="password" autocomplete="new-password" aria-required="true" placeholder=" " />
+                                <span class="input_label">
+                                    <img src="Images/password-icon-left.svg" class="input_icon" />
+                                    Repeat password
+                                </span>
+                            </div>
+
+                            <div class="input register-input">
+                                <input class="input_field" type="password" autocomplete="new-password" aria-required="true" placeholder=" " />
+                                <span class="input_label">
+                                    <img src="Images/password-icon-left.svg" class="input_icon" />
+                                    Birthdate
+                                </span>
+                            </div>
                         </div>
-                    <h1 class="register-title">Create a new account.</h1>
 
-                    <div role="alert"></div>
+                        <div class="register-right-section">
+                            <h1 class="register-title">Address information</h1>
 
-                    <div class="input">
-                        <input class="input_field" type="text" autocomplete="firstname" aria-required="true" placeholder=" " />
-                        <span class="input_label">
-                            <img src="Images/men-icon.svg" class="input_icon" />
-                            First Name
-                        </span>
+                            <div class="input register-input">
+                                <input class="input_field" type="text" autocomplete="new-password" aria-required="true" placeholder=" " />
+                                <span class="input_label">
+                                    Address 1
+                                </span>
+                            </div>
+
+                            <div class="input register-input">
+                                <input class="input_field" type="text" autocomplete="new-password" aria-required="true" placeholder=" " />
+                                <span class="input_label">
+                                    Address 2
+                                </span>
+                            </div>
+
+                            <div class="register-two-in-one-inputs">
+                                <div class="input register-small-input">
+                                    <input class="input_field" type="text" autocomplete="new-password" aria-required="true" placeholder=" " />
+                                    <span class="input_label">
+                                        Pastal code
+                                    </span>
+                                </div>
+        
+                                <div class="input register-small-input">
+                                    <input class="input_field" type="text" autocomplete="new-password" aria-required="true" placeholder=" " />
+                                    <span class="input_label">
+                                        State/Region
+                                    </span>
+                                </div>
+                            </div>
+                            
+
+                            <div class="input register-input">
+                                <input class="input_field" type="text" autocomplete="new-password" aria-required="true" placeholder=" " />
+                                <span class="input_label">
+                                    Country
+                                </span>
+                            </div>
+
+                            <div class="input register-input">
+                                <input class="input_field" type="tel" autocomplete="new-password" aria-required="true" placeholder=" " />
+                                <span class="input_label">
+                                    Phone number
+                                </span>
+                            </div>
+
+
+                        </div>
                     </div>
 
-                    <div class="input">
-                        <input class="input_field" type="text" autocomplete="lastname" aria-required="true" placeholder=" " />
-                        <span class="input_label">
-                            <img src="Images/men-icon.svg" class="input_icon" />
-                            Last Name
-                        </span>
+                    <div class="register-btn-conteiner">
+                        <button id="registerSubmit" type="submit" class="register-btn"><span>Register  </span></button>
                     </div>
-
-                    <div class="input">
-                        <input class="input_field" type="email" autocomplete="username" aria-required="true" placeholder=" " />
-                        <span class="input_label">
-                            <img src="Images/men-icon.svg" class="input_icon" />
-                                Email
-                        </span>
-                    </div>
-
-                    <div class="input">
-                        <input class="input_field" type="password" autocomplete="new-password" aria-required="true" placeholder=" " />
-                        <span class="input_label">
-                            <img src="Images/password-icon-left.svg" class="input_icon" />
-                            Password
-                        </span>
-                    </div>
-
-                    <div class="input">
-                        <input class="input_field" type="password" autocomplete="new-password" aria-required="true" placeholder=" " />
-                        <span class="input_label">
-                            <img src="Images/password-icon-left.svg" class="input_icon" />
-                             Password
-                        </span>
-                    </div>
-
-                    <button id="registerSubmit" type="submit" class="register-btn"><span>Register  </span></button>
                 </form>
-            </div>
         </div>
     </div>
 
