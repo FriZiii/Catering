@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="~/css/header.css">
     <link rel="stylesheet" href="~/css/body.css">
     <link rel="stylesheet" href="~/css/footer.css">
+    <link rel="stylesheet" href="~/css/components/inputs.css">
+    <link rel="stylesheet" href="~/css/components/buttons.css">
     <link rel="stylesheet" href="~/css/home.css">
     <link rel="stylesheet" href="~/css/offer.css">
     <link rel="stylesheet" href="~/css/faq.css">
@@ -67,8 +69,8 @@
             <a class="@(currentUrl == "Index-Home" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="Index">Contact</a>
         </div>
         <div class="socials-footer">
-            <img src="~/images/Facebook.svg" />
-            <img src="~/images/Instagram.svg" />
+            <img src="~/images/icons/socials/Facebook.svg" />
+            <img src="~/images/icons/socials/Instagram.svg" />
         </div>
         <a>Copyrights © 2023</a>
     </footer>
@@ -77,6 +79,7 @@
     <script src="~/js/faq.js" asp-append-version="true"></script>
     <script src="~/js/calendar.js" asp-append-version="true"></script>
     <script src="~/js/cart.js" asp-append-version="true"></script>
+    <script src="~/js/confirm.js" asp-append-version="true"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
