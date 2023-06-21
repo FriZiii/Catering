@@ -382,12 +382,12 @@
 
   .summary-price-left {
     position: relative;
-    left: -80%;
+    left: -110%;
   }
 
   .summary-prices {
     position: relative;
-    right: -8em;
+    right: -6em;
   }
 
   .summary-button {
