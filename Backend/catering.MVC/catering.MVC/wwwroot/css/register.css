@@ -1,0 +1,117 @@
+﻿.center-container-register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-register {
+    width: 950px;
+}
+
+
+.register-inputs-container {
+    display: flex;
+}
+
+.register-left-section {
+    flex: 1;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.register-right-section {
+    flex: 1;
+    margin-top: 74px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.register-two-in-one-inputs {
+    display: flex;
+}
+
+.register-small-input {
+    width: 205px;
+    margin-bottom: 16px;
+}
+
+#registerSubmit{
+ margin: 0;
+}
+
+.register-input {
+    width: 420px;
+    margin-bottom: 15px;
+}
+
+.register-inputs-container .input_field {
+    font-size: 20px;
+}
+
+.register-inputs-container .input_label {
+    font-size: 20px;
+}
+
+.logo-register {
+    margin-bottom: 5px;
+}
+
+
+.register-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 400;
+}
+
+.register-paragraph {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: normal;
+    margin: 10px 0 10px 0;
+}
+
+.right-register-paragraph {
+    margin-bottom: 34px;
+}
+
+.register-btn-conteiner {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 25px 0 0;
+}
+
+
+@media (max-width: 890px) {
+    .register-inputs-container {
+        flex-direction: column;
+    }
+
+    .register-btn-conteiner {
+        justify-content: center;
+        padding: 0;
+        margin-bottom: 15px;
+    }
+
+    .register-right-section {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 450px) {
+    .register-two-in-one-inputs {
+        flex-direction: column;
+    }
+
+    .register-small-input {
+        width: auto;
+    }
+
+    .register-input {
+        width: auto;
+    }
+}
