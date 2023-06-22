@@ -1,20 +1,19 @@
 .center-container-register {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-  
+
 .content-register {
-    width: 950px;
-    height: 600px;
+  width: 950px;
+  height: 600px;
 }
 
-
-.register-inputs-container{
+.register-inputs-container {
   display: flex;
 }
 
-.register-left-section{
+.register-left-section {
   flex: 1;
   padding: 10px;
   display: flex;
@@ -22,7 +21,7 @@
   align-items: center;
 }
 
-.register-right-section{
+.register-right-section {
   flex: 1;
   margin-top: 74px;
   padding: 10px;
@@ -31,128 +30,76 @@
   align-items: center;
 }
 
-.register-two-in-one-inputs{
+.register-two-in-one-inputs {
   display: flex;
 }
 
-.register-small-input{
+.register-small-input {
   width: 205px;
   margin-bottom: 15px;
 }
 
-.register-input{
+.register-input {
   width: 420px;
   margin-bottom: 15px;
 }
 
-.register-inputs-container .input_field{
+.register-inputs-container .input_field {
   font-size: 20px;
 }
 
-.register-inputs-container .input_label{
+.register-inputs-container .input_label {
   font-size: 20px;
 }
 
 .logo-register {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
-
-.register-title{
-    text-align: center;
-    font-size: 36px;
-    font-weight: 400;
+.register-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 400;
 }
 
-.register-paragraph{
-    text-align: center;
-    font-size: 18px;
-    font-weight: 200;
-    line-height: normal;
-    margin: 10px 0 10px 0;
+.register-paragraph {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: normal;
+  margin: 10px 0 10px 0;
 }
-.right-register-paragraph{
-margin-bottom: 34px;
+.right-register-paragraph {
+  margin-bottom: 34px;
 }
 
-.register-btn-conteiner{
+.register-btn-conteiner {
   display: flex;
   justify-content: flex-end;
   padding: 0 20px 0 0;
 }
 
-.flatpickr-calendar {
-  background-color: #ffffff !important;
-}
-
-.flatpickr-day.selected {
-  border: none !important;
-  background-color: var(--main-color) !important;
-}
-
-.flatpickr-day.selected:hover {
-  border: none !important;
-  background-color: var(--light-yellow) !important;
-}
-
-.flatpickr-day.selected span {
-  width: 25px !important;
-  height: 25px !important;
-}
-
-.flatpickr-weekdaycontainer span {
-  color: #000000 !important;
-}
-
-.flatpickr-calendar {
-  background-color: #ffffff !important;
-}
-
-.flatpickr-day.selected {
-  border: none !important;
-  background-color: var(--main-color) !important;
-}
-
-.flatpickr-day.selected:hover {
-  border: none !important;
-  background-color: var(--light-yellow) !important;
-}
-
-.flatpickr-day.selected span {
-  width: 25px !important;
-  height: 25px !important;
-}
-
-.flatpickr-weekdaycontainer span {
-  color: #000000 !important;
-}
-
-.flatpickr-monthDropdown-months {
-  font-family: "Inter" !important;
-  font-size: 20px !important;
-}
 
 
-
-@media (max-width: 890px){
-  .register-inputs-container{
+@media (max-width: 890px) {
+  .register-inputs-container {
     flex-direction: column;
   }
-  .register-btn-conteiner{
+  .register-btn-conteiner {
     justify-content: center;
   }
 }
 
-@media (max-width: 450px){
-  .register-two-in-one-inputs{
+@media (max-width: 450px) {
+  .register-two-in-one-inputs {
     flex-direction: column;
   }
 
-  .register-small-input{
+  .register-small-input {
     width: auto;
   }
-  
-  .register-input{
+
+  .register-input {
     width: auto;
   }
 }

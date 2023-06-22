@@ -1,0 +1,50 @@
+.flatpickr-calendar {
+    background-color: #ffffff !important;
+  }
+  
+  .flatpickr-day.selected {
+    border: none !important;
+    background-color: var(--main-color) !important;
+  }
+  
+  .flatpickr-day.selected:hover {
+    border: none !important;
+    background-color: var(--light-yellow) !important;
+  }
+  
+  .flatpickr-day.selected span {
+    width: 25px !important;
+    height: 25px !important;
+  }
+  
+  .flatpickr-weekdaycontainer span {
+    color: #000000 !important;
+  }
+  
+  .flatpickr-calendar {
+    background-color: #ffffff !important;
+  }
+  
+  .flatpickr-day.selected {
+    border: none !important;
+    background-color: var(--main-color) !important;
+  }
+  
+  .flatpickr-day.selected:hover {
+    border: none !important;
+    background-color: var(--light-yellow) !important;
+  }
+  
+  .flatpickr-day.selected span {
+    width: 25px !important;
+    height: 25px !important;
+  }
+  
+  .flatpickr-weekdaycontainer span {
+    color: #000000 !important;
+  }
+  
+  .flatpickr-monthDropdown-months {
+    font-family: "Inter" !important;
+    font-size: 20px !important;
+  }
