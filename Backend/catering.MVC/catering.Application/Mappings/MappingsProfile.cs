@@ -1,10 +1,13 @@
 ﻿using AutoMapper;
+using catering.Application.Managements.AccountManagment.AccountDtos;
+using catering.Application.Managements.AccountManagment.Commands;
 using catering.Application.Managements.CartManagement;
 using catering.Application.Managements.OfferManagment;
 using catering.Application.Managements.OrderManagment;
 using catering.Domain.Entities;
 using catering.Domain.Entities.CartEntities;
 using catering.Domain.Entities.OrderEntities;
+using catering.Domain.Entities.User.RegisterInput;
 
 namespace catering.Application.Mappings
 {
@@ -39,6 +42,16 @@ namespace catering.Application.Mappings
 
             CreateMap<OrderItemDate, OrderItemDateDto>();
 
+            CreateMap<RegisterInputDto, AccountRegisterInput>()
+              .ForMember(dest => dest.DeliveryAdress, opt => opt.MapFrom(src => new DeliveryAdressInput
+              {
+                  Adress1 = src.Adress1,
+                  Adress2 = src.Adress2,
+                  PostalCode = src.PostalCode,
+                  State = src.State,
+                  Country = src.Country,
+                  PhoneNumber = src.PhoneNumber
+              }));
         }
     }
 }
