@@ -1,26 +1,26 @@
 ﻿using AutoMapper;
 using catering.Domain.Entities.User.RegisterInput;
+using catering.Domain.Interface;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace catering.Application.Managements.AccountManagment.Commands
 {
     public class RegisterCommandHandler : IRequestHandler<RegisterCommand>
     {
         private readonly IMapper mapper;
+        private readonly IAccountRepository accountRepository;
 
-        public RegisterCommandHandler(IMapper mapper)
+        public RegisterCommandHandler(IMapper mapper, IAccountRepository accountRepository)
         {
             this.mapper = mapper;
+            this.accountRepository = accountRepository;
         }
-        public Task<Unit> Handle(RegisterCommand request, CancellationToken cancellationToken)
+
+        public async Task<Unit> Handle(RegisterCommand request, CancellationToken cancellationToken)
         {
             var registerInput = mapper.Map<AccountRegisterInput>(request);
-            return Unit.Task;
+            await accountRepository.RegisterUser(registerInput);
+            return Unit.Value;
         }
     }
 }

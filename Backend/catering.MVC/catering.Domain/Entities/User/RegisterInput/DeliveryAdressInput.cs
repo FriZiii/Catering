@@ -8,6 +8,7 @@ namespace catering.Domain.Entities.User.RegisterInput
 {
     public class DeliveryAdressInput
     {
+        public int Id { get; set; }
         public string Adress1 { get; set; } = default!;
         public string Adress2 { get; set; } = default!;
         public string PostalCode { get; set; } = default!;

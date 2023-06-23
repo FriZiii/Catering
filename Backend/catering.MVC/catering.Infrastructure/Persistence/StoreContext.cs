@@ -1,11 +1,12 @@
 ﻿using catering.Domain.Entities;
 using catering.Domain.Entities.OrderEntities;
+using catering.Domain.Entities.User.AppUser;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace catering.Infrastructure.Persistence
 {
-    public class StoreContext : DbContext
+    public class StoreContext : IdentityDbContext<AppUser>
     {
         public StoreContext(DbContextOptions<StoreContext> options)
             :base(options)
