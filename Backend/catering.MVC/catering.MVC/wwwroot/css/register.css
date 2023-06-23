@@ -52,8 +52,9 @@
     font-size: 20px;
 }
 
-.register-inputs-container .input_label {
-    font-size: 20px;
+.register-inputs-container .error {
+    color: red;
+    font-size: 10px;
 }
 
 .logo-register {
@@ -76,7 +77,7 @@
 }
 
 .right-register-paragraph {
-    margin-bottom: 34px;
+    margin-bottom: 30px;
 }
 
 .register-btn-conteiner {
