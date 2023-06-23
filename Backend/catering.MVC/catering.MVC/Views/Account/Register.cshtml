@@ -1,142 +1,152 @@
-﻿@using catering.Application.Managements.AccountManagment.AccountDtos;
+﻿@using catering.Application.Managements.AccountManagment.Commands;
 
-@model RegisterInputDto
+@model RegisterCommand
 
 <div class="center-container-register">
-    <form id="registerForm" class="content-register">
+    <form id="registerForm" class="content-register" action="/Account/Register" method="post">
         <div class="register-inputs-container">
             <div class="register-left-section">
                 <div class="logo-register">
                     <img src="~/images/yummy-logo.svg" alt="Logo">
                 </div>
 
-                <h1 class="register-title">Create a new account</h1>
+                <h0 class="register-title">Create a new account</h0>
                 <p class="register-paragraph right-register-paragraph">
                     Create a new account for free in just a
                     minute
                 </p>
                 <div class="register-two-in-one-inputs">
                     <div class="input register-small-input">
-                        <input class="input_field" type="text" autocomplete="firstname" aria-required="true"
-                               placeholder=" " />
+                        <input class="input_field" type="text" autocomplete="firstname" aria-required="true" asp-for="FirstName"
+                               placeholder=" "/>
                         <span class="input_label">
                             <img src="~/images/icons/user-yellow.svg" class="input_icon" />
                             First Name
                         </span>
+                        <span asp-validation-for="FirstName" class="error"></span>
                     </div>
 
                     <div class="input register-small-input">
-                        <input class="input_field" type="text" autocomplete="lastname" aria-required="true"
+                        <input class="input_field" type="text" autocomplete="lastname" aria-required="true" asp-for="LastName"
                                placeholder=" " />
                         <span class="input_label">
                             <img src="~/images/icons/user-yellow.svg" class="input_icon" />
                             Last Name
                         </span>
+                        <span asp-validation-for="LastName" class="error"></span>
                     </div>
                 </div>
 
 
                 <div class="input register-input">
-                    <input class="input_field" type="email" autocomplete="username" aria-required="true"
+                    <input class="input_field" type="email" autocomplete="username" aria-required="true" asp-for="Email"
                            placeholder=" " />
                     <span class="input_label">
                         <img src="~/images/icons/mail-yellow.svg" class="input_icon" />
                         Email
                     </span>
+                    <span asp-validation-for="Email" class="error"></span>
                 </div>
 
                 <div class="input register-input">
-                    <input class="input_field" type="password" autocomplete="new-password" aria-required="true"
+                    <input class="input_field" type="password" autocomplete="new-password" aria-required="true" asp-for="Password"
                            placeholder=" " />
                     <span class="input_label">
                         <img src="~/images/icons/lock-yellow.svg" class="input_icon" />
                         Password
                     </span>
+                    <span asp-validation-for="Password" class="error"></span>
                 </div>
 
                 <div class="input register-input">
-                    <input class="input_field" type="password" autocomplete="new-password" aria-required="true"
+                    <input class="input_field" type="password" autocomplete="new-password" aria-required="true" asp-for="PasswordConfirm"
                            placeholder=" " />
                     <span class="input_label">
                         <img src="~/images/icons/lock-yellow.svg" class="input_icon" />
                         Repeat password
                     </span>
+                    <span asp-validation-for="PasswordConfirm" class="error"></span>
                 </div>
 
                 <div class="input register-input" id="birthdatePicker">
-                    <input class="input_field" type="password" autocomplete="new-password" aria-required="true"
+                    <input class="input_field" type="password" autocomplete="new-password" aria-required="true" asp-for="BirthDate"
                            placeholder=" " />
                     <span class="input_label">
                         <img src="~/images/icons/calendar-yellow.svg" class="input_icon" />
                         Birthdate
                     </span>
+                    <span asp-validation-for="BirthDate" class="error"></span>
                 </div>
             </div>
 
             <div class="register-right-section">
-                <h1 class="register-title">Delivery adress</h1>
+                <h0 class="register-title">Delivery adress</h0>
                 <p class="register-paragraph">
                     Give us your an address where you want your meals to be delivered
                 </p>
 
                 <div class="input register-input">
-                    <input class="input_field" type="text" autocomplete="new-password" aria-required="true"
+                    <input class="input_field" type="text" autocomplete="new-password" aria-required="true" asp-for="Adress1"
                            placeholder=" " />
                     <span class="input_label">
                         <img src="~/images/icons/home-yellow.svg" class="input_icon" />
                         Address 1
                     </span>
+                    <span asp-validation-for="Adress1" class="error"></span>
                 </div>
 
                 <div class="input register-input">
-                    <input class="input_field" type="text" autocomplete="new-password" aria-required="true"
+                    <input class="input_field" type="text" autocomplete="new-password" aria-required="true" asp-for="Adress2"
                            placeholder=" " />
                     <span class="input_label">
                         <img src="~/images/icons/home-yellow.svg" class="input_icon" />
                         Address 2
                     </span>
+                    <span asp-validation-for="Adress2" class="error"></span>
                 </div>
 
                 <div class="register-two-in-one-inputs">
                     <div class="input register-small-input">
-                        <input class="input_field" type="text" autocomplete="new-password" aria-required="true"
+                        <input class="input_field" type="text" autocomplete="new-password" aria-required="true" asp-for="PostalCode"
                                placeholder=" " />
                         <span class="input_label">
                             <img src="~/images/icons/map-pin-yellow.svg" class="input_icon" />
                             Pastal code
                         </span>
+                        <span asp-validation-for="PostalCode" class="error"></span>
                     </div>
 
                     <div class="input register-small-input">
-                        <input class="input_field" type="text" autocomplete="new-password" aria-required="true"
+                        <input class="input_field" type="text" autocomplete="new-password" aria-required="true" asp-for="State"
                                placeholder=" " />
                         <span class="input_label">
                             <img src="~/images/icons/map-pin-yellow.svg" class="input_icon" />
                             State/Region
                         </span>
+                        <span asp-validation-for="State" class="error"></span>
                     </div>
                 </div>
 
 
                 <div class="input register-input">
-                    <input class="input_field" type="text" autocomplete="new-password" aria-required="true"
+                    <input class="input_field" type="text" autocomplete="new-password" aria-required="true" asp-for="Country"
                            placeholder=" " />
                     <span class="input_label">
                         <img src="~/images/icons/globe-yellow.svg" class="input_icon" />
                         Country
                     </span>
+                    <span asp-validation-for="Country" class="error"></span>
                 </div>
 
                 <div class="input register-input">
-                    <input class="input_field" type="tel" autocomplete="new-password" aria-required="true"
+                    <input class="input_field" type="tel" autocomplete="new-password" aria-required="true" asp-for="PhoneNumber"
                            placeholder=" " />
                     <span class="input_label">
                         <img src="~/images/icons/phone-yellow.svg" class="input_icon" />
                         Phone number
                     </span>
+                    <span asp-validation-for="PhoneNumber" class="error"></span>
                 </div>
-
-
             </div>
         </div>
 
@@ -159,4 +169,8 @@
         });
     });
     </script>
+
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
 }
