@@ -33,11 +33,14 @@
                 <img id="offer-logo" src="~/images/yummy-logo.svg">
             </a>
             <div class="menu">
-                <a class="@(currentUrl == "Index-Offer" ? "active" : "")" asp-area="" asp-controller="Offer" asp-action="Index">Offer</a>
-                <a class="@(currentUrl == "FAQ-Home" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="FAQ">FAQ</a>
-                <a class="@(currentUrl == "Index-Cart" ? "active" : "")" asp-area="" asp-controller="Cart" asp-action="Index">Cart</a>
-                <a class="@(currentUrl == "Index-Home" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="Index">Contact</a>
-                <button id="offer-login">Log in</button>
+                <a class="menu-item @(currentUrl == "Index-Offer" ? "active" : "")" asp-area="" asp-controller="Offer" asp-action="Index">Offer</a>
+                <a class="menu-item @(currentUrl == "FAQ-Home" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="FAQ">FAQ</a>
+                <a class="menu-item @(currentUrl == "Index-Cart" ? "active" : "")" asp-area="" asp-controller="Cart" asp-action="Index">Cart</a>
+                <a class="menu-item @(currentUrl == "Index-Home" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="Index">Contact</a>
+                <button id="offer-login">Log out</button>
+                <a class="log-in-button-header" href="#">
+                <span>Log in</span>
+                </a>
             </div>
 
             <button class="hamburger">
@@ -46,12 +49,15 @@
         </nav>
 
         <div class="mobile-menu">
-            <span class="material-icons close-icon hamburger">close</span>
-            <a class="@(currentUrl == "Index-Offer" ? "active" : "")" asp-area="" asp-controller="Offer" asp-action="Index">Offer</a>
-            <a class="@(currentUrl == "FAQ-Home" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="FAQ">FAQ</a>
-            <a class="@(currentUrl == "Index-Cart" ? "active" : "")" asp-area="" asp-controller="Cart" asp-action="Index">Cart</a>
-            <a class="@(currentUrl == "Index-Home" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="Index">Contact</a>
-            <button>Sign in</button>
+            <span class="material-icons close-icon hamburger hamburger-span">close</span>
+            <a class="menu-item @(currentUrl == "Index-Offer" ? "active" : "")" asp-area="" asp-controller="Offer" asp-action="Index">Offer</a>
+            <a class="menu-item @(currentUrl == "FAQ-Home" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="FAQ">FAQ</a>
+            <a class="menu-item @(currentUrl == "Index-Cart" ? "active" : "")" asp-area="" asp-controller="Cart" asp-action="Index">Cart</a>
+            <a class="menu-item @(currentUrl == "Index-Home" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="Index">Contact</a>
+            <button id="offer-login">Log out</button>
+                <a class="log-in-button-header" href="#">
+                <span>Log in</span>
+                </a>
         </div>
     </header>
 
