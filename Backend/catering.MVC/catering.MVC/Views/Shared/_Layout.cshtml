@@ -1,4 +1,10 @@
-﻿@{
+﻿@using Microsoft.AspNetCore.Identity
+@using catering.Domain.Entities.User.AppUser;
+
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
+
+@{
     var currentUrl = $"{ViewContext.RouteData.Values["Action"]!.ToString()}-{ViewContext.RouteData.Values["Controller"]!.ToString()}";
 }
 
@@ -38,10 +44,20 @@
                 <a class="menu-item @(currentUrl == "FAQ-Home" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="FAQ">FAQ</a>
                 <a class="menu-item @(currentUrl == "Index-Cart" ? "active" : "")" asp-area="" asp-controller="Cart" asp-action="Index">Cart</a>
                 <a class="menu-item @(currentUrl == "Index-Home" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="Index">Contact</a>
-                <a class="log-in-button-header" asp-area="" asp-controller="Account" asp-action="Login">
-                    <span>Log in</span>
-                </a>
-                @*<button id="offer-login">Log out</button>*@
+                @if (User?.Identity != null && User.Identity.IsAuthenticated)
+                {
+                    <form method="post" action="/Account/Logout">
+                        <button type="submit">
+                            Log out
+                        </button>
+                    </form>
+                }
+                else
+                {
+                    <a class="log-in-button-header" asp-area="" asp-controller="Account" asp-action="Login">
+                        <span>Log in</span>
+                    </a>
+                }
             </div>
 
             <button class="hamburger">
@@ -55,11 +71,20 @@
             <a class="menu-item @(currentUrl == "FAQ-Home" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="FAQ">FAQ</a>
             <a class="menu-item @(currentUrl == "Index-Cart" ? "active" : "")" asp-area="" asp-controller="Cart" asp-action="Index">Cart</a>
             <a class="menu-item @(currentUrl == "Index-Home" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="Index">Contact</a>
-            <a class="log-in-button-header" asp-area="" asp-controller="Account" asp-action="Login">
-                <span>Log in</span>
-            </a>
-
-            @*<button id="offer-login">Log out</button>*@
+            @if (User?.Identity != null && User.Identity.IsAuthenticated)
+            {
+                <form method="post" action="/Account/Logout">
+                    <button type="submit">
+                        Log out
+                    </button>
+                </form>
+            }
+            else
+            {
+                <a class="log-in-button-header" asp-area="" asp-controller="Account" asp-action="Login">
+                    <span>Log in</span>
+                </a>
+            }
         </div>
     </header>
 
