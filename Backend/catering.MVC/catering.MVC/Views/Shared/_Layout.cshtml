@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="~/css/components/buttons.css">
     <link rel="stylesheet" href="~/css/home.css">
     <link rel="stylesheet" href="~/css/register.css">
+    <link rel="stylesheet" href="~/css/login.css">
     <link rel="stylesheet" href="~/css/offer.css">
     <link rel="stylesheet" href="~/css/faq.css">
     <link rel="stylesheet" href="~/css/cart.css">
@@ -37,10 +38,10 @@
                 <a class="menu-item @(currentUrl == "FAQ-Home" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="FAQ">FAQ</a>
                 <a class="menu-item @(currentUrl == "Index-Cart" ? "active" : "")" asp-area="" asp-controller="Cart" asp-action="Index">Cart</a>
                 <a class="menu-item @(currentUrl == "Index-Home" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="Index">Contact</a>
-                <button id="offer-login">Log out</button>
-                <a class="log-in-button-header" href="#">
-                <span>Log in</span>
+                <a class="log-in-button-header" asp-area="" asp-controller="Account" asp-action="Login">
+                    <span>Log in</span>
                 </a>
+                @*<button id="offer-login">Log out</button>*@
             </div>
 
             <button class="hamburger">
@@ -54,10 +55,11 @@
             <a class="menu-item @(currentUrl == "FAQ-Home" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="FAQ">FAQ</a>
             <a class="menu-item @(currentUrl == "Index-Cart" ? "active" : "")" asp-area="" asp-controller="Cart" asp-action="Index">Cart</a>
             <a class="menu-item @(currentUrl == "Index-Home" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="Index">Contact</a>
-            <button id="offer-login">Log out</button>
-                <a class="log-in-button-header" href="#">
+            <a class="log-in-button-header" asp-area="" asp-controller="Account" asp-action="Login">
                 <span>Log in</span>
-                </a>
+            </a>
+
+            @*<button id="offer-login">Log out</button>*@
         </div>
     </header>
 
