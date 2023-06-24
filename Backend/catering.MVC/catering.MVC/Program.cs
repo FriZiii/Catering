@@ -17,16 +17,18 @@ await productSeeder.Seed();
 var discountCodeSeeder = scope.ServiceProvider.GetRequiredService<DiscountCodeSeeder>();
 await discountCodeSeeder.Seed();
 
+app.UseStaticFiles();
+
+app.UseRouting();
+
+app.UseAuthentication();
+app.UseAuthorization();
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
 }
-app.UseStaticFiles();
-
-app.UseRouting();
-
-app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
