@@ -32,6 +32,11 @@ namespace catering.Infrastructure.Repositories
             return SignInResult.Failed;
         }
 
+        public async Task LogoutUser()
+        {
+            await signInManager.SignOutAsync();
+        }
+
         public async Task RegisterUser(AccountRegisterInput registerInput)
         {
 

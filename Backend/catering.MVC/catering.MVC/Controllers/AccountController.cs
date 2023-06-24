@@ -1,7 +1,12 @@
 ﻿using catering.Application.Managements.AccountManagment.Commands.Login;
+using catering.Application.Managements.AccountManagment.Commands.Logout;
 using catering.Application.Managements.AccountManagment.Commands.Register;
+using catering.Domain.Entities.User.AppUser;
 using MediatR;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace catering.MVC.Controllers
 {
@@ -40,15 +45,15 @@ namespace catering.MVC.Controllers
         {
             await mediator.Send(loginCommand);
 
-            if (loginCommand.Result.Succeeded)
-            {
-                await Console.Out.WriteLineAsync("Logged in");
-            }
-            else
-            {
-                Console.Out.WriteLine(loginCommand.Result);
-            }
-            return View(loginCommand);
+            return RedirectToAction("Login", "Account");
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Logout()
+        {
+            await mediator.Send(new LogoutCommand());
+            return RedirectToAction("Index", "Home");
+        }
+
     }
 }

@@ -12,6 +12,7 @@ namespace catering.Domain.Interface
     public interface IAccountRepository
     {
         Task<SignInResult> LoginUser(LoginInput loginInput);
+        Task LogoutUser();
         Task RegisterUser(AccountRegisterInput registerInput);
     }
 }
