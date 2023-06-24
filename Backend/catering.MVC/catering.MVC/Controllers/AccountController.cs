@@ -1,8 +1,7 @@
-﻿using catering.Application.Managements.AccountManagment.AccountDtos;
-using catering.Application.Managements.AccountManagment.Commands;
+﻿using catering.Application.Managements.AccountManagment.Commands.Login;
+using catering.Application.Managements.AccountManagment.Commands.Register;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace catering.MVC.Controllers
 {
@@ -29,6 +28,27 @@ namespace catering.MVC.Controllers
             }
             await mediator.Send(registerCommand);
             return View();
+        }
+
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginCommand loginCommand)
+        {
+            await mediator.Send(loginCommand);
+
+            if (loginCommand.Result.Succeeded)
+            {
+                await Console.Out.WriteLineAsync("Logged in");
+            }
+            else
+            {
+                Console.Out.WriteLine(loginCommand.Result);
+            }
+            return View(loginCommand);
         }
     }
 }

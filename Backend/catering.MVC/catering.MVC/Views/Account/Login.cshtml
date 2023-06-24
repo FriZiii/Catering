@@ -1,0 +1,45 @@
+﻿@using catering.Application.Managements.AccountManagment.Commands.Login;
+
+@model LoginCommand
+<div class="center-container-login">
+    <div class="container-login">
+        <div class="image-login">
+        </div>
+        <form class="content-login" id="account" method="post" action="/Account/Login">
+            <div class="logo-login">
+                <img src="~/images/yummy-logo.svg" alt="Logo">
+            </div>
+            <h1>Hello again!</h1>
+            <h2>Enter your credentials</h2>
+
+            <div class="input">
+                <input class="input_field" type="email" autocomplete="username" aria-required="true" asp-for="Email"
+                       placeholder=" " />
+                <span class="input_label">
+                    <img src="~/images/icons/user-yellow.svg" class="input_icon" />
+                    Email
+                </span>
+            </div>
+
+            <div class="input">
+                <input class="input_field" type="password" autocomplete="current-password" aria-required="true" asp-for="Password"
+                       placeholder=" " />
+                <span class="input_label">
+                    <img src="~/images/icons/lock-yellow.svg" class="input_icon" />
+                    Password
+                </span>
+            </div>
+
+            <div class="remember-me-container">
+                <input type="checkbox" id="remember" class="remember-me-login">
+                <label class="remember-label">Remember me</label>
+            </div>
+
+            <button class="btn-with-icon" type="submit">
+                Log in
+                <img src="~/images/icons/log-in.svg">
+            </button>
+
+        </form>
+    </div>
+</div>

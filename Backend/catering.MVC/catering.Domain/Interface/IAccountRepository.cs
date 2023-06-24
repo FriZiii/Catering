@@ -1,4 +1,6 @@
-﻿using catering.Domain.Entities.User.RegisterInput;
+﻿using catering.Domain.Entities.User.LoginInput;
+using catering.Domain.Entities.User.RegisterInput;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +11,7 @@ namespace catering.Domain.Interface
 {
     public interface IAccountRepository
     {
+        Task<SignInResult> LoginUser(LoginInput loginInput);
         Task RegisterUser(AccountRegisterInput registerInput);
     }
 }
