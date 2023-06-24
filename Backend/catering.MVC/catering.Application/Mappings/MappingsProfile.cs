@@ -7,6 +7,7 @@ using catering.Application.Managements.OrderManagment;
 using catering.Domain.Entities;
 using catering.Domain.Entities.CartEntities;
 using catering.Domain.Entities.OrderEntities;
+using catering.Domain.Entities.User.LoginInput;
 using catering.Domain.Entities.User.RegisterInput;
 
 namespace catering.Application.Mappings
@@ -52,6 +53,8 @@ namespace catering.Application.Mappings
                   Country = src.Country,
                   PhoneNumber = src.PhoneNumber
               }));
+
+            CreateMap<LoginInputDto, LoginInput>();
         }
     }
 }
