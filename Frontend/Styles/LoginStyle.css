@@ -5,23 +5,19 @@
 }
 
 .container-login {
-  width: 600px;
-  height: 500px;
+  width: 700px;
+  height: 540px;
   display: flex;
-}
-
-@media (max-width: 767px) {
-  .container-login {
-    width: 80%;
-    height: auto;
-    flex-direction: column;
-  }
 }
 
 .image-login {
   flex: 1;
-  background-image: url("../Images/mniam.png");
-  background-size: cover;
+} 
+
+.image-login img {
+  object-fit: cover;
+  width: 350px;
+  height: 530px;
 }
 
 .content-login {
@@ -30,6 +26,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-bottom: 100px;
 }
 
 .logo-login {
@@ -44,6 +41,21 @@ h2 {
   margin-bottom: 20px;
 }
 
+@media (max-width: 767px) {
 
+  .remember-me-container {
+    margin-right: 120px
+  }
 
+  .image-login {
+    display: none;
+  } 
+
+  .container-login {
+    width: 80%;
+    height: auto;
+    flex-direction: column;
+    padding-bottom: 80px;
+  }
+}
 
