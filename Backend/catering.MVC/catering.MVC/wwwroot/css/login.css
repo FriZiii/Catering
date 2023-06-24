@@ -1,0 +1,64 @@
+﻿.center-container-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-login {
+    width: 700px;
+    height: 540px;
+    display: flex;
+}
+
+.image-login {
+    flex: 1;
+}
+
+    .image-login img {
+        object-fit: cover;
+        width: 350px;
+        height: 530px;
+    }
+
+.content-login {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 100px;
+}
+
+.login-margin {
+    margin-bottom: 15px;
+}
+
+.logo-login {
+    margin-bottom: 5px;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+@media (max-width: 767px) {
+
+    .remember-me-container {
+        margin-right: 140px
+    }
+
+    .image-login {
+        display: none;
+    }
+
+    .container-login {
+        width: 80%;
+        height: auto;
+        flex-direction: column;
+        padding-bottom: 80px;
+    }
+}

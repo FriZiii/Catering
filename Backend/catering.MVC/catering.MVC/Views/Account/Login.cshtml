@@ -4,6 +4,7 @@
 <div class="center-container-login">
     <div class="container-login">
         <div class="image-login">
+            <img src="~/images/login/login-header.jpg" alt="Logo">
         </div>
         <form class="content-login" id="account" method="post" action="/Account/Login">
             <div class="logo-login">
@@ -12,7 +13,7 @@
             <h1>Hello again!</h1>
             <h2>Enter your credentials</h2>
 
-            <div class="input">
+            <div class="input login-margin">
                 <input class="input_field" type="email" autocomplete="username" aria-required="true" asp-for="Email"
                        placeholder=" " />
                 <span class="input_label">
@@ -21,7 +22,7 @@
                 </span>
             </div>
 
-            <div class="input">
+            <div class="input login-margin">
                 <input class="input_field" type="password" autocomplete="current-password" aria-required="true" asp-for="Password"
                        placeholder=" " />
                 <span class="input_label">
