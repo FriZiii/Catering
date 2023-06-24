@@ -3,7 +3,7 @@ using catering.Domain.Entities.User.RegisterInput;
 using catering.Domain.Interface;
 using MediatR;
 
-namespace catering.Application.Managements.AccountManagment.Commands
+namespace catering.Application.Managements.AccountManagment.Commands.Register
 {
     public class RegisterCommandHandler : IRequestHandler<RegisterCommand>
     {
