@@ -3,10 +3,13 @@ using catering.Domain.Interface;
 using catering.Infrastructure.Persistence;
 using catering.Infrastructure.Repositories;
 using catering.Infrastructure.Seeders;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 
 namespace catering.Infrastructure.Extensions
 {
@@ -41,6 +44,8 @@ namespace catering.Infrastructure.Extensions
                 options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequiredLength = 1; // Set minimum password length
             });
+
+            services.AddHttpContextAccessor();
         }
     }
 }
