@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using catering.Infrastructure.Persistence;
 
@@ -11,9 +12,11 @@ using catering.Infrastructure.Persistence;
 namespace catering.Infrastructure.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    partial class StoreContextModelSnapshot : ModelSnapshot
+    [Migration("20230625225108_AddedGuestToOrder")]
+    partial class AddedGuestToOrder
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -175,7 +178,7 @@ namespace catering.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("DiscountCodes", (string)null);
+                    b.ToTable("DiscountCodes");
                 });
 
             modelBuilder.Entity("catering.Domain.Entities.Guest", b =>
@@ -190,7 +193,7 @@ namespace catering.Infrastructure.Migrations
 
                     b.HasIndex("DeliveryAdressId");
 
-                    b.ToTable("Guests", (string)null);
+                    b.ToTable("Guests");
                 });
 
             modelBuilder.Entity("catering.Domain.Entities.OrderEntities.Order", b =>
@@ -230,7 +233,7 @@ namespace catering.Infrastructure.Migrations
 
                     b.HasIndex("GuestId");
 
-                    b.ToTable("Orders", (string)null);
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("catering.Domain.Entities.OrderEntities.OrderItem", b =>
@@ -259,7 +262,7 @@ namespace catering.Infrastructure.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("OrderItems", (string)null);
+                    b.ToTable("OrderItems");
                 });
 
             modelBuilder.Entity("catering.Domain.Entities.OrderEntities.OrderItemDate", b =>
@@ -280,7 +283,7 @@ namespace catering.Infrastructure.Migrations
 
                     b.HasIndex("OrderItemId");
 
-                    b.ToTable("OrderItemsDates", (string)null);
+                    b.ToTable("OrderItemsDates");
                 });
 
             modelBuilder.Entity("catering.Domain.Entities.OrderEntities.OrderItemMeal", b =>
@@ -302,7 +305,7 @@ namespace catering.Infrastructure.Migrations
 
                     b.HasIndex("OrderItemId");
 
-                    b.ToTable("OrderItemMeals", (string)null);
+                    b.ToTable("OrderItemMeals");
                 });
 
             modelBuilder.Entity("catering.Domain.Entities.Product", b =>
@@ -330,7 +333,7 @@ namespace catering.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Products", (string)null);
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("catering.Domain.Entities.User.AppUser.AppUser", b =>
@@ -448,7 +451,7 @@ namespace catering.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("UserDeliveryAdress", (string)null);
+                    b.ToTable("UserDeliveryAdress");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
