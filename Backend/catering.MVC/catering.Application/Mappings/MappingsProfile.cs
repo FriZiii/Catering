@@ -9,6 +9,7 @@ using catering.Domain.Entities.CartEntities;
 using catering.Domain.Entities.OrderEntities;
 using catering.Domain.Entities.User.LoginInput;
 using catering.Domain.Entities.User.RegisterInput;
+using System.Security.Claims;
 
 namespace catering.Application.Mappings
 {
@@ -55,6 +56,13 @@ namespace catering.Application.Mappings
               }));
 
             CreateMap<LoginInputDto, LoginInput>();
+
+            CreateMap<ClaimsPrincipal, CurrentUser>()
+                .ForMember(desc => desc.Id, opt => opt.MapFrom(src => src.FindFirst(c => c.Type == ClaimTypes.NameIdentifier)!.Value))
+                .ForMember(desc => desc.Email, opt => opt.MapFrom(src => src.FindFirst(c => c.Type == ClaimTypes.Email)!.Value))
+                .ForMember(desc => desc.Roles, opt => opt.MapFrom(src => src.Claims.Where(c => c.Type == ClaimTypes.Role).Select(c => c.Value)));
+
+
         }
     }
 }

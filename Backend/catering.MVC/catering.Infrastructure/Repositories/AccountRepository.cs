@@ -3,7 +3,9 @@ using catering.Domain.Entities.User.LoginInput;
 using catering.Domain.Entities.User.RegisterInput;
 using catering.Domain.Interface;
 using catering.Infrastructure.Persistence;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
+using System.Security.Claims;
 
 namespace catering.Infrastructure.Repositories
 {
@@ -12,12 +14,32 @@ namespace catering.Infrastructure.Repositories
         private readonly StoreContext storeContext;
         private readonly UserManager<AppUser> userManager;
         private readonly SignInManager<AppUser> signInManager;
+        private readonly IHttpContextAccessor httpContextAccessor;
 
-        public AccountRepository(StoreContext storeContext ,UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
+        public AccountRepository(StoreContext storeContext, 
+            UserManager<AppUser> userManager, 
+            SignInManager<AppUser> signInManager,
+            IHttpContextAccessor httpContextAccessor)
         {
             this.storeContext = storeContext;
             this.userManager = userManager;
             this.signInManager = signInManager;
+            this.httpContextAccessor = httpContextAccessor;
+        }
+
+        public ClaimsPrincipal? GetCurrentUser()
+        {
+            var user = httpContextAccessor?.HttpContext?.User;
+            if (user == null)
+            {
+                throw new InvalidOperationException("Context user is not present");
+            }
+
+            if (user.Identity is null || !user.Identity.IsAuthenticated)
+            {
+                return null;
+            }
+            return user;
         }
 
         public async Task<SignInResult> LoginUser(LoginInput loginInput)
