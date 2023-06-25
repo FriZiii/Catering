@@ -1,4 +1,5 @@
-﻿using catering.Application.Managements.OfferManagment.Commands.AddProduct;
+﻿using catering.Application.Helpers;
+using catering.Application.Managements.OfferManagment.Commands.AddProduct;
 using catering.Application.Managements.OfferManagment.Commands.CreateProduct;
 using catering.Application.Mappings;
 using catering.Application.Serializers;
@@ -18,6 +19,8 @@ namespace catering.Application.Extensions
             services.AddAutoMapper(typeof(MappingsProfile));
 
             services.AddScoped<OrderItemSerializer>();
+
+            services.AddScoped<ReturnUrl>();
 
             services.AddValidatorsFromAssemblyContaining<CreateProductCommandValidator>()
                 .AddFluentValidationAutoValidation()
