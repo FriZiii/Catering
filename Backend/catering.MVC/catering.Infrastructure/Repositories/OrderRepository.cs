@@ -1,4 +1,6 @@
-﻿using catering.Domain.Entities.OrderEntities;
+﻿using catering.Domain.Entities;
+using catering.Domain.Entities.OrderEntities;
+using catering.Domain.Entities.User.AppUser;
 using catering.Domain.Interface;
 using catering.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Http;
@@ -16,6 +18,25 @@ namespace catering.Infrastructure.Repositories
         {
             this.context = context;
             this.httpContextAccessor = httpContextAccessor;
+        }
+
+        public async Task AddGuestToOrder(UserDeliveryAdress deliveryAdress, int orderId)
+        {
+            context.UserDeliveryAdress.Add(deliveryAdress);
+            await context.SaveChangesAsync();
+
+            var newGuest = new Guest
+            {
+                Id = Guid.NewGuid().ToString(),
+                DeliveryAdressId = deliveryAdress.Id,
+            };
+            context.Guests.Add(newGuest);
+            await context.SaveChangesAsync();
+
+            var order = await GetOrderById(orderId);
+            order!.GuestId = newGuest.Id;
+
+            await context.SaveChangesAsync();
         }
 
         public async Task<int> AddOrder(Order order)

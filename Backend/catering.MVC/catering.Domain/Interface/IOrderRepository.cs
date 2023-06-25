@@ -1,4 +1,5 @@
 ﻿using catering.Domain.Entities.OrderEntities;
+using catering.Domain.Entities.User.AppUser;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,5 +17,6 @@ namespace catering.Domain.Interface
         void RemoveOrderIdFromCookies();
         int GetOrderIdFromCookies();
         Task AddUserToOrder(string userId, int orderId);
+        Task AddGuestToOrder(UserDeliveryAdress deliveryAdress, int orderId);
     }
 }
