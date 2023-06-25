@@ -1,12 +1,9 @@
-﻿using catering.Application.Managements.AccountManagment.Commands.Login;
+﻿using catering.Application.Helpers;
 using catering.Application.Managements.AccountManagment.Commands.Logout;
 using catering.Application.Managements.AccountManagment.Commands.Register;
-using catering.Domain.Entities.User.AppUser;
+using catering.Application.Managements.AccountManagment.Querries.Login;
 using MediatR;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using System.Security.Claims;
 using System.Web;
 
 namespace catering.MVC.Controllers
@@ -14,10 +11,12 @@ namespace catering.MVC.Controllers
     public class AccountController : Controller
     {
         private readonly IMediator mediator;
+        private readonly ReturnUrl returnUrl;
 
-        public AccountController(IMediator mediator)
+        public AccountController(IMediator mediator, ReturnUrl returnUrl)
         {
             this.mediator = mediator;
+            this.returnUrl = returnUrl;
         }
 
         public IActionResult Register()
@@ -28,31 +27,17 @@ namespace catering.MVC.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(RegisterCommand registerCommand)
         {
+            var referer = Request.GetTypedHeaders().Referer;
+            string url = returnUrl.GetReturnUrl(referer?.ToString()!);
             if (!ModelState.IsValid)
             {
                 return View(registerCommand);
             }
-            await mediator.Send(registerCommand);
-
-            var referer = Request.GetTypedHeaders().Referer;
-            string returnUrl = referer?.ToString()!;
-
-            if (!string.IsNullOrEmpty(returnUrl))
+            else
             {
-                Uri uri = new Uri(returnUrl);
-                string decodedReturnUrl;
-                if (uri.Query.Contains('?'))
-                {
-                    decodedReturnUrl = HttpUtility.UrlDecode(uri.Query.TrimStart('?')).Replace("returnUrl=", "");
-                }
-                else
-                {
-                    decodedReturnUrl = uri.LocalPath;
-                }
-
-                return Redirect(decodedReturnUrl);
+                await mediator.Send(registerCommand);
+                return Redirect(url);
             }
-            return View();
         }
 
         public IActionResult Login()
@@ -61,36 +46,38 @@ namespace catering.MVC.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login(LoginCommand loginCommand)
+        public async Task<IActionResult> Login(LoginQuerry loginQuerry)
         {
-            await mediator.Send(loginCommand);
 
             var referer = Request.GetTypedHeaders().Referer;
-            string returnUrl = referer?.ToString()!;
-
-            if (!string.IsNullOrEmpty(returnUrl))
+            string url = returnUrl.GetReturnUrl(referer?.ToString()!);
+            if (ModelState.IsValid)
             {
-                Uri uri = new Uri(returnUrl);
-                string decodedReturnUrl;
-                if (uri.Query.Contains('?'))
+                var result = await mediator.Send(loginQuerry);
+
+                if (result.Succeeded)
                 {
-                    decodedReturnUrl = HttpUtility.UrlDecode(uri.Query.TrimStart('?')).Replace("returnUrl=", "");
+                    return Redirect(url);
                 }
                 else
                 {
-                    decodedReturnUrl = uri.LocalPath;
+                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                    return View(loginQuerry);
                 }
-
-              return Redirect(decodedReturnUrl);
             }
-            return RedirectToAction("Login", "Account");
+            else
+            {
+                return View(loginQuerry); ;
+            }
         }
 
         [HttpPost]
         public async Task<IActionResult> Logout()
         {
+            var referer = Request.GetTypedHeaders().Referer;
+            string url = returnUrl.GetReturnUrl(referer?.ToString()!);
             await mediator.Send(new LogoutCommand());
-            return RedirectToAction("Index", "Home");
+            return Redirect(url);
         }
 
     }

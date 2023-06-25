@@ -46,7 +46,7 @@
                 <a class="menu-item @(currentUrl == "Index-Home" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="Index">Contact</a>
                 @if (User?.Identity != null && User.Identity.IsAuthenticated)
                 {
-                    <form method="post" action="/Account/Logout">
+                    <form method="post" action="/Account/Logout" asp-route-returnUrl="@Context.Request.Path">
                         <button type="submit">
                             Log out
                         </button>
