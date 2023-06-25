@@ -92,7 +92,7 @@ function submitForm() {
             form.action = "/Order/Confirm";
 
             var expires = new Date();
-            expires.setTime(expires.getTime() + (5 * 60 * 1000));
+            expires.setTime(expires.getTime() + (20 * 60 * 1000));
             document.cookie = "orderId=" + orderId + "; expires=" + expires.toUTCString();
 
             document.body.appendChild(form);
