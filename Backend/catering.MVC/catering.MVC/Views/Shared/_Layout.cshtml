@@ -54,7 +54,7 @@
                 }
                 else
                 {
-                    <a class="log-in-button-header" asp-area="" asp-controller="Account" asp-action="Login">
+                    <a class="log-in-button-header" asp-area="" asp-controller="Account" asp-action="Login" asp-route-returnUrl="@Context.Request.Path">
                         <span>Log in</span>
                     </a>
                 }

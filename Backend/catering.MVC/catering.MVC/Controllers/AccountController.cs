@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
+using System.Web;
 
 namespace catering.MVC.Controllers
 {
@@ -45,6 +46,24 @@ namespace catering.MVC.Controllers
         {
             await mediator.Send(loginCommand);
 
+            var referer = Request.GetTypedHeaders().Referer;
+            string returnUrl = referer?.ToString()!;
+
+            if (!string.IsNullOrEmpty(returnUrl))
+            {
+                Uri uri = new Uri(returnUrl);
+                string decodedReturnUrl = default!;
+                if (uri.Query.Contains('?'))
+                {
+                    decodedReturnUrl = HttpUtility.UrlDecode(uri.Query.TrimStart('?')).Replace("returnUrl=", "");
+                }
+                else
+                {
+                    decodedReturnUrl = uri.LocalPath;
+                }
+
+              return Redirect(decodedReturnUrl);
+            }
             return RedirectToAction("Login", "Account");
         }
 
