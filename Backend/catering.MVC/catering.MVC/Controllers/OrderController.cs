@@ -1,4 +1,5 @@
-﻿using catering.Application.Managements.DiscountCodeManagment.Commands.ApplyDiscountCode;
+﻿using catering.Application.Managements.AccountManagment.Querries.GetCurrentUser;
+using catering.Application.Managements.DiscountCodeManagment.Commands.ApplyDiscountCode;
 using catering.Application.Managements.DiscountCodeManagment.Queries.GetDiscountCodeValue;
 using catering.Application.Managements.OrderManagment;
 using catering.Application.Managements.OrderManagment.Commands.DeleteOrderById;
@@ -7,6 +8,7 @@ using catering.Application.Managements.OrderManagment.Queries.GetOrderById;
 using catering.Application.Managements.OrderManagment.Queries.GetOrderIdFromCookies;
 using catering.Application.Managements.OrderManagment.SubmitOrder;
 using catering.Application.Serializers;
+using Humanizer;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -42,7 +44,7 @@ namespace catering.MVC.Controllers
             if(orderId != 0)
             {
                 var order = await mediator.Send(new GetOrderByIdQuerry(orderId));
-                if (order.OrderItems.Any())
+                if (order is not null && order.OrderItems.Any())
                 {
                     return View(order);
                 }
@@ -54,6 +56,13 @@ namespace catering.MVC.Controllers
             }
             return RedirectToAction("Error");
         }
+
+        public async Task<IActionResult> ConfirmOrder()
+        {
+            var user = await mediator.Send(new GetCurrentUserQuerry());
+            return null!;
+        }
+
 
         public async Task<IActionResult> DeleteOrderItem(int orderItemId)
         {

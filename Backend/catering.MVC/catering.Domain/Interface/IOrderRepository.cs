@@ -13,6 +13,7 @@ namespace catering.Domain.Interface
         Task DeleteOrderById(int id);
         Task DeleteOrderItemById(int id);
         Task<Order?> GetOrderById(int id);
+        void RemoveOrderIdFromCookies();
         int GetOrderIdFromCookies();
     }
 }

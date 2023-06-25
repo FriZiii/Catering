@@ -32,6 +32,7 @@ namespace catering.Infrastructure.Repositories
             {
                 context.Orders.Remove(orderToDelete);
                 await context.SaveChangesAsync();
+                RemoveOrderIdFromCookies();
             }
         }
 
@@ -72,6 +73,23 @@ namespace catering.Infrastructure.Repositories
                 }    
             }
             return 0;
+        }
+
+        public void RemoveOrderIdFromCookies()
+        {
+            var httpContext = httpContextAccessor?.HttpContext;
+
+            if (httpContext is null)
+            {
+                throw new InvalidOperationException("Cookies could not be accessed because HttpContext is null.");
+            }
+
+            var cookies = httpContext.Request.Cookies;
+
+            if (cookies.TryGetValue("orderId", out var orderIdCookie))
+            {
+                httpContext.Response.Cookies.Delete("orderId");
+            }
         }
     }
 }
