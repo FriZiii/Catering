@@ -85,6 +85,7 @@ namespace catering.Infrastructure.Repositories
             var result = await userManager.CreateAsync(user, registerInput.Password);
             if (result.Succeeded)
             {
+                await signInManager.SignInAsync(user, isPersistent: false);
                 await storeContext.SaveChangesAsync();
             }
         }
