@@ -276,6 +276,10 @@
     justify-content: center;
 }
 
+.summary-section form{
+    width: 100%;
+}
+
 @media (max-width: 1623px) {
     .summary-discount-section {
         left: -0.5em;
@@ -636,6 +640,7 @@
     .order-modal-btn:hover {
         background-color: var(--main-color);
     }
+
 
 @media (max-width: 920px) {
     .vertical-line {

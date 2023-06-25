@@ -2,6 +2,7 @@
 using catering.Application.Managements.DiscountCodeManagment.Commands.ApplyDiscountCode;
 using catering.Application.Managements.DiscountCodeManagment.Queries.GetDiscountCodeValue;
 using catering.Application.Managements.OrderManagment;
+using catering.Application.Managements.OrderManagment.Commands.AddUserToOrder;
 using catering.Application.Managements.OrderManagment.Commands.DeleteOrderById;
 using catering.Application.Managements.OrderManagment.Commands.DeleteOrderItemById;
 using catering.Application.Managements.OrderManagment.Queries.GetOrderById;
@@ -59,8 +60,11 @@ namespace catering.MVC.Controllers
 
         public async Task<IActionResult> ConfirmOrder()
         {
+            int orderId = await mediator.Send(new GetOrderIdFromCookiesQuery());
             var user = await mediator.Send(new GetCurrentUserQuerry());
-            return null!;
+
+            await mediator.Send(new AddUserToOrderCommand(user!, orderId));
+            return RedirectToAction("Index", "Payment");
         }
 
 

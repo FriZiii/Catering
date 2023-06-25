@@ -3,6 +3,7 @@ using catering.Domain.Interface;
 using catering.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using System.Net.Http;
 
 namespace catering.Infrastructure.Repositories
 {
@@ -23,6 +24,17 @@ namespace catering.Infrastructure.Repositories
             await context.SaveChangesAsync();
 
             return order.Id;
+        }
+
+        public async Task AddUserToOrder(string userId, int orderId)
+        {
+            var order = await GetOrderById(orderId);
+            if (order is null)
+            {
+                throw new InvalidOperationException("Order could not be found.");
+            }
+            order.AppUserId = userId;
+            await context.SaveChangesAsync();
         }
 
         public async Task DeleteOrderById(int id)

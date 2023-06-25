@@ -33,6 +33,25 @@ namespace catering.MVC.Controllers
                 return View(registerCommand);
             }
             await mediator.Send(registerCommand);
+
+            var referer = Request.GetTypedHeaders().Referer;
+            string returnUrl = referer?.ToString()!;
+
+            if (!string.IsNullOrEmpty(returnUrl))
+            {
+                Uri uri = new Uri(returnUrl);
+                string decodedReturnUrl;
+                if (uri.Query.Contains('?'))
+                {
+                    decodedReturnUrl = HttpUtility.UrlDecode(uri.Query.TrimStart('?')).Replace("returnUrl=", "");
+                }
+                else
+                {
+                    decodedReturnUrl = uri.LocalPath;
+                }
+
+                return Redirect(decodedReturnUrl);
+            }
             return View();
         }
 
@@ -52,7 +71,7 @@ namespace catering.MVC.Controllers
             if (!string.IsNullOrEmpty(returnUrl))
             {
                 Uri uri = new Uri(returnUrl);
-                string decodedReturnUrl = default!;
+                string decodedReturnUrl;
                 if (uri.Query.Contains('?'))
                 {
                     decodedReturnUrl = HttpUtility.UrlDecode(uri.Query.TrimStart('?')).Replace("returnUrl=", "");
