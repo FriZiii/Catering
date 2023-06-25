@@ -72,12 +72,10 @@ namespace catering.MVC.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Logout()
+        public async Task<IActionResult> Logout(string returnUrl)
         {
-            var referer = Request.GetTypedHeaders().Referer;
-            string url = returnUrl.GetReturnUrl(referer?.ToString()!);
             await mediator.Send(new LogoutCommand());
-            return Redirect(url);
+            return Redirect(returnUrl);
         }
 
     }
