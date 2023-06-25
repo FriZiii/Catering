@@ -62,7 +62,7 @@ namespace catering.Infrastructure.Repositories
         public async Task RegisterUser(AccountRegisterInput registerInput)
         {
 
-            var deliveryAdress = new UserDeliveryAdress
+            var deliveryAdress = new DeliveryAdress
             {
                 Adress1 = registerInput.DeliveryAdress.Adress1,
                 Adress2 = registerInput.DeliveryAdress.Adress2,

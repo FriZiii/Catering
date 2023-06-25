@@ -18,7 +18,7 @@ namespace catering.Application.Managements.OrderManagment.Commands.AddGuestToOrd
 
         public async Task<Unit> Handle(AddGuestToOrderCommand request, CancellationToken cancellationToken)
         {
-            var deliveryAdress = mapper.Map<UserDeliveryAdress>(request.GuestAdressDto);
+            var deliveryAdress = mapper.Map<DeliveryAdress>(request.GuestAdressDto);
             await orderRepository.AddGuestToOrder(deliveryAdress, request.OrderId);
             return Unit.Value;
         }

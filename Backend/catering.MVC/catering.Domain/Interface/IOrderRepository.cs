@@ -17,6 +17,6 @@ namespace catering.Domain.Interface
         void RemoveOrderIdFromCookies();
         int GetOrderIdFromCookies();
         Task AddUserToOrder(string userId, int orderId);
-        Task AddGuestToOrder(UserDeliveryAdress deliveryAdress, int orderId);
+        Task AddGuestToOrder(DeliveryAdress deliveryAdress, int orderId);
     }
 }

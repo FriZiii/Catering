@@ -10,7 +10,7 @@ namespace catering.Domain.Entities.User.AppUser
         public DateTime BirthDate { get; set; } = default!;
         public int DeliveryAdressId { get; set; } = default!;
 
-        public UserDeliveryAdress DeliveryAdress { get; set; } = default!;
+        public DeliveryAdress DeliveryAdress { get; set; } = default!;
         public ICollection<Order> Orders { get; set; } = default!;
     }
 }

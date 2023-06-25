@@ -7,6 +7,6 @@ namespace catering.Domain.Entities
         public string Id { get; set; } = null!;
         public int DeliveryAdressId { get; set; }
 
-        public UserDeliveryAdress DeliveryAdress { get; set; } = null!;
+        public DeliveryAdress DeliveryAdress { get; set; } = null!;
     }
 }

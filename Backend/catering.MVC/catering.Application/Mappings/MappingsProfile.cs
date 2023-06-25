@@ -64,7 +64,7 @@ namespace catering.Application.Mappings
                 .ForMember(desc => desc.Email, opt => opt.MapFrom(src => src.FindFirst(c => c.Type == ClaimTypes.Email)!.Value))
                 .ForMember(desc => desc.Roles, opt => opt.MapFrom(src => src.Claims.Where(c => c.Type == ClaimTypes.Role).Select(c => c.Value)));
 
-            CreateMap<GuestAdressDto, UserDeliveryAdress>();
+            CreateMap<GuestAdressDto, DeliveryAdress>();
         }
     }
 }

@@ -20,9 +20,9 @@ namespace catering.Infrastructure.Repositories
             this.httpContextAccessor = httpContextAccessor;
         }
 
-        public async Task AddGuestToOrder(UserDeliveryAdress deliveryAdress, int orderId)
+        public async Task AddGuestToOrder(DeliveryAdress deliveryAdress, int orderId)
         {
-            context.UserDeliveryAdress.Add(deliveryAdress);
+            context.DeliveryAddresses.Add(deliveryAdress);
             await context.SaveChangesAsync();
 
             var newGuest = new Guest

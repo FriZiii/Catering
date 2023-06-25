@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace catering.Domain.Entities.User.AppUser
 {
-    public class UserDeliveryAdress : RegisterInput.DeliveryAdressInput
+    public class DeliveryAdress : RegisterInput.DeliveryAdressInput
     {
     }
 }
