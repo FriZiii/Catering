@@ -2,9 +2,11 @@
 using catering.Application.Managements.DiscountCodeManagment.Commands.ApplyDiscountCode;
 using catering.Application.Managements.DiscountCodeManagment.Queries.GetDiscountCodeValue;
 using catering.Application.Managements.OrderManagment;
+using catering.Application.Managements.OrderManagment.Commands.AddGuestToOrder;
 using catering.Application.Managements.OrderManagment.Commands.AddUserToOrder;
 using catering.Application.Managements.OrderManagment.Commands.DeleteOrderById;
 using catering.Application.Managements.OrderManagment.Commands.DeleteOrderItemById;
+using catering.Application.Managements.OrderManagment.OrderDto;
 using catering.Application.Managements.OrderManagment.Queries.GetOrderById;
 using catering.Application.Managements.OrderManagment.Queries.GetOrderIdFromCookies;
 using catering.Application.Managements.OrderManagment.SubmitOrder;
@@ -67,7 +69,6 @@ namespace catering.MVC.Controllers
             return RedirectToAction("Index", "Payment");
         }
 
-
         public async Task<IActionResult> DeleteOrderItem(int orderItemId)
         {
             await mediator.Send(new DeleteOrderItemByIdCommand(orderItemId));
@@ -92,6 +93,20 @@ namespace catering.MVC.Controllers
             await mediator.Send(new ApplyDiscountCodeCommand(orderId, discount));
 
             return RedirectToAction("Confirm");
+        }
+
+        public IActionResult AsGuest()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> OrderAsGuest(GuestAdressDto guestAdressDto)
+        {
+            int orderId = await mediator.Send(new GetOrderIdFromCookiesQuery());
+            await mediator.Send(new AddGuestToOrderCommand(orderId, guestAdressDto));
+
+            return RedirectToAction("Index", "Payment");
         }
     }
 }

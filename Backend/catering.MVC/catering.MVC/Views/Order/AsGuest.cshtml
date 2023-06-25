@@ -1,0 +1,93 @@
+﻿@using catering.Application.Managements.OrderManagment.OrderDto;
+@model GuestAdressDto
+
+<div class="center-container-register">
+    <form id="registerForm" class="content-register" action="/Order/OrderAsGuest" method="post">
+        <div class="register-inputs-container">
+
+            <div class="register-right-section">
+                <h0 class="register-title">Delivery adress</h0>
+                <p class="register-paragraph">
+                    Give us your an address where you want your meals to be delivered
+                </p>
+
+                <div class="input register-input">
+                    <input class="input_field" type="text" autocomplete="new-password" aria-required="true" asp-for="Adress1"
+                           placeholder=" " />
+                    <span class="input_label">
+                        <img src="~/images/icons/home-yellow.svg" class="input_icon" />
+                        Address 1
+                    </span>
+                    <span asp-validation-for="Adress1" class="error"></span>
+                </div>
+
+                <div class="input register-input">
+                    <input class="input_field" type="text" autocomplete="new-password" aria-required="true" asp-for="Adress2"
+                           placeholder=" " />
+                    <span class="input_label">
+                        <img src="~/images/icons/home-yellow.svg" class="input_icon" />
+                        Address 2
+                    </span>
+                    <span asp-validation-for="Adress2" class="error"></span>
+                </div>
+
+                <div class="register-two-in-one-inputs">
+                    <div class="input register-small-input">
+                        <input class="input_field" type="text" autocomplete="new-password" aria-required="true" asp-for="PostalCode"
+                               placeholder=" " />
+                        <span class="input_label">
+                            <img src="~/images/icons/map-pin-yellow.svg" class="input_icon" />
+                            Pastal code
+                        </span>
+                        <span asp-validation-for="PostalCode" class="error"></span>
+                    </div>
+
+                    <div class="input register-small-input">
+                        <input class="input_field" type="text" autocomplete="new-password" aria-required="true" asp-for="State"
+                               placeholder=" " />
+                        <span class="input_label">
+                            <img src="~/images/icons/map-pin-yellow.svg" class="input_icon" />
+                            State/Region
+                        </span>
+                        <span asp-validation-for="State" class="error"></span>
+                    </div>
+                </div>
+
+
+                <div class="input register-input">
+                    <input class="input_field" type="text" autocomplete="new-password" aria-required="true" asp-for="Country"
+                           placeholder=" " />
+                    <span class="input_label">
+                        <img src="~/images/icons/globe-yellow.svg" class="input_icon" />
+                        Country
+                    </span>
+                    <span asp-validation-for="Country" class="error"></span>
+                </div>
+
+                <div class="input register-input">
+                    <input class="input_field" type="tel" autocomplete="new-password" aria-required="true" asp-for="PhoneNumber"
+                           placeholder=" " />
+                    <span class="input_label">
+                        <img src="~/images/icons/phone-yellow.svg" class="input_icon" />
+                        Phone number
+                    </span>
+                    <span asp-validation-for="PhoneNumber" class="error"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="register-btn-conteiner">
+            <button id="registerSubmit" type="submit" class="btn-with-icon">
+                <span>Go to Payment</span>
+                <img src="~/images/icons/log-in.svg">
+            </button>
+        </div>
+    </form>
+</div>
+
+@section Scripts
+{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
