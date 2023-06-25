@@ -1,11 +1,15 @@
-﻿
+﻿@using catering.Application.Managements.AccountManagment.Commands.Login;
+@using catering.Domain.Entities.OrderEntities;
+@using Microsoft.AspNetCore.Identity
+@using catering.Domain.Entities.User.AppUser;
+
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
+@model Order
 @{
     ViewData["Title"] = "Confirm";
+    var loginCommand = new LoginCommand();
 }
-
-@using catering.Domain.Entities.OrderEntities;
-@model Order
-
 <div class="content">
     <div class="orderdetails-listtitle">
         <h1>Order</h1>
@@ -104,7 +108,18 @@
                     <p class="summary-price-item summary-total-price">$@Model.TotalPriceAfterDiscount</p>
                     </div>
                 </div>
-            <button class="summary-button" id="order-open-modal">Go to Summary</button>
+            @if (User?.Identity != null && User.Identity.IsAuthenticated)
+            {
+                <form method="post" action="@Url.Action("ConfirmOrder", "Order")">
+                    <button class="summary-button" type="submit">
+                        Go to Payment
+                    </button>
+                </form>
+            }
+            else
+            {
+                <button class="summary-button" id="order-open-modal">Go to Payment</button>
+            }
         </div>
     </div>
 
@@ -122,10 +137,11 @@
                     <h2 class="order-modal-title">Returning Customers</h2>
                     <p class="order-modal-p">Sign in to speed up the checkout process and save your order to account.</p>
 
-                    <form class="order-content-login" id="account" method="post">
+                    <form class="order-content-login" id="account" method="post" action="/Account/Login">
                         <div role="alert"></div>
                         <div class="order-input">
-                            <input class="input_field" type="email" autocomplete="username" aria-required="true" placeholder=" " />
+                            <input class="input_field" type="email" autocomplete="username" aria-required="true" asp-for="@loginCommand.Email"
+                            placeholder=" " />
                             <span class="input_label">
                                 <img src="~/images/icons/men.svg" class="input_icon" />
                                 Email
@@ -133,9 +149,10 @@
                         </div>
 
                         <div class="order-input">
-                            <input class="input_field" type="password" autocomplete="current-password" aria-required="true" placeholder=" " />
+                            <input class="input_field" type="password" autocomplete="current-password" aria-required="true" asp-for="@loginCommand.Password"
+                            placeholder=" " />
                             <span class="input_label">
-                                <img src="~/images/icons/lock.svg" class="input_icon" />
+                                <img src="~/images/icons/lock-yellow.svg" class="input_icon" />
                                 Password
                             </span>
                         </div>
@@ -159,7 +176,7 @@
                         <h2 class="order-modal-title">New Customers</h2>
                         <p class="order-modal-p">Register to streamline your checkout process and save your orders to your account.</p>
                         <div>
-                            <a class="btn-no-cta">
+                            <a class="btn-no-cta" asp-action="Register" asp-controller="Account">
                                 <span> 
                                     Register for free
                                 </span> 
