@@ -4,9 +4,11 @@ using catering.Application.Managements.AccountManagment.Commands;
 using catering.Application.Managements.CartManagement;
 using catering.Application.Managements.OfferManagment;
 using catering.Application.Managements.OrderManagment;
+using catering.Application.Managements.OrderManagment.OrderDto;
 using catering.Domain.Entities;
 using catering.Domain.Entities.CartEntities;
 using catering.Domain.Entities.OrderEntities;
+using catering.Domain.Entities.User.AppUser;
 using catering.Domain.Entities.User.LoginInput;
 using catering.Domain.Entities.User.RegisterInput;
 using System.Security.Claims;
@@ -62,7 +64,7 @@ namespace catering.Application.Mappings
                 .ForMember(desc => desc.Email, opt => opt.MapFrom(src => src.FindFirst(c => c.Type == ClaimTypes.Email)!.Value))
                 .ForMember(desc => desc.Roles, opt => opt.MapFrom(src => src.Claims.Where(c => c.Type == ClaimTypes.Role).Select(c => c.Value)));
 
-
+            CreateMap<GuestAdressDto, UserDeliveryAdress>();
         }
     }
 }
