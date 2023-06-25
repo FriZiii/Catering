@@ -1,4 +1,4 @@
-﻿@using catering.Application.Managements.AccountManagment.Commands.Login;
+﻿@using catering.Application.Managements.AccountManagment.Querries.Login;
 @using catering.Domain.Entities.OrderEntities;
 @using Microsoft.AspNetCore.Identity
 @using catering.Domain.Entities.User.AppUser;
@@ -8,7 +8,7 @@
 @model Order
 @{
     ViewData["Title"] = "Confirm";
-    var loginCommand = new LoginCommand();
+    var loginQuerry = new LoginQuerry();
 }
 <div class="content">
     <div class="orderdetails-listtitle">
@@ -140,7 +140,7 @@
                     <form class="order-content-login" id="account" method="post" action="/Account/Login">
                         <div role="alert"></div>
                         <div class="order-input">
-                            <input class="input_field" type="email" autocomplete="username" aria-required="true" asp-for="@loginCommand.Email"
+                            <input class="input_field" type="email" autocomplete="username" aria-required="true" asp-for="@loginQuerry.Email"
                             placeholder=" " />
                             <span class="input_label">
                                 <img src="~/images/icons/men.svg" class="input_icon" />
@@ -149,7 +149,7 @@
                         </div>
 
                         <div class="order-input">
-                            <input class="input_field" type="password" autocomplete="current-password" aria-required="true" asp-for="@loginCommand.Password"
+                            <input class="input_field" type="password" autocomplete="current-password" aria-required="true" asp-for="@loginQuerry.Password"
                             placeholder=" " />
                             <span class="input_label">
                                 <img src="~/images/icons/lock-yellow.svg" class="input_icon" />
