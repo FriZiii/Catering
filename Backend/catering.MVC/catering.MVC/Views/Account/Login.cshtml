@@ -1,6 +1,6 @@
-﻿@using catering.Application.Managements.AccountManagment.Commands.Login;
+﻿@using catering.Application.Managements.AccountManagment.Querries.Login;
 
-@model LoginCommand
+@model LoginQuerry
 <div class="center-container-login">
     <div class="container-login">
         <div class="image-login">
@@ -11,7 +11,14 @@
                 <img src="~/images/yummy-logo.svg" alt="Logo">
             </div>
             <h1>Hello again!</h1>
-            <h2>Enter your credentials</h2>
+            @if(ViewData.ModelState.Any(x => x.Key == string.Empty && x.Value.Errors.Count > 0))
+            {
+                <h2 style="color: red">Invalid login attempt</h2>
+            }
+            else
+            {
+                <h2>Enter your credentials</h2>
+            }
 
             <div class="input login-margin">
                 <input class="input_field" type="email" autocomplete="username" aria-required="true" asp-for="Email"
@@ -20,6 +27,7 @@
                     <img src="~/images/icons/user-yellow.svg" class="input_icon" />
                     Email
                 </span>
+                <span asp-validation-for="Email" class="error"></span>
             </div>
 
             <div class="input login-margin">
@@ -29,6 +37,7 @@
                     <img src="~/images/icons/lock-yellow.svg" class="input_icon" />
                     Password
                 </span>
+                <span asp-validation-for="Password" class="error"></span>
             </div>
 
             <div class="remember-me-container">
