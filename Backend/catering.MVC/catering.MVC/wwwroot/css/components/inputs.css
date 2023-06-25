@@ -55,6 +55,10 @@ input:-webkit-autofill {
         transform: scale(0.8);
     }
 
+.error {
+    color: red;
+    font-size: 12px;
+}
 
 .remember-me-container {
     margin-right: 37%;
