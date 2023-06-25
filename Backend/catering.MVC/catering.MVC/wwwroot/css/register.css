@@ -40,7 +40,7 @@
 }
 
 #registerSubmit{
- margin: 0;
+    margin: 0;
 }
 
 .register-input {
@@ -50,11 +50,6 @@
 
 .register-inputs-container .input_field {
     font-size: 20px;
-}
-
-.register-inputs-container .error {
-    color: red;
-    font-size: 10px;
 }
 
 .logo-register {
