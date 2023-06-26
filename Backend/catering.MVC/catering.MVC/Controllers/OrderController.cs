@@ -1,4 +1,5 @@
 ﻿using catering.Application.Managements.AccountManagment.Querries.GetCurrentUser;
+using catering.Application.Managements.AccountManagment.Querries.Login;
 using catering.Application.Managements.DiscountCodeManagment.Commands.ApplyDiscountCode;
 using catering.Application.Managements.DiscountCodeManagment.Queries.GetDiscountCodeValue;
 using catering.Application.Managements.OrderManagment;
@@ -11,6 +12,7 @@ using catering.Application.Managements.OrderManagment.Queries.GetOrderById;
 using catering.Application.Managements.OrderManagment.Queries.GetOrderIdFromCookies;
 using catering.Application.Managements.OrderManagment.SubmitOrder;
 using catering.Application.Serializers;
+using catering.MVC.Models;
 using Humanizer;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -49,7 +51,7 @@ namespace catering.MVC.Controllers
                 var order = await mediator.Send(new GetOrderByIdQuerry(orderId));
                 if (order is not null && order.OrderItems.Any())
                 {
-                    return View(order);
+                    return View(new ConfirmViewModel() { Order = order, LoginQuerry = new LoginQuerry() }) ;
                 }
                 else
                 {

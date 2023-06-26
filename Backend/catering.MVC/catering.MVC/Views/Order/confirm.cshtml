@@ -5,10 +5,9 @@
 
 @inject SignInManager<AppUser> SignInManager
 @inject UserManager<AppUser> UserManager
-@model Order
+@model ConfirmViewModel
 @{
     ViewData["Title"] = "Confirm";
-    var loginQuerry = new LoginQuerry();
 }
 <div class="content">
     <div class="orderdetails-listtitle">
@@ -16,7 +15,7 @@
     </div>
     <div class="orders-section">
         <div class="orders-list">
-        @foreach (var item in Model.OrderItems)
+        @foreach (var item in Model.Order.OrderItems)
         {
             <div class="order-item">
                 <div class="orderdetails-image-container">
@@ -69,7 +68,7 @@
         }
         <div class="orderdetails-cancel-button-section">
             <form method="post" action="@Url.Action("DeleteOrder", "Order")">
-                <input type="hidden" name="orderId" value="@Model.Id" />
+                    <input type="hidden" name="orderId" value="@Model.Order.Id" />
                 <button class="orderdetails-cancel-button">
                     <img class="orderdetails-cancel-icon" src="~/images/icons/x.svg" alt="Trash Icon">
                     <span class="orderdetails-cancel-span">Cancel all</span>
@@ -84,11 +83,11 @@
                         <input type="text" placeholder="Enter discount code" class="summary-discount-input" name="discountCode" />
                         <button type="submit" class="summary-apply-button">Apply</button>
                     </form>
-                    @if(Model.DiscountCode is not null)
+                @if (Model.Order.DiscountCode is not null)
                     {
                         <div class="summary-discount-applied-code">
                             <img class="summary-discount-applied-code-image" src="~/images/icons/discount.svg">
-                        <h4 class="summary-discount-applied-code-text">@Model.DiscountCode.Code.ToUpper() - @Model.DiscountCode.DiscountPercentage%</h4>
+                        <h4 class="summary-discount-applied-code-text">@Model.Order.DiscountCode.Code.ToUpper() - @Model.Order.DiscountCode.DiscountPercentage%</h4>
                         </div>
                     }
                 </div>
@@ -100,12 +99,12 @@
                         <p class="summary-price-item summary-total-price">To pay</p>
                     </div>
                     <div class="summary-price-right">
-                        <p class="summary-price-item">$@Model.TotalPriceBeforeDiscount</p>
+                    <p class="summary-price-item">$@Model.Order.TotalPriceBeforeDiscount</p>
                     @{
-                        var x = Model.DiscountCode is null ? "---" : $"-{((Model.TotalPriceBeforeDiscount * Model.DiscountCode.DiscountPercentage) / 100).ToString()}$";
+                        var x = Model.Order.DiscountCode is null ? "---" : $"-{((Model.Order.TotalPriceBeforeDiscount * Model.Order.DiscountCode.DiscountPercentage) / 100).ToString()}$";
                     }
                     <p class="summary-price-item">@x</p>
-                    <p class="summary-price-item summary-total-price">$@Model.TotalPriceAfterDiscount</p>
+                    <p class="summary-price-item summary-total-price">$@Model.Order.TotalPriceAfterDiscount</p>
                     </div>
                 </div>
             @if (User?.Identity != null && User.Identity.IsAuthenticated)
@@ -136,25 +135,26 @@
                 <div class="left-section">
                     <h2 class="order-modal-title">Returning Customers</h2>
                     <p class="order-modal-p">Sign in to speed up the checkout process and save your order to account.</p>
-
                     <form class="order-content-login" id="account" method="post" action="/Account/Login">
                         <div role="alert"></div>
                         <div class="order-input">
-                            <input class="input_field" type="email" autocomplete="username" aria-required="true" asp-for="@loginQuerry.Email"
+                            <input class="input_field" type="email" autocomplete="username" aria-required="true" asp-for="@Model.LoginQuerry.Email"
                             placeholder=" " />
                             <span class="input_label">
                                 <img src="~/images/icons/men.svg" class="input_icon" />
                                 Email
                             </span>
+                            <span asp-validation-for="LoginQuerry.Email" class="error"></span>
                         </div>
 
                         <div class="order-input">
-                            <input class="input_field" type="password" autocomplete="current-password" aria-required="true" asp-for="@loginQuerry.Password"
+                            <input class="input_field" type="password" autocomplete="current-password" aria-required="true" asp-for="@Model.LoginQuerry.Password"
                             placeholder=" " />
                             <span class="input_label">
                                 <img src="~/images/icons/lock-yellow.svg" class="input_icon" />
                                 Password
                             </span>
+                            <span asp-validation-for="LoginQuerry.Password" class="error"></span>
                         </div>
 
                         <div class="order-remember-me-container">
@@ -198,3 +198,9 @@
         </div>
     </div>
 </div>
+@section Scripts
+{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
