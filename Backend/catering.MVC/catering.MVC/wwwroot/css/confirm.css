@@ -396,7 +396,12 @@
         position: relative;
         right: -6em;
     }
-
+    .summary-button-form {
+        width: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
     .summary-button {
         width: 40%;
     }

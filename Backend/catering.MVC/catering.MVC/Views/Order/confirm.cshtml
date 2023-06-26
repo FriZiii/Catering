@@ -110,7 +110,7 @@
                 </div>
             @if (User?.Identity != null && User.Identity.IsAuthenticated)
             {
-                <form method="post" action="@Url.Action("ConfirmOrder", "Order")">
+                <form class="summary-button-form" method="post" action="@Url.Action("ConfirmOrder", "Order")">
                     <button class="summary-button" type="submit">
                         Go to Payment
                     </button>
