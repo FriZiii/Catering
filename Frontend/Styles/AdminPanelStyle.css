@@ -35,6 +35,18 @@
   outline: none;
 }
 
+.hidden-admin {
+  display: none;
+}
+
+.section-admin {
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+
 /* admin page modal */
 
 .modal-admin {

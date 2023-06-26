@@ -62,26 +62,39 @@
     <div class="content">
         <div class="main-admin">
 
+            <button onclick="openModalAdmin()">Add new product</button>
+
 
             <div class="left-icon-panel-admin">
-                <button class="admin-left-panel-button">
+                <button class="admin-left-panel-button" onclick="showDiv(1)">
                     <div class="icon"><img src="Images/admin-1-user-icon.svg" alt="Icon 1"></div>
                 </button>
-                <button class="admin-left-panel-button">
+                <button class="admin-left-panel-button" onclick="showDiv(2)">
                     <div class="icon"><img src="Images/admin-2-discount-icon.svg" alt="Icon 2"></div>
                 </button>
-                <button class="admin-left-panel-button">
+                <button class="admin-left-panel-button" onclick="showDiv(3)">
                     <div class="icon"><img src="Images/admin-3-cart-icon.svg" alt="Icon 3"></div>
                 </button>
-                <button class="admin-left-panel-button">
+                <button class="admin-left-panel-button" onclick="showDiv(4)">
                     <div class="icon"><img src="Images/admin-4-box-icon.svg" alt="Icon 4"></div>
                 </button>
             </div>
 
+            <div id="div1-admin" class="hidden-admin section-admin">
+                <h2>Title 1</h2>
+            </div>
 
+            <div id="div2-admin" class="hidden-admin section-admin">
+                <h2>Title 2</h2>
+            </div>
 
-            <button onclick="openModalAdmin()">Add new product</button>
+            <div id="div3-admin" class="hidden-admin section-admin">
+                <h2>Title 3</h2>
+            </div>
 
+            <div id="div4-admin" class="hidden-admin section-admin">
+                <h2>Ultras Miedź Legnica</h2>
+            </div>
 
 
 
@@ -125,6 +138,7 @@
         </div>
         <a>Copyrights © 2023</a>
     </footer>
+    <script src="divsadminscript.js"></script>
     <script src="adminmodalscript.js" defer></script>
     <script src="scriptFAQ.js" defer></script>
     <script src="offerscript.js" defer></script>
