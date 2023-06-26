@@ -52,7 +52,7 @@
 }
 
 .guest-small-input {
-    width: 175px;
+    width: 180px;
     margin-bottom: 15px !important;
 }
 
@@ -66,11 +66,8 @@
         display: none;
     }
 
-    .container-guest {
-        width: 80%;
-        height: auto;
-        flex-direction: column;
-        padding-bottom: 80px;
+    .guest-paragraph {
+        max-width: 370px;
     }
 }
 
