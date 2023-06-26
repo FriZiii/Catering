@@ -35,6 +35,8 @@
   font-weight: bold;
   font-size: 0.9em;
   text-align: center;
+  color: var(--grey);
+  text-decoration: none;
 }
 
 .btn-no-cta span {
