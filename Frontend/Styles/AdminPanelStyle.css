@@ -3,6 +3,40 @@
   height: 60vh;
 }
 
+.left-icon-panel-admin {
+  position: absolute;
+  left: 2vh;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  padding-top: 35px;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+  background-color: var(--light-yellow);
+}
+
+.icon {
+  margin-left: 25px;
+  margin-bottom: 25px;
+}
+
+.icon img {
+  width: 35px;
+  height: 35px;
+}
+
+.admin-left-panel-button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+}
+
+/* admin page modal */
+
 .modal-admin {
   padding-top: 20vh;
   display: none;
