@@ -22,12 +22,11 @@
   }
 
 
-
-
 /*A without icon*/
 .btn-no-cta {
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-top: 20px;
   padding: 10px 30px;
   border-radius: 15px;
