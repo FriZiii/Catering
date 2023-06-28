@@ -11,13 +11,10 @@
                 <img src="~/images/yummy-logo.svg" alt="Logo">
             </div>
             <h1>Hello again!</h1>
-            @if(ViewData.ModelState.Any(x => x.Key == string.Empty && x.Value.Errors.Count > 0))
+            <h2>Enter your credentials</h2>
+            @if(ViewData.ModelState.Any(x => x.Key == string.Empty &&( x.Value?.Errors.Count > 0)))
             {
-                <h2 style="color: red">Invalid login attempt</h2>
-            }
-            else
-            {
-                <h2>Enter your credentials</h2>
+                <h2 class="error">Invalid login attempt</h2>
             }
 
             <div class="input login-margin">
