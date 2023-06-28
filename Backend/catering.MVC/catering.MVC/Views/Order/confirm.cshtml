@@ -5,17 +5,18 @@
 
 @inject SignInManager<AppUser> SignInManager
 @inject UserManager<AppUser> UserManager
-@model ConfirmViewModel
+@model Order
 @{
     ViewData["Title"] = "Confirm";
 }
+
 <div class="content">
     <div class="orderdetails-listtitle">
         <h1>Order</h1>
     </div>
     <div class="orders-section">
         <div class="orders-list">
-        @foreach (var item in Model.Order.OrderItems)
+        @foreach (var item in Model.OrderItems)
         {
             <div class="order-item">
                 <div class="orderdetails-image-container">
@@ -68,7 +69,7 @@
         }
         <div class="orderdetails-cancel-button-section">
             <form method="post" action="@Url.Action("DeleteOrder", "Order")">
-                    <input type="hidden" name="orderId" value="@Model.Order.Id" />
+                    <input type="hidden" name="orderId" value="@Model.Id" />
                 <button class="orderdetails-cancel-button">
                     <img class="orderdetails-cancel-icon" src="~/images/icons/x.svg" alt="Trash Icon">
                     <span class="orderdetails-cancel-span">Cancel all</span>
@@ -83,11 +84,11 @@
                         <input type="text" placeholder="Enter discount code" class="summary-discount-input" name="discountCode" />
                         <button type="submit" class="summary-apply-button">Apply</button>
                     </form>
-                @if (Model.Order.DiscountCode is not null)
+                @if (Model.DiscountCode is not null)
                     {
                         <div class="summary-discount-applied-code">
                             <img class="summary-discount-applied-code-image" src="~/images/icons/discount.svg">
-                        <h4 class="summary-discount-applied-code-text">@Model.Order.DiscountCode.Code.ToUpper() - @Model.Order.DiscountCode.DiscountPercentage%</h4>
+                        <h4 class="summary-discount-applied-code-text">@Model.DiscountCode.Code.ToUpper() - @Model.DiscountCode.DiscountPercentage%</h4>
                         </div>
                     }
                 </div>
@@ -99,17 +100,17 @@
                         <p class="summary-price-item summary-total-price">To pay</p>
                     </div>
                     <div class="summary-price-right">
-                    <p class="summary-price-item">$@Model.Order.TotalPriceBeforeDiscount</p>
+                    <p class="summary-price-item">$@Model.TotalPriceBeforeDiscount</p>
                     @{
-                        var x = Model.Order.DiscountCode is null ? "---" : $"-{((Model.Order.TotalPriceBeforeDiscount * Model.Order.DiscountCode.DiscountPercentage) / 100).ToString()}$";
+                        var x = Model.DiscountCode is null ? "---" : $"-{((Model.TotalPriceBeforeDiscount * Model.DiscountCode.DiscountPercentage) / 100).ToString()}$";
                     }
                     <p class="summary-price-item">@x</p>
-                    <p class="summary-price-item summary-total-price">$@Model.Order.TotalPriceAfterDiscount</p>
+                    <p class="summary-price-item summary-total-price">$@Model.TotalPriceAfterDiscount</p>
                     </div>
                 </div>
             @if (User?.Identity != null && User.Identity.IsAuthenticated)
             {
-                <form class="summary-button-form" method="post" action="@Url.Action("ConfirmOrder", "Order")">
+                <form class="summary-button-form " method="post" action="@Url.Action("ConfirmOrder", "Order")">
                     <button class="summary-button" type="submit">
                         Go to Payment
                     </button>
@@ -134,28 +135,25 @@
             <div class="modal-sections-container">
                 <h2 class="order-modal-title">Returning Customers</h2>
                 <p class="order-modal-p">Sign in to speed up the checkout process and save your order to account.</p>
-                <a class="btn-no-cta details-modal-btn-no-cta"> <span> Sign in</span> <img src="Images/log-in.svg"></a>
+                <a class="btn-no-cta details-modal-btn-no-cta" asp-action="Login" asp-controller="Account" asp-route-returnUrl="@Context.Request.Path">
+                    <span> Sign in</span>
+                    <img src="~/images/icons/log-in.svg">
+                </a>
                     
                 <div class="horizontal-line"></div>
                 <h2 class="order-modal-title">New Customers</h2>
                 <p class="order-modal-p">Register to streamline your checkout process and save your orders to your account.</p>
-                    <a class="btn-no-cta details-modal-btn-no-cta" asp-action="Register" asp-controller="Account" asp-route-returnUrl="@Context.Request.Path">
-                        <span> Register for free </span> 
-                    </a>
+                <a class="btn-no-cta details-modal-btn-no-cta" asp-action="Register" asp-controller="Account" asp-route-returnUrl="@Context.Request.Path">
+                    <span> Register for free </span> 
+                </a>
 
                 <div class="horizontal-line"></div>
                 <h2 class="order-modal-title">Order as guest</h2>
                 <p class="order-modal-p">Enjoy a quick and hassle-free ordering experience without creating an account. </p>
-                    <a class="btn-no-cta details-modal-btn-no-cta" asp-action="AsGuest" asp-controller="Order">
-                         <span> Order as guest </span>
-                    </a>
+                <a class="btn-no-cta details-modal-btn-no-cta" asp-action="AsGuest" asp-controller="Order">
+                     <span> Order as guest </span>
+                </a>
             </div>
         </div>
     </div>
 </div>
-@section Scripts
-{
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-}

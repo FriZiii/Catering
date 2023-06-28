@@ -51,7 +51,7 @@ namespace catering.MVC.Controllers
                 var order = await mediator.Send(new GetOrderByIdQuerry(orderId));
                 if (order is not null && order.OrderItems.Any())
                 {
-                    return View(new ConfirmViewModel() { Order = order, LoginQuerry = new LoginQuerry() }) ;
+                    return View(order) ;
                 }
                 else
                 {
