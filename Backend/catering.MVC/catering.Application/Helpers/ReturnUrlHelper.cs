@@ -2,7 +2,7 @@
 
 namespace catering.Application.Helpers
 {
-    public class ReturnUrl
+    public class ReturnUrlHelper
     {
         public string GetReturnUrl(string url)
         {

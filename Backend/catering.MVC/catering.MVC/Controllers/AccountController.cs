@@ -4,19 +4,18 @@ using catering.Application.Managements.AccountManagment.Commands.Register;
 using catering.Application.Managements.AccountManagment.Querries.Login;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using System.Web;
 
 namespace catering.MVC.Controllers
 {
     public class AccountController : Controller
     {
         private readonly IMediator mediator;
-        private readonly ReturnUrl returnUrl;
+        private readonly ReturnUrlHelper returnUrlHelper;
 
-        public AccountController(IMediator mediator, ReturnUrl returnUrl)
+        public AccountController(IMediator mediator, ReturnUrlHelper returnUrlHelper)
         {
             this.mediator = mediator;
-            this.returnUrl = returnUrl;
+            this.returnUrlHelper = returnUrlHelper;
         }
 
         public IActionResult Register()
@@ -28,7 +27,7 @@ namespace catering.MVC.Controllers
         public async Task<IActionResult> Register(RegisterCommand registerCommand)
         {
             var referer = Request.GetTypedHeaders().Referer;
-            string url = returnUrl.GetReturnUrl(referer?.ToString()!);
+            string returnUrl = returnUrlHelper.GetReturnUrl(referer?.ToString()!);
             if (!ModelState.IsValid)
             {
                 return View(registerCommand);
@@ -36,7 +35,7 @@ namespace catering.MVC.Controllers
             else
             {
                 await mediator.Send(registerCommand);
-                return Redirect(url);
+                return Redirect(returnUrl);
             }
         }
 
@@ -50,14 +49,14 @@ namespace catering.MVC.Controllers
         {
 
             var referer = Request.GetTypedHeaders().Referer;
-            string url = returnUrl.GetReturnUrl(referer?.ToString()!);
+            string returnUrl = returnUrlHelper.GetReturnUrl(referer?.ToString()!);
             if (ModelState.IsValid)
             {
                 var result = await mediator.Send(loginQuerry);
 
                 if (result.Succeeded)
                 {
-                    return Redirect(url);
+                    return Redirect(returnUrl);
                 }
                 else
                 {
@@ -77,6 +76,5 @@ namespace catering.MVC.Controllers
             await mediator.Send(new LogoutCommand());
             return Redirect(returnUrl);
         }
-
     }
 }

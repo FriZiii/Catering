@@ -20,7 +20,7 @@ namespace catering.Application.Extensions
 
             services.AddScoped<OrderItemSerializer>();
 
-            services.AddScoped<ReturnUrl>();
+            services.AddScoped<ReturnUrlHelper>();
 
             services.AddValidatorsFromAssemblyContaining<CreateProductCommandValidator>()
                 .AddFluentValidationAutoValidation()
