@@ -103,7 +103,7 @@ namespace catering.MVC.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> OrderAsGuest(GuestAdressDto guestAdressDto)
+        public async Task<IActionResult> AsGuest(GuestAdressDto guestAdressDto)
         {
             int orderId = await mediator.Send(new GetOrderIdFromCookiesQuery());
             await mediator.Send(new AddGuestToOrderCommand(orderId, guestAdressDto));
