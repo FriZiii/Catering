@@ -79,6 +79,16 @@ namespace catering.Infrastructure.Repositories
             }
         }
 
+        public async Task<IEnumerable<Order>> GetAllOrders()
+            => await context.Orders
+            .Include(o => o.AppUser).ThenInclude(oda => oda!.DeliveryAdress)
+            .Include(o=>o.Guest).ThenInclude(oda => oda!.DeliveryAdress)
+            .Include(o => o.OrderItems).ThenInclude(oi => oi.Dates)
+            .Include(o => o.OrderItems).ThenInclude(oi => oi.Meals)
+            .Include(o => o.OrderItems).ThenInclude(oi => oi.Product)
+            .Include(o => o.DiscountCode)
+            .ToListAsync();
+
         public async Task<Order?> GetOrderById(int id)
             => await context.Orders
                 .Include(o => o.OrderItems).ThenInclude(oi => oi.Dates)

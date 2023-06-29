@@ -18,5 +18,6 @@ namespace catering.Domain.Interface
         int GetOrderIdFromCookies();
         Task AddUserToOrder(string userId, int orderId);
         Task AddGuestToOrder(DeliveryAdress deliveryAdress, int orderId);
+        Task<IEnumerable<Order>> GetAllOrders();
     }
 }
