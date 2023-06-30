@@ -53,12 +53,17 @@
 }
 
 .search-bar-admin-products {
-  width: 50%;
+  width: 40vh;
   position: relative;
   display: inline-block;
   top: 0px;
-  left: 0px;
-  margin-right: 15vh;
+  left: -38vh;
+}
+
+.title-products-admin {
+  display: inline-block;
+  padding-right: 75vh;
+  font-weight: normal;
 }
 
 .create-product-button-admin {
@@ -79,6 +84,8 @@
   height: 20px;
 }
 
+
+
 /*table products admin*/
 
 .table-div-admin {
@@ -94,7 +101,9 @@ table {
 
 th,
 td {
-  padding: 30px;
+  padding: 38px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   text-align: left;
   border-bottom: 1px solid #ddd;
 }
