@@ -6,14 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Styles/404Style.css">
+    <link rel="stylesheet" href="./Styles/AdminPanelStyle.css">
     <link rel="stylesheet" href="./Styles/BodyStyle.css">
+    <link rel="stylesheet" href="./Styles/ButtonsStyle.css">
     <link rel="stylesheet" href="./Styles/CartStyle.css">
-    <link rel="stylesheet" href="./Styles/CalendarStyle.css">
     <link rel="stylesheet" href="./Styles/colors.css">
     <link rel="stylesheet" href="./Styles/ContactStyle.css">
     <link rel="stylesheet" href="./Styles/EmptyCartStyle.css">
     <link rel="stylesheet" href="./Styles/FAQStyle.css">
     <link rel="stylesheet" href="./Styles/FooterStyle.css">
+    <link rel="stylesheet" href="./Styles/GuestStyle.css">
     <link rel="stylesheet" href="./Styles/HeaderStyle.css">
     <link rel="stylesheet" href="./Styles/HomeStyle.css">
     <link rel="stylesheet" href="./Styles/InputsStyle.css">
@@ -21,7 +23,6 @@
     <link rel="stylesheet" href="./Styles/NewCart.css">
     <link rel="stylesheet" href="./Styles/OfferStyle.css">
     <link rel="stylesheet" href="./Styles/OrderDetailsStyle.css">
-    <link rel="stylesheet" href="./Styles/PickerStyle.css">
     <link rel="stylesheet" href="./Styles/RegisterStyle.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
@@ -58,25 +59,74 @@
 
     </header>
 
-    <h2 class="title-center-contact">Contact us</h2>
-    <div class="content-contact">
-        <div class="container-contact">
-            <div class="imgBox-contact">
-                <img src="Images/header-img.png" class="food-contact">
+    <div class="contact">
+        <h2 class="title-center-contact">Contact us</h2>
+        <div class="content-contact">
+            <div class="container-contact">
+                <div class="imgBox-contact">
+                    <img src="Images/header-img.png" class="food-contact">
+                </div>
+                <div class="textBox-contact">
+                    <p>Send us a message</p>
+                    <div class="contact-inputs-container">
+                        <div class="input">
+                            <input class="input_field contact-input-field" type="text"  aria-required="true"
+                                placeholder=" " />
+                            <span class="input_label">
+                                <img src="Images/user-yellow.svg" class="input_icon" />
+                                First name and surname
+                            </span>
+                        </div>
+                        <div class="input">
+                            <input class="input_field contact-input-field" type="email"  aria-required="true"
+                                placeholder=" " />
+                            <span class="input_label">
+                                <img src="Images/mail-yellow.svg" class="input_icon" />
+                                Email
+                            </span>
+                        </div>
+                        <div class="input">
+                            <input class="input_field contact-input-field" type="email"  aria-required="true"
+                                placeholder=" " />
+                            <span class="input_label">
+                                <img src="Images/pencil-yellow.svg" class="input_icon" />
+                                Message subjact
+                            </span>
+                        </div>
+                        <div class="input">
+                            <input class="input_field contact-input-field contact-message-input-field" type="email"  aria-required="true"
+                                placeholder=" " />
+                            <span class="input_label">
+                                <img src="Images/text-yellow.svg" class="input_icon" />
+                                Your message
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-button-container">
+                        <a class="btn-no-cta" href="#"><span>Send</span><img src="Images/send.svg"></a>
+                    </div>
+                </div>
+            
             </div>
-            <div class="textBox-contact">
-                <p>Send us a message</p>
-                <section>First name and Surname</section>
-                <section>Email adress</section>
-                <section>Message subject</section>
-                <section class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro ea qui molestias
-                    suscipit pariatur sapiente odio necessitatibus veritatis perspiciatis, laboriosam amet ipsa nesciunt
-                    velit consectetur modi, exercitationem inventore sequi. Odio.</section>
-                <a class="cta send-contact" href="#"><button>Send</button></a>
+        </div>
+        <div class="contact-icons-container">
+            <div class="contact-icon-item">
+                <img src="Images/phone-yellow.svg">
+                <h4>PHONE</h4>
+                <p>32 234 25 25</p>
             </div>
-
-        </div class="container-contact">
-    </div>
+            <div class="contact-icon-item">
+                <img src="Images/map-pin-yellow.svg">
+                <h4>ADDRESS</h4>
+                <p>12 34 Sesame St.</p>
+            </div>
+            <div class="contact-icon-item">
+                <img src="Images/mail-yellow.svg">
+                <h4>EMAIL</h4>
+                <p>yummy@contact.com</p>
+            </div>
+        </div>
 
     </div>
     <footer style="position: relative;">
