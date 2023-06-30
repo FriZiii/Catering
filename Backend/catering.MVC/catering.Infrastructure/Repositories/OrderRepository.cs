@@ -118,6 +118,15 @@ namespace catering.Infrastructure.Repositories
             return 0;
         }
 
+        public async Task<IEnumerable<Order>> GetOrdersByUserId(string userID)
+            => await context.Orders
+                .Include(o => o.OrderItems).ThenInclude(oi => oi.Dates)
+                .Include(o => o.OrderItems).ThenInclude(oi => oi.Meals)
+                .Include(o => o.OrderItems).ThenInclude(oi => oi.Product)
+                .Include(o => o.DiscountCode)
+                .Where(o => o.AppUserId == userID)
+                .ToListAsync();
+
         public void RemoveOrderIdFromCookies()
         {
             var httpContext = httpContextAccessor?.HttpContext;
