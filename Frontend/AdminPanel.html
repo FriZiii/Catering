@@ -62,9 +62,6 @@
     <div class="content">
         <div class="main-admin">
 
-            <button onclick="openModalAdmin()">Add new product</button>
-
-
             <div class="left-icon-panel-admin">
                 <button class="admin-left-panel-button" onclick="showDiv(1)">
                     <div class="icon"><img src="Images/admin-1-user-icon.svg" alt="Icon 1"></div>
@@ -80,8 +77,90 @@
                 </button>
             </div>
 
-            <div id="div1-admin" class="hidden-admin section-admin">
-                <h2>Title 1</h2>
+            <div id="div1-admin" class="hidden-admin section-admin div-with-table-admin">
+
+                <div class="div1-actions-admin">
+                    <input type="text" class="input_field search-bar-admin-products" placeholder="Search...">
+                    <button class="create-product-button-admin" onclick="openModalAdminProduct()">
+                        <img src="Images/plus-icon.svg">
+                        CREATE PRODUCT</button>
+                </div>
+
+                <div class="table-div-admin">
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Price</th>
+                                <th>Image Name</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Product 1</td>
+                                <td>Description 1</td>
+                                <td>$10.99</td>
+                                <td>product1.jpg</td>
+                                <td><button class="delete-button-admin">Delete</button></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Product 2</td>
+                                <td>Description 2</td>
+                                <td>$19.99</td>
+                                <td>product2.jpg</td>
+                                <td><button class="delete-button-admin">Delete</button></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Product 2</td>
+                                <td>Description 2</td>
+                                <td>$19.99</td>
+                                <td>product2.jpg</td>
+                                <td><button class="delete-button-admin">Delete</button></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Product 2</td>
+                                <td>Description 2</td>
+                                <td>$19.99</td>
+                                <td>product2.jpg</td>
+                                <td><button class="delete-button-admin">Delete</button></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Product 2</td>
+                                <td>Description 2</td>
+                                <td>$19.99</td>
+                                <td>product2.jpg</td>
+                                <td><button class="delete-button-admin">Delete</button></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Product 2</td>
+                                <td>Description 2</td>
+                                <td>$19.99</td>
+                                <td>product2.jpg</td>
+                                <td><button class="delete-button-admin">Delete</button></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Product 2</td>
+                                <td>Description 2</td>
+                                <td>$19.99</td>
+                                <td>product2.jpg</td>
+                                <td><button class="delete-button-admin">Delete</button></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
             </div>
 
             <div id="div2-admin" class="hidden-admin section-admin">
@@ -100,7 +179,7 @@
 
             <div id="modal-create-admin" class="modal-admin">
                 <div class="modal-content-admin">
-                    <span class="close-admin" onclick="closeModalAdmin()">&times;</span>
+                    <span class="close-admin" onclick="closeModalAdminProduct()">&times;</span>
                     <h2 class="modal-title-admin">Create new product</h2>
                     <div class="form-group-admin">
                         <input class="input_field" placeholder="Name" type="text" id="name" />
@@ -115,7 +194,7 @@
                         <input class="file-input-modal-admin" type="file" id="image" />
                     </div>
                     <div class="buttons-admin">
-                        <button class="cancel-admin" onclick="closeModalAdmin()">Cancel</button>
+                        <button class="cancel-admin" onclick="closeModalAdminProduct()">Cancel</button>
                         <button class="create-admin">Create New</button>
                     </div>
                 </div>

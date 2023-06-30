@@ -1,8 +1,10 @@
 
-function openModalAdmin() {
-    document.getElementById("myModal").style.display = "block";
+function openModalAdminProduct() {
+    document.getElementById("modal-create-admin").style.display = "block";
+    document.getElementById("header-admin").style.zIndex = -1;
 }
 
-function closeModalAdmin() {
-    document.getElementById("myModal").style.display = "none";
+function closeModalAdminProduct() {
+    document.getElementById("modal-create-admin").style.display = "none";
+    document.getElementById("header-admin").style.zIndex = 1;
 }
