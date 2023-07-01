@@ -76,5 +76,11 @@ namespace catering.MVC.Controllers
             await mediator.Send(new LogoutCommand());
             return Redirect(returnUrl);
         }
-    }
+
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
+
+	}
 }
