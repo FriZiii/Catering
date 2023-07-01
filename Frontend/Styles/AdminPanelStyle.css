@@ -46,23 +46,50 @@
   width: 100%;
 }
 
-.div-with-table-admin {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.div1-actions-admin {
+  width: 65%;
+  border-bottom: 1px solid #ddd;
 }
 
 .search-bar-admin-products {
-  width: 40vh;
+  width: 30vh;
   position: relative;
   display: inline-block;
-  top: 0px;
-  left: -38vh;
+  top: 15px;
+  left: -45.5vh;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.div1-search-bar-admin {
+  display: flex;
+  align-items: center;
+}
+
+.counter-container-admin {
+
+  display: flex;
+  align-items: center;
+  position: relative;
+  left: -46vh;
+  top: 3vh;
+}
+
+.search-counter-admin,
+.search-counter-results-admin {
+  padding-left: 20px;
+  font-size: 16px;
+  font-weight: lighter;
+  margin: 0;
+}
+
+.search-counter-results-admin {
+  padding-left: 3px;
 }
 
 .title-products-admin {
   display: inline-block;
-  padding-right: 75vh;
+  padding-right: 86vh;
   font-weight: normal;
 }
 
@@ -71,10 +98,13 @@
   border: none;
   background-color: var(--light-yellow);
   border-radius: 10px;
-  padding: 10px;
-  padding-top: 6px;
+  padding: 8px;
+  padding-top: 4px;
   cursor: pointer;
   outline: none;
+  position: relative;
+  top: -5px;
+  left: 100px;
 }
 
 .create-product-button-admin img {
@@ -84,6 +114,11 @@
   height: 20px;
 }
 
+.div-with-table-admin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 
 /*table products admin*/
@@ -101,15 +136,24 @@ table {
 
 th,
 td {
-  padding: 38px;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding: 60px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   text-align: left;
   border-bottom: 1px solid #ddd;
+  font-weight: bold;
 }
 
 th {
-  background-color: #f2f2f2;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: var(--light-grey);
+}
+
+thead th {
+  position: sticky;
+  top: 0;
+  background-color: #E6EAED; /
 }
 
 .delete-button-admin {
@@ -117,12 +161,25 @@ th {
   color: #000000;
   border: none;
   border-radius: 5px;
-  padding: 10px 15px;
+  padding: 8px 8px;
+  padding-top: 4px;
+  position: relative;
+  left: -15px;
   cursor: pointer;
+  font-weight: bold;
+  z-index: 0;
 }
 
 .delete-button-admin:hover {
   background-color: var(--main-color);
+}
+
+.delete-button-admin img {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: 5px;
+
 }
 
 /* admin page modal */
