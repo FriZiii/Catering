@@ -118,7 +118,8 @@
 .div-with-table-admin {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  position: relative;
+  top: 1vh;
 }
 
 
@@ -127,7 +128,7 @@
 .table-div-admin {
   margin-top: 5vh;
   overflow: auto;
-  max-height: 420px;
+  height: 420px;
 }
 
 table {
@@ -146,10 +147,8 @@ td {
   white-space: nowrap; 
   overflow: hidden;
   text-overflow: ellipsis; 
-}
-
-td {
-  max-width: 340px;
+  width: 19vh;
+  max-width: 30vh;
 }
 
 th {
