@@ -147,8 +147,8 @@ td {
   white-space: nowrap; 
   overflow: hidden;
   text-overflow: ellipsis; 
-  width: 19vh;
-  max-width: 30vh;
+  width: 22vh;
+  max-width: 22vh;
 }
 
 th {
