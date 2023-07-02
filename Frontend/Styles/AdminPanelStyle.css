@@ -137,12 +137,19 @@ table {
 
 th,
 td {
-  padding: 7.1vh;
+  padding: 6.1vh;
   padding-top: 10px;
   padding-bottom: 10px;
   text-align: left;
   border-bottom: 1px solid #ddd;
   font-weight: bold;
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+
+td {
+  max-width: 340px;
 }
 
 th {
@@ -154,7 +161,7 @@ th {
 thead th {
   position: sticky;
   top: 0;
-  background-color: #E6EAED; 
+  background-color: #E6EAED;
   z-index: 1;
 }
 
@@ -181,8 +188,27 @@ thead th {
   height: 20px;
   position: relative;
   top: 5px;
-
 }
+
+td:hover {
+  white-space: normal; 
+  overflow: visible;
+  position: relative;
+  z-index: 2;
+}
+
+td:hover::after {
+  content: attr(data-text); 
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: white; 
+  padding: 10px;
+  max-width: 340px; 
+  overflow: auto;
+}
+
+
 
 /* admin page modal */
 
