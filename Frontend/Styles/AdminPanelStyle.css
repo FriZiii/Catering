@@ -1,6 +1,7 @@
 .main-admin {
   width: 100%;
   height: 60vh;
+  margin-bottom: 30px;
 }
 
 .left-icon-panel-admin {
@@ -47,7 +48,7 @@
 }
 
 .div1-actions-admin {
-  width: 65%;
+  width: 131vh;
   border-bottom: 1px solid #ddd;
 }
 
@@ -71,7 +72,7 @@
   display: flex;
   align-items: center;
   position: relative;
-  left: -46vh;
+  left: 45vh;
   top: 3vh;
 }
 
@@ -104,7 +105,7 @@
   outline: none;
   position: relative;
   top: -5px;
-  left: 100px;
+  left: 14vh;
 }
 
 .create-product-button-admin img {
@@ -126,7 +127,7 @@
 .table-div-admin {
   margin-top: 5vh;
   overflow: auto;
-  max-height: 400px;
+  max-height: 420px;
 }
 
 table {
@@ -136,7 +137,7 @@ table {
 
 th,
 td {
-  padding: 60px;
+  padding: 7.1vh;
   padding-top: 10px;
   padding-bottom: 10px;
   text-align: left;
@@ -153,7 +154,8 @@ th {
 thead th {
   position: sticky;
   top: 0;
-  background-color: #E6EAED; /
+  background-color: #E6EAED; 
+  z-index: 1;
 }
 
 .delete-button-admin {
@@ -203,15 +205,15 @@ thead th {
   border-radius: 10px;
   padding: 20px;
   width: 350px;
-  height: 400px;
+  height: 420px;
   align-items: center;
 }
 
 .close-admin {
   color: #aaa;
   float: right;
-  margin-top: -6px;
-  font-size: 28px;
+  margin-top: -15px;
+  font-size: 32px;
 }
 
 .close-admin:hover,
@@ -224,7 +226,8 @@ thead th {
 .modal-title-admin {
   font-size: 20px;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 .form-group-admin {
@@ -240,9 +243,9 @@ thead th {
 .form-group-admin input,
 .form-group-admin textarea,
 .form-group-admin .custom-file-input {
-  border-radius: 10px;
+  border-radius: 15px;
   border: 1px solid #ccc;
-  padding: 5px;
+  padding: 10px;
   width: 100%;
   box-sizing: border-box;
 }
@@ -253,29 +256,60 @@ thead th {
 }
 
 .buttons-admin {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 20px;
 }
 
+
 .buttons-admin button {
-  border-radius: 5px;
+  border-radius: 1px;
   border: none;
-  padding: 8px 12px;
+  padding: 12px 30px;
+  padding-top: 4px;
   margin-left: 5px;
   cursor: pointer;
+  font-weight: bold;
 }
 
-.buttons-admin button.cancel-admin {
+.modal-cancel-admin
+{
   background-color: #ccc;
+  border-radius: 1px;
 }
 
-.buttons-admin button.create-admin {
+.modal-cancel-admin:hover 
+{
+  background-color: #999;
+}
+
+.modal-create-admin 
+{
   background-color: var(--light-yellow);
-  color: rgb(0, 0, 0);
+  color: #000000;
+  border-radius: 1px;
 }
 
-.buttons-admin button.create-admin:hover {
+.modal-create-admin:hover 
+{
   background-color: var(--main-color);
+}
+
+.modal-cancel-admin img
+{
+  width: 20px;
+  height: 20px;
+  position:relative;
+  top: 5px;
+  margin-left: 5px;
+}
+
+.modal-create-admin img {
+  width: 22px;
+  height: 22px;
+  position:relative;
+  top: 6px; 
 }
 
 /* File input styling */
