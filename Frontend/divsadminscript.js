@@ -9,3 +9,8 @@ function showDiv(divNumber) {
     div.style.display = "flex";
     currentDiv = div;
 }
+
+function changeIcon(button, imagePath) {
+    var img = button.querySelector('.icon img');
+    img.src = imagePath;
+  }

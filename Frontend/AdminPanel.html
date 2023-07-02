@@ -63,29 +63,37 @@
         <div class="main-admin">
 
             <div class="left-icon-panel-admin">
-                <button class="admin-left-panel-button" onclick="showDiv(1)">
+                <button class="admin-left-panel-button"
+                    onmouseenter="changeIcon(this, 'Images/admin-1-user-icon-hover.svg')"
+                    onmouseleave="changeIcon(this, 'Images/admin-1-user-icon.svg')" onclick="showDiv(1, this)">
                     <div class="icon"><img src="Images/admin-1-user-icon.svg" alt="Icon 1"></div>
                 </button>
-                <button class="admin-left-panel-button" onclick="showDiv(2)">
+                <button class="admin-left-panel-button"
+                    onmouseenter="changeIcon(this, 'Images/admin-2-discount-icon-hover.svg')"
+                    onmouseleave="changeIcon(this, 'Images/admin-2-discount-icon.svg')" onclick="showDiv(2, this)">
                     <div class="icon"><img src="Images/admin-2-discount-icon.svg" alt="Icon 2"></div>
                 </button>
-                <button class="admin-left-panel-button" onclick="showDiv(3)">
+                <button class="admin-left-panel-button"
+                    onmouseenter="changeIcon(this, 'Images/admin-3-cart-icon-hover.svg')"
+                    onmouseleave="changeIcon(this, 'Images/admin-3-cart-icon.svg')" onclick="showDiv(3, this)">
                     <div class="icon"><img src="Images/admin-3-cart-icon.svg" alt="Icon 3"></div>
                 </button>
-                <button class="admin-left-panel-button" onclick="showDiv(4)">
+                <button class="admin-left-panel-button"
+                    onmouseenter="changeIcon(this, 'Images/admin-4-box-icon-hover.svg')"
+                    onmouseleave="changeIcon(this, 'Images/admin-4-box-icon.svg')" onclick="showDiv(4, this)">
                     <div class="icon"><img src="Images/admin-4-box-icon.svg" alt="Icon 4"></div>
                 </button>
             </div>
 
             <div id="div1-admin" class="hidden-admin section-admin div-with-table-admin">
 
-                <div class="div1-actions-admin">
+                <div class="div-actions-admin">
                     <h1 class="title-products-admin"> Products </h1>
                     <button class="create-product-button-admin" onclick="openModalAdminProduct()">
                         <img src="Images/plus-icon.svg">
                         CREATE PRODUCT</button>
                 </div>
-                <div class="div1-search-bar-admin">
+                <div class="div-search-bar-admin">
                     <input type="text" class="input_field search-bar-admin-products" placeholder="Search...">
                     <div class="counter-container-admin">
                         <h1 class="search-counter-admin">
@@ -317,7 +325,7 @@
         </div>
         <a>Copyrights © 2023</a>
     </footer>
-    <script src="divsadminscript.js"></script>
+    <script src="divsadminscript.js" defer></script>
     <script src="adminmodalscript.js" defer></script>
     <script src="scriptFAQ.js" defer></script>
     <script src="offerscript.js" defer></script>

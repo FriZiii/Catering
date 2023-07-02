@@ -16,7 +16,8 @@
   padding-top: 35px;
   border-top-right-radius: 40px;
   border-bottom-right-radius: 40px;
-  background-color: var(--light-yellow);
+  background-color: #E6EAED ;
+  z-index: 1;
 }
 
 .icon {
@@ -27,6 +28,7 @@
 .icon img {
   width: 35px;
   height: 35px;
+  transition: filter 0.3s ease-in-out; /* Add a transition effect for smooth color change */
 }
 
 .admin-left-panel-button {
@@ -47,7 +49,7 @@
   width: 100%;
 }
 
-.div1-actions-admin {
+.div-actions-admin {
   width: 131vh;
   border-bottom: 1px solid #ddd;
 }
@@ -62,7 +64,7 @@
   padding-bottom: 8px;
 }
 
-.div1-search-bar-admin {
+.div-search-bar-admin {
   display: flex;
   align-items: center;
 }
