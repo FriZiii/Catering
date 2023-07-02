@@ -194,7 +194,7 @@ td:hover {
   white-space: normal; 
   overflow: visible;
   position: relative;
-  z-index: 2;
+  z-index: 0;
 }
 
 td:hover::after {
