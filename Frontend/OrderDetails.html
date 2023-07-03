@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./Styles/404Style.css">
+    <link rel="stylesheet" href="./Styles/AdminPanelStyle.css">
     <link rel="stylesheet" href="./Styles/BodyStyle.css">
     <link rel="stylesheet" href="./Styles/CartStyle.css">
     <link rel="stylesheet" href="./Styles/CalendarStyle.css">
@@ -243,8 +244,7 @@
         <!--Modal-->
         <div class="order-modal-container" id="order-modal-container">
             <div class="order-modal">
-                <div class="order-modal-button-container"><button class="order-close-modal" id="order-close-modal"><img
-                            src="Images/close.svg"></button></div>
+                <span class="close-admin" onclick="closeModalAdminProduct()">&times;</span>
 
                 <div class="modal-sections-container">
                     <h2 class="order-modal-title">Returning Customers</h2>
@@ -280,6 +280,7 @@
         <a>Copyrights © 2023</a>
     </footer>
     <script src="scriptFAQ.js" defer></script>
+    <script src="adminmodalscript.js" defer></script>
     <script src="offerscript.js" defer></script>
     <script src="headerscript.js" defer></script>
     <script src="cartscript.js" defer></script>
