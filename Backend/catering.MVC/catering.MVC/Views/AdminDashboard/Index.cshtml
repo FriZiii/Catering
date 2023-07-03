@@ -28,6 +28,101 @@
     </div>
 
     <div id="div1-admin" class="hidden-admin section-admin div-with-table-admin">
+        
+    </div>
+
+    <div id="div2-admin" class="hidden-admin section-admin div-with-table-admin">
+        <div class="div-actions-admin">
+            <h1 class="title-products-admin"> Discount Codes </h1>
+            <button class="create-product-button-admin" onclick="openModalAdminProduct()">
+                <img src="~/images/icons/plus.svg">
+                CREATE DISCOUNT
+            </button>
+        </div>
+        <div class="div-search-bar-admin">
+            <input type="text" class="input_field search-bar-admin-products" placeholder="Search...">
+            <div class="counter-container-admin">
+                <h1 class="search-counter-admin">
+                    @Model.Orders.Count()
+                </h1>
+                <h1 class="search-counter-results-admin"> Results </h1>
+            </div>
+        </div>
+        <div class="table-div-admin">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Code</th>
+                        <th>Percentage value</th>
+                        <th>Expiration date</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var discount in Model.Discounts)
+                    {
+                        <tr>
+                            <td>@discount.Id</td>
+                            <td>@discount.Code</td>
+                            <td>@discount.DiscountPercentage%</td>
+                            <td>@discount.Expiration</td>
+                            <td>
+                                <button class="delete-button-admin">
+                                    <img src="~/images/icons/x.svg">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="div3-admin" class="hidden-admin section-admin div-with-table-admin">
+        <div class="div-actions-admin">
+            <h1 class="title-products-admin"> Orders </h1>
+        </div>
+        <div class="div-search-bar-admin">
+            <input type="text" class="input_field search-bar-admin-products" placeholder="Search...">
+            <div class="counter-container-admin">
+                <h1 class="search-counter-admin">
+                    @Model.Orders.Count()
+                </h1>
+                <h1 class="search-counter-results-admin"> Results </h1>
+            </div>
+        </div>
+        <div class="table-div-admin">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Order date</th>
+                        <th>Price before discount</th>
+                        <th>Discount code</th>
+                        <th>Price after discount</th>
+                        <th>Confirmed</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var order in Model.Orders)
+                    {
+                        <tr>
+                            <td>@order.Id</td>
+                            <td>@order.OrderDate.ToString("d")</td>
+                            <td>@order.TotalPriceBeforeDiscount</td>
+                            <td>@(order.DiscountCode != null ? order.DiscountCode.Code : "None")</td>
+                            <td>@order.TotalPriceAfterDiscount</td>
+                            <td>@order.Confirmed</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="div4-admin" class="hidden-admin section-admin div-with-table-admin">
         <div class="div-actions-admin">
             <h1 class="title-products-admin"> Products </h1>
             <button class="create-product-button-admin" onclick="openModalAdminProduct()">
@@ -76,56 +171,6 @@
                 </tbody>
             </table>
         </div>
-    </div>
-
-    <div id="div2-admin" class="hidden-admin section-admin div-with-table-admin">
-        <div class="div-actions-admin">
-            <h1 class="title-products-admin"> Orders </h1>
-        </div>
-        <div class="div-search-bar-admin">
-            <input type="text" class="input_field search-bar-admin-products" placeholder="Search...">
-            <div class="counter-container-admin">
-                <h1 class="search-counter-admin">
-                    @Model.Orders.Count()
-                </h1>
-                <h1 class="search-counter-results-admin"> Results </h1>
-            </div>
-        </div>
-        <div class="table-div-admin">
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Order date</th>
-                        <th>Price before discount</th>
-                        <th>Discount code</th>
-                        <th>Price after discount</th>
-                        <th>Confirmed</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var order in Model.Orders)
-                    {
-                        <tr>
-                            <td>@order.Id</td>
-                            <td>@order.OrderDate.ToString("d")</td>
-                            <td>@order.TotalPriceBeforeDiscount</td>
-                            <td>@(order.DiscountCode != null ? order.DiscountCode.Code : "None")</td>
-                            <td>@order.TotalPriceAfterDiscount</td>
-                            <td>@order.Confirmed</td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <div id="div3-admin" class="hidden-admin section-admin">
-        <h2>Title 3</h2>
-    </div>
-
-    <div id="div4-admin" class="hidden-admin section-admin">
-        <h2>Title 4</h2>
     </div>
 
     <div id="modal-create-admin" class="modal-admin">
