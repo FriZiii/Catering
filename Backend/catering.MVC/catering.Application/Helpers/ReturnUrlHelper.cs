@@ -11,7 +11,7 @@ namespace catering.Application.Helpers
             Uri uri = new Uri(url);
             if (uri.Query.Contains('?'))
             {
-                decodedReturnUrl = HttpUtility.UrlDecode(uri.Query.TrimStart('?')).Replace("returnUrl=", "");
+                decodedReturnUrl = HttpUtility.UrlDecode(uri.Query.TrimStart('?')).ToLower().Replace("returnurl=", "");
             }
             else
             {
