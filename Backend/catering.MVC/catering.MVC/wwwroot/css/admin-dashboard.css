@@ -124,11 +124,11 @@
 
 
 /*table products admin*/
-
 .table-div-admin {
     margin-top: 5vh;
     overflow: auto;
     height: 420px;
+    width: 131vh;
 }
 
 table {
