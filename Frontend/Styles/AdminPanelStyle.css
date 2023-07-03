@@ -57,10 +57,7 @@
 
 .search-bar-admin-products {
   width: 30vh;
-  position: relative;
   display: inline-block;
-  top: 15px;
-  left: -45.5vh;
   padding-top: 8px;
   padding-bottom: 8px;
 }
@@ -68,15 +65,14 @@
 .div-search-bar-admin {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 131vh;
+  padding: 15px 15px 15px 0;
 }
 
 .counter-container-admin {
-
   display: flex;
   align-items: center;
-  position: relative;
-  left: 45vh;
-  top: 3vh;
 }
 
 .search-counter-admin,
@@ -128,7 +124,6 @@
 /*table products admin*/
 
 .table-div-admin {
-  margin-top: 5vh;
   overflow: auto;
   height: 420px;
 }
