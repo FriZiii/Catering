@@ -3,42 +3,47 @@
     ViewData["Title"] = "AdminDashboard";
 }
 
-
 <div class="main-admin">
     <div class="left-icon-panel-admin">
-        <button class="admin-left-panel-button" onclick="showDiv(1)">
+        <button class="admin-left-panel-button"
+                onmouseenter="changeIcon(this, '/images/icons/user-yellow.svg')"
+                onmouseleave="changeIcon(this, '/images/icons/user.svg')" onclick="showDiv(1, this)">
             <div class="icon"><img src="~/images/icons/user.svg" alt="Icon 1"></div>
         </button>
-        <button class="admin-left-panel-button" onclick="showDiv(2)">
+        <button class="admin-left-panel-button"
+                onmouseenter="changeIcon(this, '/images/icons/discount-yellow.svg')"
+                onmouseleave="changeIcon(this, '/images/icons/discount.svg')" onclick="showDiv(2, this)">
             <div class="icon"><img src="~/images/icons/discount.svg" alt="Icon 2"></div>
         </button>
-        <button class="admin-left-panel-button" onclick="showDiv(3)">
+        <button class="admin-left-panel-button"
+                onmouseenter="changeIcon(this, '/images/icons/shoping-cart-yellow.svg')"
+                onmouseleave="changeIcon(this, '/images/icons/shoping-cart.svg')" onclick="showDiv(3, this)">
             <div class="icon"><img src="~/images/icons/shoping-cart.svg" alt="Icon 3"></div>
         </button>
-        <button class="admin-left-panel-button" onclick="showDiv(4)">
+        <button class="admin-left-panel-button"
+                onmouseenter="changeIcon(this, '/images/icons/package-yellow.svg')"
+                onmouseleave="changeIcon(this, '/images/icons/package.svg')" onclick="showDiv(4, this)">
             <div class="icon"><img src="~/images/icons/package.svg" alt="Icon 4"></div>
         </button>
     </div>
 
     <div id="div1-admin" class="hidden-admin section-admin div-with-table-admin">
-        <div class="div1-actions-admin">
+        <div class="div-actions-admin">
             <h1 class="title-products-admin"> Products </h1>
             <button class="create-product-button-admin" onclick="openModalAdminProduct()">
                 <img src="~/images/icons/plus.svg">
                 CREATE PRODUCT
             </button>
         </div>
-
-        <div class="div1-search-bar-admin">
-            <input type="text" class="input_field search-bar-admin-products" placeholder="Search..." id="search-product">
+        <div class="div-search-bar-admin">
+            <input type="text" class="input_field search-bar-admin-products" placeholder="Search...">
             <div class="counter-container-admin">
                 <h1 class="search-counter-admin">
-                    42
+                    @Model.Products.Count()
                 </h1>
                 <h1 class="search-counter-results-admin"> Results </h1>
             </div>
         </div>
-
         <div class="table-div-admin">
             <table>
                 <thead>
@@ -52,7 +57,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach(var product in Model.Products)
+                    @foreach (var product in Model.Products)
                     {
                         <tr>
                             <td>@product.Id</td>
@@ -73,8 +78,46 @@
         </div>
     </div>
 
-    <div id="div2-admin" class="hidden-admin section-admin">
-        <h2>Title 2</h2>
+    <div id="div2-admin" class="hidden-admin section-admin div-with-table-admin">
+        <div class="div-actions-admin">
+            <h1 class="title-products-admin"> Orders </h1>
+        </div>
+        <div class="div-search-bar-admin">
+            <input type="text" class="input_field search-bar-admin-products" placeholder="Search...">
+            <div class="counter-container-admin">
+                <h1 class="search-counter-admin">
+                    @Model.Orders.Count()
+                </h1>
+                <h1 class="search-counter-results-admin"> Results </h1>
+            </div>
+        </div>
+        <div class="table-div-admin">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Order date</th>
+                        <th>Price before discount</th>
+                        <th>Discount code</th>
+                        <th>Price after discount</th>
+                        <th>Confirmed</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var order in Model.Orders)
+                    {
+                        <tr>
+                            <td>@order.Id</td>
+                            <td>@order.OrderDate.ToString("d")</td>
+                            <td>@order.TotalPriceBeforeDiscount</td>
+                            <td>@(order.DiscountCode != null ? order.DiscountCode.Code : "None")</td>
+                            <td>@order.TotalPriceAfterDiscount</td>
+                            <td>@order.Confirmed</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <div id="div3-admin" class="hidden-admin section-admin">
@@ -84,7 +127,6 @@
     <div id="div4-admin" class="hidden-admin section-admin">
         <h2>Title 4</h2>
     </div>
-
 
     <div id="modal-create-admin" class="modal-admin">
         <div class="modal-content-admin">
@@ -99,9 +141,16 @@
             <div class="form-group-admin">
                 <textarea class="input_field" placeholder="Description" id="description"></textarea>
             </div>
-            <div class="form-group-admin">
-                <input class="file-input-modal-admin" type="file" id="image" />
+
+            <div class="file-input">
+                <input type="file" id="file" class="file">
+                <label for="file">
+                    Select an image
+                    <img src="~/images/icons/upload.svg">
+                    <p class="file-name"></p>
+                </label>
             </div>
+
             <div class="buttons-admin">
                 <button class="modal-cancel-admin" onclick="closeModalAdminProduct()">
                     Cancel <img class="" src="~/images/icons/x.svg">
