@@ -6,24 +6,24 @@
 <div class="main-admin">
     <div class="left-icon-panel-admin">
         <button class="admin-left-panel-button"
-                onmouseenter="changeIcon(this, '/images/icons/user-yellow.svg')"
-                onmouseleave="changeIcon(this, '/images/icons/user.svg')" onclick="showDiv(1, this)">
-            <div class="icon"><img src="~/images/icons/user.svg" alt="Icon 1"></div>
+                onmouseenter="changeIcon(this, '/images/icons/user/user-yellow.svg')"
+                onmouseleave="changeIcon(this, '/images/icons/user/user.svg')" onclick="showDiv(1, this)">
+            <div class="icon"><img src="~/images/icons/user/user.svg" alt="Icon 1"></div>
         </button>
         <button class="admin-left-panel-button"
-                onmouseenter="changeIcon(this, '/images/icons/discount-yellow.svg')"
-                onmouseleave="changeIcon(this, '/images/icons/discount.svg')" onclick="showDiv(2, this)">
-            <div class="icon"><img src="~/images/icons/discount.svg" alt="Icon 2"></div>
+                onmouseenter="changeIcon(this, '/images/icons/discount/discount-yellow.svg')"
+                onmouseleave="changeIcon(this, '/images/icons/discount/discount.svg')" onclick="showDiv(2, this)">
+            <div class="icon"><img src="~/images/icons/discount/discount.svg" alt="Icon 2"></div>
         </button>
         <button class="admin-left-panel-button"
-                onmouseenter="changeIcon(this, '/images/icons/shoping-cart-yellow.svg')"
-                onmouseleave="changeIcon(this, '/images/icons/shoping-cart.svg')" onclick="showDiv(3, this)">
-            <div class="icon"><img src="~/images/icons/shoping-cart.svg" alt="Icon 3"></div>
+                onmouseenter="changeIcon(this, '/images/icons/shopping-cart/shopping-cart-yellow.svg')"
+                onmouseleave="changeIcon(this, '/images/icons/shopping-cart/shopping-cart.svg')" onclick="showDiv(3, this)">
+            <div class="icon"><img src="~/images/icons/shopping-cart/shopping-cart.svg" alt="Icon 3"></div>
         </button>
         <button class="admin-left-panel-button"
-                onmouseenter="changeIcon(this, '/images/icons/package-yellow.svg')"
-                onmouseleave="changeIcon(this, '/images/icons/package.svg')" onclick="showDiv(4, this)">
-            <div class="icon"><img src="~/images/icons/package.svg" alt="Icon 4"></div>
+                onmouseenter="changeIcon(this, '/images/icons/package/package-yellow.svg')"
+                onmouseleave="changeIcon(this, '/images/icons/package/package.svg')" onclick="showDiv(4, this)">
+            <div class="icon"><img src="~/images/icons/package/package.svg" alt="Icon 4"></div>
         </button>
     </div>
 
@@ -31,7 +31,7 @@
         <div class="div-actions-admin">
             <h1 class="title-products-admin"> Products </h1>
             <button class="create-product-button-admin" onclick="openModalAdminProduct()">
-                <img src="~/images/icons/plus.svg">
+                <img src="~/images/icons/plus/plus.svg">
                 CREATE PRODUCT
             </button>
         </div>
@@ -67,7 +67,7 @@
                             <td>@product.ImageName</td>
                             <td>
                                 <button class="delete-button-admin">
-                                    <img src="~/images/icons/x.svg">
+                                    <img src="~/images/icons/close/close.svg">
                                     Delete
                                 </button>
                             </td>
@@ -146,17 +146,17 @@
                 <input type="file" id="file" class="file">
                 <label for="file">
                     Select an image
-                    <img src="~/images/icons/upload.svg">
+                    <img src="~/images/icons/upload/upload.svg">
                     <p class="file-name"></p>
                 </label>
             </div>
 
             <div class="buttons-admin">
                 <button class="modal-cancel-admin" onclick="closeModalAdminProduct()">
-                    Cancel <img class="" src="~/images/icons/x.svg">
+                    Cancel <img class="" src="~/images/icons/close/close.svg">
                 </button>
                 <button class="modal-create-admin">
-                    Create New <img class="" src="~/images/icons/plus.svg">
+                    Create New <img class="" src="~/images/icons/plus/plus.svg">
                 </button>
             </div>
         </div>

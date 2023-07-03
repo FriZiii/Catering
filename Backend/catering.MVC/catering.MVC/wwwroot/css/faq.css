@@ -63,11 +63,11 @@
     }
 
         .accordion-faq button[aria-expanded='true'] .icon::after {
-            content: url("../images/icons/arrow-up.svg")
+            content: url("../images/icons/arrow-up/arrow-up.svg")
         }
 
     .accordion-faq button[aria-expanded='false'] .icon::after {
-        content: url("../images/icons/arrow-down.svg");
+        content: url("../images/icons/arrow-down/arrow-down.svg");
     }
 
     .accordion-faq button[aria-expanded='true'] + .accordion-content-faq {

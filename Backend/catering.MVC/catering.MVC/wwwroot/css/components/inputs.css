@@ -84,8 +84,8 @@ input:-webkit-autofill {
 }
 
     .remember-me-login:checked::before {
-        content: url("../../images/icons/check.svg");
-        position:relative;
+        content: url("../../images/icons/check/check.svg");
+        position: relative;
         left: -2.5px;
         top: -2px;
     }

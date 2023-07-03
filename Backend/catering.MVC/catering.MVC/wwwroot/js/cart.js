@@ -39,7 +39,7 @@ function submitForm() {
             div.className = 'incomplete';
             div.id = 'error-heading';
             const img = document.createElement('img');
-            img.src = '../images/icons/alert-triangle.svg';
+            img.src = '../images/icons/alert-triangle/alert-triangle.svg';
             const textNode = document.createTextNode('Complete your order setup to proceed!');
             div.appendChild(img);
             div.appendChild(textNode);
