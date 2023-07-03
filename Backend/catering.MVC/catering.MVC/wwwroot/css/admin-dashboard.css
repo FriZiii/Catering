@@ -117,7 +117,6 @@
     }
 
 .div-with-table-admin {
-    display: flex;
     flex-direction: column;
     position: relative;
     top: 1vh;
@@ -142,7 +141,7 @@ td {
     padding: 6.1vh;
     padding-top: 10px;
     padding-bottom: 10px;
-    height: 5vh;
+    height: 56px;
     text-align: center;
     border-bottom: 1px solid #ddd;
     font-weight: bold;
