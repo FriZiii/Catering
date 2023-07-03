@@ -1,4 +1,5 @@
-﻿using catering.Application.Managements.OfferManagment.Queries.GetAllProducts;
+﻿using catering.Application.Managements.DiscountCodeManagment.Queries.GetAllDiscountCodes;
+using catering.Application.Managements.OfferManagment.Queries.GetAllProducts;
 using catering.Application.Managements.OrderManagment.Queries.GetAllOrders;
 using catering.MVC.Models;
 using MediatR;
@@ -21,10 +22,12 @@ namespace catering.MVC.Controllers
         {
             var products = await mediator.Send(new GetAllProductsQuery());
             var orders = await mediator.Send(new GetAllOrdersQuerry());
+            var discounts = await mediator.Send(new GetAllDiscountCodesQuerry());
             var dashboardViewModel = new AdminDashboardViewModel()
             {
                 Products = products,
-                Orders = orders
+                Orders = orders,
+                Discounts = discounts
             };
 
             return View(dashboardViewModel);

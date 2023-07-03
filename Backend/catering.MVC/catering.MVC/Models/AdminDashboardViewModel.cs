@@ -12,5 +12,6 @@ namespace catering.MVC.Models
     {
         public IEnumerable<Product> Products { get; set; } = null!;
         public IEnumerable<Order> Orders { get; set; } = null!;
+        public IEnumerable<DiscountCode> Discounts { get; set; } = null!;
     }
 }
