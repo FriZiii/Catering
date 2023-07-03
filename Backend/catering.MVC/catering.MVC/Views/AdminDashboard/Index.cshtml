@@ -28,7 +28,60 @@
     </div>
 
     <div id="div1-admin" class="hidden-admin section-admin div-with-table-admin">
-        
+        <div class="div-actions-admin">
+            <h1 class="title-products-admin"> Users </h1>
+        </div>
+        <div class="div-search-bar-admin">
+            <input type="text" class="input_field search-bar-admin-products" placeholder="Search...">
+            <div class="counter-container-admin">
+                <h1 class="search-counter-admin">
+                    @Model.Users.Count()
+                </h1>
+                <h1 class="search-counter-results-admin"> Results </h1>
+            </div>
+        </div>
+        <div class="table-div-admin">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Email</th>
+                        <th>First Name</th>
+                        <th>LastName</th>
+                        <th>PhoneNumber</th>
+                        <th>PhoneNumber</th>
+                        <th>Adress1</th>
+                        <th>Adress2</th>
+                        <th>PostalCode</th>
+                        <th>Country</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var user in Model.Users)
+                    {
+                        <tr>
+                            <td>@user.Id</td>
+                            <td>@user.Email</td>
+                            <td>@user.FirstName</td>
+                            <td>@user.LastName</td>
+                            <td>@user.DeliveryAdress.PhoneNumber</td>
+                            <td>@user.DeliveryAdress.PhoneNumber</td>
+                            <td>@user.DeliveryAdress.Adress1</td>
+                            <td>@user.DeliveryAdress.Adress2</td>
+                            <td>@user.DeliveryAdress.PostalCode</td>
+                            <td>@user.DeliveryAdress.Country</td>
+                            <td>
+                                <button class="delete-button-admin">
+                                    <img src="~/images/icons/close/close.svg">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <div id="div2-admin" class="hidden-admin section-admin div-with-table-admin">
@@ -43,7 +96,7 @@
             <input type="text" class="input_field search-bar-admin-products" placeholder="Search...">
             <div class="counter-container-admin">
                 <h1 class="search-counter-admin">
-                    @Model.Orders.Count()
+                    @Model.Discounts.Count()
                 </h1>
                 <h1 class="search-counter-results-admin"> Results </h1>
             </div>
@@ -69,7 +122,7 @@
                             <td>@discount.Expiration</td>
                             <td>
                                 <button class="delete-button-admin">
-                                    <img src="~/images/icons/x.svg">
+                                    <img src="~/images/icons/close/close.svg">
                                     Delete
                                 </button>
                             </td>
