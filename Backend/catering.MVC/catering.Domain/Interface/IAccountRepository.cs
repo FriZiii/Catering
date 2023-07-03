@@ -1,4 +1,5 @@
-﻿using catering.Domain.Entities.User.LoginInput;
+﻿using catering.Domain.Entities.User.AppUser;
+using catering.Domain.Entities.User.LoginInput;
 using catering.Domain.Entities.User.RegisterInput;
 using Microsoft.AspNetCore.Identity;
 using System;
@@ -12,6 +13,7 @@ namespace catering.Domain.Interface
 {
     public interface IAccountRepository
     {
+        IEnumerable<AppUser> GetAllUsers();
         ClaimsPrincipal? GetCurrentUser();
         Task<SignInResult> LoginUser(LoginInput loginInput);
         Task LogoutUser();

@@ -5,6 +5,7 @@ using catering.Domain.Interface;
 using catering.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 
 namespace catering.Infrastructure.Repositories
@@ -25,6 +26,12 @@ namespace catering.Infrastructure.Repositories
             this.userManager = userManager;
             this.signInManager = signInManager;
             this.httpContextAccessor = httpContextAccessor;
+        }
+
+        public IEnumerable<AppUser> GetAllUsers()
+        {
+            var users = userManager.Users.Include(u => u.DeliveryAdress).ToList();
+            return users;
         }
 
         public ClaimsPrincipal? GetCurrentUser()
