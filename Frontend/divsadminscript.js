@@ -10,6 +10,10 @@ function showDiv(divNumber) {
     currentDiv = div;
 }
 
+document.addEventListener("DOMContentLoaded", function(event) {
+    showDiv(1);
+});
+
 function changeIcon(button, imagePath) {
     var img = button.querySelector('.icon img');
     img.src = imagePath;
