@@ -52,6 +52,7 @@
 .div-actions-admin {
   width: 131vh;
   border-bottom: 1px solid #ddd;
+  display: flex;
 }
 
 .search-bar-admin-products {
@@ -92,7 +93,6 @@
 
 .title-products-admin {
   display: inline-block;
-  padding-right: 86vh;
   font-weight: normal;
 }
 
