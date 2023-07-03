@@ -30,10 +30,10 @@
     @*USERS*@
     <div id="div1-admin" class="hidden-admin section-admin div-with-table-admin">
         <div class="div-actions-admin">
-            <h1 class="title-products-admin"> Users </h1>
+            <h1 class="title-admin"> Users </h1>
         </div>
         <div class="div-search-bar-admin">
-            <input type="text" class="input_field search-bar-admin-products" placeholder="Search...">
+            <input type="text" class="input_field search-bar-admin" placeholder="Search...">
             <div class="counter-container-admin">
                 <h1 class="search-counter-admin">
                     @Model.Users.Count()
@@ -86,14 +86,14 @@
     @*DISCOUNTS*@
     <div id="div2-admin" class="hidden-admin section-admin div-with-table-admin">
         <div class="div-actions-admin">
-            <h1 class="title-products-admin"> Discount Codes </h1>
-            <button class="create-product-button-admin" onclick="openModalAdminProduct()">
+            <h1 class="title-admin"> Discount Codes </h1>
+            <button class="create-button-admin" onclick="openModalAdminDiscount()">
                 <img src="~/images/icons/plus/plus.svg">
                 CREATE DISCOUNT
             </button>
         </div>
         <div class="div-search-bar-admin">
-            <input type="text" class="input_field search-bar-admin-products" placeholder="Search...">
+            <input type="text" class="input_field search-bar-admin" placeholder="Search...">
             <div class="counter-container-admin">
                 <h1 class="search-counter-admin">
                     @Model.Discounts.Count()
@@ -136,10 +136,10 @@
     @*ORDERS*@
     <div id="div3-admin" class="hidden-admin section-admin div-with-table-admin">
         <div class="div-actions-admin">
-            <h1 class="title-products-admin"> Orders </h1>
+            <h1 class="title-admin"> Orders </h1>
         </div>
         <div class="div-search-bar-admin">
-            <input type="text" class="input_field search-bar-admin-products" placeholder="Search...">
+            <input type="text" class="input_field search-bar-admin" placeholder="Search...">
             <div class="counter-container-admin">
                 <h1 class="search-counter-admin">
                     @Model.Orders.Count()
@@ -179,14 +179,14 @@
     @*PRODUCTS*@
     <div id="div4-admin" class="hidden-admin section-admin div-with-table-admin">
         <div class="div-actions-admin">
-            <h1 class="title-products-admin"> Products </h1>
-            <button class="create-product-button-admin" onclick="openModalAdminProduct()">
+            <h1 class="title-admin"> Products </h1>
+            <button class="create-button-admin" onclick="openModalAdminProduct()">
                 <img src="~/images/icons/plus/plus.svg">
                 CREATE PRODUCT
             </button>
         </div>
         <div class="div-search-bar-admin">
-            <input type="text" class="input_field search-bar-admin-products" placeholder="Search...">
+            <input type="text" class="input_field search-bar-admin" placeholder="Search...">
             <div class="counter-container-admin">
                 <h1 class="search-counter-admin">
                     @Model.Products.Count()
@@ -229,37 +229,90 @@
     </div>
 
     @*MODALS*@
-    <div id="modal-create-admin" class="modal-admin">
-        <div class="modal-content-admin">
+    <div id="modal-create-product-admin" class="modal-admin">
+        <div class="modal-product-content-admin">
             <span class="close-admin" onclick="closeModalAdminProduct()">&times;</span>
             <h2 class="modal-title-admin">Create new product</h2>
-            <div class="form-group-admin">
-                <input class="input_field" placeholder="Name" type="text" id="name" />
-            </div>
-            <div class="form-group-admin">
-                <input class="input_field" placeholder="Price" type="text" id="price" />
-            </div>
-            <div class="form-group-admin">
-                <textarea class="input_field" placeholder="Description" id="description"></textarea>
-            </div>
+            <form>
+                <div class="form-group-admin">
+                    <input class="input_field" placeholder="Name" type="text" id="name" />
+                    <span class="error"></span>
+                </div>
+                <div class="form-group-admin">
+                    <input class="input_field" placeholder="Price" type="text" id="price" />
+                    <span class="error"></span>
+                </div>
+                <div class="form-group-admin">
+                    <textarea class="input_field" placeholder="Description" id="description"></textarea>
+                    <span class="error"></span>
+                </div>
 
-            <div class="file-input">
-                <input type="file" id="file" class="file">
-                <label for="file">
-                    Select an image
-                    <img src="~/images/icons/upload/upload.svg">
-                    <p class="file-name"></p>
-                </label>
-            </div>
+                <div class="file-input">
+                    <input type="file" id="file" class="file">
+                    <label for="file">
+                        Select an image
+                        <img src="~/images/icons/upload/upload.svg">
+                        <p class="file-name"></p>
+                    </label>
+                </div>
 
-            <div class="buttons-admin">
-                <button class="modal-cancel-admin" onclick="closeModalAdminProduct()">
-                    Cancel <img class="" src="~/images/icons/close/close.svg">
-                </button>
-                <button class="modal-create-admin">
-                    Create New <img class="" src="~/images/icons/plus/plus.svg">
-                </button>
-            </div>
+                <div class="buttons-admin">
+                    <button class="modal-cancel-admin" onclick="closeModalAdminProduct()">
+                        Cancel <img class="" src="~/images/icons/close/close.svg">
+                    </button>
+                    <button class="modal-create-admin">
+                        Create New <img class="" src="~/images/icons/plus/plus.svg">
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="modal-create-discount-admin" class="modal-admin">
+        <div class="modal-discount-content-admin">
+            <span class="close-admin" onclick="closeModalAdminDiscount()">&times;</span>
+            <h2 class="modal-title-admin">Create new product</h2>
+            <form>
+                <div class="form-group-admin">
+                    <input class="input_field" placeholder="Name" type="text" id="name" />
+                    <span class="error"></span>
+                </div>
+                <div class="form-group-admin">
+                    <input class="input_field" placeholder="Percent value" type="text" id="price" />
+                    <span class="error"></span>
+                </div>
+                <div class="form-group-admin" id="birthdatePicker">
+                    <input class="input_field" placeholder="Expiration date" id="description" />
+                    <span class="error"></span>
+                </div>
+
+                <div class="buttons-admin">
+                    <button class="modal-cancel-admin" onclick="closeModalAdminDiscount()">
+                        Cancel <img class="" src="~/images/icons/close/close.svg">
+                    </button>
+                    <button class="modal-create-admin">
+                        Create New <img class="" src="~/images/icons/plus/plus.svg">
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
+
+
+@section Scripts
+{
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        flatpickr("#birthdatePicker input", {
+            dateFormat: "d-m-Y",
+            minDate: new Date().fp_incr(0),
+        });
+    });
+    </script>
+
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}

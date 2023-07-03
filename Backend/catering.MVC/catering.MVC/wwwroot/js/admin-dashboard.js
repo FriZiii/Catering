@@ -1,11 +1,11 @@
 ﻿//Modal
 function openModalAdminProduct() {
-    document.getElementById("modal-create-admin").style.display = "block";
+    document.getElementById("modal-create-product-admin").style.display = "block";
     document.getElementById("header-admin").style.zIndex = -1;
 }
 
 function closeModalAdminProduct() {
-    document.getElementById("modal-create-admin").style.display = "none";
+    document.getElementById("modal-create-product-admin").style.display = "none";
     document.getElementById("header-admin").style.zIndex = 1;
 }
 
@@ -18,6 +18,15 @@ file.addEventListener('change', (e) => {
     document.querySelector('.file-name').textContent = fileNameAndSize;
 });
 
+function openModalAdminDiscount() {
+    document.getElementById("modal-create-discount-admin").style.display = "block";
+    document.getElementById("header-admin").style.zIndex = -1;
+}
+
+function closeModalAdminDiscount() {
+    document.getElementById("modal-create-discount-admin").style.display = "none";
+    document.getElementById("header-admin").style.zIndex = 1;
+}
 
 //Switchings divs
 var currentDiv = null;
