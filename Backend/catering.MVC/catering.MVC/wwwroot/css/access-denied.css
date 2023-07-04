@@ -1,0 +1,39 @@
+﻿.centered-access-denied {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 59vh;
+}
+
+.text-access-denied {
+    font-size: 4em;
+    font-weight: 200;
+}
+
+.image-access-denied {
+    width: 360px;
+}
+
+
+@media (max-width: 650px) {
+
+    .image-access-denied {
+        width: 80%;
+    }
+
+    .text-access-denied {
+        font-size: 2.5em;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .image-access-denied {
+        width: 80%;
+    }
+
+    .text-access-denied {
+        font-size: 1.5em;
+    }
+}
