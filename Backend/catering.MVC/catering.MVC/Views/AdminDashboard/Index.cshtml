@@ -119,7 +119,7 @@
                             <td>@discount.Id</td>
                             <td>@discount.Code</td>
                             <td>@discount.DiscountPercentage%</td>
-                            <td>@discount.Expiration</td>
+                            <td>@discount.Expiration.ToString("d")</td>
                             <td>
                                 <button class="delete-button-admin">
                                     <img src="~/images/icons/close/close.svg">
@@ -207,7 +207,6 @@
                     </tr>
                 </thead>
                 <tbody>
-
                 </tbody>
             </table>
         </div>
@@ -248,7 +247,7 @@
                     <button class="modal-cancel-admin" onclick="closeModalAdminProduct()">
                         Cancel <img class="" src="~/images/icons/close/close.svg">
                     </button>
-                    <button class="modal-create-admin" type="submit" onclick="submitForm(event)">
+                    <button class="modal-create-admin" type="submit" onclick="submitProductForm(event)">
                         Create New <img class="" src="~/images/icons/plus/plus.svg">
                     </button>
                 </div>
@@ -259,26 +258,28 @@
     <div id="modal-create-discount-admin" class="modal-admin">
         <div class="modal-discount-content-admin">
             <span class="close-admin" onclick="closeModalAdminDiscount()">&times;</span>
-            <h2 class="modal-title-admin">Create new product</h2>
-            <form>
+            <h2 class="modal-title-admin">Create new discount code</h2>
+            <form id="createDiscountForm">
                 <div class="form-group-admin">
-                    <input class="input_field" placeholder="Name" type="text" id="name" />
-                    <span class="error"></span>
+                    <input class="input_field" placeholder="Name" type="text" id="code" asp-for="CreateDiscountCodeCommand.Code" />
+                    <span asp-validation-for="CreateDiscountCodeCommand.Code" class="error"></span>
                 </div>
+
                 <div class="form-group-admin">
-                    <input class="input_field" placeholder="Percent value" type="text" id="price" />
-                    <span class="error"></span>
+                    <input class="input_field" placeholder="Percent value" type="text" id="value" asp-for="CreateDiscountCodeCommand.DiscountPercentage" />
+                    <span asp-validation-for="CreateDiscountCodeCommand.DiscountPercentage" class="error"></span>
                 </div>
-                <div class="form-group-admin" id="birthdatePicker">
-                    <input class="input_field" placeholder="Expiration date" id="description" />
-                    <span class="error"></span>
+
+                <div class="form-group-admin" id="expirationPicker">
+                    <input class="input_field" placeholder="Expiration date" asp-for="CreateDiscountCodeCommand.Expiration" />
+                    <span asp-validation-for="CreateDiscountCodeCommand.Expiration" class="error"></span>
                 </div>
 
                 <div class="buttons-admin">
                     <button class="modal-cancel-admin" onclick="closeModalAdminDiscount()">
                         Cancel <img class="" src="~/images/icons/close/close.svg">
                     </button>
-                    <button class="modal-create-admin">
+                    <button class="modal-create-admin" type="submit" onclick="submitDiscountForm(event)">
                         Create New <img class="" src="~/images/icons/plus/plus.svg">
                     </button>
                 </div>
@@ -291,16 +292,16 @@
 @section Scripts
 {
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="~/js/admin-dashboard-products.js"></script>
+    <script src="~/js/admin-dashboard-discount.js"></script>
     <script>
     document.addEventListener("DOMContentLoaded", function () {
-        flatpickr("#birthdatePicker input", {
+            flatpickr("#expirationPicker input", {
             dateFormat: "d-m-Y",
             minDate: new Date().fp_incr(0),
         });
     });
     </script>
-    <script src="~/js/admin-dashboard-products.js"></script>
-
 	@{
 		await Html.RenderPartialAsync("_ValidationScriptsPartial");
 	}

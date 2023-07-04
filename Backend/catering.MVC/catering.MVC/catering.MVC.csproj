@@ -9,11 +9,13 @@
 
   <ItemGroup>
     <Content Remove="wwwroot\images\icons\alert-triangle.svg" />
+    <Content Remove="wwwroot\js\admin-dashboard-discount.js" />
     <Content Remove="wwwroot\js\Confirm.js" />
   </ItemGroup>
 
   <ItemGroup>
     <_ContentIncludedByDefault Remove="wwwroot\images\icons\alert-triangle.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\js\admin-dashboard-discount.js" />
     <_ContentIncludedByDefault Remove="wwwroot\js\Confirm.js" />
   </ItemGroup>
 
@@ -37,6 +39,7 @@
 
   <ItemGroup>
     <None Include="wwwroot\images\icons\alert-triangle\alert-triangle.svg" />
+    <None Include="wwwroot\js\admin-dashboard-discount.js" />
     <None Include="wwwroot\js\confirm.js" />
   </ItemGroup>
 

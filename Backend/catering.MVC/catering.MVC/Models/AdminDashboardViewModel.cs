@@ -1,4 +1,5 @@
-﻿using catering.Application.Managements.OfferManagment;
+﻿using catering.Application.Managements.DiscountCodeManagment.Commands.CreateDiscountCode;
+using catering.Application.Managements.OfferManagment;
 using catering.Application.Managements.OfferManagment.Commands.AddProduct;
 using catering.Domain.Entities;
 using catering.Domain.Entities.OrderEntities;
@@ -19,5 +20,6 @@ namespace catering.MVC.Models
         public IEnumerable<AppUser> Users { get; set; } = null!;
 
         public CreateProductCommand CreateProductCommand { get; set; } = null!;
+        public CreateDiscountCodeCommand CreateDiscountCodeCommand { get; set; } = null!;
     }
 }
