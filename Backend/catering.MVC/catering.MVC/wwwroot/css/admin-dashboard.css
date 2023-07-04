@@ -61,6 +61,7 @@
     display: inline-block;
     padding-top: 8px;
     padding-bottom: 8px;
+    height: 38px;
 }
 
 .div-search-bar-admin {
@@ -80,8 +81,8 @@
     background-color: white;
     border: 1px solid var(--light-grey);
     border-radius: 10px;
-    height: 36.57px;
-    width: 36.57px;
+    height: 38px;
+    width: 38px;
     cursor: pointer;
     display: flex;
     align-items: center;
