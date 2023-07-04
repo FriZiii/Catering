@@ -2,6 +2,7 @@
 using catering.Application.Managements.AccountManagment.AccountDtos;
 using catering.Application.Managements.AccountManagment.Commands;
 using catering.Application.Managements.CartManagement;
+using catering.Application.Managements.DiscountCodeManagment;
 using catering.Application.Managements.OfferManagment;
 using catering.Application.Managements.OrderManagment;
 using catering.Application.Managements.OrderManagment.OrderDto;
@@ -20,6 +21,7 @@ namespace catering.Application.Mappings
         public MappingsProfile()
         {
             CreateMap<ProductDto, Product>();
+            CreateMap<DiscountCodeDto, DiscountCode>();
 
             CreateMap<CartItemModel, CartItemModelDto>()
                 .ForMember(dest => dest.Product, opt => opt.MapFrom(
