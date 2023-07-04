@@ -320,12 +320,30 @@ td:hover {
     .buttons-admin button {
         border-radius: 1px;
         border: none;
-        padding: 12px 30px;
-        padding-top: 4px;
+        width: 140px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         margin-left: 5px;
         cursor: pointer;
         font-weight: bold;
+        font-size: 14px;
     }
+
+    .buttons-admin span {
+        border-radius: 1px;
+        border: none;
+        width: 140px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
 
 .modal-cancel-admin {
     background-color: #ccc;
@@ -347,18 +365,15 @@ td:hover {
     }
 
 .modal-cancel-admin img {
-    width: 20px;
-    height: 20px;
-    position: relative;
-    top: 5px;
+    width: 22px;
+    height: 22px;
     margin-left: 5px;
 }
 
 .modal-create-admin img {
     width: 22px;
     height: 22px;
-    position: relative;
-    top: 6px;
+    margin-left: 5px;
 }
 
 /* File input styling */
