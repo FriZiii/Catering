@@ -23,6 +23,13 @@ namespace catering.Infrastructure.Repositories
             await context.SaveChangesAsync();
         }
 
+        public async Task DeleteDiscountCodeById(int id)
+        {
+            var discountCodeToDelete = await context.DiscountCodes.FirstAsync(d => d.Id == id);
+            context.DiscountCodes.Remove(discountCodeToDelete);
+            await context.SaveChangesAsync();
+        }
+
         public async Task<IEnumerable<DiscountCode>> GetAllDiscountCodes()
             => await context.DiscountCodes.ToListAsync();
 
