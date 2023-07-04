@@ -76,31 +76,6 @@ searchUserInput.addEventListener('keyup', function (event) {
 });
 
 
-const searchDiscountInput = document.getElementById('search-discount');
-const rowsDiscount = document.querySelectorAll('#div2-admin tbody tr');
-const counterDiscount = document.querySelector('#div2-admin .search-counter-admin');
-searchDiscountInput.addEventListener('keyup', function (event) {
-    const q = event.target.value.toLowerCase();
-    let count = 0;
-    rowsDiscount.forEach((row) => {
-        let matchFound = false;
-        const records = row.querySelectorAll('td');
-        records.forEach(record => {
-            if (record.textContent.toLowerCase().includes(q)) {
-                matchFound = true;
-            }
-        });
-        if (matchFound === true) {
-            row.style.display = '';
-            count += 1;
-        } else {
-            row.style.display = 'none';
-        }
-    });
-    counterDiscount.textContent = count;
-});
-
-
 const searchOrderInput = document.getElementById('search-order');
 const rowsOrder = document.querySelectorAll('#div3-admin tbody tr');
 const counterOrder = document.querySelector('#div3-admin .search-counter-admin');
@@ -123,29 +98,4 @@ searchOrderInput.addEventListener('keyup', function (event) {
         }
     });
     counterOrder.textContent = count;
-});
-
-
-const searchProductInput = document.getElementById('search-product');
-const rowsProducts = document.querySelectorAll('#div4-admin tbody tr');
-const counterProduct = document.querySelector('#div4-admin .search-counter-admin');
-searchProductInput.addEventListener('keyup', function (event) {
-    const q = event.target.value.toLowerCase();
-    let count = 0;
-    rowsProducts.forEach((row) => {
-        let matchFound = false;
-        const records = row.querySelectorAll('td');
-        records.forEach(record => {
-            if (record.textContent.toLowerCase().includes(q)) {
-                matchFound = true;
-            }
-        });
-        if (matchFound === true) {
-            row.style.display = '';
-            count += 1;
-        } else {
-            row.style.display = 'none';
-        }
-    });
-    counterProduct.textContent = count;
 });

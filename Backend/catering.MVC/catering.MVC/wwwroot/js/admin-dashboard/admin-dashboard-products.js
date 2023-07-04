@@ -1,5 +1,4 @@
 ﻿const DeleteProductById = (id) => { 
-    console.log(id);
     $.ajax({
         url: '/Offer/DeleteProductById',
         type: 'DELETE',
@@ -12,11 +11,11 @@
     })
 }
 
-const RenderProducts = (products, container) => {
-    container.empty();
+const RenderProducts = (products, productsContainer) => {
+    productsContainer.empty();
 
     for (const product of products) {
-        container.append(`
+        productsContainer.append(`
         <tr>
             <td>${product.id}</td>
             <td>${product.name}</td>
@@ -35,13 +34,13 @@ const RenderProducts = (products, container) => {
 }
 
 const LoadProducts = () => {
-    const container = $("#div4-admin tbody");
+    const productsContainer = $("#div4-admin tbody");
 
     $.ajax({
         url: '/Offer/GetProducts',
         type: 'get',
         success: function (data) {
-            RenderProducts(data, container);
+            RenderProducts(data, productsContainer);
         }
     })
 }
@@ -66,3 +65,27 @@ function submitProductForm(event) {
 
     xhr.send(formData);
 }
+
+const searchProductInput = document.getElementById('search-product');
+const rowsProducts = document.querySelectorAll('#div4-admin tbody tr');
+const counterProduct = document.querySelector('#div4-admin .search-counter-admin');
+searchProductInput.addEventListener('keyup', function (event) {
+    const q = event.target.value.toLowerCase();
+    let count = 0;
+    rowsProducts.forEach((row) => {
+        let matchFound = false;
+        const records = row.querySelectorAll('td');
+        records.forEach(record => {
+            if (record.textContent.toLowerCase().includes(q)) {
+                matchFound = true;
+            }
+        });
+        if (matchFound === true) {
+            row.style.display = '';
+            count += 1;
+        } else {
+            row.style.display = 'none';
+        }
+    });
+    counterProduct.textContent = count;
+});
