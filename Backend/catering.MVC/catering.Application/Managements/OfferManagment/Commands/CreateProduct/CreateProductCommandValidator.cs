@@ -15,15 +15,7 @@ namespace catering.Application.Managements.OfferManagment.Commands.CreateProduct
             RuleFor(c => c.Name)
                 .NotEmpty()
                 .MinimumLength(3)
-                .MaximumLength(20)
-                .Custom((value, context) =>
-                {
-                    var existingProduct = offerRepository.GetByName(value).Result;
-                    if (existingProduct != null)
-                    {
-                        context.AddFailure($"{value} is not unique name for product.");
-                    }
-                });
+                .MaximumLength(20);
 
             RuleFor(c => c.Description)
                 .NotEmpty()
