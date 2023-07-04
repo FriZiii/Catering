@@ -13,6 +13,12 @@ function showDiv(divNumber) {
 function toggleOrderDetails(button) {
     var orderDetailsRow = button.closest('tr').nextElementSibling;
     orderDetailsRow.classList.toggle('order-details');
+    var img = button.querySelector('img');
+    if (img.getAttribute('src') === 'Images/arrow-down.svg') {
+        img.setAttribute('src', 'Images/left-arrow.svg');
+    } else {
+        img.setAttribute('src', 'Images/arrow-down.svg');
+    }
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {
