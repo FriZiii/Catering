@@ -239,6 +239,7 @@
   top: 8vh;
 }
 
+
 /*table user-panel*/
 
 .table-div-user-panel {
@@ -280,6 +281,15 @@ thead th {
   z-index: 1;
 }
 
+.table-div2-user-panel th, td {
+  width: 20vh;
+  max-width: 16.5vh;
+}
+
+.table-div2-user-panel {
+  padding-bottom: 21vh;
+}
+
 .delete-button-user-panel {
   background-color: var(--light-yellow);
   color: #000000;
@@ -304,6 +314,29 @@ thead th {
   top: 5px;
 }
 
+.expand-button-user-panel {
+  background-color: var(--light-yellow);
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 8px;
+  padding-top: 4px;
+  position: relative;
+  left: -0px;
+  cursor: pointer;
+  font-weight: bold;
+  z-index: 0;
+}
+
+.expand-button-user-panel img{
+  position: relative;
+  top: 3px;
+}
+
+.order-details {
+  display: none;
+}
+
 td:hover {
   white-space: normal; 
   overflow: visible;
@@ -322,3 +355,19 @@ td:hover::after {
   overflow: auto;
 }
 
+th:hover {
+  white-space: normal; 
+  overflow: visible;
+  position: relative;
+  z-index: 0;
+}
+
+th:hover::after {
+  content: attr(data-text); 
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  max-width: 340px; 
+  overflow: auto;
+}

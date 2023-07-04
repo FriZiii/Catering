@@ -216,68 +216,174 @@
         </div>
 
 
-        <div id="div2-user-panel" class="div-with-table-user-panel hidden-user-panel">
-            <div class="main-user-panel">
-                <div class="div-actions-user-panel">
-                    <h1 class="title-user-panel "> Products </h1>
-                    <button class="create-button-user-panel " onclick="openModalAdminProduct()">
-                        <img src="Images/plus-icon.svg">
-                        CREATE PRODUCT</button>
+        <div id="div2-user-panel" class="section-admin div-with-table-user-panel hidden-user-panel">
+            <div class="div-actions-user-panel">
+                <h1 class="title-user-panel"> Orders </h1>
+            </div>
+            <div class="div-search-bar-user-panel">
+                <input type="text" class="input_field search-bar-user-panel" placeholder="Search...">
+                <div class="counter-container-user-panel">
+                    <h1 class="search-counter-user-panel">
+                        42
+                    </h1>
+                    <h1 class="search-counter-results-user-panel"> Results </h1>
                 </div>
-                <div class="div-search-bar-user-panel">
-                    <input type="text" class="input_field search-bar-user-panel" placeholder="Search...">
-                    <div class="counter-container-user-panel">
-                        <h1 class="search-counter-user-panel">
-                            42
-                        </h1>
-                        <h1 class="search-counter-results-user-panel"> Results </h1>
-                    </div>
-                </div>
-                <div class="table-div-user-panel">
+            </div>
+            <div class="table-div2-user-panel">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Order Date</th>
+                            <th>Price before discount</th>
+                            <th>Discount</th>
+                            <th>Price after discount</th>
+                            <th>Confirmed</th>
+                            <th>Paid</th>
+                            <th>Expand</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>20/05/1997</td>
+                            <td>100</td>
+                            <td>25%</td>
+                            <td>75</td>
+                            <td>True</td>
+                            <td>False</td>
+                            <td><button class="expand-button-user-panel" onclick="toggleOrderDetails(this)">
+                                    <img src="Images/arrow-down.svg">
+                                </button></td>
+                        </tr>
+                        <tr class="order-details">
+                            <td colspan="8">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Product Id</th>
+                                            <th>Product Name</th>
+                                            <th>Price</th>
+                                            <th>Calories</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Product 1</td>
+                                            <td>10</td>
+                                            <td>100</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>20/05/1997</td>
+                            <td>100</td>
+                            <td>25%</td>
+                            <td>75</td>
+                            <td>True</td>
+                            <td>False</td>
+                            <td><button class="expand-button-user-panel" onclick="toggleOrderDetails(this)">
+                                    <img src="Images/arrow-down.svg">
+                                </button></td>
+                        </tr>
+                        <tr class="order-details">
+                            <td colspan="8">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Product Id</th>
+                                            <th>Product Name</th>
+                                            <th>Price</th>
+                                            <th>Calories</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Product 3</td>
+                                            <td>30</td>
+                                            <td>300</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
 
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>Description</th>
-                                <th>Price</th>
-                                <th>Image Name</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Product 1</td>
-                                <td> Pyszna dieta dla starych i mniej starych. Założenia
-                                    ideologii komunistycznej starał
-                                    się wprowadzić w życie Włodzimierz Lenin </td>
-                                <td>$10.99</td>
-                                <td>product1.jpg</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Product 2</td>
-                                <td>Opis testowy numer 2 bardzo długi oj chyba trzeba go zawinąć
-                                    ale nie na dołek
-                                </td>
-                                <td>$19.99</td>
-                                <td>product2.jpg</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Product 2</td>
-                                <td>Description 2</td>
-                                <td>$19.99</td>
-                                <td>product2.jpg</td>
-                            </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>20/05/1997</td>
+                            <td>100</td>
+                            <td>25%</td>
+                            <td>75</td>
+                            <td>True</td>
+                            <td>False</td>
+                            <td><button class="expand-button-user-panel" onclick="toggleOrderDetails(this)">
+                                    <img src="Images/arrow-down.svg">
+                                </button></td>
+                        </tr>
+                        <tr class="order-details">
+                            <td colspan="8">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Product Id</th>
+                                            <th>Product Name</th>
+                                            <th>Price</th>
+                                            <th>Calories</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Product 1</td>
+                                            <td>10</td>
+                                            <td>100</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
 
-
-                        </tbody>
-                    </table>
-                </div>
-
-
+                        <tr>
+                            <td>1</td>
+                            <td>20/05/1997</td>
+                            <td>100</td>
+                            <td>25%</td>
+                            <td>75</td>
+                            <td>True</td>
+                            <td>False</td>
+                            <td><button class="expand-button-user-panel" onclick="toggleOrderDetails(this)">
+                                    <img src="Images/arrow-down.svg">
+                                </button></td>
+                        </tr>
+                        <tr class="order-details">
+                            <td colspan="8">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Product Id</th>
+                                            <th>Product Name</th>
+                                            <th>Price</th>
+                                            <th>Calories</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Product 1</td>
+                                            <td>10</td>
+                                            <td>100</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
 
