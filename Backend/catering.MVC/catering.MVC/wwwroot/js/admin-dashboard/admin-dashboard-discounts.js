@@ -27,7 +27,7 @@ const RenderDiscounts = (discounts, discountContainer) => {
                     Delete
                 </button>
             </td>
-        <tr>
+        </tr>
         `)
     }
 }
@@ -56,7 +56,7 @@ function submitDiscountForm(event) {
 
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
-            LoadProducts();
+            LoadDiscounts()
             form.reset();
             closeModalAdminDiscount();
         }
@@ -70,6 +70,9 @@ function updateRowsDiscount() {
     const searchDiscountInput = document.getElementById('search-discount');
     const rowsDiscount = document.querySelectorAll('#div2-admin tbody tr');
     const counterDiscount = document.querySelector('#div2-admin .search-counter-admin');
+
+    counterDiscount.textContent = (document.querySelectorAll('#div2-admin tbody tr')).length;
+
     searchDiscountInput.addEventListener('keyup', function (event) {
         const q = event.target.value.toLowerCase();
         let count = 0;

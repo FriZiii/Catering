@@ -29,7 +29,7 @@ const RenderProducts = (products, productsContainer) => {
                     Delete
                 </button>
             </td>
-        <tr>
+        </tr>
         `)
     }
 }
@@ -73,6 +73,9 @@ function updateRowsProducts() {
     const searchProductInput = document.getElementById('search-product');
     const rowsProducts = document.querySelectorAll('#div4-admin tbody tr');
     const counterProduct = document.querySelector('#div4-admin .search-counter-admin');
+
+    counterProduct.textContent = (document.querySelectorAll('#div4-admin tbody tr')).length;
+
     searchProductInput.addEventListener('keyup', function (event) {
         const q = event.target.value.toLowerCase();
         let count = 0;

@@ -33,7 +33,7 @@ const RenderUsers = (users, usersContainer) => {
                     Delete
                 </button>
             </td>
-        <tr>
+        </tr>
         `)
     }
 }
@@ -55,6 +55,9 @@ function updateRowsUsers() {
     const searchUserInput = document.getElementById('search-user');
     const rowsUser = document.querySelectorAll('#div1-admin tbody tr');
     const counterUser = document.querySelector('#div1-admin .search-counter-admin');
+
+    counterUser.textContent = (document.querySelectorAll('#div1-admin tbody tr')).length;
+
     searchUserInput.addEventListener('keyup', function (event) {
         const q = event.target.value.toLowerCase();
         let count = 0;
