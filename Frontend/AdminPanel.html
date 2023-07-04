@@ -94,8 +94,8 @@
                         CREATE PRODUCT</button>
                 </div>
                 <div class="div-search-bar-admin">
-                        <input type="text" class="input_field search-bar-admin" placeholder="Search...">
-                        
+                    <input type="text" class="input_field search-bar-admin" placeholder="Search...">
+
                     <div class="counter-container-admin">
                         <h1 class="search-counter-admin">
                             42
@@ -262,8 +262,175 @@
 
             </div>
 
-            <div id="div2-admin" class="hidden-admin section-admin">
-                <h2>Title 2</h2>
+            <div id="div2-admin" class="section-admin div-with-table-admin hidden-admin">
+                <div class="div-actions-admin">
+                    <h1 class="title-admin"> Orders </h1>
+                </div>
+                <div class="div-search-bar-admin">
+                    <input type="text" class="input_field search-bar-admin" placeholder="Search...">
+                    <div class="counter-container-admin">
+                        <h1 class="search-counter-admin">
+                            42
+                        </h1>
+                        <h1 class="search-counter-results-admin"> Results </h1>
+                    </div>
+                </div>
+                <div class="table-div2-admin">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Order Date</th>
+                                <th>Price before discount</th>
+                                <th>Discount</th>
+                                <th>Price after discount</th>
+                                <th>Confirmed</th>
+                                <th>Paid</th>
+                                <th>Expand</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>20/05/1997</td>
+                                <td>100</td>
+                                <td>25%</td>
+                                <td>75</td>
+                                <td>True</td>
+                                <td>False</td>
+                                <td><button class="expand-button-admin" onclick="toggleOrderDetails(this)">
+                                        <img src="Images/arrow-down.svg">
+                                    </button></td>
+                            </tr>
+                            <tr class="order-details">
+                                <td colspan="8">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Product Id</th>
+                                                <th>Product Name</th>
+                                                <th>Price</th>
+                                                <th>Calories</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Product 1</td>
+                                                <td>10</td>
+                                                <td>100</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>20/05/1997</td>
+                                <td>100</td>
+                                <td>25%</td>
+                                <td>75</td>
+                                <td>True</td>
+                                <td>False</td>
+                                <td><button class="expand-button-admin" onclick="toggleOrderDetails(this)">
+                                        <img src="Images/arrow-down.svg">
+                                    </button></td>
+                            </tr>
+                            <tr class="order-details">
+                                <td colspan="8">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Product Id</th>
+                                                <th>Product Name</th>
+                                                <th>Price</th>
+                                                <th>Calories</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Product 3</td>
+                                                <td>30</td>
+                                                <td>300</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>1</td>
+                                <td>20/05/1997</td>
+                                <td>100</td>
+                                <td>25%</td>
+                                <td>75</td>
+                                <td>True</td>
+                                <td>False</td>
+                                <td><button class="expand-button-admin" onclick="toggleOrderDetails(this)">
+                                        <img src="Images/arrow-down.svg">
+                                    </button></td>
+                            </tr>
+                            <tr class="order-details">
+                                <td colspan="8">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Product Id</th>
+                                                <th>Product Name</th>
+                                                <th>Price</th>
+                                                <th>Calories</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Product 1</td>
+                                                <td>10</td>
+                                                <td>100</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>1</td>
+                                <td>20/05/1997</td>
+                                <td>100</td>
+                                <td>25%</td>
+                                <td>75</td>
+                                <td>True</td>
+                                <td>False</td>
+                                <td><button class="expand-button-admin" onclick="toggleOrderDetails(this)">
+                                        <img src="Images/arrow-down.svg">
+                                    </button></td>
+                            </tr>
+                            <tr class="order-details">
+                                <td colspan="8">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Product Id</th>
+                                                <th>Product Name</th>
+                                                <th>Price</th>
+                                                <th>Calories</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Product 1</td>
+                                                <td>10</td>
+                                                <td>100</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
             <div id="div3-admin" class="hidden-admin section-admin">
