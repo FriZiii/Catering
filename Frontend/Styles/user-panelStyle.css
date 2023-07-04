@@ -171,9 +171,10 @@
   width: 131vh;
   border-bottom: 1px solid #ddd;
   display: flex;
+  justify-content: space-between;
 }
 
-.search-bar-user-panel-products {
+.search-bar-user-panel {
   width: 30vh;
   display: inline-block;
   padding-top: 8px;
@@ -205,12 +206,12 @@
   padding-left: 3px;
 }
 
-.title-products-user-panel {
+.title-user-panel {
   display: inline-block;
   font-weight: normal;
 }
 
-.create-product-button-user-panel {
+.create-button-user-panel {
   display: inline-block;
   border: none;
   background-color: var(--light-yellow);
@@ -221,10 +222,9 @@
   outline: none;
   position: relative;
   top: -5px;
-  left: 100vh;
 }
 
-.create-product-button-user-panel img {
+.create-button-user-panel img {
   position: relative;
   top: 4px;
   width: 20px;
@@ -239,7 +239,7 @@
   top: 8vh;
 }
 
-/*table products user-panel*/
+/*table user-panel*/
 
 .table-div-user-panel {
   overflow: auto;
