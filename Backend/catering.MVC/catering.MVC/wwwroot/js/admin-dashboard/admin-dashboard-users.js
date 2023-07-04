@@ -18,7 +18,7 @@ const RenderUsers = (users, usersContainer) => {
         usersContainer.append(`
         <tr>
             <td>${user.id}</td>
-            <td>${user.Email}</td>
+            <td>${user.normalizedEmail}</td>
             <td>${user.firstName}</td>
             <td>${user.lastName}</td>
             <td>${user.deliveryAdress.phoneNumber}</td>
@@ -46,8 +46,36 @@ const LoadUsers = () => {
         type: 'get',
         success: function (data) {
             RenderUsers(data, usersContainer);
+            updateRowsUsers();
         }
     })
 }
+
+function updateRowsUsers() {
+    const searchUserInput = document.getElementById('search-user');
+    const rowsUser = document.querySelectorAll('#div1-admin tbody tr');
+    const counterUser = document.querySelector('#div1-admin .search-counter-admin');
+    searchUserInput.addEventListener('keyup', function (event) {
+        const q = event.target.value.toLowerCase();
+        let count = 0;
+        rowsUser.forEach((row) => {
+            let matchFound = false;
+            const records = row.querySelectorAll('td');
+            records.forEach(record => {
+                if (record.textContent.toLowerCase().includes(q)) {
+                    matchFound = true;
+                }
+            });
+            if (matchFound === true) {
+                row.style.display = '';
+                count += 1;
+            } else {
+                row.style.display = 'none';
+            }
+        });
+        counterUser.textContent = count;
+    });
+}
+
 
 LoadUsers()

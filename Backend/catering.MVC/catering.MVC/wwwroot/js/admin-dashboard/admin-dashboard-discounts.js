@@ -40,12 +40,10 @@ const LoadDiscounts = () => {
         type: 'get',
         success: function (data) {
             RenderDiscounts(data, discountContainer);
+            updateRowsDiscount();
         }
     })
 }
-
-LoadDiscounts()
-
 
 function submitDiscountForm(event) {
     event.preventDefault();
@@ -67,26 +65,30 @@ function submitDiscountForm(event) {
 }
 
 
-const searchDiscountInput = document.getElementById('search-discount');
-const rowsDiscount = document.querySelectorAll('#div2-admin tbody tr');
-const counterDiscount = document.querySelector('#div2-admin .search-counter-admin');
-searchDiscountInput.addEventListener('keyup', function (event) {
-    const q = event.target.value.toLowerCase();
-    let count = 0;
-    rowsDiscount.forEach((row) => {
-        let matchFound = false;
-        const records = row.querySelectorAll('td');
-        records.forEach(record => {
-            if (record.textContent.toLowerCase().includes(q)) {
-                matchFound = true;
+function updateRowsDiscount() {
+    const searchDiscountInput = document.getElementById('search-discount');
+    const rowsDiscount = document.querySelectorAll('#div2-admin tbody tr');
+    const counterDiscount = document.querySelector('#div2-admin .search-counter-admin');
+    searchDiscountInput.addEventListener('keyup', function (event) {
+        const q = event.target.value.toLowerCase();
+        let count = 0;
+        rowsDiscount.forEach((row) => {
+            let matchFound = false;
+            const records = row.querySelectorAll('td');
+            records.forEach(record => {
+                if (record.textContent.toLowerCase().includes(q)) {
+                    matchFound = true;
+                }
+            });
+            if (matchFound === true) {
+                row.style.display = '';
+                count += 1;
+            } else {
+                row.style.display = 'none';
             }
         });
-        if (matchFound === true) {
-            row.style.display = '';
-            count += 1;
-        } else {
-            row.style.display = 'none';
-        }
+        counterDiscount.textContent = count;
     });
-    counterDiscount.textContent = count;
-});
+}
+
+LoadDiscounts()

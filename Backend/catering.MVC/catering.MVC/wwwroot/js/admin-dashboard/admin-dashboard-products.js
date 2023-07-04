@@ -11,6 +11,7 @@
     })
 }
 
+
 const RenderProducts = (products, productsContainer) => {
     productsContainer.empty();
 
@@ -33,6 +34,7 @@ const RenderProducts = (products, productsContainer) => {
     }
 }
 
+
 const LoadProducts = () => {
     const productsContainer = $("#div4-admin tbody");
 
@@ -41,11 +43,11 @@ const LoadProducts = () => {
         type: 'get',
         success: function (data) {
             RenderProducts(data, productsContainer);
+            updateRowsProducts();
         }
     })
 }
 
-LoadProducts()
 
 function submitProductForm(event) {
     event.preventDefault();
@@ -59,6 +61,7 @@ function submitProductForm(event) {
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
             LoadProducts();
+            form.reset();
             closeModalAdminProduct();
         }
     };
@@ -66,26 +69,31 @@ function submitProductForm(event) {
     xhr.send(formData);
 }
 
-const searchProductInput = document.getElementById('search-product');
-const rowsProducts = document.querySelectorAll('#div4-admin tbody tr');
-const counterProduct = document.querySelector('#div4-admin .search-counter-admin');
-searchProductInput.addEventListener('keyup', function (event) {
-    const q = event.target.value.toLowerCase();
-    let count = 0;
-    rowsProducts.forEach((row) => {
-        let matchFound = false;
-        const records = row.querySelectorAll('td');
-        records.forEach(record => {
-            if (record.textContent.toLowerCase().includes(q)) {
-                matchFound = true;
+function updateRowsProducts() {
+    const searchProductInput = document.getElementById('search-product');
+    const rowsProducts = document.querySelectorAll('#div4-admin tbody tr');
+    const counterProduct = document.querySelector('#div4-admin .search-counter-admin');
+    searchProductInput.addEventListener('keyup', function (event) {
+        const q = event.target.value.toLowerCase();
+        let count = 0;
+        rowsProducts.forEach((row) => {
+            let matchFound = false;
+            const records = row.querySelectorAll('td');
+            records.forEach(record => {
+                if (record.textContent.toLowerCase().includes(q)) {
+                    matchFound = true;
+                }
+            });
+            if (matchFound === true) {
+                row.style.display = '';
+                count += 1;
+            } else {
+                row.style.display = 'none';
             }
         });
-        if (matchFound === true) {
-            row.style.display = '';
-            count += 1;
-        } else {
-            row.style.display = 'none';
-        }
+        counterProduct.textContent = count;
     });
-    counterProduct.textContent = count;
-});
+}
+
+
+LoadProducts()
