@@ -15,7 +15,6 @@ const RenderDiscounts = (discounts, discountContainer) => {
     discountContainer.empty();
     for (const discount of discounts) {
         var formattedDate = (discount.expiration).split("T")[0];
-        console.log(formattedDate)
         discountContainer.append(`
         <tr>
             <td>${discount.id}</td>
