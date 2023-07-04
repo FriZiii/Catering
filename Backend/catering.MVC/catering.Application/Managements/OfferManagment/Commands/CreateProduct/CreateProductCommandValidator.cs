@@ -6,12 +6,8 @@ namespace catering.Application.Managements.OfferManagment.Commands.CreateProduct
 {
     public class CreateProductCommandValidator : AbstractValidator<CreateProductCommand>
     {
-        private readonly IOfferRepository offerRepository;
-
-        public CreateProductCommandValidator(IOfferRepository offerRepository)
+        public CreateProductCommandValidator()
         {
-            this.offerRepository = offerRepository;
-
             RuleFor(c => c.Name)
                 .NotEmpty()
                 .MinimumLength(3)
