@@ -75,140 +75,222 @@
 
 
         <div class="center-container-user-panel">
-            <form id="user-panelForm" class="content-user-panel">
-                <div class="account-info-title-user-panel-div">
-                    <h1 class="account-info-title-user-panel"> Account Information </h1>
-                </div>
-                <div class="user-panel-inputs-container">
-                    <div class="user-panel-left-section">
 
-                        <div class="user-panel-two-in-one-inputs">
-                            <div class="input user-panel-small-input">
-                                <input class="input_field" type="text" autocomplete="firstname" aria-required="true"
-                                    placeholder=" " />
-                                <span class="input_label">
-                                    <img src="Images/user-yellow.svg" class="input_icon" />
-                                    First Name
-                                </span>
-                            </div>
+            <div id="div1-user-panel" class="hidden-user-panel">
 
-                            <div class="input user-panel-small-input">
-                                <input class="input_field" type="text" autocomplete="lastname" aria-required="true"
-                                    placeholder=" " />
-                                <span class="input_label">
-                                    <img src="Images/user-yellow.svg" class="input_icon" />
-                                    Last Name
-                                </span>
-                            </div>
-                        </div>
-
-
-                        <div class="input user-panel-input">
-                            <input class="input_field" type="email" autocomplete="username" aria-required="true"
-                                placeholder=" " />
-                            <span class="input_label">
-                                <img src="Images/mail-yellow.svg" class="input_icon" />
-                                Email
-                            </span>
-                        </div>
-
-                        <div class="input user-panel-input">
-                            <input class="input_field" type="password" autocomplete="new-password" aria-required="true"
-                                placeholder=" " />
-                            <span class="input_label">
-                                <img src="Images/password-icon-left.svg" class="input_icon" />
-                                Password
-                            </span>
-                        </div>
-
-                        <div class="input user-panel-input">
-                            <input class="input_field" type="password" autocomplete="new-password" aria-required="true"
-                                placeholder=" " />
-                            <span class="input_label">
-                                <img src="Images/password-icon-left.svg" class="input_icon" />
-                                Repeat password
-                            </span>
-                        </div>
-
-                        <div class="input user-panel-input" id="birthdatePicker">
-                            <input class="input_field" type="password" autocomplete="new-password" aria-required="true"
-                                placeholder=" " />
-                            <span class="input_label">
-                                <img src="Images/calendar-yellow.svg" class="input_icon" />
-                                Birthdate
-                            </span>
-                        </div>
+                <form id="user-panelForm" class="content-user-panel">
+                    <div class="account-info-title-user-panel-div">
+                        <h1 class="account-info-title-user-panel"> Account Information </h1>
                     </div>
+                    <div class="user-panel-inputs-container">
+                        <div class="user-panel-left-section">
 
-                    <div class="user-panel-right-section">
-                        <div class="input user-panel-input">
-                            <input class="input_field" type="text" autocomplete="new-password" aria-required="true"
-                                placeholder=" " />
-                            <span class="input_label">
-                                <img src="Images/home-yellow.svg" class="input_icon" />
-                                Address 1
-                            </span>
+                            <div class="user-panel-two-in-one-inputs">
+                                <div class="input user-panel-small-input">
+                                    <input class="input_field" type="text" autocomplete="firstname" aria-required="true"
+                                        placeholder=" " />
+                                    <span class="input_label">
+                                        <img src="Images/user-yellow.svg" class="input_icon" />
+                                        First Name
+                                    </span>
+                                </div>
+
+                                <div class="input user-panel-small-input">
+                                    <input class="input_field" type="text" autocomplete="lastname" aria-required="true"
+                                        placeholder=" " />
+                                    <span class="input_label">
+                                        <img src="Images/user-yellow.svg" class="input_icon" />
+                                        Last Name
+                                    </span>
+                                </div>
+                            </div>
+
+
+                            <div class="input user-panel-input">
+                                <input class="input_field" type="email" autocomplete="username" aria-required="true"
+                                    placeholder=" " />
+                                <span class="input_label">
+                                    <img src="Images/mail-yellow.svg" class="input_icon" />
+                                    Email
+                                </span>
+                            </div>
+
+                            <div class="input user-panel-input">
+                                <input class="input_field" type="password" autocomplete="new-password"
+                                    aria-required="true" placeholder=" " />
+                                <span class="input_label">
+                                    <img src="Images/password-icon-left.svg" class="input_icon" />
+                                    Password
+                                </span>
+                            </div>
+
+                            <div class="input user-panel-input">
+                                <input class="input_field" type="password" autocomplete="new-password"
+                                    aria-required="true" placeholder=" " />
+                                <span class="input_label">
+                                    <img src="Images/password-icon-left.svg" class="input_icon" />
+                                    Repeat password
+                                </span>
+                            </div>
+
+                            <div class="input user-panel-input" id="birthdatePicker">
+                                <input class="input_field" type="password" autocomplete="new-password"
+                                    aria-required="true" placeholder=" " />
+                                <span class="input_label">
+                                    <img src="Images/calendar-yellow.svg" class="input_icon" />
+                                    Birthdate
+                                </span>
+                            </div>
                         </div>
 
-                        <div class="input user-panel-input">
-                            <input class="input_field" type="text" autocomplete="new-password" aria-required="true"
-                                placeholder=" " />
-                            <span class="input_label">
-                                <img src="Images/home-yellow.svg" class="input_icon" />
-                                Address 2
-                            </span>
-                        </div>
-
-                        <div class="user-panel-two-in-one-inputs">
-                            <div class="input user-panel-small-input">
+                        <div class="user-panel-right-section">
+                            <div class="input user-panel-input">
                                 <input class="input_field" type="text" autocomplete="new-password" aria-required="true"
                                     placeholder=" " />
                                 <span class="input_label">
-                                    <img src="Images/map-pin-yellow.svg" class="input_icon" />
-                                    Pastal code
+                                    <img src="Images/home-yellow.svg" class="input_icon" />
+                                    Address 1
                                 </span>
                             </div>
 
-                            <div class="input user-panel-small-input">
+                            <div class="input user-panel-input">
                                 <input class="input_field" type="text" autocomplete="new-password" aria-required="true"
                                     placeholder=" " />
                                 <span class="input_label">
-                                    <img src="Images/map-pin-yellow.svg" class="input_icon" />
-                                    State/Region
+                                    <img src="Images/home-yellow.svg" class="input_icon" />
+                                    Address 2
                                 </span>
                             </div>
+
+                            <div class="user-panel-two-in-one-inputs">
+                                <div class="input user-panel-small-input">
+                                    <input class="input_field" type="text" autocomplete="new-password"
+                                        aria-required="true" placeholder=" " />
+                                    <span class="input_label">
+                                        <img src="Images/map-pin-yellow.svg" class="input_icon" />
+                                        Pastal code
+                                    </span>
+                                </div>
+
+                                <div class="input user-panel-small-input">
+                                    <input class="input_field" type="text" autocomplete="new-password"
+                                        aria-required="true" placeholder=" " />
+                                    <span class="input_label">
+                                        <img src="Images/map-pin-yellow.svg" class="input_icon" />
+                                        State/Region
+                                    </span>
+                                </div>
+                            </div>
+
+
+                            <div class="input user-panel-input">
+                                <input class="input_field" type="text" autocomplete="new-password" aria-required="true"
+                                    placeholder=" " />
+                                <span class="input_label">
+                                    <img src="Images/globe-yellow.svg" class="input_icon" />
+                                    Country
+                                </span>
+                            </div>
+
+                            <div class="input user-panel-input">
+                                <input class="input_field" type="tel" autocomplete="new-password" aria-required="true"
+                                    placeholder=" " />
+                                <span class="input_label">
+                                    <img src="Images/phone-yellow.svg" class="input_icon" />
+                                    Phone number
+                                </span>
+                            </div>
+
+
                         </div>
-
-
-                        <div class="input user-panel-input">
-                            <input class="input_field" type="text" autocomplete="new-password" aria-required="true"
-                                placeholder=" " />
-                            <span class="input_label">
-                                <img src="Images/globe-yellow.svg" class="input_icon" />
-                                Country
-                            </span>
-                        </div>
-
-                        <div class="input user-panel-input">
-                            <input class="input_field" type="tel" autocomplete="new-password" aria-required="true"
-                                placeholder=" " />
-                            <span class="input_label">
-                                <img src="Images/phone-yellow.svg" class="input_icon" />
-                                Phone number
-                            </span>
-                        </div>
-
-
                     </div>
-                </div>
 
-                <div class="user-panel-btn-conteiner">
-                    <button id="user-panelSubmit" type="submit" class="btn-with-icon">
-                        <span>Update</span>
-                    </button>
-                </div>
-            </form>
+                    <div class="user-panel-btn-conteiner">
+                        <button id="user-panelSubmit" type="submit" class="btn-with-icon">
+                            <span>Update</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
         </div>
+
+
+        <div id="div2-user-panel" class="div-with-table-user-panel hidden-user-panel">
+            <div class="main-user-panel">
+                <div class="div-actions-user-panel">
+                    <h1 class="title-products-user-panel"> Products </h1>
+                    <button class="create-product-button-user-panel" onclick="openModalAdminProduct()">
+                        <img src="Images/plus-icon.svg">
+                        CREATE PRODUCT</button>
+                </div>
+                <div class="div-search-bar-user-panel">
+                    <input type="text" class="input_field search-bar-user-panel-products" placeholder="Search...">
+                    <div class="counter-container-user-panel">
+                        <h1 class="search-counter-user-panel">
+                            42
+                        </h1>
+                        <h1 class="search-counter-results-user-panel"> Results </h1>
+                    </div>
+                </div>
+                <div class="table-div-user-panel">
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Price</th>
+                                <th>Image Name</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Product 1</td>
+                                <td> Pyszna dieta dla starych i mniej starych. Założenia
+                                    ideologii komunistycznej starał
+                                    się wprowadzić w życie Włodzimierz Lenin </td>
+                                <td>$10.99</td>
+                                <td>product1.jpg</td>
+                                <td><button class="delete-button-user-panel">
+                                        <img src="Images/x-icon.svg">
+                                        Delete</button></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Product 2</td>
+                                <td>Opis testowy numer 2 bardzo długi oj chyba trzeba go zawinąć
+                                    ale nie na dołek
+                                </td>
+                                <td>$19.99</td>
+                                <td>product2.jpg</td>
+                                <td><button class="delete-button-user-panel">
+                                        <img src="Images/x-icon.svg">
+                                        Delete</button></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Product 2</td>
+                                <td>Description 2</td>
+                                <td>$19.99</td>
+                                <td>product2.jpg</td>
+                                <td><button class="delete-button-user-panel">
+                                        <img src="Images/x-icon.svg">
+                                        Delete</button></td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+                </div>
+
+
+            </div>
+        </div>
+
     </div>
 
     <footer style="position: relative" id="footer-offer">

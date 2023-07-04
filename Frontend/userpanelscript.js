@@ -5,7 +5,7 @@ function showDiv(divNumber) {
         currentDiv.style.display = "none";
     }
 
-    var div = document.getElementById("div" + divNumber + "-admin");
+    var div = document.getElementById("div" + divNumber + "-user-panel");
     div.style.display = "flex";
     currentDiv = div;
 }

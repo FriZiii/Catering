@@ -28,7 +28,7 @@
 .icon img {
   width: 35px;
   height: 35px;
-  transition: filter 0.3s ease-in-out; /* Add a transition effect for smooth color change */
+  transition: filter 0.3s ease-in-out; 
 }
 
 .admin-left-panel-button {
@@ -118,6 +118,8 @@
   flex-direction: column;
   position: relative;
   top: 1vh;
+  justify-content: center;
+  align-items: center;
 }
 
 

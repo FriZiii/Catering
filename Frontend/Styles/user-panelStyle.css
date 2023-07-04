@@ -1,3 +1,4 @@
+
 .center-container-user-panel {
   display: flex;
   justify-content: center;
@@ -38,7 +39,7 @@
 .icon img {
   width: 35px;
   height: 35px;
-  transition: filter 0.3s ease-in-out; /* Add a transition effect for smooth color change */
+  transition: filter 0.3s ease-in-out; 
 }
 
 .user-left-panel-button {
@@ -48,11 +49,16 @@
   outline: none;
 }
 
+.hidden-user-panel {
+  display: none;
+}
+
 .account-info-title-user-panel-div {
   position: relative;
   top: -30px;
   border-bottom: 1px solid #8b8b8b;
 }
+
 
 .account-info-title-user-panel {
   font-size: 40px;
@@ -149,3 +155,170 @@
     width: auto;
   }
 }
+
+
+/* products section user-panel */
+.main-user-panel {
+  display: flex;
+  width: 131vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 8vh;
+}
+
+.div-actions-user-panel {
+  width: 131vh;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+}
+
+.search-bar-user-panel-products {
+  width: 30vh;
+  display: inline-block;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.div-search-bar-user-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 131vh;
+  padding: 15px 15px 15px 0;
+}
+
+.counter-container-user-panel {
+  display: flex;
+  align-items: center;
+}
+
+.search-counter-user-panel,
+.search-counter-results-user-panel {
+  padding-left: 20px;
+  font-size: 16px;
+  font-weight: lighter;
+  margin: 0;
+}
+
+.search-counter-results-user-panel {
+  padding-left: 3px;
+}
+
+.title-products-user-panel {
+  display: inline-block;
+  font-weight: normal;
+}
+
+.create-product-button-user-panel {
+  display: inline-block;
+  border: none;
+  background-color: var(--light-yellow);
+  border-radius: 10px;
+  padding: 8px;
+  padding-top: 4px;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  top: -5px;
+  left: 100vh;
+}
+
+.create-product-button-user-panel img {
+  position: relative;
+  top: 4px;
+  width: 20px;
+  height: 20px;
+}
+
+.div-with-table-user-panel {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 8vh;
+}
+
+/*table products user-panel*/
+
+.table-div-user-panel {
+  overflow: auto;
+  height: 420px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 6.1vh;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  height: 5vh;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  font-weight: bold;
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  width: 22vh;
+  max-width: 22vh;
+}
+
+th {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: var(--light-grey);
+}
+
+thead th {
+  position: sticky;
+  top: 0;
+  background-color: #E6EAED;
+  z-index: 1;
+}
+
+.delete-button-user-panel {
+  background-color: var(--light-yellow);
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 8px;
+  padding-top: 4px;
+  position: relative;
+  cursor: pointer;
+  font-weight: bold;
+  z-index: 0;
+}
+
+.delete-button-user-panel:hover {
+  background-color: var(--main-color);
+}
+
+.delete-button-user-panel img {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: 5px;
+}
+
+td:hover {
+  white-space: normal; 
+  overflow: visible;
+  position: relative;
+  z-index: 0;
+}
+
+td:hover::after {
+  content: attr(data-text); 
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: white; 
+  padding: 10px;
+  max-width: 340px; 
+  overflow: auto;
+}
+
