@@ -55,32 +55,14 @@
                         <th>Phone Number</th>
                         <th>Adress 1</th>
                         <th>Adress 2</th>
+                        <th>State/Region</th>
                         <th>Postal Code</th>
                         <th>Country</th>
                         <th>Delete</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var user in Model.Users)
-                    {
-                        <tr>
-                            <td>@user.Id</td>
-                            <td>@user.Email</td>
-                            <td>@user.FirstName</td>
-                            <td>@user.LastName</td>
-                            <td>@user.DeliveryAdress.PhoneNumber</td>
-                            <td>@user.DeliveryAdress.Adress1</td>
-                            <td>@user.DeliveryAdress.Adress2</td>
-                            <td>@user.DeliveryAdress.PostalCode</td>
-                            <td>@user.DeliveryAdress.Country</td>
-                            <td>
-                                <button class="delete-button-admin">
-                                    <img src="~/images/icons/close/close.svg">
-                                    Delete
-                                </button>
-                            </td>
-                        </tr>
-                    }
+                   
                 </tbody>
             </table>
         </div>
@@ -292,6 +274,7 @@
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="~/js/admin-dashboard/admin-dashboard-products.js"></script>
     <script src="~/js/admin-dashboard/admin-dashboard-discounts.js"></script>
+    <script src="~/js/admin-dashboard/admin-dashboard-users.js"></script>
     <script>
     document.addEventListener("DOMContentLoaded", function () {
             flatpickr("#expirationPicker input", {

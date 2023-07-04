@@ -30,8 +30,8 @@ namespace catering.Infrastructure.Repositories
 
         public async Task DeleteUserById(string id)
         {
-            var userToDelete = await userManager.Users.FirstAsync(u => u.Id == id);
-            await userManager.DeleteAsync(userToDelete);
+            var userToDelete = await userManager.FindByIdAsync(id);
+            await userManager.DeleteAsync(userToDelete!);
         }
 
         public IEnumerable<AppUser> GetAllUsers()
