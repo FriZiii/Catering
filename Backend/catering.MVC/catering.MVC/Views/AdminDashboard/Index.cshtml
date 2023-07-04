@@ -119,21 +119,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var discount in Model.Discounts)
-                    {
-                        <tr>
-                            <td>@discount.Id</td>
-                            <td>@discount.Code</td>
-                            <td>@discount.DiscountPercentage%</td>
-                            <td>@discount.Expiration.ToString("d")</td>
-                            <td>
-                                <button class="delete-button-admin">
-                                    <img src="~/images/icons/close/close.svg">
-                                    Delete
-                                </button>
-                            </td>
-                        </tr>
-                    }
+                  
                 </tbody>
             </table>
         </div>
@@ -304,8 +290,8 @@
 @section Scripts
 {
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script src="~/js/admin-dashboard-products.js"></script>
-    <script src="~/js/admin-dashboard-discount.js"></script>
+    <script src="~/js/admin-dashboard/admin-dashboard-products.js"></script>
+    <script src="~/js/admin-dashboard/admin-dashboard-discount.js"></script>
     <script>
     document.addEventListener("DOMContentLoaded", function () {
             flatpickr("#expirationPicker input", {
