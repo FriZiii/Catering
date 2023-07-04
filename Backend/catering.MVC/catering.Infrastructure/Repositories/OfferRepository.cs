@@ -36,6 +36,13 @@ namespace catering.Infrastructure.Repositories
             await context.SaveChangesAsync();
         }
 
+        public async Task DeleteById(int id)
+        {
+            var productToDelete = await context.Products.FirstAsync(p => p.Id == id);
+            context.Products.Remove(productToDelete);
+            await context.SaveChangesAsync();
+        }
+
         public async Task<List<Product>> GetAll()
         {
             return await context.Products.ToListAsync();

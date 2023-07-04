@@ -8,5 +8,6 @@ namespace catering.Domain.Interface
         Task<List<Product>> GetAll();
         Task <Product?> GetByName(string name);
         Task<Product?> GetById(int id);
+        Task DeleteById(int id);
     }
 }
