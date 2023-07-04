@@ -39,7 +39,6 @@
             </div>
             <div class="counter-container-admin">
                 <h1 class="search-counter-admin">
-                    @Model.Users.Count()
                 </h1>
                 <h1 class="search-counter-results-admin"> Results </h1>
             </div>
@@ -84,7 +83,6 @@
             </div>
             <div class="counter-container-admin">
                 <h1 class="search-counter-admin">
-                    @Model.Discounts.Count()
                 </h1>
                 <h1 class="search-counter-results-admin"> Results </h1>
             </div>
@@ -124,16 +122,17 @@
                 <h1 class="search-counter-results-admin"> Results </h1>
             </div>
         </div>
-        <div class="table-div-admin">
+        <div class="table-div3-admin">
             <table>
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Order date</th>
+                        <th>Order Date</th>
                         <th>Price before discount</th>
                         <th>Discount code</th>
                         <th>Price after discount</th>
                         <th>Confirmed</th>
+                        <th>Expand</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -146,6 +145,36 @@
                             <td>@(order.DiscountCode != null ? order.DiscountCode.Code : "None")</td>
                             <td>@order.TotalPriceAfterDiscount</td>
                             <td>@order.Confirmed</td>
+                            <td>
+                                <button class="expand-button-admin" onclick="toggleOrderDetails(this)">
+                                    <img src="../images/icons/arrow-down/arrow-down.svg">
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="order-details-admin">
+                            <td colspan="8" class="subtable-td-admin">
+                                <table class="subtable-admin">
+                                    <thead>
+                                        <tr>
+                                            <th>Product Id</th>
+                                            <th>Product Name</th>
+                                            <th>Price</th>
+                                            <th>Calories</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var orderItem in order.OrderItems)
+                                        {
+                                            <tr>
+                                                <td>@orderItem.ProductId</td>
+                                                <td>@orderItem.Product.Name</td>
+                                                <td>@orderItem.Product.Price</td>
+                                                <td>@orderItem.Calories</td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </td>
                         </tr>
                     }
                 </tbody>
@@ -169,7 +198,6 @@
             </div>
             <div class="counter-container-admin">
                 <h1 class="search-counter-admin">
-                    @Model.Products.Count()
                 </h1>
                 <h1 class="search-counter-results-admin"> Results </h1>
             </div>
