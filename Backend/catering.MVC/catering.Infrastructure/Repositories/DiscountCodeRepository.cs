@@ -17,6 +17,12 @@ namespace catering.Infrastructure.Repositories
             this.orderRepository = orderRepository;
         }
 
+        public async Task CreateDiscountCode(DiscountCode discountCode)
+        {
+            await context.DiscountCodes.AddAsync(discountCode);
+            await context.SaveChangesAsync();
+        }
+
         public async Task<IEnumerable<DiscountCode>> GetAllDiscountCodes()
             => await context.DiscountCodes.ToListAsync();
 

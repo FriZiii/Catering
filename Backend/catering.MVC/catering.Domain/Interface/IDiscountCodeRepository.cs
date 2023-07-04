@@ -9,6 +9,7 @@ namespace catering.Domain.Interface
 {
     public interface IDiscountCodeRepository
     {
+        Task CreateDiscountCode(DiscountCode discountCode);
         Task<IEnumerable<DiscountCode>> GetAllDiscountCodes();
         Task<DiscountCode?> GetDiscountCodeByCode(string code);
         Task SetDiscountCodeToOrder(int orderId, DiscountCode discountCode);
