@@ -57,6 +57,7 @@ function submitDiscountForm(event) {
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
             LoadProducts();
+            form.reset();
             closeModalAdminDiscount();
         }
     };
