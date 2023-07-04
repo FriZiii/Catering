@@ -34,6 +34,12 @@ namespace catering.Infrastructure.Repositories
             var productToDelete = await context.Products.FirstAsync(p => p.Id == id);
             context.Products.Remove(productToDelete);
             await context.SaveChangesAsync();
+            string wwRootPath = hostEnvironment.WebRootPath;
+            string path = Path.Combine(wwRootPath + "/images/products/", productToDelete.ImageName);
+            if (File.Exists(path))
+            {
+                File.Delete(path);
+            }
         }
 
         public async Task<List<Product>> GetAll()
