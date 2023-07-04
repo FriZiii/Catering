@@ -25,7 +25,7 @@ const RenderProducts = (products, container) => {
             <td>${product.imageName}</td>
             <td>
                 <button class="delete-button-admin" onclick="DeleteProductById(${product.id})">
-                    <img src="images/icons/close/close.svg">
+                    <img src="../images/icons/close/close.svg">
                     Delete
                 </button>
             </td>
@@ -48,19 +48,18 @@ const LoadProducts = () => {
 
 LoadProducts()
 
-function submitForm(event) {
+function submitProductForm(event) {
     event.preventDefault();
 
     var form = document.querySelector('#createProductForm');
     var formData = new FormData(form);
 
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'Offer/CreateProduct', true);
+    xhr.open('POST', '/Offer/CreateProduct', true);
 
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
             LoadProducts();
-            form.reset();
             closeModalAdminProduct();
         }
     };
