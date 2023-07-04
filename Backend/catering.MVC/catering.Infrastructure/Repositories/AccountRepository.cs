@@ -28,6 +28,12 @@ namespace catering.Infrastructure.Repositories
             this.httpContextAccessor = httpContextAccessor;
         }
 
+        public async Task DeleteUserById(string id)
+        {
+            var userToDelete = await userManager.Users.FirstAsync(u => u.Id == id);
+            await userManager.DeleteAsync(userToDelete);
+        }
+
         public IEnumerable<AppUser> GetAllUsers()
         {
             var users = userManager.Users.Include(u => u.DeliveryAdress).ToList();

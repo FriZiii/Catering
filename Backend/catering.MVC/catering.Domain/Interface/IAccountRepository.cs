@@ -13,6 +13,7 @@ namespace catering.Domain.Interface
 {
     public interface IAccountRepository
     {
+        Task DeleteUserById(string id);
         IEnumerable<AppUser> GetAllUsers();
         ClaimsPrincipal? GetCurrentUser();
         Task<SignInResult> LoginUser(LoginInput loginInput);
