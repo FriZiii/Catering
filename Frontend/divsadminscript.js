@@ -10,8 +10,16 @@ function showDiv(divNumber) {
     currentDiv = div;
 }
 
+function toggleOrderDetails(button) {
+    var orderDetailsRow = button.closest('tr').nextElementSibling;
+    orderDetailsRow.classList.toggle('order-details');
+}
+
 document.addEventListener("DOMContentLoaded", function(event) {
     showDiv(1);
+    document.getElementById("div2-admin").style.display = "none";
+    document.getElementById("div3-admin").style.display = "none";
+    document.getElementById("div4-admin").style.display = "none";
 });
 
 function changeIcon(button, imagePath) {
