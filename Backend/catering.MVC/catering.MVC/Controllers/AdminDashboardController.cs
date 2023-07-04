@@ -1,5 +1,6 @@
 ﻿using catering.Application.Managements.AccountManagment.Querries.GetAllUsers;
 using catering.Application.Managements.DiscountCodeManagment.Queries.GetAllDiscountCodes;
+using catering.Application.Managements.OfferManagment.Commands.DeleteProductById;
 using catering.Application.Managements.OfferManagment.Queries.GetAllProducts;
 using catering.Application.Managements.OrderManagment.Queries.GetAllOrders;
 using catering.MVC.Models;

@@ -1,4 +1,6 @@
-﻿using catering.Domain.Entities;
+﻿using catering.Application.Managements.OfferManagment;
+using catering.Application.Managements.OfferManagment.Commands.AddProduct;
+using catering.Domain.Entities;
 using catering.Domain.Entities.OrderEntities;
 using catering.Domain.Entities.User.AppUser;
 using System;
@@ -15,5 +17,7 @@ namespace catering.MVC.Models
         public IEnumerable<Order> Orders { get; set; } = null!;
         public IEnumerable<DiscountCode> Discounts { get; set; } = null!;
         public IEnumerable<AppUser> Users { get; set; } = null!;
+
+        public CreateProductCommand CreateProductCommand { get; set; } = null!;
     }
 }

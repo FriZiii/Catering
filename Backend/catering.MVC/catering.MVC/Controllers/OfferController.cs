@@ -1,7 +1,9 @@
 ﻿using catering.Application.Managements.AccountManagment.Querries.GetCurrentUser;
 using catering.Application.Managements.OfferManagment.Commands.AddProduct;
+using catering.Application.Managements.OfferManagment.Commands.DeleteProductById;
 using catering.Application.Managements.OfferManagment.Queries.GetAllProducts;
 using catering.Application.Managements.OrderManagment.Queries.GetOrderByUserId;
+using catering.MVC.Models;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -22,20 +24,25 @@ namespace catering.MVC.Controllers
             return View(products);
         }
 
-        public IActionResult Create()
+        [HttpGet]
+        public async Task<IActionResult> GetProducts()
         {
-            return View();
+            var products = await mediator.Send(new GetAllProductsQuery());
+            return Ok(products);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(CreateProductCommand command)
+        public async Task<IActionResult> CreateProduct(AdminDashboardViewModel adminDashboardViewModel)
         {
-            if(!ModelState.IsValid)
-            {
-                return View(command);
-            }
-            await mediator.Send(command);
-            return RedirectToAction("Index");
+            await mediator.Send(adminDashboardViewModel.CreateProductCommand);
+            return Ok();
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> DeleteProductById(int id)
+        {
+            await mediator.Send(new DeleteProductByIdCommand(id));
+            return Ok();
         }
     }
 }

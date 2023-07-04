@@ -207,22 +207,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var product in Model.Products)
-                    {
-                        <tr>
-                            <td>@product.Id</td>
-                            <td>@product.Name</td>
-                            <td>@product.Description</td>
-                            <td>@product.Price$</td>
-                            <td>@product.ImageName</td>
-                            <td>
-                                <button class="delete-button-admin">
-                                    <img src="~/images/icons/close/close.svg">
-                                    Delete
-                                </button>
-                            </td>
-                        </tr>
-                    }
+
                 </tbody>
             </table>
         </div>
@@ -233,34 +218,37 @@
         <div class="modal-product-content-admin">
             <span class="close-admin" onclick="closeModalAdminProduct()">&times;</span>
             <h2 class="modal-title-admin">Create new product</h2>
-            <form>
+            <form enctype="multipart/form-data" id="createProductForm">
                 <div class="form-group-admin">
-                    <input class="input_field" placeholder="Name" type="text" id="name" />
-                    <span class="error"></span>
+                    <input class="input_field" placeholder="Name" type="text" id="name" asp-for="CreateProductCommand.Name" />
+                    <span asp-validation-for="CreateProductCommand.Name" class="error"></span>
                 </div>
+
                 <div class="form-group-admin">
-                    <input class="input_field" placeholder="Price" type="text" id="price" />
-                    <span class="error"></span>
+                    <input class="input_field" placeholder="Price" type="text" id="price" asp-for="CreateProductCommand.Price" />
+                    <span asp-validation-for="CreateProductCommand.Price" class="error"></span>
                 </div>
+
                 <div class="form-group-admin">
-                    <textarea class="input_field" placeholder="Description" id="description"></textarea>
-                    <span class="error"></span>
+                    <textarea class="input_field" placeholder="Description" id="description" asp-for="CreateProductCommand.Description"></textarea>
+                    <span asp-validation-for="CreateProductCommand.Description" class="error"></span>
                 </div>
 
                 <div class="file-input">
-                    <input type="file" id="file" class="file">
+                    <input type="file" id="file" class="file" accept="image/*" asp-for="CreateProductCommand.ImageFile">
                     <label for="file">
                         Select an image
                         <img src="~/images/icons/upload/upload.svg">
                         <p class="file-name"></p>
                     </label>
+                    <span asp-validation-for="CreateProductCommand.ImageFile" class="error"></span>
                 </div>
 
                 <div class="buttons-admin">
                     <button class="modal-cancel-admin" onclick="closeModalAdminProduct()">
                         Cancel <img class="" src="~/images/icons/close/close.svg">
                     </button>
-                    <button class="modal-create-admin">
+                    <button class="modal-create-admin" type="submit" onclick="submitForm(event)">
                         Create New <img class="" src="~/images/icons/plus/plus.svg">
                     </button>
                 </div>
@@ -311,6 +299,7 @@
         });
     });
     </script>
+    <script src="~/js/admin-dashboard-products.js"></script>
 
 	@{
 		await Html.RenderPartialAsync("_ValidationScriptsPartial");
