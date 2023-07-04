@@ -53,9 +53,10 @@
   width: 131vh;
   border-bottom: 1px solid #ddd;
   display: flex;
+  justify-content: space-between;
 }
 
-.search-bar-admin-products {
+.search-bar-admin {
   width: 30vh;
   display: inline-block;
   padding-top: 8px;
@@ -75,6 +76,8 @@
   align-items: center;
 }
 
+
+
 .search-counter-admin,
 .search-counter-results-admin {
   padding-left: 20px;
@@ -87,12 +90,12 @@
   padding-left: 3px;
 }
 
-.title-products-admin {
+.title-admin {
   display: inline-block;
   font-weight: normal;
 }
 
-.create-product-button-admin {
+.create-button-admin {
   display: inline-block;
   border: none;
   background-color: var(--light-yellow);
@@ -103,10 +106,9 @@
   outline: none;
   position: relative;
   top: -5px;
-  left: 14vh;
 }
 
-.create-product-button-admin img {
+.create-button-admin img {
   position: relative;
   top: 4px;
   width: 20px;
