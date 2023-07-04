@@ -5,7 +5,9 @@ using catering.Application.Managements.OfferManagment.Queries.GetAllProducts;
 using catering.Application.Managements.OrderManagment.Queries.GetOrderByUserId;
 using catering.MVC.Models;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 
 namespace catering.MVC.Controllers
 {
@@ -25,6 +27,7 @@ namespace catering.MVC.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetProducts()
         {
             var products = await mediator.Send(new GetAllProductsQuery());
@@ -39,6 +42,7 @@ namespace catering.MVC.Controllers
         }
 
         [HttpDelete]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteProductById(int id)
         {
             await mediator.Send(new DeleteProductByIdCommand(id));
