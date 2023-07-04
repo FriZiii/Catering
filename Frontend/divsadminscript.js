@@ -12,7 +12,7 @@ function showDiv(divNumber) {
 
 function toggleOrderDetails(button) {
     var orderDetailsRow = button.closest('tr').nextElementSibling;
-    orderDetailsRow.classList.toggle('order-details');
+    orderDetailsRow.classList.toggle('order-details-admin');
     var img = button.querySelector('img');
     if (img.getAttribute('src') === 'Images/arrow-down.svg') {
         img.setAttribute('src', 'Images/left-arrow.svg');

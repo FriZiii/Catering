@@ -254,7 +254,6 @@ table {
 
 th,
 td {
-  padding: 6.1vh;
   padding-top: 10px;
   padding-bottom: 10px;
   height: 5vh;
@@ -349,7 +348,6 @@ td:hover::after {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: white; 
   padding: 10px;
   max-width: 340px; 
   overflow: auto;
@@ -370,4 +368,13 @@ th:hover::after {
   padding: 20px;
   max-width: 340px; 
   overflow: auto;
+}
+
+.subtable-td-user-panel {
+  padding: 0;
+  border: none;
+}
+
+.subtable-td-user-panel th {
+  background-color: var(--light-yellow);
 }
