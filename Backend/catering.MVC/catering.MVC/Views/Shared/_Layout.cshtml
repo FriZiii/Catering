@@ -44,6 +44,10 @@
                 <img id="offer-logo" src="~/images/yummy-logo.svg">
             </a>
             <div class="menu">
+                @if (User?.Identity != null && User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                {
+                    <a class="menu-item @(currentUrl == "Index-AdminDashboard" ? "active" : "")" asp-area="" asp-controller="AdminDashboard" asp-action="Index">Admin Dashboard</a>
+                }
                 <a class="menu-item @(currentUrl == "Index-Offer" ? "active" : "")" asp-area="" asp-controller="Offer" asp-action="Index">Offer</a>
                 <a class="menu-item @(currentUrl == "FAQ-Home" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="FAQ">FAQ</a>
                 <a class="menu-item @(currentUrl == "Index-Cart" ? "active" : "")" asp-area="" asp-controller="Cart" asp-action="Index">Cart</a>
@@ -72,6 +76,10 @@
 
         <div class="mobile-menu">
             <span class="material-icons close-icon hamburger hamburger-span">close</span>
+            @if (User?.Identity != null && User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+            {
+                <a class="@(currentUrl == "Index-AdminDashboard" ? "active" : "")" asp-area="" asp-controller="AdminDashboard" asp-action="Index">Admin Dashboard</a>
+            }
             <a class="menu-item @(currentUrl == "Index-Offer" ? "active" : "")" asp-area="" asp-controller="Offer" asp-action="Index">Offer</a>
             <a class="menu-item @(currentUrl == "FAQ-Home" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="FAQ">FAQ</a>
             <a class="menu-item @(currentUrl == "Index-Cart" ? "active" : "")" asp-area="" asp-controller="Cart" asp-action="Index">Cart</a>
@@ -108,6 +116,10 @@
             <a class="@(currentUrl == "FAQ-Home" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="FAQ">FAQ</a>
             <a class="@(currentUrl == "Index-Cart" ? "active" : "")" asp-area="" asp-controller="Cart" asp-action="Index">Cart</a>
             <a class="@(currentUrl == "Index-Home" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="Index">Contact</a>
+            @if (User?.Identity != null && User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+            {
+                <a class="@(currentUrl == "Index-AdminDashboard" ? "active" : "")" asp-area="" asp-controller="AdminDashboard" asp-action="Index">Admin Dashboard</a>
+            }
         </div>
         <div class="socials-footer">
             <img src="~/images/icons/socials/Facebook.svg" />
