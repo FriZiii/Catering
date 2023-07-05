@@ -178,17 +178,25 @@
                                                 <td>@orderItem.Product.Name</td>
                                                 <td>@orderItem.Product.Price</td>
                                                 <td>@orderItem.Calories</td>
-                                                <td>
-                                                    @foreach (var meal in orderItem.Meals)
-                                                    {
-                                                        @meal.Meal<br />
+                                                <td class="subtable-date-padding">
+                                                    @{
+                                                        var meals = "";
+                                                        foreach (var meal in orderItem.Meals)
+                                                        {
+                                                            meals += meal.Meal + '\n';
+                                                        }
                                                     }
+                                                    @meals
                                                 </td>
-                                                <td>
-                                                    @foreach (var date in orderItem.Dates.OrderBy(d => d.Date))
-                                                    {
-                                                        @date.Date.ToString("d")<br/>
-                                                    }
+                                                <td class="subtable-date-padding">
+                                                    @{
+                                                        var dates = "";
+                                                        foreach (var date in orderItem.Dates.OrderBy(d => d.Date))
+                                                        {
+                                                            dates += date.Date.ToString("d") + '\n';
+                                                        }
+                                                     }
+                                                     @dates
                                                 </td>
                                             </tr>
                                         }
