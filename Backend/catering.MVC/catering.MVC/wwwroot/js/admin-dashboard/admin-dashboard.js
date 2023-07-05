@@ -1,6 +1,4 @@
-﻿//Modal
-
-//Switchings divs
+﻿//Switchings divs
 var currentDiv = null;
 
 function showDiv(divNumber) {
@@ -35,4 +33,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
 function changeIcon(button, imagePath) {
     var img = button.querySelector('.icon img');
     img.src = imagePath;
+}
+
+function clearInput(inputId) {
+    const input = document.getElementById(inputId);
+    input.value = '';
+    input.dispatchEvent(new Event('input'));
 }

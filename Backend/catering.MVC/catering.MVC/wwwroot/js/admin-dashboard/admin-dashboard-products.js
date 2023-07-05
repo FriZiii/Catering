@@ -85,7 +85,7 @@ function updateRowsProducts() {
 
     counterProduct.textContent = (document.querySelectorAll('#div4-admin tbody tr')).length;
 
-    searchProductInput.addEventListener('keyup', function (event) {
+    searchProductInput.addEventListener('input', function (event) {
         const q = event.target.value.toLowerCase();
         let count = 0;
         rowsProducts.forEach((row) => {
@@ -123,9 +123,7 @@ function submitProductForm(event) {
             form.reset();
             closeModalAdminProduct();
         } else if (xhr.status === 400) {
-            console.log(xhr.responseText);
             var errors = JSON.parse(xhr.responseText);
-            console.log(errors);
             Object.keys(errors).forEach(function (key) {
                 var validationMessage = errors[key][errors[key].length - 1];
 

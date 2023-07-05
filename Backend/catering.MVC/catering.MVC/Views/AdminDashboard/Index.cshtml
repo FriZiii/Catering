@@ -35,7 +35,9 @@
         <div class="div-search-bar-admin">
             <div class="search-bar-container">
                 <input type="text" class="input_field search-bar-admin" placeholder="Search..." id="search-user">
-                <button class="clean-search-button"><img src="~/images/icons/close/close.svg"/></button>
+                <button class="clean-search-button" onclick="clearInput('search-user')">
+                    <img src="~/images/icons/close/close.svg" />
+                </button>
             </div>
             <div class="counter-container-admin">
                 <h1 class="search-counter-admin">
@@ -79,7 +81,9 @@
         <div class="div-search-bar-admin">
             <div class="search-bar-container">
                 <input type="text" class="input_field search-bar-admin" placeholder="Search..." id="search-discount">
-                <button class="clean-search-button"><img src="~/images/icons/close/close.svg"/></button>
+                <button class="clean-search-button" onclick="clearInput('search-discount')">
+                    <img src="~/images/icons/close/close.svg"/>
+                </button>
             </div>
             <div class="counter-container-admin">
                 <h1 class="search-counter-admin">
@@ -113,7 +117,9 @@
         <div class="div-search-bar-admin">
             <div class="search-bar-container">
                 <input type="text" class="input_field search-bar-admin" placeholder="Search..." id="search-order">
-                <button class="clean-search-button"><img src="~/images/icons/close/close.svg"/></button>
+                <button class="clean-search-button" onclick="clearInput('search-order')">
+                    <img src="~/images/icons/close/close.svg"/>
+                </button>
             </div>
             <div class="counter-container-admin">
                 <h1 class="search-counter-admin">
@@ -138,7 +144,7 @@
                 <tbody>
                     @foreach (var order in Model.Orders)
                     {
-                        <tr>
+                        <tr id="order-record">
                             <td>@order.Id</td>
                             <td>@order.OrderDate.ToString("d")</td>
                             <td>@order.TotalPriceBeforeDiscount</td>
@@ -194,7 +200,9 @@
         <div class="div-search-bar-admin">
             <div class="search-bar-container">
                 <input type="text" class="input_field search-bar-admin" placeholder="Search..." id="search-product">
-                <button class="clean-search-button"><img src="~/images/icons/close/close.svg"/></button>
+                <button class="clean-search-button" onclick="clearInput('search-product')">
+                    <img src="~/images/icons/close/close.svg"/>
+                </button>
             </div>
             <div class="counter-container-admin">
                 <h1 class="search-counter-admin">
@@ -299,13 +307,14 @@
     <script src="~/js/admin-dashboard/admin-dashboard-products.js"></script>
     <script src="~/js/admin-dashboard/admin-dashboard-discounts.js"></script>
     <script src="~/js/admin-dashboard/admin-dashboard-users.js"></script>
+    <script src="~/js/admin-dashboard/admin-dashboard-orders.js"></script>
     <script>
-    document.addEventListener("DOMContentLoaded", function () {
-            flatpickr("#expirationPicker input", {
-            dateFormat: "d-m-Y",
-            minDate: new Date().fp_incr(0),
+        document.addEventListener("DOMContentLoaded", function () {
+                flatpickr("#expirationPicker input", {
+                dateFormat: "d-m-Y",
+                minDate: new Date().fp_incr(0),
+            });
         });
-    });
     </script>
 	@{
 		await Html.RenderPartialAsync("_ValidationScriptsPartial");

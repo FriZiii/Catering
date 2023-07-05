@@ -73,7 +73,7 @@ function updateRowsDiscount() {
 
     counterDiscount.textContent = (document.querySelectorAll('#div2-admin tbody tr')).length;
 
-    searchDiscountInput.addEventListener('keyup', function (event) {
+    searchDiscountInput.addEventListener('input', function (event) {
         const q = event.target.value.toLowerCase();
         let count = 0;
         rowsDiscount.forEach((row) => {

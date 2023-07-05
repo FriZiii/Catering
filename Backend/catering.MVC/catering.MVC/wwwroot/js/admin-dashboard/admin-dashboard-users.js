@@ -58,7 +58,7 @@ function updateRowsUsers() {
 
     counterUser.textContent = (document.querySelectorAll('#div1-admin tbody tr')).length;
 
-    searchUserInput.addEventListener('keyup', function (event) {
+    searchUserInput.addEventListener('input', function (event) {
         const q = event.target.value.toLowerCase();
         let count = 0;
         rowsUser.forEach((row) => {
