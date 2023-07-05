@@ -1,33 +1,4 @@
 ﻿//Modal
-function openModalAdminProduct() {
-    document.getElementById("modal-create-product-admin").style.display = "block";
-}
-
-function closeModalAdminProduct() {
-    document.getElementById("modal-create-product-admin").style.display = "none";
-    document.querySelector('.file-name').textContent = "";
-    var form = document.querySelector('#createProductForm');
-    form.reset();
-}
-
-const file = document.querySelector('#file');
-file.addEventListener('change', (e) => {
-    const [file] = e.target.files;
-    const { name: fileName, size } = file;
-    const fileSize = (size / 1000).toFixed(2);
-    const fileNameAndSize = `${fileName} - ${fileSize}KB`;
-    document.querySelector('.file-name').textContent = fileNameAndSize;
-});
-
-function openModalAdminDiscount() {
-    document.getElementById("modal-create-discount-admin").style.display = "block";
-    var form = document.querySelector('#createDiscountForm');
-    form.reset();
-}
-
-function closeModalAdminDiscount() {
-    document.getElementById("modal-create-discount-admin").style.display = "none";
-}
 
 //Switchings divs
 var currentDiv = null;
