@@ -7,15 +7,15 @@ namespace catering.Application.Managements.DiscountCodeManagment.Commands.Create
         public CreateDiscountCodeCommandValidator()
         {
             RuleFor(c => c.Code)
-                .NotEmpty();
+                .NotEmpty().WithMessage("Please enter discount code");
 
             RuleFor(c => c.DiscountPercentage)
-                .NotEmpty()
-                .LessThan(100)
-                .GreaterThan(0);
+                .NotEmpty().WithMessage("Please enter percentage value of discount")
+                .LessThan(100).WithMessage("Discount cannot be greather then 100%")
+                .GreaterThan(0).WithMessage("Discount cannot be less then 0%");
 
             RuleFor(c => c.Expiration)
-                .NotEmpty();
+                .NotEmpty().WithMessage("Please enter expiration date"); ;
         }
     }
 }
