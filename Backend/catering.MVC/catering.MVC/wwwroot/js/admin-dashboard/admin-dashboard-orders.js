@@ -3,7 +3,6 @@ const rowsOrders = document.querySelectorAll('#div3-admin tbody tr');
 const counterOrder = document.querySelector('#div3-admin .search-counter-admin');
 
 counterOrder.textContent = (document.querySelectorAll('#order-record')).length;
-console.log(document.querySelectorAll('#order-record'));
 
 searchOrderInput.addEventListener('input', function (event) {
     const q = event.target.value.toLowerCase();
