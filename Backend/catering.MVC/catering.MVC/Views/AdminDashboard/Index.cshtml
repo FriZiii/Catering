@@ -228,17 +228,17 @@
             <form enctype="multipart/form-data" id="createProductForm">
                 <div class="form-group-admin">
                     <input class="input_field" placeholder="Name" type="text" id="name" asp-for="CreateProductCommand.Name" />
-                    <span asp-validation-for="CreateProductCommand.Name" class="error"></span>
+                    <span asp-validation-for="CreateProductCommand.Name" class="error" id="createProductCommand.Name-valid"></span>
                 </div>
 
                 <div class="form-group-admin">
                     <input class="input_field" placeholder="Price" type="text" id="price" asp-for="CreateProductCommand.Price" />
-                    <span asp-validation-for="CreateProductCommand.Price" class="error"></span>
+                    <span asp-validation-for="CreateProductCommand.Price" class="error" id="createProductCommand.Price-valid"></span>
                 </div>
 
                 <div class="form-group-admin">
                     <textarea class="input_field" placeholder="Description" id="description" asp-for="CreateProductCommand.Description"></textarea>
-                    <span asp-validation-for="CreateProductCommand.Description" class="error"></span>
+                    <span asp-validation-for="CreateProductCommand.Description" class="error" id="createProductCommand.Description-valid"></span>
                 </div>
 
                 <div class="file-input">
@@ -248,7 +248,7 @@
                         <img src="~/images/icons/upload/upload.svg">
                         <p class="file-name"></p>
                     </label>
-                    <span asp-validation-for="CreateProductCommand.ImageFile" class="error"></span>
+                    <span asp-validation-for="CreateProductCommand.ImageFile" class="error" id="createProductCommand.ImageFile-valid"></span>
                 </div>
 
                 <div class="buttons-admin">

@@ -1,4 +1,24 @@
-﻿const DeleteDiscountById = (id) => {
+﻿//Validation
+function clearValidationDiscountSpans() {
+    var validationSpans = document.querySelectorAll('#createDiscountForm .error');
+    validationSpans.forEach(function (span) {
+        span.textContent = '';
+    });
+}
+
+//Modal
+function openModalAdminDiscount() {
+    document.getElementById("modal-create-discount-admin").style.display = "block";
+    var form = document.querySelector('#createDiscountForm');
+    clearValidationDiscountSpans();
+    form.reset();
+}
+
+function closeModalAdminDiscount() {
+    document.getElementById("modal-create-discount-admin").style.display = "none";
+}
+
+const DeleteDiscountById = (id) => {
     $.ajax({
         url: '/DiscountCode/DeleteById',
         type: 'DELETE',
@@ -11,6 +31,7 @@
     })
 }
 
+//Displaying records async
 const RenderDiscounts = (discounts, discountContainer) => {
     discountContainer.empty();
     for (const discount of discounts) {
@@ -45,27 +66,6 @@ const LoadDiscounts = () => {
     })
 }
 
-function submitDiscountForm(event) {
-    event.preventDefault();
-
-    var form = document.querySelector('#createDiscountForm');
-    var formData = new FormData(form);
-
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', '/DiscountCode/Create', true);
-
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            LoadDiscounts()
-            form.reset();
-            closeModalAdminDiscount();
-        }
-    };
-
-    xhr.send(formData);
-}
-
-
 function updateRowsDiscount() {
     const searchDiscountInput = document.getElementById('search-discount');
     const rowsDiscount = document.querySelectorAll('#div2-admin tbody tr');
@@ -93,6 +93,42 @@ function updateRowsDiscount() {
         });
         counterDiscount.textContent = count;
     });
+}
+
+//Submit form
+function submitDiscountForm(event) {
+    event.preventDefault();
+
+    var form = document.querySelector('#createDiscountForm');
+    var formData = new FormData(form);
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '/DiscountCode/Create', true);
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                LoadDiscounts();
+                form.reset();
+                closeModalAdminDiscount();
+            } else if (xhr.status === 400) {
+                var errors = JSON.parse(xhr.responseText);
+
+                clearValidationDiscountSpans();
+
+                Object.keys(errors).forEach(function (key) {
+                    var validationMessage = errors[key][errors[key].length - 1];
+
+                    var validationSpan = document.getElementById(key + '-valid');
+                    if (validationSpan) {
+                        validationSpan.textContent = validationMessage;
+                    }
+                });
+            }
+        }
+    };
+
+    xhr.send(formData);
 }
 
 LoadDiscounts()

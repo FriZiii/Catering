@@ -1,10 +1,11 @@
-﻿using catering.Application.Managements.DiscountCodeManagment.Commands.DeleteDiscountCodeById;
+﻿using catering.Application.Managements.DiscountCodeManagment.Commands.CreateDiscountCode;
+using catering.Application.Managements.DiscountCodeManagment.Commands.DeleteDiscountCodeById;
 using catering.Application.Managements.DiscountCodeManagment.Queries.GetAllDiscountCodes;
 using catering.MVC.Models;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Data;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace catering.MVC.Controllers
 {
@@ -19,9 +20,13 @@ namespace catering.MVC.Controllers
 
         [HttpPost]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> Create(AdminDashboardViewModel adminDashboardViewModel)
+        public async Task<IActionResult> Create(CreateDiscountCodeCommand createDiscountCodeCommand)
         {
-            await mediator.Send(adminDashboardViewModel.CreateDiscountCodeCommand);
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            await mediator.Send(createDiscountCodeCommand);
             return Ok();
         }
 

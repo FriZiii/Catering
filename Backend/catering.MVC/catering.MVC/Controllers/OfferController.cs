@@ -35,9 +35,13 @@ namespace catering.MVC.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateProduct(AdminDashboardViewModel adminDashboardViewModel)
+        public async Task<IActionResult> CreateProduct(CreateProductCommand createProductCommand)
         {
-            await mediator.Send(adminDashboardViewModel.CreateProductCommand);
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            await mediator.Send(createProductCommand);
             return Ok();
         }
 
