@@ -1,4 +1,10 @@
-﻿@{
+﻿@using Microsoft.AspNetCore.Identity
+@using catering.Domain.Entities.User.AppUser;
+
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
+
+@{
     ViewData["Title"] = "Home";
 }
 
@@ -8,11 +14,22 @@
             <img src="~/images/home/yummy.svg">
             <h2>, the best choice of meals for every day!</h2>
         </div>
-        <p>A nutrient-packed, tasty meal for every day of<br>the week just a few clicks away.</p>
-        <a class="signup-button" asp-action="Register" asp-controller="Account">
-            <span>Sign up</span>
-            <img src="~/images/icons/log-in/log-in.svg">
-        </a>
+        @if (User?.Identity != null && User.Identity.IsAuthenticated)
+        {
+            <p>Being our user, you have access to the history of your orders, visit your account.</p>
+            <a class="signup-button" asp-action="Index" asp-controller="UserDashboard">
+                <span>My Account</span>
+                <img src="~/images/icons/user/user.svg">
+            </a>
+        }
+        else
+        {
+            <p>A nutrient-packed, tasty meal for every day of<br>the week just a few clicks away.</p>
+            <a class="signup-button" asp-action="Register" asp-controller="Account">
+                <span>Sign up</span>
+                <img src="~/images/icons/log-in/log-in.svg">
+            </a>
+        }
     </div>
     <div class="home-imgBox">
         <img src="~/images/home/header-img.png">
