@@ -280,6 +280,7 @@ th:hover {
 .subtable-admin th {
     background-color: var(--light-yellow);
     border-bottom: 1px solid #ddd;
+    z-index: 0;
 }
 
 .subtable-td-admin {
