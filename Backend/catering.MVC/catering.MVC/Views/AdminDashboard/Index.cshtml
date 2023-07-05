@@ -166,6 +166,7 @@
                                             <th>Product Name</th>
                                             <th>Price</th>
                                             <th>Calories</th>
+                                            <th>Meals</th>
                                             <th>Dates</th>
                                         </tr>
                                     </thead>
@@ -177,6 +178,12 @@
                                                 <td>@orderItem.Product.Name</td>
                                                 <td>@orderItem.Product.Price</td>
                                                 <td>@orderItem.Calories</td>
+                                                <td>
+                                                    @foreach (var meal in orderItem.Meals)
+                                                    {
+                                                        @meal.Meal<br />
+                                                    }
+                                                </td>
                                                 <td>
                                                     @foreach (var date in orderItem.Dates.OrderBy(d => d.Date))
                                                     {
