@@ -378,3 +378,8 @@ th:hover::after {
 .subtable-td-user-panel th {
   background-color: var(--light-yellow);
 }
+
+.subtable-date-padding {
+  padding-left: 70px;
+  padding-right: 70px;
+}
