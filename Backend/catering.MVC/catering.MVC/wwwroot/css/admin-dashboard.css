@@ -449,6 +449,7 @@ th:hover {
     align-items: center;
     margin-top: 20px;
     margin-bottom: 30px;
+    flex-direction: column;
 }
 
     .file-input label {
