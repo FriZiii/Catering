@@ -16,7 +16,7 @@
   padding-top: 35px;
   border-top-right-radius: 40px;
   border-bottom-right-radius: 40px;
-  background-color: #E6EAED ;
+  background-color: #E6EAED;
   z-index: 1;
 }
 
@@ -25,11 +25,11 @@
   margin-bottom: 25px;
 }
 
-.icon img {
-  width: 35px;
-  height: 35px;
-  transition: filter 0.3s ease-in-out; 
-}
+  .icon img {
+      width: 35px;
+      height: 35px;
+      transition: filter 0.3s ease-in-out; /* Add a transition effect for smooth color change */
+  }
 
 .admin-left-panel-button {
   border: none;
@@ -43,7 +43,7 @@
 }
 
 .section-admin {
-  justify-content: center;
+  margin-top: 20px;
   align-items: center;
   height: 100%;
   width: 100%;
@@ -61,6 +61,7 @@
   display: inline-block;
   padding-top: 8px;
   padding-bottom: 8px;
+  height: 38px;
 }
 
 .div-search-bar-admin {
@@ -71,12 +72,33 @@
   padding: 15px 15px 15px 0;
 }
 
-.counter-container-admin {
+.search-bar-container {
   display: flex;
   align-items: center;
 }
 
+.clean-search-button {
+  background-color: white;
+  border: 1px solid var(--light-grey);
+  border-radius: 10px;
+  height: 38px;
+  width: 38px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+}
 
+  .clean-search-button img {
+      height: 20px;
+      width: 20px;
+  }
+
+.counter-container-admin {
+  display: flex;
+  align-items: center;
+}
 
 .search-counter-admin,
 .search-counter-results-admin {
@@ -108,33 +130,31 @@
   top: -5px;
 }
 
-.create-button-admin img {
-  position: relative;
-  top: 4px;
-  width: 20px;
-  height: 20px;
-}
+  .create-button-admin img {
+      position: relative;
+      top: 4px;
+      width: 20px;
+      height: 20px;
+  }
 
 .div-with-table-admin {
-  display: flex;
   flex-direction: column;
   position: relative;
   top: 1vh;
-  justify-content: center;
-  align-items: center;
 }
 
 
 /*table products admin*/
-
 .table-div-admin {
   overflow: auto;
-  height: 420px;
+  max-height: 420px;
+  width: 131vh;
 }
 
-.table-div2-admin {
+.table-div3-admin {
   overflow: auto;
-  height: 420px;
+  max-height: 420px;
+  width: 131vh;
 }
 
 table {
@@ -150,11 +170,10 @@ td {
   text-align: center;
   border-bottom: 1px solid #ddd;
   font-weight: bold;
-  white-space: nowrap; 
+  white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis; 
-  width: 22vh;
-  max-width: 22vh;
+  text-overflow: ellipsis;
+  min-width: 165px;
 }
 
 th {
@@ -163,7 +182,7 @@ th {
   background-color: var(--light-grey);
 }
 
-.table-div2-admin th, td {
+.table-div3-admin th, td {
   width: 20vh;
   max-width: 16.5vh;
 }
@@ -204,10 +223,10 @@ thead th {
   z-index: 0;
 }
 
-.expand-button-admin img{
-  position: relative;
-  top: 3px;
-}
+  .expand-button-admin img {
+      position: relative;
+      top: 3px;
+  }
 
 .order-details-admin {
   display: none;
@@ -225,42 +244,43 @@ thead th {
 }
 
 td:hover {
-  white-space: normal; 
+  white-space: normal;
   overflow: visible;
   position: relative;
   z-index: 0;
 }
 
-td:hover::after {
-  content: attr(data-text); 
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 10px;
-  max-width: 340px; 
-  overflow: auto;
-}
+  td:hover::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 10px;
+      max-width: 340px;
+      overflow: auto;
+  }
 
 th:hover {
-  white-space: normal; 
+  white-space: normal;
   overflow: visible;
   position: relative;
   z-index: 0;
 }
 
-th:hover::after {
-  content: attr(data-text); 
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 20px;
-  max-width: 340px; 
-  overflow: auto;
-}
+  th:hover::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 20px;
+      max-width: 340px;
+      overflow: auto;
+  }
 
 .subtable-admin th {
   background-color: var(--light-yellow);
   border-bottom: 1px solid #ddd;
+  z-index: 0;
 }
 
 .subtable-td-admin {
@@ -284,13 +304,21 @@ th:hover::after {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-.modal-content-admin {
+.modal-product-content-admin {
   background-color: #fefefe;
   margin: 20px auto;
   border-radius: 10px;
-  padding: 20px;
+  padding: 20px 20px 30px 20px;
   width: 350px;
-  height: 440px;
+  align-items: center;
+}
+
+.modal-discount-content-admin {
+  background-color: #fefefe;
+  margin: 20px auto;
+  border-radius: 10px;
+  padding: 20px 20px 30px 20px;
+  width: 350px;
   align-items: center;
 }
 
@@ -301,12 +329,12 @@ th:hover::after {
   font-size: 32px;
 }
 
-.close-admin:hover,
-.close-admin:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
+  .close-admin:hover,
+  .close-admin:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+  }
 
 .modal-title-admin {
   font-size: 20px;
@@ -319,26 +347,26 @@ th:hover::after {
   margin-bottom: 15px;
 }
 
-.form-group-admin label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
+  .form-group-admin label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+  }
 
-.form-group-admin input,
-.form-group-admin textarea,
-.form-group-admin .file-input-modal-admin {
-  border-radius: 15px;
-  border: 1px solid #ccc;
-  padding: 10px;
-  width: 100%;
-  box-sizing: border-box;
-}
+  .form-group-admin input,
+  .form-group-admin textarea,
+  .form-group-admin .file-input-modal-admin {
+      border-radius: 15px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      width: 100%;
+      box-sizing: border-box;
+  }
 
-.form-group-admin textarea {
-  resize: none;
-  height: 100px;
-}
+  .form-group-admin textarea {
+      resize: none;
+      height: 100px;
+  }
 
 .buttons-admin {
   display: flex;
@@ -348,53 +376,63 @@ th:hover::after {
 }
 
 
-.buttons-admin button {
-  border-radius: 1px;
-  border: none;
-  padding: 12px 30px;
-  padding-top: 4px;
-  margin-left: 5px;
-  cursor: pointer;
-  font-weight: bold;
-}
+  .buttons-admin button {
+      border-radius: 1px;
+      border: none;
+      width: 140px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 14px;
+  }
 
-.modal-cancel-admin
-{
+  .buttons-admin span {
+      border-radius: 1px;
+      border: none;
+      width: 140px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 14px;
+  }
+
+
+.modal-cancel-admin {
   background-color: #ccc;
   border-radius: 1px;
 }
 
-.modal-cancel-admin:hover 
-{
-  background-color: #999;
-}
+  .modal-cancel-admin:hover {
+      background-color: #999;
+  }
 
-.modal-create-admin 
-{
+.modal-create-admin {
   background-color: var(--light-yellow);
   color: #000000;
   border-radius: 1px;
 }
 
-.modal-create-admin:hover 
-{
-  background-color: var(--main-color);
-}
+  .modal-create-admin:hover {
+      background-color: var(--main-color);
+  }
 
-.modal-cancel-admin img
-{
-  width: 20px;
-  height: 20px;
-  position:relative;
-  top: 5px;
+.modal-cancel-admin img {
+  width: 22px;
+  height: 22px;
   margin-left: 5px;
 }
 
 .modal-create-admin img {
   width: 22px;
   height: 22px;
-  position:relative;
-  top: 6px; 
+  margin-left: 5px;
 }
 
 /* File input styling */
@@ -412,34 +450,35 @@ th:hover::after {
   align-items: center;
   margin-top: 20px;
   margin-bottom: 30px;
+  flex-direction: column;
 }
 
-.file-input label {
-  display: block;
-  position: relative;
-  width: 200px;
-  height: 50px;
-  border-radius: 25px;
-  background: var(--light-yellow);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  cursor: pointer;
-  transition: transform .2s ease-out;
-}
+  .file-input label {
+      display: block;
+      position: relative;
+      width: 200px;
+      height: 50px;
+      border-radius: 25px;
+      background: var(--light-yellow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform .2s ease-out;
+  }
 
-.file-input label:hover {
-  background: var(--main-color);
-}
+      .file-input label:hover {
+          background: var(--main-color);
+      }
 
-.file-input label img {
-  position: relative;
-  top: -2px;
-  margin-left: 10px;
-  width: 30px;
-  height: 30px;
-}
+      .file-input label img {
+          position: relative;
+          top: -2px;
+          margin-left: 10px;
+          width: 30px;
+          height: 30px;
+      }
 
 .file-name {
   position: absolute;
