@@ -287,6 +287,8 @@ thead th {
 .table-div2-user-panel {
     width: 131vh;
     overflow: auto;
+    max-height: 420px;
+    overflow: auto;
 }
 
 .delete-button-user-panel {
