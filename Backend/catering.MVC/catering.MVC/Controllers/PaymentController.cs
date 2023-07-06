@@ -1,5 +1,4 @@
-﻿using catering.Application.Managements.OrderManagment.Commands.DeleteOrderById;
-using catering.Application.Managements.OrderManagment.Commands.MarkAsPaid;
+﻿using catering.Application.Managements.OrderManagment.Commands.MarkAsPaid;
 using catering.Application.Managements.OrderManagment.Queries.GetOrderIdFromCookies;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
