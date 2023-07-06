@@ -164,6 +164,7 @@ table {
 
 th,
 td {
+  word-wrap: break-word;
   padding-top: 10px;
   padding-bottom: 10px;
   height: 5vh;
@@ -171,6 +172,7 @@ td {
   border-bottom: 1px solid #ddd;
   font-weight: bold;
   white-space: nowrap;
+
   overflow: hidden;
   text-overflow: ellipsis;
   min-width: 165px;

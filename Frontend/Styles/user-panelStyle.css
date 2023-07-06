@@ -254,6 +254,7 @@ table {
 
 th,
 td {
+  word-wrap: break-word;
   padding-top: 10px;
   padding-bottom: 10px;
   height: 5vh;
