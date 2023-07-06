@@ -1,5 +1,4 @@
 ﻿using catering.Domain.Entities.User.AppUser;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace catering.Domain.Entities.OrderEntities
 {
@@ -14,7 +13,7 @@ namespace catering.Domain.Entities.OrderEntities
         public decimal TotalPriceAfterDiscount { get; set; }
         public DateTime OrderDate { get; set; }
         public bool Confirmed { get; set; } = false;
-
+        public bool Paid { get; set; } = false;
 
         public AppUser? AppUser { get; set; } = null!;
         public Guest? Guest { get; set; } = null!;
