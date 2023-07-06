@@ -138,6 +138,7 @@
                         <th>Discount code</th>
                         <th>Price after discount</th>
                         <th>Confirmed</th>
+                        <th>Paid</th>
                         <th>Expand</th>
                     </tr>
                 </thead>
@@ -151,6 +152,7 @@
                             <td>@(order.DiscountCode != null ? order.DiscountCode.Code : "None")</td>
                             <td>@order.TotalPriceAfterDiscount</td>
                             <td>@order.Confirmed</td>
+                            <td>@order.Paid</td>
                             <td>
                                 <button class="expand-button-admin" onclick="toggleOrderDetails(this)">
                                     <img src="../images/icons/arrow-down/arrow-down.svg">
