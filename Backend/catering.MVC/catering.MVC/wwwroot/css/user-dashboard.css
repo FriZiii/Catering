@@ -6,7 +6,7 @@
 }
 
 .content-user-panel {
-    width: 950px;
+    width: 131vh;
     padding-top: 80px;
     padding-bottom: 70px;
 }
@@ -56,16 +56,13 @@
 .account-info-title-user-panel-div {
     position: relative;
     top: -30px;
-    border-bottom: 1px solid #8b8b8b;
+    border-bottom: 1px solid #ddd;
 }
 
 
 .account-info-title-user-panel {
-    font-size: 40px;
-    font-weight: 400;
-    position: relative;
-    top: -5px;
-    right: 0px;
+    font-weight: normal;
+    display: inline-block;
 }
 
 .user-panel-left-section {
@@ -238,7 +235,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    top: 8vh;
+    top: 30px;
 }
 
 
@@ -288,7 +285,8 @@ thead th {
 }
 
 .table-div2-user-panel {
-    padding-bottom: 21vh;
+    width: 131vh;
+    overflow: auto;
 }
 
 .delete-button-user-panel {
