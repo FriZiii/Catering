@@ -4,6 +4,7 @@ using catering.Application.Managements.DiscountCodeManagment.Queries.GetDiscount
 using catering.Application.Managements.OrderManagment;
 using catering.Application.Managements.OrderManagment.Commands.AddGuestToOrder;
 using catering.Application.Managements.OrderManagment.Commands.AddUserToOrder;
+using catering.Application.Managements.OrderManagment.Commands.ConfirmOrder;
 using catering.Application.Managements.OrderManagment.Commands.DeleteOrderById;
 using catering.Application.Managements.OrderManagment.Commands.DeleteOrderItemById;
 using catering.Application.Managements.OrderManagment.OrderDto;
@@ -65,6 +66,7 @@ namespace catering.MVC.Controllers
             var user = await mediator.Send(new GetCurrentUserQuerry());
 
             await mediator.Send(new AddUserToOrderCommand(user!, orderId));
+            await mediator.Send(new ConfirmOrderCommand(orderId));
             return RedirectToAction("Index", "Payment");
         }
 
@@ -104,7 +106,7 @@ namespace catering.MVC.Controllers
         {
             int orderId = await mediator.Send(new GetOrderIdFromCookiesQuery());
             await mediator.Send(new AddGuestToOrderCommand(orderId, guestAdressDto));
-
+            await mediator.Send(new ConfirmOrderCommand(orderId));
             return RedirectToAction("Index", "Payment");
         }
     }
