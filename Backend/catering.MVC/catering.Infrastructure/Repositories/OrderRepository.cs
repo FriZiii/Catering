@@ -2,11 +2,9 @@
 using catering.Domain.Entities.OrderEntities;
 using catering.Domain.Entities.User.AppUser;
 using catering.Domain.Interface;
-using catering.Infrastructure.Migrations;
 using catering.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
-using System.Net.Http;
 
 namespace catering.Infrastructure.Repositories
 {
@@ -80,6 +78,7 @@ namespace catering.Infrastructure.Repositories
             }
         }
 
+
         public async Task DeleteOrderItemById(int id)
         {
             var orderItemToDelete = await context.OrderItems.Where(orderItem => orderItem.Id == id).FirstOrDefaultAsync();
@@ -145,6 +144,7 @@ namespace catering.Infrastructure.Repositories
             {
                 paidOrder.Paid = true;
                 await context.SaveChangesAsync();
+                RemoveOrderIdFromCookies();
             }
         }
 
