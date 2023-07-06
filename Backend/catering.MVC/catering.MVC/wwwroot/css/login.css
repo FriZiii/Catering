@@ -48,10 +48,6 @@ h2 {
 
 @media (max-width: 767px) {
 
-    .remember-me-container {
-        margin-right: 140px
-    }
-
     .image-login {
         display: none;
     }
