@@ -60,7 +60,7 @@ namespace catering.Infrastructure.Repositories
             AppUser? singedUser = await  userManager.FindByEmailAsync(loginInput.Email);
             if (singedUser is not null)
             {
-                var result = await signInManager.PasswordSignInAsync(singedUser.UserName!, loginInput.Password, false, false);
+                var result = await signInManager.PasswordSignInAsync(singedUser.UserName!, loginInput.Password, loginInput.RememberMe, false);
                 return result;
             }
 

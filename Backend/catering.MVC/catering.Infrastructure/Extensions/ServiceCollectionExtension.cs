@@ -35,6 +35,11 @@ namespace catering.Infrastructure.Extensions
             services.AddDbContext<StoreContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("DevCon")));
 
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.ExpireTimeSpan = TimeSpan.FromDays(30);
+                options.SlidingExpiration = true;
+            });
             services.Configure<IdentityOptions>(options =>
             {
                 // Remove password requirements
