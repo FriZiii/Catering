@@ -2,6 +2,7 @@
 using catering.Domain.Entities.OrderEntities;
 using catering.Domain.Entities.User.AppUser;
 using catering.Domain.Interface;
+using catering.Infrastructure.Migrations;
 using catering.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
@@ -56,6 +57,16 @@ namespace catering.Infrastructure.Repositories
             }
             order.AppUserId = userId;
             await context.SaveChangesAsync();
+        }
+
+        public async Task ConfirmOrder(int orderId)
+        {
+            var orderToConfirm = await context.Orders.Where(o=>o.Id == orderId).FirstOrDefaultAsync();
+            if(orderToConfirm != null)
+            {
+                orderToConfirm.Confirmed = true;
+                await context.SaveChangesAsync();
+            }
         }
 
         public async Task DeleteOrderById(int id)
@@ -126,6 +137,16 @@ namespace catering.Infrastructure.Repositories
                 .Include(o => o.DiscountCode)
                 .Where(o => o.AppUserId == userID)
                 .ToListAsync();
+
+        public async Task MarkAsPaid(int orderId)
+        {
+            var paidOrder = await context.Orders.Where(o => o.Id == orderId).FirstOrDefaultAsync();
+            if (paidOrder != null)
+            {
+                paidOrder.Paid = true;
+                await context.SaveChangesAsync();
+            }
+        }
 
         public void RemoveOrderIdFromCookies()
         {

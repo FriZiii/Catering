@@ -20,5 +20,7 @@ namespace catering.Domain.Interface
         Task AddGuestToOrder(DeliveryAdress deliveryAdress, int orderId);
         Task<IEnumerable<Order>> GetAllOrders();
         Task <IEnumerable<Order>> GetOrdersByUserId(string userID);
+        Task ConfirmOrder(int orderId);
+        Task MarkAsPaid(int orderId);
     }
 }
