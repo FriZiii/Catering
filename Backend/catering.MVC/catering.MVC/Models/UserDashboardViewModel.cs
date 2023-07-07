@@ -6,8 +6,7 @@ namespace catering.MVC.Models
 {
     public class UserDashboardViewModel
     {
-        public DeliveryAdress DeliveryAdress { get; set; } = default!;
-        public IEnumerable<Order> Orders { get; set; } = default!;
+        public CurrentUser CurrentUser { get; set; } = default!;
         public DeliveryAdressInputDto DeliveryAdressInputDto { get; set; } = default!;
     }   
 }

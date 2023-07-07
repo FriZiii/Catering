@@ -29,10 +29,10 @@
                     <div class="user-panel-left-section">
                             <h1 class="account-info-title-user-panel"> Account information </h1>
                             <div class="user-panel-account-info-container">
-                                <span class="account-info-span"><label class="account-info-label">First name:</label> Jan </span>
-                                <span class="account-info-span"><label class="account-info-label">Last name:</label> Nowak </span>
-                                <span class="account-info-span"><label class="account-info-label">E-mail:</label> jan.nowak@gmail.com </span>
-                                <span class="account-info-span"><label class="account-info-label">Birth date:</label> 16.05.1976 </span>
+                                <span class="account-info-span"><label class="account-info-label">First name:</label> @Model.CurrentUser.FirstName </span>
+                            <span class="account-info-span"><label class="account-info-label">Last name:</label> @Model.CurrentUser.LastName </span>
+                            <span class="account-info-span"><label class="account-info-label">E-mail:</label> @Model.CurrentUser.Email </span>
+                            <span class="account-info-span"><label class="account-info-label">Birth date:</label> @Model.CurrentUser.BirthDate </span>
                             </div>
                     </div>
 
@@ -41,7 +41,7 @@
                         <div class="user-panel-delivery-address-container">
                             <div class="input user-panel-input">
                                 <input class="input_field" type="text" autocomplete="new-password" aria-required="true" asp-for="DeliveryAdressInputDto.Adress1"
-                                    value="@Model.DeliveryAdress.Adress1" placeholder=" " />
+                                    value="@Model.CurrentUser.DeliveryAdress.Adress1" placeholder=" " />
                                 <span class="input_label">
                                     <img src="~/images/icons/home/home-yellow.svg" class="input_icon" />
                                     Address 1
@@ -51,7 +51,7 @@
 
                             <div class="input user-panel-input">
                                 <input class="input_field" type="text" autocomplete="new-password" aria-required="true" asp-for="DeliveryAdressInputDto.Adress2"
-                                    value="@Model.DeliveryAdress.Adress2" placeholder=" " />
+                                       value="@Model.CurrentUser.DeliveryAdress.Adress2" placeholder=" " />
                                 <span class="input_label">
                                     <img src="~/images/icons/home/home-yellow.svg" class="input_icon" />
                                     Address 2
@@ -62,7 +62,7 @@
                             <div class="user-panel-two-in-one-inputs">
                                 <div class="input user-panel-small-input">
                                     <input class="input_field" type="text" autocomplete="new-password" asp-for="DeliveryAdressInputDto.PostalCode"
-                                        value="@Model.DeliveryAdress.PostalCode" aria-required="true" placeholder=" " />
+                                           value="@Model.CurrentUser.DeliveryAdress.PostalCode" aria-required="true" placeholder=" " />
                                     <span class="input_label">
                                         <img src="~/images/icons/map-pin/map-pin-yellow.svg" class="input_icon" />
                                         Pastal code
@@ -72,7 +72,7 @@
 
                                 <div class="input user-panel-small-input">
                                     <input class="input_field" type="text" autocomplete="new-password" asp-for="DeliveryAdressInputDto.State"
-                                        value="@Model.DeliveryAdress.State" aria-required="true" placeholder=" " />
+                                           value="@Model.CurrentUser.DeliveryAdress.State" aria-required="true" placeholder=" " />
                                     <span class="input_label">
                                         <img src="~/images/icons/map-pin/map-pin-yellow.svg" class="input_icon" />
                                         State/Region
@@ -83,7 +83,7 @@
 
                             <div class="input user-panel-input">
                                 <input class="input_field" type="text" autocomplete="new-password" aria-required="true" asp-for="DeliveryAdressInputDto.Country"
-                                    value="@Model.DeliveryAdress.Country" placeholder=" " />
+                                       value="@Model.CurrentUser.DeliveryAdress.Country" placeholder=" " />
                                 <span class="input_label">
                                     <img src="~/images/icons/globe/globe-yellow.svg" class="input_icon" />
                                     Country
@@ -93,7 +93,7 @@
 
                             <div class="input user-panel-input">
                                 <input class="input_field" type="tel" autocomplete="new-password" aria-required="true" asp-for="DeliveryAdressInputDto.PhoneNumber"
-                                    value="@Model.DeliveryAdress.PhoneNumber"placeholder=" " />
+                                       value="@Model.CurrentUser.DeliveryAdress.PhoneNumber" placeholder=" " />
                                 <span class="input_label">
                                     <img src="~/images/icons/phone/phone-yellow.svg" class="input_icon" />
                                     Phone number
@@ -145,7 +145,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var order in Model.Orders)
+                    @foreach (var order in Model.CurrentUser.Orders)
                     {
                         <tr>
                             <td>@order.Id</td>
