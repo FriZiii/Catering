@@ -108,5 +108,26 @@ namespace catering.Infrastructure.Repositories
                 await storeContext.SaveChangesAsync();
             }
         }
+
+        public async Task UpdateDeliveryAdressByUserId(string userId, DeliveryAdressInput deliveryAdressInput)
+        {
+            var user = await userManager.Users
+                .Include(u => u.DeliveryAdress)
+                .FirstOrDefaultAsync(u => u.Id == userId);
+
+            var deliveryAdress = new DeliveryAdress
+            {
+                Adress1 = deliveryAdressInput.Adress1,
+                Adress2 = deliveryAdressInput.Adress2,
+                Country = deliveryAdressInput.Country,
+                State = deliveryAdressInput.State,
+                PostalCode = deliveryAdressInput.PostalCode,
+                PhoneNumber = deliveryAdressInput.PhoneNumber,
+            };
+
+
+            user!.DeliveryAdress = deliveryAdress;
+            await storeContext.SaveChangesAsync();
+        }
     }
 }

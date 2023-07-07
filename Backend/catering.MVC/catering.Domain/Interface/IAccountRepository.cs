@@ -20,5 +20,6 @@ namespace catering.Domain.Interface
         Task<SignInResult> LoginUser(LoginInput loginInput);
         Task LogoutUser();
         Task RegisterUser(AccountRegisterInput registerInput);
+        Task UpdateDeliveryAdressByUserId(string userId, DeliveryAdressInput deliveryAdressInput);
     }
 }
