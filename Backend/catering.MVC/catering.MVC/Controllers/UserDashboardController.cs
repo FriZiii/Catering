@@ -1,4 +1,6 @@
-﻿using catering.Application.Managements.AccountManagment.Querries.GetCurrentUser;
+﻿using catering.Application.Managements.AccountManagment.AccountDtos;
+using catering.Application.Managements.AccountManagment.Commands.UpdateDeliveryAdressByUserId;
+using catering.Application.Managements.AccountManagment.Querries.GetCurrentUser;
 using catering.Application.Managements.OrderManagment.Queries.GetOrderByUserId;
 using catering.MVC.Models;
 using MediatR;
@@ -28,6 +30,13 @@ namespace catering.MVC.Controllers
             };
 
             return View(userDashboardViewModel);
+        }
+
+        public async Task<IActionResult> UpdateDeliveryAdress(DeliveryAdressInputDto deliveryAdressInputDto)
+        {
+            var user = await mediator.Send(new GetCurrentUserQuerry());
+            await mediator.Send(new UpdateDeliveryAdressByUserIdCommand(user!.Id, deliveryAdressInputDto));
+            return View(deliveryAdressInputDto);
         }
     }
 }
