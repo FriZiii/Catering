@@ -1,4 +1,5 @@
 ﻿using catering.Application.Managements.AccountManagment.Querries.GetCurrentUser;
+using catering.Application.Managements.CartManagement.Commands.DeleteCartFromCookies;
 using catering.Application.Managements.DiscountCodeManagment.Commands.ApplyDiscountCode;
 using catering.Application.Managements.DiscountCodeManagment.Queries.GetDiscountCodeValue;
 using catering.Application.Managements.OrderManagment;
@@ -37,7 +38,7 @@ namespace catering.MVC.Controllers
                 .ToList());
 
             await mediator.Send(submitOrderCommand);
-
+            await mediator.Send(new DeleteCartFromCookiesCommand());
             return Ok(submitOrderCommand.OrderId.ToString());
         }
 

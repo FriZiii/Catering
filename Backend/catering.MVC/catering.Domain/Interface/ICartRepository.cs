@@ -9,5 +9,6 @@ namespace catering.Domain.Interface
         void AddToCart(int productID);
         void Commit(CartModel cart);
         void DeleteFromCart(int productID);
+        void DeleteCartFromCookies();
     }
 }

@@ -1,5 +1,4 @@
-﻿using catering.Domain.Entities;
-using catering.Domain.Entities.CartEntities;
+﻿using catering.Domain.Entities.CartEntities;
 using catering.Domain.Interface;
 using Microsoft.AspNetCore.Http;
 using System.Text.Json;
@@ -70,6 +69,23 @@ namespace catering.Infrastructure.Repositories
             };
             var cartJson = JsonSerializer.Serialize(cart, options)!;
             httpContext.Response.Cookies.Append("Cart", cartJson);
+        }
+
+        public void DeleteCartFromCookies()
+        {
+            var httpContext = httpContextAccessor?.HttpContext;
+
+            if (httpContext is null)
+            {
+                throw new InvalidOperationException("Cookies could not be accessed because HttpContext is null.");
+            }
+
+            var cookies = httpContext.Request.Cookies;
+
+            if (cookies.TryGetValue("Cart", out var orderIdCookie))
+            {
+                httpContext.Response.Cookies.Delete("Cart");
+            }
         }
     }
 }
