@@ -20,18 +20,16 @@
 
 
     <div class="center-container-user-panel">
-
         <div id="div1-user-panel" class="hidden-user-panel">
-
-            <form id="user-panelForm" class="content-user-panel">
+            <form id="user-panelForm" class="content-user-panel" action="/UserDashboard/UpdateDeliveryAdress">
                 <div class="account-info-title-user-panel-div">
                     <h1 class="account-info-title-user-panel"> Account Information </h1>
                 </div>
                 <div class="user-panel-inputs-container">
                     <div class="user-panel-right-section">
                         <div class="input user-panel-input">
-                            <input class="input_field" type="text" autocomplete="new-password" aria-required="true" value="@Model.DeliveryAdress.Adress1"
-                                   placeholder=" " />
+                            <input class="input_field" type="text" autocomplete="new-password" aria-required="true" asp-for="DeliveryAdressInputDto.Adress1"
+                                value="@Model.DeliveryAdress.Adress1" placeholder=" " />
                             <span class="input_label">
                                 <img src="~/images/icons/home/home-yellow.svg" class="input_icon" />
                                 Address 1
@@ -39,8 +37,8 @@
                         </div>
 
                         <div class="input user-panel-input">
-                            <input class="input_field" type="text" autocomplete="new-password" aria-required="true" value="@Model.DeliveryAdress.Adress2"
-                                   placeholder=" " />
+                            <input class="input_field" type="text" autocomplete="new-password" aria-required="true" asp-for="DeliveryAdressInputDto.Adress2"
+                                value="@Model.DeliveryAdress.Adress2" placeholder=" " />
                             <span class="input_label">
                                 <img src="~/images/icons/home/home-yellow.svg" class="input_icon" />
                                 Address 2
@@ -49,8 +47,8 @@
 
                         <div class="user-panel-two-in-one-inputs">
                             <div class="input user-panel-small-input">
-                                <input class="input_field" type="text" autocomplete="new-password" value="@Model.DeliveryAdress.PostalCode"
-                                       aria-required="true" placeholder=" " />
+                                <input class="input_field" type="text" autocomplete="new-password" asp-for="DeliveryAdressInputDto.PostalCode"
+                                    value="@Model.DeliveryAdress.PostalCode" aria-required="true" placeholder=" " />
                                 <span class="input_label">
                                     <img src="~/images/icons/map-pin/map-pin-yellow.svg" class="input_icon" />
                                     Pastal code
@@ -58,8 +56,8 @@
                             </div>
 
                             <div class="input user-panel-small-input">
-                                <input class="input_field" type="text" autocomplete="new-password" value="@Model.DeliveryAdress.State"
-                                       aria-required="true" placeholder=" " />
+                                <input class="input_field" type="text" autocomplete="new-password" asp-for="DeliveryAdressInputDto.State"
+                                    value="@Model.DeliveryAdress.State" aria-required="true" placeholder=" " />
                                 <span class="input_label">
                                     <img src="~/images/icons/map-pin/map-pin-yellow.svg" class="input_icon" />
                                     State/Region
@@ -68,8 +66,8 @@
                         </div>
 
                         <div class="input user-panel-input">
-                            <input class="input_field" type="text" autocomplete="new-password" aria-required="true" value="@Model.DeliveryAdress.Country"
-                                   placeholder=" " />
+                            <input class="input_field" type="text" autocomplete="new-password" aria-required="true" asp-for="DeliveryAdressInputDto.Country"
+                                value="@Model.DeliveryAdress.Country" placeholder=" " />
                             <span class="input_label">
                                 <img src="~/images/icons/globe/globe-yellow.svg" class="input_icon" />
                                 Country
@@ -77,8 +75,8 @@
                         </div>
 
                         <div class="input user-panel-input">
-                            <input class="input_field" type="tel" autocomplete="new-password" aria-required="true" value="@Model.DeliveryAdress.PhoneNumber"
-                                   placeholder=" " />
+                            <input class="input_field" type="tel" autocomplete="new-password" aria-required="true" asp-for="DeliveryAdressInputDto.PhoneNumber"
+                                value="@Model.DeliveryAdress.PhoneNumber"placeholder=" " />
                             <span class="input_label">
                                 <img src="~/images/icons/phone/phone-yellow.svg" class="input_icon" />
                                 Phone number
@@ -94,9 +92,7 @@
                 </div>
             </form>
         </div>
-
     </div>
-
 
     <div id="div2-user-panel" class="section-admin div-with-table-user-panel hidden-user-panel">
         <div class="div-actions-user-panel">

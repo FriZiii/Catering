@@ -30,3 +30,17 @@ function changeIconUser(button, imagePath) {
     var img = button.querySelector('.icon img');
     img.src = imagePath;
 }
+
+const form = document.getElementById('user-panelForm');
+const inputs = form.getElementsByTagName('input');
+const submitButton = document.getElementById('user-panelSubmit');
+submitButton.disabled = true;
+const initialValues = Array.from(inputs).map(input => input.value);
+
+Array.from(inputs).forEach((input, index) => {
+    input.addEventListener('input', () => {
+        const hasChanged = input.value !== initialValues[index];
+
+        submitButton.disabled = !hasChanged;
+    });
+});
