@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using catering.Application.Managements.AccountManagment.AccountDtos;
+using catering.Application.Managements.AccountManagment.Querries.GetDeliveryAdressByUserId;
 using catering.Application.Managements.OrderManagment.Queries.GetOrderByUserId;
 using catering.Domain.Interface;
 using MediatR;
@@ -27,6 +28,7 @@ namespace catering.Application.Managements.AccountManagment.Querries.GetCurrentU
             {
                 var currentUser = mapper.Map<CurrentUser>(user);
                 currentUser.Orders = await mediator.Send(new GetOrdersByUserIdQuerry(currentUser.Id));
+                currentUser.DeliveryAdress = await mediator.Send(new GetDeliveryAdressByUserIdQuerry(currentUser.Id));
                 return currentUser;
             }
             return null;
