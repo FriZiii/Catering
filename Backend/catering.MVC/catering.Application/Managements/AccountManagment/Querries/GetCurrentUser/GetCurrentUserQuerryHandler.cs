@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using catering.Application.Managements.AccountManagment.AccountDtos;
-using catering.Application.Managements.AccountManagment.Querries.GetDeliveryAdressByUserId;
-using catering.Application.Managements.OrderManagment.Queries.GetOrderByUserId;
+using catering.Domain.Entities.User.AppUser;
 using catering.Domain.Interface;
 using MediatR;
 using System.Security.Claims;
@@ -23,12 +22,17 @@ namespace catering.Application.Managements.AccountManagment.Querries.GetCurrentU
 
         public async Task<CurrentUser?> Handle(GetCurrentUserQuerry request, CancellationToken cancellationToken)
         {
-            ClaimsPrincipal? user = accountRepository.GetCurrentUser();
-            if(user is not null)
+            ClaimsPrincipal? currentUserClaims = accountRepository.GetCurrentUser();
+            AppUser? currentAppUser = await accountRepository.GetAppUserById(currentUserClaims!.FindFirst(c => c.Type == ClaimTypes.NameIdentifier)!.Value);
+            if(currentAppUser is not null)
             {
-                var currentUser = mapper.Map<CurrentUser>(user);
-                currentUser.Orders = await mediator.Send(new GetOrdersByUserIdQuerry(currentUser.Id));
-                currentUser.DeliveryAdress = await mediator.Send(new GetDeliveryAdressByUserIdQuerry(currentUser.Id));
+                var currentUser = mapper.Map<CurrentUser>(currentUserClaims);
+                currentUser.Orders = currentAppUser.Orders;
+                currentUser.DeliveryAdress = currentAppUser.DeliveryAdress;
+                currentUser.FirstName = currentAppUser.FirstName;
+                currentUser.LastName = currentAppUser.LastName;
+                currentUser.BirthDate = currentAppUser.BirthDate;
+
                 return currentUser;
             }
             return null;
