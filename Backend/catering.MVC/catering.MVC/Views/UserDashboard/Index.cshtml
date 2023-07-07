@@ -102,7 +102,12 @@
             <h1 class="title-user-panel"> Orders </h1>
         </div>
         <div class="div-search-bar-user-panel">
-            <input type="text" class="input_field search-bar-user-panel" placeholder="Search...">
+            <div class="search-bar-container-user-panel">
+                <input type="text" class="input_field search-bar-user-panel" placeholder="Search...">
+                <button class="clean-search-button-user-panel" onclick="clearInput('search-order')">
+                        <img src="~/images/icons/close/close.svg"/>
+                </button>
+            </div>
             <div class="counter-container-user-panel">
                 <h1 class="search-counter-user-panel">
                     42
