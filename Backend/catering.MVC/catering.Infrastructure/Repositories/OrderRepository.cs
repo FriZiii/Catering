@@ -128,15 +128,6 @@ namespace catering.Infrastructure.Repositories
             return 0;
         }
 
-        public async Task<IEnumerable<Order>> GetOrdersByUserId(string userID)
-            => await context.Orders
-                .Include(o => o.OrderItems).ThenInclude(oi => oi.Dates)
-                .Include(o => o.OrderItems).ThenInclude(oi => oi.Meals)
-                .Include(o => o.OrderItems).ThenInclude(oi => oi.Product)
-                .Include(o => o.DiscountCode)
-                .Where(o => o.AppUserId == userID)
-                .ToListAsync();
-
         public async Task MarkAsPaid(int orderId)
         {
             var paidOrder = await context.Orders.Where(o => o.Id == orderId).FirstOrDefaultAsync();
