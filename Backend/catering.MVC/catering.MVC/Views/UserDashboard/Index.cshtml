@@ -26,76 +26,91 @@
                     <h1 class="account-info-title-user-panel"> Account Information </h1>
                 </div>
                 <div class="user-panel-inputs-container">
+                    <div class="user-panel-left-section">
+                            <h1 class="account-info-title-user-panel"> Account information </h1>
+                            <div class="user-panel-account-info-container">
+                                <span class="account-info-span"><label class="account-info-label">First name:</label> Jan </span>
+                                <span class="account-info-span"><label class="account-info-label">Last name:</label> Nowak </span>
+                                <span class="account-info-span"><label class="account-info-label">E-mail:</label> jan.nowak@gmail.com </span>
+                                <span class="account-info-span"><label class="account-info-label">Birth date:</label> 16.05.1976 </span>
+                            </div>
+                    </div>
+
                     <div class="user-panel-right-section">
-                        <div class="input user-panel-input">
-                            <input class="input_field" type="text" autocomplete="new-password" aria-required="true" asp-for="DeliveryAdressInputDto.Adress1"
-                                value="@Model.DeliveryAdress.Adress1" placeholder=" " />
-                            <span class="input_label">
-                                <img src="~/images/icons/home/home-yellow.svg" class="input_icon" />
-                                Address 1
-                            </span>
-                            <span asp-validation-for="DeliveryAdressInputDto.Adress1" class="error" id="deliveryAdressInputDto.Adress1-valid"></span>
-                        </div>
-
-                        <div class="input user-panel-input">
-                            <input class="input_field" type="text" autocomplete="new-password" aria-required="true" asp-for="DeliveryAdressInputDto.Adress2"
-                                value="@Model.DeliveryAdress.Adress2" placeholder=" " />
-                            <span class="input_label">
-                                <img src="~/images/icons/home/home-yellow.svg" class="input_icon" />
-                                Address 2
-                            </span>
-                            <span asp-validation-for="DeliveryAdressInputDto.Adress2" class="error" id="deliveryAdressInputDto.Adress2-valid"></span>
-                        </div>
-
-                        <div class="user-panel-two-in-one-inputs">
-                            <div class="input user-panel-small-input">
-                                <input class="input_field" type="text" autocomplete="new-password" asp-for="DeliveryAdressInputDto.PostalCode"
-                                    value="@Model.DeliveryAdress.PostalCode" aria-required="true" placeholder=" " />
+                        <h1 class="account-info-title-user-panel"> Delivery address </h1>
+                        <div class="user-panel-delivery-address-container">
+                            <div class="input user-panel-input">
+                                <input class="input_field" type="text" autocomplete="new-password" aria-required="true" asp-for="DeliveryAdressInputDto.Adress1"
+                                    value="@Model.DeliveryAdress.Adress1" placeholder=" " />
                                 <span class="input_label">
-                                    <img src="~/images/icons/map-pin/map-pin-yellow.svg" class="input_icon" />
-                                    Pastal code
+                                    <img src="~/images/icons/home/home-yellow.svg" class="input_icon" />
+                                    Address 1
                                 </span>
-                                <span asp-validation-for="DeliveryAdressInputDto.PostalCode" class="error" id="deliveryAdressInputDto.PostalCode-valid"></span>
+                                <span asp-validation-for="DeliveryAdressInputDto.Adress1" class="error" id="deliveryAdressInputDto.Adress1-valid"></span>
                             </div>
 
-                            <div class="input user-panel-small-input">
-                                <input class="input_field" type="text" autocomplete="new-password" asp-for="DeliveryAdressInputDto.State"
-                                    value="@Model.DeliveryAdress.State" aria-required="true" placeholder=" " />
+                            <div class="input user-panel-input">
+                                <input class="input_field" type="text" autocomplete="new-password" aria-required="true" asp-for="DeliveryAdressInputDto.Adress2"
+                                    value="@Model.DeliveryAdress.Adress2" placeholder=" " />
                                 <span class="input_label">
-                                    <img src="~/images/icons/map-pin/map-pin-yellow.svg" class="input_icon" />
-                                    State/Region
+                                    <img src="~/images/icons/home/home-yellow.svg" class="input_icon" />
+                                    Address 2
                                 </span>
-                                <span asp-validation-for="DeliveryAdressInputDto.State" class="error" id="deliveryAdressInputDto.State-valid"></span>
+                                <span asp-validation-for="DeliveryAdressInputDto.Adress2" class="error" id="deliveryAdressInputDto.Adress2-valid"></span>
                             </div>
-                        </div>
 
-                        <div class="input user-panel-input">
-                            <input class="input_field" type="text" autocomplete="new-password" aria-required="true" asp-for="DeliveryAdressInputDto.Country"
-                                value="@Model.DeliveryAdress.Country" placeholder=" " />
-                            <span class="input_label">
-                                <img src="~/images/icons/globe/globe-yellow.svg" class="input_icon" />
-                                Country
-                            </span>
-                            <span asp-validation-for="DeliveryAdressInputDto.Country" class="error" id="deliveryAdressInputDto.Country-valid"></span>
-                        </div>
+                            <div class="user-panel-two-in-one-inputs">
+                                <div class="input user-panel-small-input">
+                                    <input class="input_field" type="text" autocomplete="new-password" asp-for="DeliveryAdressInputDto.PostalCode"
+                                        value="@Model.DeliveryAdress.PostalCode" aria-required="true" placeholder=" " />
+                                    <span class="input_label">
+                                        <img src="~/images/icons/map-pin/map-pin-yellow.svg" class="input_icon" />
+                                        Pastal code
+                                    </span>
+                                    <span asp-validation-for="DeliveryAdressInputDto.PostalCode" class="error" id="deliveryAdressInputDto.PostalCode-valid"></span>
+                                </div>
 
-                        <div class="input user-panel-input">
-                            <input class="input_field" type="tel" autocomplete="new-password" aria-required="true" asp-for="DeliveryAdressInputDto.PhoneNumber"
-                                value="@Model.DeliveryAdress.PhoneNumber"placeholder=" " />
-                            <span class="input_label">
-                                <img src="~/images/icons/phone/phone-yellow.svg" class="input_icon" />
-                                Phone number
-                            </span>
-                            <span asp-validation-for="DeliveryAdressInputDto.PhoneNumber" class="error" id="deliveryAdressInputDto.PhoneNumber-valid"></span>
+                                <div class="input user-panel-small-input">
+                                    <input class="input_field" type="text" autocomplete="new-password" asp-for="DeliveryAdressInputDto.State"
+                                        value="@Model.DeliveryAdress.State" aria-required="true" placeholder=" " />
+                                    <span class="input_label">
+                                        <img src="~/images/icons/map-pin/map-pin-yellow.svg" class="input_icon" />
+                                        State/Region
+                                    </span>
+                                    <span asp-validation-for="DeliveryAdressInputDto.State" class="error" id="deliveryAdressInputDto.State-valid"></span>
+                                </div>
+                            </div>
+
+                            <div class="input user-panel-input">
+                                <input class="input_field" type="text" autocomplete="new-password" aria-required="true" asp-for="DeliveryAdressInputDto.Country"
+                                    value="@Model.DeliveryAdress.Country" placeholder=" " />
+                                <span class="input_label">
+                                    <img src="~/images/icons/globe/globe-yellow.svg" class="input_icon" />
+                                    Country
+                                </span>
+                                <span asp-validation-for="DeliveryAdressInputDto.Country" class="error" id="deliveryAdressInputDto.Country-valid"></span>
+                            </div>
+
+                            <div class="input user-panel-input">
+                                <input class="input_field" type="tel" autocomplete="new-password" aria-required="true" asp-for="DeliveryAdressInputDto.PhoneNumber"
+                                    value="@Model.DeliveryAdress.PhoneNumber"placeholder=" " />
+                                <span class="input_label">
+                                    <img src="~/images/icons/phone/phone-yellow.svg" class="input_icon" />
+                                    Phone number
+                                </span>
+                                <span asp-validation-for="DeliveryAdressInputDto.PhoneNumber" class="error" id="deliveryAdressInputDto.PhoneNumber-valid"></span>
+                            </div>
+
+                            <div class="user-panel-btn-conteiner">
+                                <button id="user-panelSubmit" type="submit" class="btn-with-icon" onclick="submitDiscountForm(event)">
+                                    <span>Update</span>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="user-panel-btn-conteiner">
-                    <button id="user-panelSubmit" type="submit" class="btn-with-icon" onclick="submitDiscountForm(event)">
-                        <span>Update</span>
-                    </button>
-                </div>
+                
             </form>
         </div>
     </div>

@@ -70,18 +70,39 @@
 
 .user-panel-left-section {
   flex: 1;
-  padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+.user-panel-account-info-container{
+  padding: 15px 70px 15px 30px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--gray-4, #BDBDBD);
+  border-radius: 26px;
+}
+.account-info-span{
+  font-size: 20px;
+  font-weight: 200;
+  line-height: 28px;
+  color: var(--gray-4, #1a1a1a);
+}
+.account-info-label{
+  color: var(--gray-4, #BDBDBD);
+}
+
 .user-panel-right-section {
   flex: 1;
-  padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.user-panel-delivery-address-container{
+  border: 1px solid var(--gray-4, #BDBDBD);
+  border-radius: 26px;
+  padding: 15px;
 }
 
 .user-panel-two-in-one-inputs {
@@ -130,7 +151,12 @@
 .user-panel-btn-conteiner {
   display: flex;
   justify-content: flex-end;
-  padding: 0 20px 0 0;
+  width: 420px;
+  position: relative;
+}
+
+.user-panel-btn-conteiner button{
+  margin: 0px !important;
 }
 
 @media (max-width: 890px) {
