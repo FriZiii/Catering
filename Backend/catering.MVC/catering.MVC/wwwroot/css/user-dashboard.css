@@ -129,10 +129,20 @@
     display: flex;
     justify-content: flex-end;
     padding: 0 20px 0 0;
+    position: relative;
+    right: 390px;
+    bottom: 22px;
 }
 
-@media (max-width: 890px) {
-    .user-panel-inputs-container {
+    .user-panel-btn-conteiner button:disabled {
+        cursor: auto;
+    }
+    .user-panel-btn-conteiner button:disabled:hover {
+        background-color: var(--light-yellow);
+    }
+
+    @media (max-width: 890px) {
+        .user-panel-inputs-container {
         flex-direction: column;
     }
 
