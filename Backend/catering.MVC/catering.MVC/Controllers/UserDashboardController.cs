@@ -23,6 +23,7 @@ namespace catering.MVC.Controllers
 
             var userDashboardViewModel = new UserDashboardViewModel()
             {
+                DeliveryAdress = user!.DeliveryAdress,
                 Orders = await mediator.Send(new GetOrdersByUserIdQuerry(user!.Id)),
             };
 
