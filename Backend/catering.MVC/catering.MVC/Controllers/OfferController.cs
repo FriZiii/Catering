@@ -1,13 +1,9 @@
-﻿using catering.Application.Managements.AccountManagment.Querries.GetCurrentUser;
-using catering.Application.Managements.OfferManagment.Commands.AddProduct;
+﻿using catering.Application.Managements.OfferManagment.Commands.AddProduct;
 using catering.Application.Managements.OfferManagment.Commands.DeleteProductById;
 using catering.Application.Managements.OfferManagment.Queries.GetAllProducts;
-using catering.Application.Managements.OrderManagment.Queries.GetOrderByUserId;
-using catering.MVC.Models;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Data;
 
 namespace catering.MVC.Controllers
 {
