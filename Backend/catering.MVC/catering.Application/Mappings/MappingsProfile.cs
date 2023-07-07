@@ -67,6 +67,7 @@ namespace catering.Application.Mappings
                 .ForMember(desc => desc.Roles, opt => opt.MapFrom(src => src.Claims.Where(c => c.Type == ClaimTypes.Role).Select(c => c.Value)));
 
             CreateMap<GuestAdressDto, DeliveryAdress>();
+            CreateMap<DeliveryAdressInputDto, DeliveryAdressInput>();
         }
     }
 }
