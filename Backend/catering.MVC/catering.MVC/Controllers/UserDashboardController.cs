@@ -32,11 +32,17 @@ namespace catering.MVC.Controllers
             return View(userDashboardViewModel);
         }
 
+        [Authorize]
+        [HttpPost]
         public async Task<IActionResult> UpdateDeliveryAdress(DeliveryAdressInputDto deliveryAdressInputDto)
         {
+            if(!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
             var user = await mediator.Send(new GetCurrentUserQuerry());
             await mediator.Send(new UpdateDeliveryAdressByUserIdCommand(user!.Id, deliveryAdressInputDto));
-            return View(deliveryAdressInputDto);
+            return Ok();
         }
     }
 }

@@ -44,3 +44,43 @@ Array.from(inputs).forEach((input, index) => {
         submitButton.disabled = !hasChanged;
     });
 });
+
+//Validation
+function clearValidationUpdateSpans() {
+    var validationSpans = document.querySelectorAll('#user-panelForm .error');
+    validationSpans.forEach(function (span) {
+        span.textContent = '';
+    });
+}
+
+function submitDiscountForm(event) {
+    event.preventDefault();
+
+    var form = document.querySelector('#user-panelForm');
+    var formData = new FormData(form);
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '/UserDashboard/UpdateDeliveryAdress', true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                location.reload()
+            } else if (xhr.status === 400) {
+                var errors = JSON.parse(xhr.responseText);
+
+                clearValidationUpdateSpans();
+
+                Object.keys(errors).forEach(function (key) {
+                    var validationMessage = errors[key][errors[key].length - 1];
+
+                    var validationSpan = document.getElementById(key + '-valid');
+                    if (validationSpan) {
+                        validationSpan.textContent = validationMessage;
+                    }
+                });
+            }
+        }
+    };
+
+    xhr.send(formData);
+}

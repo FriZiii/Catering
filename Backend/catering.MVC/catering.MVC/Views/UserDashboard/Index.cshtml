@@ -21,7 +21,7 @@
 
     <div class="center-container-user-panel">
         <div id="div1-user-panel" class="hidden-user-panel">
-            <form id="user-panelForm" class="content-user-panel" action="/UserDashboard/UpdateDeliveryAdress">
+            <form id="user-panelForm" class="content-user-panel">
                 <div class="account-info-title-user-panel-div">
                     <h1 class="account-info-title-user-panel"> Account Information </h1>
                 </div>
@@ -34,6 +34,7 @@
                                 <img src="~/images/icons/home/home-yellow.svg" class="input_icon" />
                                 Address 1
                             </span>
+                            <span asp-validation-for="DeliveryAdressInputDto.Adress1" class="error" id="deliveryAdressInputDto.Adress1-valid"></span>
                         </div>
 
                         <div class="input user-panel-input">
@@ -43,6 +44,7 @@
                                 <img src="~/images/icons/home/home-yellow.svg" class="input_icon" />
                                 Address 2
                             </span>
+                            <span asp-validation-for="DeliveryAdressInputDto.Adress2" class="error" id="deliveryAdressInputDto.Adress2-valid"></span>
                         </div>
 
                         <div class="user-panel-two-in-one-inputs">
@@ -53,6 +55,7 @@
                                     <img src="~/images/icons/map-pin/map-pin-yellow.svg" class="input_icon" />
                                     Pastal code
                                 </span>
+                                <span asp-validation-for="DeliveryAdressInputDto.PostalCode" class="error" id="deliveryAdressInputDto.PostalCode-valid"></span>
                             </div>
 
                             <div class="input user-panel-small-input">
@@ -62,6 +65,7 @@
                                     <img src="~/images/icons/map-pin/map-pin-yellow.svg" class="input_icon" />
                                     State/Region
                                 </span>
+                                <span asp-validation-for="DeliveryAdressInputDto.State" class="error" id="deliveryAdressInputDto.State-valid"></span>
                             </div>
                         </div>
 
@@ -72,6 +76,7 @@
                                 <img src="~/images/icons/globe/globe-yellow.svg" class="input_icon" />
                                 Country
                             </span>
+                            <span asp-validation-for="DeliveryAdressInputDto.Country" class="error" id="deliveryAdressInputDto.Country-valid"></span>
                         </div>
 
                         <div class="input user-panel-input">
@@ -81,12 +86,13 @@
                                 <img src="~/images/icons/phone/phone-yellow.svg" class="input_icon" />
                                 Phone number
                             </span>
+                            <span asp-validation-for="DeliveryAdressInputDto.PhoneNumber" class="error" id="deliveryAdressInputDto.PhoneNumber-valid"></span>
                         </div>
                     </div>
                 </div>
 
                 <div class="user-panel-btn-conteiner">
-                    <button id="user-panelSubmit" type="submit" class="btn-with-icon">
+                    <button id="user-panelSubmit" type="submit" class="btn-with-icon" onclick="submitDiscountForm(event)">
                         <span>Update</span>
                     </button>
                 </div>
