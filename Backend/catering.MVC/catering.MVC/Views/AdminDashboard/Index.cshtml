@@ -133,6 +133,7 @@
                 <thead>
                     <tr>
                         <th>ID</th>
+                        <th>Buyer ID</th>
                         <th>Order Date</th>
                         <th>Price before discount</th>
                         <th>Discount code</th>
@@ -147,6 +148,7 @@
                     {
                         <tr id="order-record">
                             <td>@order.Id</td>
+                            <td>@(order.GuestId ?? order.AppUserId)</td>
                             <td>@order.OrderDate.ToString("d")</td>
                             <td>@order.TotalPriceBeforeDiscount</td>
                             <td>@(order.DiscountCode != null ? order.DiscountCode.Code : "None")</td>
