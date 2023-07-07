@@ -84,3 +84,30 @@ function submitDiscountForm(event) {
 
     xhr.send(formData);
 }
+
+const searchOrderUserInput = document.getElementById('search-user-order');
+const rowsUserOrders = document.querySelectorAll('#div2-user-panel tbody tr');
+const counterUserOrder = document.querySelector('#div2-user-panel .search-counter-user-panel');
+
+counterUserOrder.textContent = (document.querySelectorAll('#order-record')).length;
+
+searchOrderUserInput.addEventListener('input', function (event) {
+    const q = event.target.value.toLowerCase();
+    let count = 0;
+    rowsUserOrders.forEach((row) => {
+        let matchFound = false;
+        const records = row.querySelectorAll('#user-order-record td');
+        records.forEach(record => {
+            if (record.textContent.toLowerCase().includes(q)) {
+                matchFound = true;
+            }
+        });
+        if (matchFound === true) {
+            row.style.display = '';
+            count += 1;
+        } else {
+            row.style.display = 'none';
+        }
+    });
+    counterUserOrder.textContent = count;
+});

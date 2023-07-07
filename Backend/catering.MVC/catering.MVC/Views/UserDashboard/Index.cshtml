@@ -121,7 +121,7 @@
         </div>
         <div class="div-search-bar-user-panel">
             <div class="search-bar-container-user-panel">
-                <input type="text" class="input_field search-bar-user-panel" placeholder="Search...">
+                <input type="text" class="input_field search-bar-user-panel" placeholder="Search..." id="search-user-order">
                 <button class="clean-search-button-user-panel" onclick="clearInput('search-order')">
                         <img src="~/images/icons/close/close.svg"/>
                 </button>
@@ -147,7 +147,7 @@
                 <tbody>
                     @foreach (var order in Model.CurrentUser.Orders)
                     {
-                        <tr>
+                        <tr id="user-order-record">
                             <td>@order.Id</td>
                             <td>@order.OrderDate.ToString("d")</td>
                             <td>@order.TotalPriceAfterDiscount</td>
