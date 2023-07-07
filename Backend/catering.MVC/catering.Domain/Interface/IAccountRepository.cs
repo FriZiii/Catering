@@ -2,21 +2,16 @@
 using catering.Domain.Entities.User.LoginInput;
 using catering.Domain.Entities.User.RegisterInput;
 using Microsoft.AspNetCore.Identity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Claims;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace catering.Domain.Interface
 {
     public interface IAccountRepository
     {
         Task DeleteUserById(string id);
-        IEnumerable<AppUser> GetAllUsers();
+        IEnumerable<AppUser?> GetAllUsers();
+        Task<AppUser> GetAppUserById(string userId);
         ClaimsPrincipal? GetCurrentUser();
-        Task<DeliveryAdress> GetDeliveryAdressByUserId(string userId);
         Task<SignInResult> LoginUser(LoginInput loginInput);
         Task LogoutUser();
         Task RegisterUser(AccountRegisterInput registerInput);

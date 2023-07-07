@@ -40,6 +40,20 @@ namespace catering.Infrastructure.Repositories
             return users;
         }
 
+        public async Task<AppUser> GetAppUserById(string userId)
+        {
+            var user = await userManager.Users
+                .Include(u => u.DeliveryAdress)
+                .Include(u => u.Orders).ThenInclude(o => o.OrderItems).ThenInclude(oi => oi.Dates)
+                .Include(u => u.Orders).ThenInclude(o => o.OrderItems).ThenInclude(oi => oi.Meals)
+                .Include(u=>u.Orders).ThenInclude(o=>o.OrderItems).ThenInclude(oi => oi.Product)
+                .FirstOrDefaultAsync(u => u.Id == userId);
+
+            if(user is not null)
+                return user;
+            return null!;
+        }
+
         public ClaimsPrincipal? GetCurrentUser()
         {
             var user = httpContextAccessor?.HttpContext?.User;
@@ -55,15 +69,9 @@ namespace catering.Infrastructure.Repositories
             return user;
         }
 
-        public async Task<DeliveryAdress> GetDeliveryAdressByUserId(string userId)
-        {
-            var user = await userManager.Users.Include(u => u.DeliveryAdress).FirstOrDefaultAsync(u => u.Id == userId);
-            return user!.DeliveryAdress;
-        }
-
         public async Task<SignInResult> LoginUser(LoginInput loginInput)
         {
-            AppUser? singedUser = await  userManager.FindByEmailAsync(loginInput.Email);
+            AppUser? singedUser = await userManager.FindByEmailAsync(loginInput.Email);
             if (singedUser is not null)
             {
                 var result = await signInManager.PasswordSignInAsync(singedUser.UserName!, loginInput.Password, loginInput.RememberMe, false);
@@ -124,7 +132,6 @@ namespace catering.Infrastructure.Repositories
                 PostalCode = deliveryAdressInput.PostalCode,
                 PhoneNumber = deliveryAdressInput.PhoneNumber,
             };
-
 
             user!.DeliveryAdress = deliveryAdress;
             await storeContext.SaveChangesAsync();
