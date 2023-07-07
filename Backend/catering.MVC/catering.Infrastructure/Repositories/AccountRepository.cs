@@ -55,6 +55,12 @@ namespace catering.Infrastructure.Repositories
             return user;
         }
 
+        public async Task<DeliveryAdress> GetDeliveryAdressByUserId(string userId)
+        {
+            var user = await userManager.Users.Include(u => u.DeliveryAdress).FirstOrDefaultAsync(u => u.Id == userId);
+            return user!.DeliveryAdress;
+        }
+
         public async Task<SignInResult> LoginUser(LoginInput loginInput)
         {
             AppUser? singedUser = await  userManager.FindByEmailAsync(loginInput.Email);

@@ -16,6 +16,7 @@ namespace catering.Domain.Interface
         Task DeleteUserById(string id);
         IEnumerable<AppUser> GetAllUsers();
         ClaimsPrincipal? GetCurrentUser();
+        Task<DeliveryAdress> GetDeliveryAdressByUserId(string userId);
         Task<SignInResult> LoginUser(LoginInput loginInput);
         Task LogoutUser();
         Task RegisterUser(AccountRegisterInput registerInput);
