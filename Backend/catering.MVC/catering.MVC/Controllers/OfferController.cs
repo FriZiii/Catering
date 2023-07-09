@@ -1,6 +1,7 @@
 ﻿using catering.Application.Managements.OfferManagment.Commands.AddProduct;
 using catering.Application.Managements.OfferManagment.Commands.DeleteProductById;
 using catering.Application.Managements.OfferManagment.Queries.GetAllProducts;
+using catering.Application.Managements.OrderManagment.Queries.GetOrderIdFromCookies;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -18,6 +19,11 @@ namespace catering.MVC.Controllers
 
         public async Task<IActionResult> Index()
         {
+            int orderId = await mediator.Send(new GetOrderIdFromCookiesQuery());
+            if (orderId != 0)
+            {
+                return RedirectToAction("Confirm", "Order");
+            }
             var products = await mediator.Send(new GetAllProductsQuery());
             return View(products);
         }
