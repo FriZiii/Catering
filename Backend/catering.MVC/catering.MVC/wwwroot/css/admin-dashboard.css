@@ -148,7 +148,9 @@
 .table-div-admin {
     overflow: auto;
     max-height: 420px;
-    width: 131vh;
+    width: 133vh;
+    position: relative;
+    left: 10px;
 }
 
 .table-div3-admin {
