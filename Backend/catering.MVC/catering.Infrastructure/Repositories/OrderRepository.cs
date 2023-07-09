@@ -82,9 +82,16 @@ namespace catering.Infrastructure.Repositories
         public async Task DeleteOrderItemById(int id)
         {
             var orderItemToDelete = await context.OrderItems.Where(orderItem => orderItem.Id == id).FirstOrDefaultAsync();
-            if(orderItemToDelete != null)
+            var order = await context.Orders.Include(o=>o.DiscountCode).Where(order => order.Id == orderItemToDelete!.OrderId).FirstOrDefaultAsync();
+            if(orderItemToDelete != null && order != null)
             {
                 context.OrderItems.Remove(orderItemToDelete);
+                order.TotalPriceBeforeDiscount = order.OrderItems.Select(c => c.Price).Sum();
+                order.TotalPriceAfterDiscount = order.OrderItems.Select(c => c.Price).Sum();
+                if(order.DiscountCode is not null)
+                {
+                    order.TotalPriceAfterDiscount = order.TotalPriceBeforeDiscount - ((order.TotalPriceBeforeDiscount * order.DiscountCode.DiscountPercentage) / 100);
+                }
                 await context.SaveChangesAsync();
             }
         }
