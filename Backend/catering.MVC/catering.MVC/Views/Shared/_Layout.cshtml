@@ -52,7 +52,7 @@
                 <a class="menu-item @(currentUrl == "Index-Offer" ? "active" : "")" asp-area="" asp-controller="Offer" asp-action="Index">Offer</a>
                 <a class="menu-item @(currentUrl == "FAQ-Home" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="FAQ">FAQ</a>
                 <a class="menu-item @(currentUrl == "Index-Cart" ? "active" : "")" asp-area="" asp-controller="Cart" asp-action="Index">Cart</a>
-                <a class="menu-item @(currentUrl == "Index-Home" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="Index">Contact</a>
+                <a class="menu-item @(currentUrl == "Index-Contact" ? "active" : "")" asp-area="" asp-controller="Contact" asp-action="Index">Contact</a>
                 @if (User?.Identity != null && User.Identity.IsAuthenticated)
                 {
                     <form method="post" action="/Account/Logout">
@@ -84,7 +84,7 @@
             <a class="menu-item @(currentUrl == "Index-Offer" ? "active" : "")" asp-area="" asp-controller="Offer" asp-action="Index">Offer</a>
             <a class="menu-item @(currentUrl == "FAQ-Home" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="FAQ">FAQ</a>
             <a class="menu-item @(currentUrl == "Index-Cart" ? "active" : "")" asp-area="" asp-controller="Cart" asp-action="Index">Cart</a>
-            <a class="menu-item @(currentUrl == "Index-Home" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="Index">Contact</a>
+            <a class="menu-item @(currentUrl == "Index-Contact" ? "active" : "")" asp-area="" asp-controller="Contact" asp-action="Index">Contact</a>
             @if (User?.Identity != null && User.Identity.IsAuthenticated)
             {
                 <form method="post" action="/Account/Logout">
@@ -116,7 +116,7 @@
             <a class="@(currentUrl == "Index-Offer" ? "active" : "")" asp-area="" asp-controller="Offer" asp-action="Index">Offer</a>
             <a class="@(currentUrl == "FAQ-Home" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="FAQ">FAQ</a>
             <a class="@(currentUrl == "Index-Cart" ? "active" : "")" asp-area="" asp-controller="Cart" asp-action="Index">Cart</a>
-            <a class="@(currentUrl == "Index-Home" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="Index">Contact</a>
+            <a class="@(currentUrl == "Index-Contact" ? "active" : "")" asp-area="" asp-controller="Contact" asp-action="Index">Contact</a>
             @if (User?.Identity != null && User.Identity.IsAuthenticated && User.IsInRole("Admin"))
             {
                 <a class="@(currentUrl == "Index-AdminDashboard" ? "active" : "")" asp-area="" asp-controller="AdminDashboard" asp-action="Index">Admin Dashboard</a>
