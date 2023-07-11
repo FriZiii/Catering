@@ -1,7 +1,72 @@
 ﻿
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Contact";
 }
 
-<h1>Index</h1>
+<h2 class="title-center-contact">Contact us</h2>
+<div class="content-contact">
+    <div class="container-contact">
+        <div class="imgBox-contact">
+            <img src="~/images/home/header-img.png" class="food-contact">
+        </div>
+        <div class="textBox-contact">
+            <p>Send us a message</p>
+            <div class="contact-inputs-container">
+                <div class="input">
+                    <input class="input_field contact-input-field" type="text" aria-required="true"
+                           placeholder=" " />
+                    <span class="input_label">
+                        <img src="~/images/icons/user/user-yellow.svg" class="input_icon" />
+                        First name and surname
+                    </span>
+                </div>
+                <div class="input">
+                    <input class="input_field contact-input-field" type="email" aria-required="true"
+                           placeholder=" " />
+                    <span class="input_label">
+                        <img src="~/images/icons/mail/mail-yellow.svg" class="input_icon" />
+                        Email
+                    </span>
+                </div>
+                <div class="input">
+                    <input class="input_field contact-input-field" type="email" aria-required="true"
+                           placeholder=" " />
+                    <span class="input_label">
+                        <img src="~/images/icons/pen/pen-yellow.svg" class="input_icon" />
+                        Message subjact
+                    </span>
+                </div>
+                <div class="input">
+                    <textarea class="input_field contact-input-field contact-message-input-field" type="email" aria-required="true"
+                              placeholder=" "></textarea>
+                    <span class="input_label">
+                        <img src="~/images/icons/text/text-yellow.svg" class="input_icon" />
+                        Your message
+                    </span>
+                </div>
+            </div>
 
+            <div class="contact-button-container">
+                <a class="btn-no-cta" href="#">Send</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="contact-icons-container">
+    <div class="contact-icon-item">
+        <img src="~/images/icons/phone/phone-yellow.svg">
+        <h4>PHONE</h4>
+        <p>32 234 25 25</p>
+    </div>
+    <div class="contact-icon-item">
+        <img src="~/images/icons/map-pin/map-pin-yellow.svg">
+        <h4>ADDRESS</h4>
+        <p>12 34 Sesame St.</p>
+    </div>
+    <div class="contact-icon-item">
+        <img src="~/images/icons/mail/mail-yellow.svg">
+        <h4>EMAIL</h4>
+        <p>yummy@contact.com</p>
+    </div>
+</div>

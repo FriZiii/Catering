@@ -1,0 +1,122 @@
+﻿.title-center-contact {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 58px;
+    text-align: center;
+    margin: 0px 0px 40px 0px;
+}
+
+.content-contact {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-contact {
+    display: flex;
+}
+
+.content-contact .btn-no-cta {
+    border-radius: 0 !important;
+}
+
+.imgBox-contact {
+    flex: 1;
+    padding: 0 50px 0 50px;
+}
+
+    .imgBox-contact img {
+        width: 500px;
+        transform: rotate(340deg);
+    }
+
+.textBox-contact {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+    margin-left: 40px;
+}
+
+.contact-inputs-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.textBox-contact p {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 29px;
+    margin-bottom: 15px;
+}
+
+.contact-input-field {
+    width: 480px !important;
+}
+
+.contact-message-input-field {
+    height: 250px !important;
+}
+
+.contact-button-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.contact-icons-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+}
+
+.contact-icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    margin: 20px 30px 20px 30px;
+}
+
+
+    .contact-icon-item img {
+        width: 55px;
+        height: 55px;
+        margin-bottom: 5px;
+    }
+
+    .contact-icon-item h4 {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .contact-icon-item p {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+@media (max-width: 1160px) {
+    .imgBox-contact {
+        display: none;
+    }
+
+    .textBox-contact {
+        margin: 0;
+    }
+}
+
+@media (max-width: 560px) {
+    .contact-input-field {
+        width: 350px !important;
+    }
+
+    .contact-icons-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
