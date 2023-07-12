@@ -47,7 +47,7 @@ p {
     .home-imgBox img {
         width: 75%;
         height: 75%;
-        transform: rotate(75deg);
+        transform: rotate(340deg);
         min-width: 570px;
     }
 
