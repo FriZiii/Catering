@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using catering.Application.Managements.MessageManagement.MessageDto;
+using Microsoft.AspNetCore.Mvc;
 
 namespace catering.MVC.Controllers
 {
@@ -7,6 +8,11 @@ namespace catering.MVC.Controllers
         public async Task<IActionResult> Index()
         {
             return View();
+        }
+
+        public async Task<IActionResult> Submit(MessageDto messageDto)
+        {
+            return RedirectToAction("Index");
         }
     }
 }
