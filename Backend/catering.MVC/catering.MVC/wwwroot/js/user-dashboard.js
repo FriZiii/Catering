@@ -53,7 +53,7 @@ function clearValidationUpdateSpans() {
     });
 }
 
-function submitDiscountForm(event) {
+function submitUpdateDeliveryAdressForm(event) {
     event.preventDefault();
 
     var form = document.querySelector('#user-panelForm');
@@ -89,7 +89,7 @@ const searchOrderUserInput = document.getElementById('search-user-order');
 const rowsUserOrders = document.querySelectorAll('#div2-user-panel tbody tr');
 const counterUserOrder = document.querySelector('#div2-user-panel .search-counter-user-panel');
 
-counterUserOrder.textContent = (document.querySelectorAll('#order-record')).length;
+counterUserOrder.textContent = (document.querySelectorAll('#user-order-record')).length;
 
 searchOrderUserInput.addEventListener('input', function (event) {
     const q = event.target.value.toLowerCase();
