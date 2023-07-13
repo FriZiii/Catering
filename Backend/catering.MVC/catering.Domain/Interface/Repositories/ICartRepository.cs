@@ -1,7 +1,7 @@
 ﻿using catering.Domain.Entities;
 using catering.Domain.Entities.CartEntities;
 
-namespace catering.Domain.Interface
+namespace catering.Domain.Interface.Repositories
 {
     public interface ICartRepository
     {

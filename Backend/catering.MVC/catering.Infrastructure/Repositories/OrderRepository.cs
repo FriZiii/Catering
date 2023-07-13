@@ -1,7 +1,7 @@
 ﻿using catering.Domain.Entities;
 using catering.Domain.Entities.OrderEntities;
 using catering.Domain.Entities.User.AppUser;
-using catering.Domain.Interface;
+using catering.Domain.Interface.Repositories;
 using catering.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;

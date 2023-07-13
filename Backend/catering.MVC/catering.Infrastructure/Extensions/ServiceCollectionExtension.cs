@@ -1,11 +1,14 @@
 ﻿using catering.Domain.Entities.User.AppUser;
-using catering.Domain.Interface;
+using catering.Domain.Interface.Repositories;
+using catering.Domain.Interface.Services;
 using catering.Infrastructure.Persistence;
 using catering.Infrastructure.Repositories;
 using catering.Infrastructure.Seeders;
+using catering.Infrastructure.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -29,6 +32,7 @@ namespace catering.Infrastructure.Extensions
             services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddScoped<IDiscountCodeRepository, DiscountCodeRepository>();
             services.AddScoped<IAccountRepository, AccountRepository>();
+            services.AddScoped<IEmailService, EmailService>();
 
             services.AddScoped<UserManager<AppUser>>();
 

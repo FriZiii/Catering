@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace catering.Domain.Interface
+namespace catering.Domain.Interface.Repositories
 {
     public interface IOrderRepository
     {

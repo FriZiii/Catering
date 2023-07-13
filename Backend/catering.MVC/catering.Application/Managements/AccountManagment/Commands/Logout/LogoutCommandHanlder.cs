@@ -1,4 +1,4 @@
-﻿using catering.Domain.Interface;
+﻿using catering.Domain.Interface.Repositories;
 using MediatR;
 using System;
 using System.Collections.Generic;

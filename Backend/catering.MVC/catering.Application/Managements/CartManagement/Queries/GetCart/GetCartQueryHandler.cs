@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using catering.Application.Managements.OfferManagment.Queries.GetById;
-using catering.Domain.Interface;
+using catering.Domain.Interface.Repositories;
 using MediatR;
 
 namespace catering.Application.Managements.CartManagement.Queries.GetCart

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using catering.Domain.Entities.User.LoginInput;
-using catering.Domain.Interface;
+using catering.Domain.Interface.Repositories;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using System;

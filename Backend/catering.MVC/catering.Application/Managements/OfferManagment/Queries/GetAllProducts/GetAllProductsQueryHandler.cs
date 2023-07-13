@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using catering.Domain.Entities;
-using catering.Domain.Interface;
+using catering.Domain.Interface.Repositories;
 using MediatR;
 
 namespace catering.Application.Managements.OfferManagment.Queries.GetAllProducts

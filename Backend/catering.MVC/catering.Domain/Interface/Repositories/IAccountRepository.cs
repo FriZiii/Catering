@@ -4,7 +4,7 @@ using catering.Domain.Entities.User.RegisterInput;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
 
-namespace catering.Domain.Interface
+namespace catering.Domain.Interface.Repositories
 {
     public interface IAccountRepository
     {

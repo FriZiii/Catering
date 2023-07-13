@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using catering.Domain.Entities.User.AppUser;
-using catering.Domain.Interface;
+using catering.Domain.Interface.Repositories;
 using MediatR;
 
 namespace catering.Application.Managements.OrderManagment.Commands.AddGuestToOrder

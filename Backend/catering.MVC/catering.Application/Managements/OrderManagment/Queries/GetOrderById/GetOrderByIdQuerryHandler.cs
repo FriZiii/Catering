@@ -1,5 +1,5 @@
 ﻿using catering.Domain.Entities.OrderEntities;
-using catering.Domain.Interface;
+using catering.Domain.Interface.Repositories;
 using MediatR;
 
 namespace catering.Application.Managements.OrderManagment.Queries.GetOrderById

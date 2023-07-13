@@ -1,4 +1,4 @@
-﻿namespace catering.Application.Managements.MessageManagement.MessageDto
+﻿namespace catering.Application.Managements.MessageManagement
 {
     public class MessageDto
     {
